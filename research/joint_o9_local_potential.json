@@ -1,0 +1,8080 @@
+{
+  "core_names": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "u",
+    "v",
+    "w",
+    "z",
+    "x"
+  ],
+  "core_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      8
+    ]
+  ],
+  "initial_partition": {
+    "a": "A",
+    "b": "A",
+    "c": "A",
+    "d": "A",
+    "u": "C",
+    "v": "A",
+    "w": "C",
+    "z": "A",
+    "x": "A"
+  },
+  "profiles_tested": 64,
+  "recolorings_each": 19683,
+  "surviving_profiles": [
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ],
+        [
+          "v",
+          "w"
+        ],
+        [
+          "v",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ],
+        [
+          "v",
+          "w"
+        ],
+        [
+          "v",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ],
+        [
+          "v",
+          "w"
+        ],
+        [
+          "v",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ],
+        [
+          "v",
+          "w"
+        ],
+        [
+          "v",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    }
+  ],
+  "results": [
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ],
+        [
+          "v",
+          "w"
+        ],
+        [
+          "v",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ],
+        [
+          "v",
+          "w"
+        ],
+        [
+          "v",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ],
+        [
+          "v",
+          "w"
+        ],
+        [
+          "v",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ],
+        [
+          "v",
+          "w"
+        ],
+        [
+          "v",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        4,
+        5,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "v"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "v"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "v",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        4,
+        5
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        5,
+        4
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        4,
+        5,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "z"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "z"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ],
+        [
+          "u",
+          "z"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        4,
+        5
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        5,
+        4
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        4,
+        6
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        5,
+        5
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        2,
+        6,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    },
+    {
+      "leaf_v": [
+        3,
+        6,
+        3
+      ],
+      "leaf_z": [
+        3,
+        6,
+        3
+      ],
+      "center_x": [
+        3,
+        5,
+        4
+      ],
+      "minimum_delta": 0,
+      "minimizing_partition": {
+        "a": "A",
+        "b": "A",
+        "c": "A",
+        "d": "A",
+        "u": "C",
+        "v": "A",
+        "w": "C",
+        "z": "A",
+        "x": "A"
+      },
+      "zero_C_subsets": [
+        [
+          "a",
+          "w"
+        ],
+        [
+          "a",
+          "x"
+        ],
+        [
+          "b",
+          "w"
+        ],
+        [
+          "b",
+          "x"
+        ],
+        [
+          "c",
+          "u"
+        ],
+        [
+          "c",
+          "x"
+        ],
+        [
+          "d",
+          "u"
+        ],
+        [
+          "d",
+          "x"
+        ],
+        [
+          "u",
+          "w"
+        ]
+      ],
+      "cycle_reducing_zero_move": null
+    }
+  ]
+}

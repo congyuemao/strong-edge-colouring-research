@@ -1,0 +1,81 @@
+{
+  "scope": "Every operation sequence in the same stated budgets, with repetitions; independently implemented representative and clique filters.",
+  "summary": [
+    {
+      "root": "K5",
+      "replacements": 0,
+      "operation_sequences": 1,
+      "admissible_sequences": 0,
+      "admissible_pairs": 0
+    },
+    {
+      "root": "K5",
+      "replacements": 1,
+      "operation_sequences": 10,
+      "admissible_sequences": 0,
+      "admissible_pairs": 0
+    },
+    {
+      "root": "K5",
+      "replacements": 2,
+      "operation_sequences": 90,
+      "admissible_sequences": 30,
+      "admissible_pairs": 60,
+      "common_path_pairs": 60
+    },
+    {
+      "root": "K5",
+      "replacements": 3,
+      "operation_sequences": 960,
+      "admissible_sequences": 360,
+      "admissible_pairs": 360,
+      "common_path_pairs": 360
+    },
+    {
+      "root": "K5",
+      "replacements": 4,
+      "operation_sequences": 11880,
+      "admissible_sequences": 480,
+      "admissible_pairs": 480,
+      "common_path_pairs": 480
+    },
+    {
+      "root": "K5",
+      "replacements": 5,
+      "operation_sequences": 167760,
+      "admissible_sequences": 0,
+      "admissible_pairs": 0
+    },
+    {
+      "root": "O9",
+      "replacements": 0,
+      "operation_sequences": 1,
+      "admissible_sequences": 1,
+      "admissible_pairs": 16,
+      "previous_rotation_pairs": 16
+    },
+    {
+      "root": "O9",
+      "replacements": 1,
+      "operation_sequences": 6,
+      "admissible_sequences": 6,
+      "admissible_pairs": 28,
+      "previous_rotation_pairs": 28
+    },
+    {
+      "root": "O9",
+      "replacements": 2,
+      "operation_sequences": 46,
+      "admissible_sequences": 0,
+      "admissible_pairs": 0
+    },
+    {
+      "root": "O9",
+      "replacements": 3,
+      "operation_sequences": 432,
+      "admissible_sequences": 0,
+      "admissible_pairs": 0
+    }
+  ],
+  "unhandled_pairs": []
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "palette": 9,
+    "n": 7,
+    "trials": 500,
+    "bad": []
+  },
+  {
+    "palette": 9,
+    "n": 8,
+    "trials": 500,
+    "bad": []
+  },
+  {
+    "palette": 9,
+    "n": 9,
+    "trials": 500,
+    "bad": []
+  },
+  {
+    "palette": 9,
+    "n": 10,
+    "trials": 500,
+    "bad": []
+  },
+  {
+    "palette": 10,
+    "n": 7,
+    "trials": 500,
+    "bad": []
+  },
+  {
+    "palette": 10,
+    "n": 8,
+    "trials": 500,
+    "bad": []
+  },
+  {
+    "palette": 10,
+    "n": 9,
+    "trials": 500,
+    "bad": []
+  },
+  {
+    "palette": 10,
+    "n": 10,
+    "trials": 500,
+    "bad": []
+  }
+]

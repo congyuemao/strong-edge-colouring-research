@@ -1,0 +1,44 @@
+{
+  "base_triangular_nonbacktracking_walks": 0,
+  "base_quadrangular_nonbacktracking_walks": 176,
+  "base_simple_four_cycles": 22,
+  "three_sheet_sign_masks": [
+    0,
+    255
+  ],
+  "double": {
+    "prefix_nodes": 31,
+    "covered_assignments": 4096,
+    "solutions": 0
+  },
+  "triple": {
+    "0": {
+      "prefix_nodes": 1651,
+      "covered_assignments": 531441,
+      "solutions": 0,
+      "color_distribution": {}
+    },
+    "255": {
+      "prefix_nodes": 1651,
+      "covered_assignments": 531441,
+      "solutions": 6,
+      "color_distribution": {
+        "7": 4,
+        "8": 2
+      }
+    }
+  },
+  "cyclic_four": {
+    "prefix_nodes": 64365,
+    "covered_assignments": 16777216,
+    "solutions": 8184,
+    "color_distribution": {
+      "5": 48,
+      "6": 2035,
+      "7": 5208,
+      "8": 878,
+      "9": 15
+    }
+  },
+  "all_checks_passed": true
+}

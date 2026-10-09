@@ -1,0 +1,132 @@
+研究状态：2026-10-09。本文件用于直接恢复，不是结题声明。
+
+最新续研（优先于以下旧待审措辞）：
+- full_end_normalization.md 全文根/upper/structural独审通过。完整NA bowtie iff满A端。四层minPhi,minC奇圈,min实际阻塞E,min满端M后无双满；相反full根绝不相邻；同向full自由端投影全蓝；三连full中心spoke A3（新A根两Fred伴C/B，不能属于任何其余C根的新K4）。整full圈/七full连续段任意多圈同步列表四色。非整full圈有无任何满端根，尚缺任意多这种代表联合四色。
+- separated_good_representatives.md 根已全文独审17距离版本：临界Y r代表高端口n≤21r−4；无团割迫层2..8各至少2，三个连续2层会低Gallai诱导C4，故半径8球至少21点；距离17使球不交，矛盾。是任意数量S的严格充分条件，不保证存在所需代表。
+- high_clique_low_clique_free.md 根/upper全文独审：k≥3，K_k-free、Δ≤k+1、全部实际high成团⇒k染。低Gallai叶完全块Hall失败造Kk；奇圈各表{δ,β_i}、相邻β异，延拓。factor_541_matching.md根全文审§§1–4/修正5：min(5,4,1)Phi/minC边，坏C边端点(6,5,1)，A5邻(5,5,2)成≤3团且不跨两坏边，故每端单独A5-good。旧A4跨3边还可能三单例+旧C孤点，已纠正原遗漏，不能只保(2,1,1)二元禁子句。一般r代表入A/w入C delta=c−a+4−r。任意多容量与五染仍缺。
+- factor_541_two_representatives.md 根/upper全文审核：两根联合失败6critical≤41点，单高≤39双高≤38。低5Gallai K≤4 gives nL≤P−4；高来源ε_i/S_i/T，h=ε1+ε2+s1+s2+t,m≥sumC(si,2)+sumεi(si+t),s_i≤3,s_i+t≤5+ε_i。纯表，不是41点图枚举。
+- five_critical_two_adjacent_general.md 根/structural全文审核：Δ≤5、无K5、至多两相邻5度⇒4染，不需无K4共3。双high各4低端口，叶K3/K4八端口只剩bowtie双三角或双叶K4+桥中点/中K4，均4染。给五邻插入且至多1旧A4邻出口。注意根在critical中可降4，不能用奇偶草率推失败必≥3旧饱和邻；counter已撤回该误断。
+- joint_o9_low_pair_matching.md §§1–6根全文审核：LL代表关系每部matching，无满端S的任意O9恰两代表且只能LL；两matching并图二部可一次分配S，全部O9同时避开。仍未保证其他5critical/负载。
+- joint_thirteen_pair_matching.md 根新纯稿，upper已独推核心通过、待最终全文审：更强P3+K2两代表共P3且两个K2合旧A-K4的关系也是matching。固定根P3/K2唯一，旧A点属K4唯一。aligned Fredstar配对由星中心唯一余蓝端+Fredmate不得落K2排第二搭档；cross配对根两端分别接K2两叶，迫所有根无A Fredmate；三独立根共同P3借匹配W4禁形迫P3有一共享二星中心，该中心只有两蓝端容纳≤2根，矛盾。LL根NA含三角，13型NA无三角，每部两matching并仍matching。只覆盖恰2代表的13核：J13独立数3，有c+U低点+V低点三低代表候选，upper正在分类，勿宣布所有13已同步消除。
+- factor_small_clique_routes.md根/upper全文审§§6/8/8.1：第6层min小K4，固定A的全A6零转移闭包是BC6regular组件，Brooks6color；A4根邻旧A-K4 R，其r profiles(3,4,5)/(3,5,4)/(3,6,3)，首末零转移仅中者balancedstop；Q=R+q FredC5不能allbalanced，q移B后Q-toB19为奇数而每外Fred邻数偶。§7 small_clique_insertion_obstruction.py根读代码/运行，O9+A根B-K4局部障碍及9522点4reg/girth5/F2全图completion均通过，但没有最优分区。
+- small_clique_balanced_gate_search.py 根完整读码并复跑最终版。fresh 41:2F/3triples/40nodes roots0,3,4；311:5/4/52 roots0,2,3,4；221:9/16/48 roots0..3；matching121/1070/1270 roots空；C5:1/0/0空。单独matching_one_cross_edge20试20positive保存五根证书。此前第一版matching五根positive只查部内度，加入局部12度无负单移必要条件后已撤回；historyJSON保全部版本与范围。正例仅局部，不声称完整全局势；负例仅一个已给核+freshports，不是所有外端相连模型。根最终重跑与现JSON一致。
+- private_clique_colour.md最强最终§§1–8根全文审核通过，包括无high独立/无共同外邻限制k≥4证明和25点反例；无需再标待审。README已同步上述主要进展。
+
+本轮最新，优先于下方所有旧“待审/未同步”标记：
+- 【统一规范化及最终反向禁邻】blocking_event_normalization.md 根全文审通过：minPhi、min坏C奇圈后再min所有坏圈点A/B阻塞事件总数。双blocked v的B8 Fred伴b，其C邻锚定为v和v两圈邻，零换只同圈替点且完整B+任意其他C集同构；b变A-good/Bblocked，总事件减1，故规范化无双blocked。全Bblocked圈A4辐条零换新vi A4邻域含独立3，不能属于任何新A8（其4度点邻域α≤2）；其他旧C根新A阻塞⇒旧核已存在，故不增，新ai双good，事件降。对称同时迫两类整圈自由辐条全3，可分别任意多圈代表入A/B并同步列表4染。混合圈仍留。
+- opposite_blocked_adjacency.md 根提出端点分类、structural/upper逐案独审，根保存完整纯证；structural补§4.1、根/upper审核：反向Ablocked/Bblocked C根实际上完全不邻！共享free端蓝星4边全C爆度；full端蓝违满星，full-free Fred给4+3同部邻爆4，full-full Fred颜色矛盾，free-free蓝给3C；唯一free-free Fred C三角残形v-e-w被B8伴b零换排除：Fred四边路径b-v-e-w使b/w不冲突(否则≤5圈)，但保持C奇圈迫b邻w。故规范化后每个非整圈单向blocked的混合圈必有双good点；若两种blocked标签都出现，至少2个doublegood隔开。仍非联合插入。
+- blocked_run_list_extension.md 根/upper全文§§1–4独审通过：同部blocked根间Fred连接e若C给8A违5，若A给6A违4，故全blue。3连续Bblocked的内部spoke在统一第三势下A3。路径/圈加matching列表定理，路径center离端≥2，列表≥d+1−P−Q，残余含center组至少2个匹配目标、不含center组至少1，2s+t≤s矛盾。任意多圈各有7连续Bblocked便可取5内部spokes路径、选中间root同时插A4染；对称B。§5三组P4的列表9奇圈反例说明仅center匹配独立不够把7降6，不是实际H反例。
+- 【私有三角定理加强】private_triangle_three_colour.md 已删除high独立前提，根独推、counter全文复审通过。每high4带相邻degree3 tips且tips唯一high属主、共同邻仅属主即可3色。关键任何这样的high都不可能入K4（团必含tip，tip满3迫整pair及额外共同点）。一般k3去共同低邻条件不成立：private_triangle_repeated_centres.md保存10点2high4chrom障碍，勿把Moser唯一分类错误推广；该失败路线已关闭。
+- 【k≥4私有团新定理】private_clique_colour.md 根提出、structural扩强/完整改稿，upper/counter全文独审。Δ≤k+1、无Kk+1，每high有k−1低邻成clique且每tip唯一high属主、degree≤k，则k染；不需high独立/不需排共同外邻。临界低Gallai：指定团若不扩，外接全bridge，删团补两外邻edge，q降2；若扩低Kk=P+x，删P识别不邻q/x，新点≤3<k。新high少、私有性/Kk+1free保留，Hall延拓。根已独推两支，尚可再读最终完整稿。k4在H中提供5critical核过滤，但不自动覆盖所有mixed reps。structural正在保存去唯一high条件的25点5色例（K5顶点拆high对+共享lowK3，Z5锦标赛分接）。
+- factor_two_saturated.md §15根全文审通过：全硬挂块起初当前坏Q在圈上时，同步正规化也合法。不同Q跨B/C饱和目标相邻会一次零换使另一饱和profile(6,3,3)违边界；同部挂目标若邻，先一方正规化使另目标B2为g/h，再逆零换用12.4排仍见自己坏Q。故所有目标independent，同步zero前三级及类型保持，接收A-K4彼此不同(否则新A5违Phi)。再统一用§14修复，净移原当前中央a_i。已请求并获补‘其他规范化不改本块中央/L/M/f2等’文字。
+- factor_small_clique_routes.md 根/upper全文审通过：每个原B/C-K4必有dA≥5且不接任何实际坏A-K5的点。反设四中央各接完整A-K4(可另badanchor)，四匹配私有卫星均41/311，中央所有第二Fred边C；三种Fred核选择全造C内部4度矛盾。该点不自动可插A；counter已提出O9加B-K4附件局部失败核，待保存/根审。
+- 当前代理后续：counter检查原小部K4路线；root建议第六层min小部K4，A6点BC零转移迫另一侧接收K3；若整个转移轨道只A6，闭包是BC的6正则组件，Brooks6染可处理(候选待证)。upper已完成三染/私有团审核可继续混合圈。structural保私有团25点边界例后继续混合圈或独审BC闭包。一般20、任意因子10仍未解决，goal保持ACTIVE。
+- 【已闭合的三染抽象接口】private_triangle_three_colour.md 由 upper 提出，根与 counter 全文独审通过。有限 K4-free、Δ≤4、四度点独立；每四度 q 有三度相邻 tips s,t，其唯一四度邻均为 q、唯一共同邻为 q，则整图3色。按实际四度数归纳；4critical 低 Gallai 图中 st 桥/≥7奇圈压缩三边路为边降 q；低C5若另一私有对不存在也安全；若有两私有对，整个C5的三外接口等价NAE，替换为低三角各接三个外点，两个高点降三度。替换不造K4、保留剩余私有性。hanger_local_reductions_check.py/json 根独写并跑，27种三边路外颜色与27种C5/三角外颜色全部恒等，纯证不依赖枚举。
+- 【所有全硬挂边块同步修复】factor_two_saturated.md §14.3容量对核内/外伸g均成立，根已全文审核；以上新定理遂闭合这一整类任意多块：每坏Q任选一挂中央q移入其目标小部，暂删私有二度M后满足私有三角定理，三染再补M；A坏K5变K4。B/C选择同时独立且每Q只选一次。此为最终调色，Phi每块+1，不是最优状态矛盾。不消除其他坏A-K5和原小部K4；不是完整10/20色证明。§13.1–13.7及§14.1–14.2根也已全文审核，均无漏洞。
+- 【全A3辐条的任意多圈同步】all_blocked_circles_list_extension.md 根/upper全文独审通过。圈长≥5的圈并匹配图，指定每圈center；P为center闭圈邻域，Q为匹配伴是center，则列表长≥d+1−P−Q必可染。若剥离卡K，每圈只有短2/3段含center、整圈或删center长段；所需不同匹配目标center至少2s+2f+4l，却仅s+f，矛盾。应用全Bblocked C奇圈且全部A-spokes旧A3：每圈任取代表S，先4染A\W，S外部至多2邻，再列表恢复W，得A+S整体4色。全体坏C圈都满足时得10色；一般混合A4及非全Bblocked仍未解。
+- blocked_eight_component.md、all_blocked_circles_joint_degree.md §§1–7根全文独审通过，upper也通过。私有B8阻塞根单射、全Bblocked圈投影全蓝、任意多圈代表入A的Δ5、A3辐条profiles均成立。新§7：(3,5,4)辐条不能接另坏圈，否则三C代表/A-spoke四点零移切至少两奇圈；跨不同全Bblocked圈远端辐条匹配两端只(3,4,5)。
+- private_eight_synchronous_rotation.md 根全文独审通过：来自不同C坏圈的私有B8伴点交换可任意子集同时零势且保次级奇圈数；A不动、B及B加其他未选圈任意S完整同构；可独立选各对A-good代表。仍不等于联合A可插。
+- joint_gadget_family.md 根全文独审通过，joint_gadget_tree_family.py 与 joint_gadget_sequence_verify.py 根均复跑一致。K5至5步/O9至3步全部指定边替换族初筛存活均在已有双圈修复轨道，未处理点对0；有限族覆盖不是所有临界图分类。
+- joint_c7_blowup.py、joint_c7_cover.py、joint_c7_cover_verify.py 根已读/重跑通过（独立verify在生成结束后再跑一遍）：13核α3、13删点色证书、12合格代表；2121原点4reg/F2/girth7完整实现，独立DFS213009状态，无最优分区证书。
+- 当前下一步：structural攻全Bblocked圈A4混合，upper/counter在新三染定理之后继续其他坏团/小部K4。根已提示A4候选跨圈额外边至多matching，独立横截可同步零换但B联合4色未自动成立。原20和一般因子10均未解，goal ACTIVE。
+
+最新主线成果（本段优先于下方旧规模/任务记录）：
+- 【最新有限核规模】joint_critical_size_bound.md 根/upper全文独审，根复跑joint_critical_size_parameters.py：一般两代表联合失败的5临界见证≤44点。低Gallai组件nL≤2P−4（K4块只能桥接，b2≥b4−1）；高h偶≤10，n≤11h−4eh−4c。代表可为低点；高独占邻su/sv≤3成团，共同t给eh≥E0，孤低代表j补7松量；算术h2/4/6/8/10界18/40/42/44/42。不是44点图穷举或联合修复总定理。
+- 【最新同步线索，纯稿待根全文审】根提出、structural/upper独立核验：单点B阻塞的O9减高根整个8点B组件封闭；低邻对若旧B4会破根S团，故旧B3也满。B8仅两补O9类型，同型两根K4共3禁止，异型五Fredstar蓝C5禁止，所以每B8全局至多阻塞一个坏C顶点。blocked_eight_uniform_extension.md根全文审及5行色表通过：别圈点只触5点L，若全部指定同色α则延拓B8 iff其邻域并集不覆盖全L；这不是一般多色/多圈同步结论。
+- 【圈投影新线索，待根最终文稿审】若某C奇圈所有点Bblocked，其Fred根边两两原端点分离，满B端不能参与C冲突，故自由端投影为原奇圈。根起初错误假定投影连接必蓝，及时撤回；后修正6A计数严格排Fred连接：若自由端红连接A，则两端各一个蓝星为C+ A、另一个全2A，给该A边6个A邻，违ΔA4。故投影确全蓝且长度≥7。NA(v_i)={a_i,a_prev,a_next,f_i,g_i}二部(maxdeg≤3)，A-good；spoke a_i若A4，零换v_i/a_i后新C代表B-good；全A3分支profiles仅(3,5,4)/(3,4,5)。structural进一步推这些全Bblocked圈任意每圈选一点全插A仍Δ≤5（非spoke A边最多通过两Fred续边见2根；spoke见本圈3根+至多匹配远圈1根），尚未四色闭合。
+- joint_o9_edge_gadget.md 根/structural全文独审通过，根复跑joint_edge_gadget_probe.py18图14有初筛代表：O9低叶边替换/中心叶替换的新13核，全部合格轨道用零换Fred伴+另根A-good修复，或零换后饱和邻非团排最优实现。完整N_A(v)若单插失败必须bowtie=K1∨2K2；两旧A≤3非邻也足A-good。joint_gadget_family.md/.py/.json及独立sequence verifier已upper生成，根尚待全文审/复跑：K5≤5次、O9≤3次的明确低边K4附件递归族全部初筛存活均被共同P3/旧O9/单替换修复；不是所有5临界分类。
+- joint_odd_cycle_blowup.md 根全文审§§1–6通过：J_N=C_(2k+1)[K2]删一点整个族5临界，删另一点用两份删圈点偶路径2染给4色；高2N−6，联合核high≤10排N≥9，N3K5禁，N5O9已处理，N7新13核全部合格代表簇2/4、3/5、2/5。根初称核内S1即完整S1不成立已撤回；upper正确用新O9低中心/远簇缺边排A阻塞，再Fred同簇真孪生零換保持全A+另一代表同构，远端B选择完成修复。joint_c7_cover.py/json与另写verify给2121点4reg/F2/girth7完整实现，根尚待跑；无最优分区证书。
+- factor_two_saturated.md §§10–12.3 根全文审通过；两energy程序根已复跑八例18点最小势−38且只有3中央状态。核内同部h经不相邻接收点零转移迫m4、同部度0；一般多邻g有dA≥dB+4。g外伸p支撑外，四中央端满度故完全不见q1/q2（曾提出见一个的(6,2,4)分支为空已撤回），恰见Q0三边，所以至少b+1外围A邻。新§13.1–13.7 upper已独审、根待全文审：所有核内g挂块可同步只移q到其小部，A坏Q→K4；g原小部孤点变叶，M度2。唯一普通邻h的容量r≤3−dB(h)自动由独立饱和横截零换迫出：接收对间剩余边是matching，b≤1翻转二分侧避h，b2共享已排。删所有g/M后小部subcubic无新增K4，放回叶/度2点三染；B/C方向可同时选且每Q只一次。是最终调色修复，Φ每块+1，不是最优分区矛盾；外伸g及其他坏团/原小部K4仍留。
+- factor_girth_six_neighbourhood.md 全文包括§5已根独审：12邻域两hub相邻，各接一侧2K2+孤点，其他仅远端跨图D(Δ3,C4free、对星匹配)。局部χ4 iff八个蓝星远端D0=C8，否则χ3。factor_girth_seven_interfaces.md 根/upper全文独审：O9三K4蓝三边路径加低中心Fred边迫原C6，故girth7无O9且所有C坏点双向single-good；C≤2坏圈时10。girth7也无W4，但C7双吹13核可存在，因此仍非一般girth7十色。
+- 【最新双圈修复】joint_common_path_repair.md 根独立纯证，upper/structural均全文逐段独审通过：两个不同C坏圈代表p,q共同A邻含诱导P3，且各完整A邻域诱导最大度≤2，则两者A-good且至少一方B-good，可分部同时修复两圈。若Bblocked，5B集中一原端；另端Fred伴若A则在五A邻内至少见3A，矛盾。故双阻塞时p/q与所有A核边端点分离；共同P3构成W4，五匹配W4的matching三角分端迫原C4；唯一hub-A-rim共享端时p/q蓝接共享中心，另一端若都B满则至第三A边的两个见证均Fred且落同一端，违反F度2。一般多圈同步仍未解决。
+- joint_thirteen_obstruction.md/.py/.json 给严格13点5临界核，否定一般两代表只能O9：中心K5删不交pq,ab，两不交K4分别2+2接pq与ab；高四点C4。逐删点四色纯证与13份色表、186节点UNSAT均根复跑。合格独立代表对恰pq/ab一个轨道，根全文审核通过。joint_thirteen_realization.py/.json给2020点4reg/F2/girth6完整原实现，根读代码并复跑全部通过；不附最优分区。共同P3新定理修复该核的所有合格代表位置，因此不是10色反例或同步阻断。
+- joint_o9_all_pairs.md 与 joint_o9_two_repair.md 根已全文独审通过：O9独立对LL/HL/HC全可双圈修复。HL/HC另一代表在原状态与高Fred对零交换状态都A-good，否则两新K4和原蓝三边路径闭蓝C5；高Fred对至少一状态B-good，否则另一端Fred伴多出第六B邻。LL零换转HL。只能处理确有该核的两圈，不能未经证明迭代多个圈。
+- joint_common_neighbour_budget.md 根全文审核通过：两代表共同旧A3点T的profiles仅(3,5,4)/(3,4,5)，T4为前者。同时两代表进A、R⊆T进C，ΔΦ=2−|R∩T4|+2e(R)。T无三角、T4无独立3；独立T4对r,s的零换迫它们支配其余T和两代表所有旧A4邻，且分别补回两个不同奇圈；任一S代表大小3则T4不能有独立对，故≤2且若2则邻接。
+- joint_ore_probe.py/json已根补全两个半部粘接方向，180个17点标号候选全部不满足两代表接口。joint_ore_obstruction.md纯证根全文审核：两代表必须一侧一个原高K4点，左删边两端使其中代表出现第四个旧4度邻，矛盾。只排此Ore族，不声称所有5临界或候选都经临界检验。早期90范围是历史记录。
+- factor_two_saturated.md §§4–8.4 与 two_saturated_two_connectors.md 根已全部审过：三级max|A|使核内续边必C且C度≤1；C6零/一/二Fred连接均有类型/部别必要限制，三连接已排。四级max41+311、五级max221后，M坏团每q每小部饱和≤1；221双饱和只剩C5挂叶核。全硬C5挂边中M必FredB，两个挂点连接恰一FredC，另一蓝；零挂点Fred被通用核内非Q Fred边d_small≤1排除。剩一个Fred挂点模式尚未排除。§9局部邻域探针通过不是全局最优证书；§10新18点任意交换局部稳定证据待根读审/复跑。
+- factor_two_saturated.md §§1–3根/upper已全文独审通过：双饱和中央只C6交替matching或C5+挂匹配边；若C6三条连接全F，六组Z_B出现重数6−2t≥(3−t)(4−t)且t≤2迫t2。加第三级max|A|（中央三状态保持）后，取B-r及其唯一不见的中央q作A，r的4A邻来自两个旧A-K4各2；零移r到A不造K5且|A|增1，矛盾。因此排完整Fred C6型。其余C6 F连接0/1/2条、C5挂边未全排。upper在two_saturated_two_connectors.md得到2条F连接部别残形，尚待根审；counter处理0/1条。
+- factor_girth_six_synchronization.md 与 factor_girth_six_sync_interfaces.md 根已全文审过：每AB连通分量对每坏C圈点分别A/B平衡，跨≥2 AB分量的点双向可插；双阻塞点v两C邻分别可插A/B（同A伴边两端双核将使A边见8A邻），故双阻塞点集独立、ℓ奇圈≥(ℓ+1)/2可插位置。uA内部度a，接k≥2不同坏C圈，b≥a+1、c≥a+k−1、3a+k≤12，由同时移k圈代表到A并移u到C得ΔΦ=c−a+2−k，负或零均不行。A4不能跨2坏圈；A3跨3圈只能(3,4,5)。饱和零交换可把坏圈转到C中另一偶阶路径，不可误说总在原圈。同步仍未解。
+- 【当前最新】(4,3,3)最小Φ再最少A-K5下，每q每小部饱和私有邻点≤2完整纯证已根读审三个分支通过。factor_saturated_private_bound.md 汇总；factor_three_saturated_dd41.md（DD可混311）、three_saturated_cross.md（全r）、three_saturated_single_diagonal.md（单D）全中央F选法无遗漏，根/counter/upper相互独审。固定四匹配中央q_i=s_i t_i，r_i=s_i t_(i+1)，D0=t0t2,D1=t1t3；t卫星连接蓝故F第二边仅r或D。四同势最优状态，各辅助根12邻表，坏团多邻外点不能小部饱和，三个分支均矛盾。总饱和外邻重数界更新C5/41/311/221/M为0/6/8/10/10。未消除双饱和，不能说全团转移网络最大度2。
+- 【当前最新】five_critical_high_clique_two.md 与 five_critical_high_clique_four.md 给纯完整分类：Δ≤5、五度点成团、K5-free、无两K4共3的5临界图唯一O9：高K4，低bowtie两个三角，高两互补对各接一对叶。h偶且≤4；h2用8低端、叶块列表延拓/端口排尽；h4同8端逼唯一bowtie。通用度列表块引理已自证（邻表不同比较色、删一点后二连通贪心；同表用已有Brooks），无需外部Gallai定理。根/structural/upper独审通过。
+- 【当前最新，防误报】factor_girth_six_ten.md 只证明girth≥6 F的最优(4,4,2)每个C坏奇圈有某v可单独插A/B后四色；若C≤1坏圈即10色。一般多奇圈同步未解决，绝不能声称girth6任意F10已证。minΦ→minC奇圈迫v5/5/2，饱和大部邻w为4/5/3且成团≤3。A+v失败必O9高点v，强K4共2边几何迫5A全部集中原v一端；B失败迫另一端，余两C邻为Fred距离2续边。若一奇圈每点双失败，其边标A/B交替矛盾。根/upper/structural独审局部证与同步缺口一致。
+- factor_three_saturated_audit.py 根已独立运行：268点4正则girth5、F圈16/52/59/141，四个中央零交换状态全部单点稳定，但37个负势双交换；77↔131把Φ−573降−575。不是真最优，不与三饱和排除冲突。factor_two_short_obstructions.py 根已运行：m4C5链20点α3排独立3重支配（本Hχ7）；O9高团χ5，并有4046点4reg/F2/girth6完整原实现，不能仅以几何排O9。
+- mixed_path_pair_constraints.md 新纯混合四色接口已根/upper独审：权总≥3的任意NAE与P3+K2异色对禁约束可共同四色（每变量权≤5）。二分活跃约束→关联≤2、伪森林二元无单色奇圈、带符号代表换边。disconnected_odd_cycle_constraints.md §§1–7原子LLL根/structural/counter独审，K4桥树≥4高邻+奇圈≥5高邻可混合；rho/19端口/365指数及截断有理证根复算通过。仍不是一般独立高点五临界或因子10。
+- 【否定推断】一次坏Q转移到Qw时，Q去q对整个Qw无邻点，不是w的私有K4，不能套沿共边胶合表断言matching/221必转41。counter已指出，根撤回三级最大化41路线；新旧团只由qw冲突连接，完全可能matching→matching纯几何。
+- weighted_nae_three.md 根已完整逐行审§§1–7、upper亦独审通过：每超边≥2点、端权总≥3、每点总权≤5 ⇒弱4染。极小反例每点超度4/5，权≤2且每点至多一权2；二元超边指向权2端给伪森林J。最少单色超边二分使各部超度≤2，再最少J单色奇圈：圈上权2点总超度≤4，移它不增第一势且破唯一圈，矛盾。各部max超度2、二元无奇圈⇒2染（根自证代表图Δ2，奇圈大超边改第三代表w；w原超度≤2且当前未选，所以当前代表度≤1，切圈接路径不造圈）。混合K4桥树NAE和低孤立奇圈高邻对R的某连通二部成分≥3边、侧含≥2点可收权≥3。仍未处理R全小分量断开等及一般块树。
+- factor_partition_exchange.md §5.2根已完整审：关联每分量至多一圈保证2SAT可满足；同标签两右邻Q选相反部切圈，或全相异标签使圈Q数偶、交替选部。§5.3两个共Q的6圈给抽象仙人掌UNSAT六子句，根核通过，仅同步充分条件障碍，非真实G分区证书。
+- upper正在保存条件概率/局部引理子类：K4桥树高邻至少4个+低奇圈R为l≥3条独立边，随机4色坏概率4^(1−k)、6/8^l，统一x1/32满足依赖≤4s的条件概率界；尚待根读最终全文。counter新任务检查三饱和41/311剩余局部能否在完整F/全局势实现，根给中央四匹配+四卫星的候选红补全，不预设不可能。structural继续低高邻对断开模式/一般块树。
+- 根最新完整读审 factor_c5_cycle_layers.md 通过：F全C5且圈商Z最大度2 ⇒Z圈链m≥4、每相邻层完整蓝匹配g_i(j)=±2j+b；红边中点坐标非冲突匹配正为g_i。复合π=aj+b，a=±2^m；m4无原C4迫π非零平移，四步单空位无法移动全部五坐标，双空位四步七色且≥7；m≥5 π的四循环/双二循环/五循环可5/6步单空位实现，χ=5 iffπ=id，否则6。根复跑100代表84高围长色表全部一致。
+- 根完整审 factor_five_clique_geometry.md §§1–14、运行 factor_five_clique_geometry_check.py 与 factor_five_clique_overlap.py 均通过。五森林型计数0,2,0,8,4,0,192；Q4核计数1,4,1,20,96。30点三Petersen层+跨层红匹配的4reg/F2factor唯一Q邻点反例严格；旧tower同族Q5共享4交叠分量31m团/85m边/5m三角无限大，仍仅5/6色，不可误当反例。
+- factor_five_clique_geometry.md §15私有团胶合已根/structural独审；§16完整2因子排除同q同部四饱和点新纯证明三方通过：四接收核不同使中央q+S是matching5，五个卫星均41，中央Petersen每点原度4已满且卫星连接非F，F第二边迫两个C5有完匹配矛盾。§17根与counter独立加强：同q同部饱和团S必为原F匹配，因为w_j对接收Q_i仅见w_i，唯一邻点判据迫端点分离。三饱和只可能旧/新Q_i均41/311，q/wi均孤立；221/匹配每q每部至多2，单叶q亦≤2，内部q和C5为0。
+- 根已完整审 factor_partition_exchange.md §§3.6–3.9、5/5.1：minΦ→min A坏K5自动所有坏团外4/4；小部边界旧度3 iff三部度5/3/4且零势转移；每接收旧A-K4至多一个饱和扩张。红C5边界全≤2，每部至少1可单独接入（修正成本22>20）。所有坏A团红C5且B/C无K4时，关联森林或其一般2-SAT可满足足以同步4+3+3。upper新推广关联单圈分量待读审，不能把抽象不可满足2SAT当原图反例。
+- structural在研究辅助候选：Δ≤5、五度点独立、K5-free且无两K4共三点 ⇒4色？尚未解决。critical_five_independent_high.md §§1–3根完整审通过：唯一5度点奇偶排除；加权NAE每超边总权≥4、每点≤5可4色（最小反例权≤2，二代表容量3流）；低图由不交K4桥树构成时延拓失败iff全高邻同色，故4色。upper独审也通过。正在把权≥4改成≥3的超图引理以及三角/奇圈低块纳入，最新加强待根看文稿。
+- 根本轮完整读审 factor_k12_cover_classification.md §5：任意阶置换覆盖的两个六基层各诱导5正则K6覆盖，原无C4使其无K4，自证Brooks5给总10。factor_cover_all_orders.md 的Z11 K11因子基图任意阶10证明亦完成三方独审。两覆盖族均已关闭反例扩样方向，旧有限证书全部保留。
+- factor_half_degree_obstruction.md：奇m≥5层原G顶点Z_m×Z5、红j→j+1、蓝(i,j)→(i+1,2j)，girth≥5且H_F无法(5,5)度分区。混合层计数三和7/8，合法闭合计数序列只可05、23交替或13314224的偶周期。structural独审通过。factor_odd_layer_six.md 同族χ恰6：非冲突匹配f(j)=2j+3单四循环+不动点，奇m单值传播排5色；一空色五步实现四循环、补空步得到6色。根已逐行审通过。此为过强度分区反例，不是10色反例。
+- 当前upper主攻 factor_partition_exchange.md：根完整读审§1–3.5通过。更简洁§3.6以minΦ再min A坏K5，严格坏红C5外B邻w满足d_A≥d_B+3,d_C≥d_B+1，故d_B≤2；B∪C每个分量对各Q边须B/C平衡。唯一4度Moser分类可分析Q点加入B。注意一次未落盘计数错误：相邻Q边的共同外邻不仅T_z，还可能T_prev∩T_next；根给允许(2,2,1)强5核推翻旧‘至少2点可加入B’，upper正在修为至少1点，待独审。
+- 当前counter完成 factor_five_clique_geometry.md 和 factor_five_clique_geometry_check.py/json，Q5森林形状仅(4,1),(3,1,1),(2,2,1),(1^5)，加C5；手证任意Q4至多3个Q5扩张，尚待根读审。非C5 Q5外邻可能只见一Q点，不能套C5的2/4邻数。girth≥6仍有强Q4：两F二边星的中心由非F边连接，此树核唯一；因此girth≥6强团≤3猜测已否定，不能误用(4,3,3)直接结题。
+- structural正在把全C5因子的完整蓝匹配圈链推广到任意扭转，初步monodromy AGL(1,5)六/七色构造待根读稿审核；一般蓝边散向多个C5仍未解决。
+- factor_small_order.md 根新纯证明、structural独审通过：任意Δ≤12,ω≤5,|X|≤19 =>χ≤9；|X|≤22 =>χ≤10。因此高围长4正则图任意2因子10色若有反例，原图至少23点。10/11临界补图均连通（分量数c2..5由临界规模与Δ12矛盾）。19点10临界补图因子临界σ9 δ6 α5，删triangle后匹配分解q=a+2,Σt+s=7−a,t≥3−a,a≤3；跨边式(2t+1)(6−t)≤(a+3)(t+1)排a0/1，预算排a2，α5排a3。11临界21/22点补图δ≥8>α5必有triangle，原独立3点删后≤19用9色，补第10色。无外部整数定理，无程序替代。
+- factor_cover_search.md / factor_cover_independent_audit.md 完整记录从Z11(±1,±4)和红±1的K11冲突因子基图出发的覆盖。全部二覆盖0个girth5（K23鸽笼纯证）；全部三重置换6^12归一化组合，符号2模式/完整CSP仅6个girth5，均7/8色；Z4循环4^12赋值中8184个girth5，均5..9色。counter独立程序factor_cover_independent_audit.py不导入生成器，独立DFS完整解集合一致，并逐原端点验证全部6+8184色表。不能外推任意2factor10。
+- 根已完整读clique16_boundary_model.md并运行全部九分支，63118类型/20623节点无候选一致；结合Q4分支，计算辅助临界团≤15正式审核通过。
+- high_girth_clique_literature.md：用户授权后的文献核查，7是Neethi–Saxena 2017 JCO（在线2015）arxiv1412.8338 §6 pp13–14直接推论，根另读原文确认；分类允许换Q，不能直接套固定F的5。5未确认相同先例，不声称新颖。
+- 目前代理：structural搜索C6双点吹胀K12红因子基图的最小四重Z4/V4高围长覆盖；counter研究非循环4重/更高Z11覆盖的困难实例；upper主攻H_F的(4,3,3)势分区十色。坏完整分量的零势移动会转移坏块；最小势仅迫外邻≥r_j而非r_j+1。根指出完整Fred C5局部严格外4+4模式可实现，须真正用全局势或交换链。
+
+最新用户更新（优先于下方旧路线）：保留全部研究，但以经典分数Reed定理为基准。高围长任意F分数≤16，F内部最大度≤2分数≤9；此前加权19/10不构成新数值突破，停止重复推进这些数值。主线现在是4正则、围长至少5的任意2因子H_F是否整数10可染，允许先找反例；如假，再特殊2因子分解或跨因子重色。同时用户明确授权独立查强团7、5文献先例，局部文献核查已开始，不能再声称整个项目从未联网；独立旧推导仍保留来源区分。分数Reed出处Molloy–Reed 2002 Theorem21.7 p244，arxiv.org/html/1904.05618 Theorem7有明确重述。没有查借用整数20现有证明。
+
+最新执行与审核：根独立复跑high_conflict_types.py得到844类型、70155 AB选择、4 forced survivors、无完成解；strongQ16含Q4点且原c≥20已完成有限覆盖审。counter新clique16_boundary_model.md/.py/result.json对Q16子立方支撑非封闭情形给63118类型、20623补边节点、九分支全无解；structural已独立逐项审核并复跑一致，根已读代码但尚需全稿最终审。若结合支撑封闭≤16点≤32边与临界≥42，得到计算辅助临界ω≤15。
+
+根已完整审过cut5_matching.md（5匹配边割20色拼合）、moser_unique_four.md、four_critical_high_clique.md前六节（四度高点成团的K4-free四临界九类）、short_path_factors.md（高围长短路径边集8/10/11列表界）。根运行high_clique_matching_ports.py，八种新增四临界模型全部有真实高围长匹配实现，不能仅凭内部几何排除。最新主线优先于这些偏线，不继续无目标拓展。
+
+用户明确目标（仍 active）：独立证明所有最大度4有限简单图强边20可染，或给出严格21反例。禁查网络/论文/已有相关证明。已知全局界限20至21由用户提供；独立22证明只作历史档案。没有完成一般命题，不能标记目标 complete，也不能因为局部困难标 blocked。
+
+最新严格里程碑：
+0. 任意边子集F均满足 |F|≤20ν_s(F)，20是最佳常数；并有O(|F|³)局部算法。
+   packing_private_cliques.md 已无条件闭合。选最大独立集M使度和最小，私有闭邻域P_e为团且各点度≥d(e)，双计数2|F|≤Σ(d(e)+1+|P_e|)≤40|M|。
+   所需原冲突度阈值21/22/23强团上界18/17/16分别在high_conflict_thresholds.md、high_conflict_subcubic.md、strong_clique_subcubic.md，全已根、structural独立逐案核验。
+   警惕支撑外邻点：不能因强团端点原度4便假定邻点都在强团支撑内。最终证明允许支撑外邻点，不用曾发现有误的G[B]必2正则快捷推断。
+   packing_local_algorithm.py生成1362证书，packing_verify.py按原始端点独立通过。此结论尚不足分数或整数20着色，不能宣布解决。
+1. 20边强团必是孤立C5双点吹胀分量，故21临界冲突H的ω≤19。
+2. 原冲突度24的强团至多7。
+3. 所有≤41条边原图可20色；因此≤20顶点也可。任何21临界F至少42边。
+   证明链：critical_size_continuation.md 与 critical25.md 排≤25；
+   critical_complement_connectivity.md 自证最大匹配D/A/C分解与连通团覆盖临界界，排26..40；
+   dense_complement41.md 排41点无三角补图；critical41_triangles.md 排41点有三角补图。
+   全链根已核验，后面三个核心文件也经structural独立复核通过。
+4. 任何41条原边有3条两两不冲突（最优40界由2个紧例给出）。这是独立数≤2的任意规模结论，不是20色总证明。
+5. triangle_reducibility.md：临界F没有任何原三角边；不能据此删除三角顶点。活动三角给6个H度20的K6。
+6. noncritical_connectors.md：支撑图G[V(F)]中K=G\F分量仅P1..P6、爪、单臂细分爪、C3。
+7. tight_endpoint_interactions.md：紧点（K度2且两K邻点度2）的全部F外端在G中独立。
+8. critical_defect_budget.md：邻点总缺额B_v≤4、精确冲突重复项、23s+24r−2p+Q≤8n；原度3点不在3/4圈，两个原度3点之间至多一条长度3路径。根已逐项核验。
+9. global_continuation.md：极小原反例所有非平凡边割≥5，3顶点连通；若4正则则非平凡割≥6。另有线图子类17色、可3边染底图时12色。
+10. k33_reducibility.md：任意K3,3子图（无需诱导或围长条件）及关联边均可从任意外部部分强20染色延拓。临界支撑不含K3,3。内部K9各表≥8唯一失败是九表全同8；迫六外伸全异色、同侧三外端星颜色同3集A，故三外端独立。三个外伸原表≥8同在17色池必有交，可先同色两条再补其他四条，内部各表≥9成功。structural逐行审过。k33_extension_check.py根运行100个初始九表同8的真实紧边界，均保持外部并合法补完。
+11. petersen_reducibility.md：自证小色池引理及K_{3×5}8列表可染，从而无3/4圈Petersen块可延拓。任意诱导三度子图若内部冲突8可选择，则临界支撑禁用（所有内部边外冲突≤12；若内部F空则外F边冲突≤15）。由此一般支撑禁诱导Petersen、立方体；后一个文件正在upper落盘，正式路径以他通知为准。
+12. matching_six_obstacle.md：H=补(Z11,±1,±4)为Δ6、ω4、χ6且6顶点临界，但不可实现为高围长匹配冲突子图。H边三角分解T_i={i,i+2,i+5}各延拓K4，每个三角恰一同端角⇒总11；每顶点6见证分3+3，三对同端角总偶数，矛盾。推广任意奇数阶6正则且边分解三角各延拓K4。根已完整核验。
+13. petersen_minus_reducibility.md：Petersen删一边的内部冲突图J是K_(2,3,3,3,3)再删四special间K2,2，14点74边，点度(9x4,11x8,12x2)，任意(5x4,7x8,8x2)列表可染。自证网格插值准则；指数t=(4,4,4,4,5,6,6,6,5,6,6,6,6,6)系数精确12240。根生成器31500 normal对称赋值，根通用独立14变量验证器92280个完整合法赋值，structural独立程序55800个normal有序赋值，三者任意精度整数完全相同。程序petersen_minus_polynomial.py、petersen_minus_verify.py、petersen_minus_independent.py及各JSON。完整理论和代码均独审通过。因此任意临界支撑禁诱导P−e；无3/4圈时唯一可能弦是所删边，故连非诱导P−e也禁。
+14. matching_k4_overlap.md：任意高围长匹配冲突K4端点单独邻居映射为4循环，两个共三角K4必须方向相反，原10点14边见证恰为P−e，附显式二元集同构，根已读审。结合13，无3/4圈临界支撑任意匹配冲突图不含两个共三角K4。
+15. 新强团阈值全部纯证明、根与structural独审通过：原冲突度≥20/21/22/23分别强团≤18/17/16/15，见high_conflict_20_21_improved.md、high_conflict_22_improved.md、high_conflict_23_improved.md。因此packing_private_cliques.md§8无条件给2|F|≤39ν_s(F)+t，t是F完整包含的原孤立紧20分量数。仍不能推出整数染色，19.5未证明最优。
+16. high_girth_fractional.md全稿根与counter独审通过：无3/4圈Δ4原G任意F/非负权，存在诱导匹配w(M)≥w(F)/19；若d_F≤2则≥w(F)/10。通用平方权交换结合所有≤24点ω≤6图≤12色、所有≤12点ω≤4图≤6色；局部小阶颜色界来自自证临界补图分量引理和R(3,4)≤9等独立小图推导。高围长强团≤7、度2边集强团≤5另有直接纯证明。这是加权/分数19子类结论，非整数20，不覆盖原题全部图。
+
+已严格否定的路线：
+- 任意一次双色交换可补3根边：3991顶点证书失败，原图7色，两次交换可修。
+- 任意大围长会保证8/5列表延拓：所有12k圈长均有真实外部20染色实现的不可延拓列表，DAG证书8424状态33728弧；这些完整图11色。见high_girth_continuation.md。
+- 因子临界且σ=ν必无三角：7点反例见critical41_triangles.md第1节。
+- 原冲突度≥23的强团≤8：counterexamples刚构造9边强团，所有原冲突度精确23，有限76顶点80边补足正在落盘及独立验证。未被任何已证明里程碑使用。
+- 全局单边改色必有进展：regular_core_cover.md给40点4正则无3/4圈的完整20色冻结染色，每边看到另19色。它只是某个染色的局部停滞，不是21色反例。
+- weighted_private_exchange.md平方权势交换归约纯数学正确，但所需开放邻域χ≤38−d条件已被d24实例否定（邻域含16团而要求14）。upper/counter正保存独立证书；不能宣称已建立分数20。
+
+独立实际运行检查（根执行）：
+- degree3_verify_certificate.py：189相关双色分量全失败；66137无关分量；另完整7色。
+- high_girth_verify.py：DAG证书及围长8/12/24真实边界/完整11色全通过。
+- global_gluing.py：287份完整原边条件色表通过。
+- dense_complement41_check.py：15个最终大小向量、3类及异常点方程全部通过；不是枚举所有41点图。
+
+当前代理任务：
+- upper_bound：已经完成高围长加权19，现继续整数两因子10色：H_F最大度12、团≤5，结构为F圈平方加另一因子边的K2,2冲突；任意选择2因子在有4圈时会失败的旧反例不重跑。
+- structural：P−e系数/临界禁形/匹配K4交叠全审完成，正在研究2+3度分区换部和唯一4度点的Moser临界核；最新moser_unique_four.md已自证低度subcubic块列表分类并给Moser原14点高围长匹配实现，根尚待完整阅读。
+- counterexamples：新强团阈值和39/2包装全完成，现研究5匹配边割20色拼合；备选研究无K33、无Q三角的临界强团能否压到≤15，未假定成立。
+
+关键未解决：F=E、G4正则、局部无短圈时K为空，缺额预算不矛盾。不能假定最小原反例4正则；虽可用16份二进制副本加按顶点缺度选坐标的超立方体边，把一般图嵌入4正则超图，这只归约全局证明任务，不归约某个极小反例。
+
+环境：cwd C:\Users\21161\Documents\ChatGPT\math，PowerShell。
+Python：C:\Program Files\WindowsApps\OpenAI.CodexPrimaryRuntime.v26-1005-1301-0_26.1005.1301.0_x64__3k8sg7r9htsxt\dependencies\python\python.exe
+标准库足够，无需联网或安装。

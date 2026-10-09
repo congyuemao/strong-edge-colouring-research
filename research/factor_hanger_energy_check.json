@@ -1,0 +1,98 @@
+[
+  {
+    "types": [
+      "221",
+      "221"
+    ],
+    "nuclear_choice": 0,
+    "minimum": -38,
+    "aux_assignments": 729,
+    "minimum_states": 3,
+    "states_exactly_central_swaps": true,
+    "all_outside_A_counts_zero": true
+  },
+  {
+    "types": [
+      "221",
+      "221"
+    ],
+    "nuclear_choice": 1,
+    "minimum": -38,
+    "aux_assignments": 729,
+    "minimum_states": 3,
+    "states_exactly_central_swaps": true,
+    "all_outside_A_counts_zero": true
+  },
+  {
+    "types": [
+      "221",
+      "matching"
+    ],
+    "nuclear_choice": 0,
+    "minimum": -38,
+    "aux_assignments": 729,
+    "minimum_states": 3,
+    "states_exactly_central_swaps": true,
+    "all_outside_A_counts_zero": true
+  },
+  {
+    "types": [
+      "221",
+      "matching"
+    ],
+    "nuclear_choice": 1,
+    "minimum": -38,
+    "aux_assignments": 729,
+    "minimum_states": 3,
+    "states_exactly_central_swaps": true,
+    "all_outside_A_counts_zero": true
+  },
+  {
+    "types": [
+      "matching",
+      "221"
+    ],
+    "nuclear_choice": 0,
+    "minimum": -38,
+    "aux_assignments": 729,
+    "minimum_states": 3,
+    "states_exactly_central_swaps": true,
+    "all_outside_A_counts_zero": true
+  },
+  {
+    "types": [
+      "matching",
+      "221"
+    ],
+    "nuclear_choice": 1,
+    "minimum": -38,
+    "aux_assignments": 729,
+    "minimum_states": 3,
+    "states_exactly_central_swaps": true,
+    "all_outside_A_counts_zero": true
+  },
+  {
+    "types": [
+      "matching",
+      "matching"
+    ],
+    "nuclear_choice": 0,
+    "minimum": -38,
+    "aux_assignments": 729,
+    "minimum_states": 3,
+    "states_exactly_central_swaps": true,
+    "all_outside_A_counts_zero": true
+  },
+  {
+    "types": [
+      "matching",
+      "matching"
+    ],
+    "nuclear_choice": 1,
+    "minimum": -38,
+    "aux_assignments": 729,
+    "minimum_states": 3,
+    "states_exactly_central_swaps": true,
+    "all_outside_A_counts_zero": true
+  }
+]

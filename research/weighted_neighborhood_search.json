@@ -1,0 +1,25 @@
+{
+  "found": false,
+  "checked": [
+    {
+      "deletions": 0,
+      "orbits": 1
+    },
+    {
+      "deletions": 1,
+      "orbits": 1
+    },
+    {
+      "deletions": 2,
+      "orbits": 5
+    },
+    {
+      "deletions": 3,
+      "orbits": 13
+    },
+    {
+      "deletions": 4,
+      "orbits": 43
+    }
+  ]
+}

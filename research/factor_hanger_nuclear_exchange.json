@@ -1,0 +1,770 @@
+[
+  {
+    "types": [
+      "221",
+      "221"
+    ],
+    "choice": 0,
+    "extra_B_degree": 0,
+    "original_energy": -41,
+    "minimum_energy": -41,
+    "delta": 0,
+    "original_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "nodes": 33550,
+    "optimal_leaf_tests": 3,
+    "coloring": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      2,
+      0,
+      0,
+      1,
+      1
+    ]
+  },
+  {
+    "types": [
+      "221",
+      "221"
+    ],
+    "choice": 0,
+    "extra_B_degree": 1,
+    "original_energy": -40,
+    "minimum_energy": -40,
+    "delta": 0,
+    "original_objective": [
+      -40,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -40,
+      1,
+      -14,
+      0,
+      -1
+    ],
+    "nodes": 45406,
+    "optimal_leaf_tests": 5,
+    "coloring": [
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "types": [
+      "221",
+      "221"
+    ],
+    "choice": 1,
+    "extra_B_degree": 0,
+    "original_energy": -41,
+    "minimum_energy": -41,
+    "delta": 0,
+    "original_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "nodes": 33181,
+    "optimal_leaf_tests": 3,
+    "coloring": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      1
+    ]
+  },
+  {
+    "types": [
+      "221",
+      "221"
+    ],
+    "choice": 1,
+    "extra_B_degree": 1,
+    "original_energy": -40,
+    "minimum_energy": -40,
+    "delta": 0,
+    "original_objective": [
+      -40,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -40,
+      1,
+      -14,
+      0,
+      -1
+    ],
+    "nodes": 45151,
+    "optimal_leaf_tests": 5,
+    "coloring": [
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ]
+  },
+  {
+    "types": [
+      "221",
+      "matching"
+    ],
+    "choice": 0,
+    "extra_B_degree": 0,
+    "original_energy": -41,
+    "minimum_energy": -41,
+    "delta": 0,
+    "original_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "nodes": 33181,
+    "optimal_leaf_tests": 3,
+    "coloring": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      1
+    ]
+  },
+  {
+    "types": [
+      "221",
+      "matching"
+    ],
+    "choice": 0,
+    "extra_B_degree": 1,
+    "original_energy": -40,
+    "minimum_energy": -40,
+    "delta": 0,
+    "original_objective": [
+      -40,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -40,
+      1,
+      -14,
+      0,
+      -1
+    ],
+    "nodes": 45151,
+    "optimal_leaf_tests": 5,
+    "coloring": [
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      0
+    ]
+  },
+  {
+    "types": [
+      "221",
+      "matching"
+    ],
+    "choice": 1,
+    "extra_B_degree": 0,
+    "original_energy": -41,
+    "minimum_energy": -41,
+    "delta": 0,
+    "original_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "nodes": 33550,
+    "optimal_leaf_tests": 3,
+    "coloring": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      1
+    ]
+  },
+  {
+    "types": [
+      "221",
+      "matching"
+    ],
+    "choice": 1,
+    "extra_B_degree": 1,
+    "original_energy": -40,
+    "minimum_energy": -40,
+    "delta": 0,
+    "original_objective": [
+      -40,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -40,
+      1,
+      -14,
+      0,
+      -1
+    ],
+    "nodes": 45412,
+    "optimal_leaf_tests": 5,
+    "coloring": [
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      0
+    ]
+  },
+  {
+    "types": [
+      "matching",
+      "221"
+    ],
+    "choice": 0,
+    "extra_B_degree": 0,
+    "original_energy": -41,
+    "minimum_energy": -41,
+    "delta": 0,
+    "original_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "nodes": 33550,
+    "optimal_leaf_tests": 3,
+    "coloring": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      2,
+      0,
+      0,
+      1,
+      1
+    ]
+  },
+  {
+    "types": [
+      "matching",
+      "221"
+    ],
+    "choice": 0,
+    "extra_B_degree": 1,
+    "original_energy": -40,
+    "minimum_energy": -40,
+    "delta": 0,
+    "original_objective": [
+      -40,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -40,
+      1,
+      -14,
+      0,
+      -1
+    ],
+    "nodes": 45406,
+    "optimal_leaf_tests": 5,
+    "coloring": [
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "types": [
+      "matching",
+      "221"
+    ],
+    "choice": 1,
+    "extra_B_degree": 0,
+    "original_energy": -41,
+    "minimum_energy": -41,
+    "delta": 0,
+    "original_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "nodes": 33181,
+    "optimal_leaf_tests": 3,
+    "coloring": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      1
+    ]
+  },
+  {
+    "types": [
+      "matching",
+      "221"
+    ],
+    "choice": 1,
+    "extra_B_degree": 1,
+    "original_energy": -40,
+    "minimum_energy": -40,
+    "delta": 0,
+    "original_objective": [
+      -40,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -40,
+      1,
+      -14,
+      0,
+      -1
+    ],
+    "nodes": 45151,
+    "optimal_leaf_tests": 5,
+    "coloring": [
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ]
+  },
+  {
+    "types": [
+      "matching",
+      "matching"
+    ],
+    "choice": 0,
+    "extra_B_degree": 0,
+    "original_energy": -41,
+    "minimum_energy": -41,
+    "delta": 0,
+    "original_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "nodes": 33181,
+    "optimal_leaf_tests": 3,
+    "coloring": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      1
+    ]
+  },
+  {
+    "types": [
+      "matching",
+      "matching"
+    ],
+    "choice": 0,
+    "extra_B_degree": 1,
+    "original_energy": -40,
+    "minimum_energy": -40,
+    "delta": 0,
+    "original_objective": [
+      -40,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -40,
+      1,
+      -14,
+      0,
+      0
+    ],
+    "nodes": 45151,
+    "optimal_leaf_tests": 5,
+    "coloring": [
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ]
+  },
+  {
+    "types": [
+      "matching",
+      "matching"
+    ],
+    "choice": 1,
+    "extra_B_degree": 0,
+    "original_energy": -41,
+    "minimum_energy": -41,
+    "delta": 0,
+    "original_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -41,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "nodes": 33550,
+    "optimal_leaf_tests": 3,
+    "coloring": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      1
+    ]
+  },
+  {
+    "types": [
+      "matching",
+      "matching"
+    ],
+    "choice": 1,
+    "extra_B_degree": 1,
+    "original_energy": -40,
+    "minimum_energy": -40,
+    "delta": 0,
+    "original_objective": [
+      -40,
+      1,
+      -13,
+      0,
+      -1
+    ],
+    "minimum_objective": [
+      -40,
+      1,
+      -14,
+      0,
+      0
+    ],
+    "nodes": 45412,
+    "optimal_leaf_tests": 5,
+    "coloring": [
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ]
+  }
+]

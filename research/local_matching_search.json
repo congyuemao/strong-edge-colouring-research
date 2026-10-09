@@ -1,0 +1,12 @@
+{
+  "result": "UNSAT",
+  "potential_edges": 33,
+  "induced_matching_clauses": 40,
+  "stats": {
+    "states": 20,
+    "capacity_prunes": 2,
+    "triangle_prunes": 4,
+    "four_cycle_prunes": 140
+  },
+  "completion_edges": null
+}

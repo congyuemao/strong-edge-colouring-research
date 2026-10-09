@@ -1,0 +1,52 @@
+{
+  "initial_potential": -50,
+  "visited_states": 73,
+  "escape": {
+    "actions": [
+      {
+        "type": "swap",
+        "vertices": [
+          6,
+          1
+        ],
+        "delta": 0
+      },
+      {
+        "type": "swap",
+        "vertices": [
+          14,
+          7
+        ],
+        "delta": -1
+      }
+    ],
+    "final_partition": [
+      0,
+      0,
+      2,
+      2,
+      2,
+      0,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      0,
+      0,
+      1,
+      0,
+      2,
+      2,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "final_potential": -51
+  }
+}

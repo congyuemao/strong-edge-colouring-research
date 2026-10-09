@@ -1,0 +1,100 @@
+{
+  "vertices": 268,
+  "edges": 536,
+  "F_cycle_lengths": [
+    16,
+    52,
+    59,
+    141
+  ],
+  "part_sizes": {
+    "0": 102,
+    "1": 82,
+    "2": 84
+  },
+  "potential": -573,
+  "unique_A_K5": [
+    0,
+    10,
+    12,
+    13,
+    14
+  ],
+  "three_saturated_private_neighbors": [
+    2,
+    4,
+    6
+  ],
+  "base_single_move_check": "passed",
+  "zero_swap_states": [
+    {
+      "swap": [
+        0,
+        2
+      ],
+      "potential": -573,
+      "unique_A_K5": [
+        2,
+        16,
+        18,
+        19,
+        20
+      ],
+      "all_single_moves_nonnegative": true
+    },
+    {
+      "swap": [
+        0,
+        4
+      ],
+      "potential": -573,
+      "unique_A_K5": [
+        4,
+        22,
+        24,
+        25,
+        26
+      ],
+      "all_single_moves_nonnegative": true
+    },
+    {
+      "swap": [
+        0,
+        6
+      ],
+      "potential": -573,
+      "unique_A_K5": [
+        6,
+        28,
+        30,
+        31,
+        32
+      ],
+      "all_single_moves_nonnegative": true
+    }
+  ],
+  "negative_pair_swaps_count": 37,
+  "explicit_global_optimality_refutation": {
+    "swap": [
+      77,
+      131
+    ],
+    "G_edges": [
+      [
+        56,
+        118
+      ],
+      [
+        86,
+        160
+      ]
+    ],
+    "old_parts": [
+      2,
+      0
+    ],
+    "change": -2,
+    "after_potential": -575
+  },
+  "scope": "Local necessary conditions and zero-swap states verified. Not a global optimum."
+}

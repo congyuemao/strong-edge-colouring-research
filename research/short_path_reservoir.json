@@ -1,0 +1,58 @@
+{
+  "vertices": 40,
+  "edges": 80,
+  "maximum_induced_matching": 9,
+  "witness_edge_indices": [
+    79,
+    69,
+    73,
+    71,
+    43,
+    44,
+    34,
+    31,
+    17
+  ],
+  "witness_edges": [
+    [
+      39,
+      6
+    ],
+    [
+      33,
+      5
+    ],
+    [
+      37,
+      2
+    ],
+    [
+      35,
+      7
+    ],
+    [
+      23,
+      24
+    ],
+    [
+      20,
+      31
+    ],
+    [
+      18,
+      26
+    ],
+    [
+      15,
+      22
+    ],
+    [
+      9,
+      17
+    ]
+  ],
+  "search_calls": 1097,
+  "elapsed_seconds": 0.010676299993065186,
+  "two_colors_maximum_size_upper_bound": 18,
+  "two_paths_lengths_2_and_4_required_reservoir": 22
+}

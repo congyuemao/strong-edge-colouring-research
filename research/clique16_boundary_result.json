@@ -1,0 +1,109 @@
+[
+  {
+    "qu": 0,
+    "qv": 0,
+    "counts": {
+      "incidence_multisets": 17372,
+      "base_valid": 204,
+      "completion_nodes": 423,
+      "locked_overlap_reject": 17117,
+      "base_reject": 51
+    },
+    "found": null
+  },
+  {
+    "qu": 0,
+    "qv": 1,
+    "counts": {
+      "incidence_multisets": 9932,
+      "locked_overlap_reject": 9501,
+      "base_valid": 410,
+      "completion_nodes": 730,
+      "base_reject": 21
+    },
+    "found": null
+  },
+  {
+    "qu": 0,
+    "qv": 2,
+    "counts": {
+      "incidence_multisets": 5715,
+      "base_valid": 1141,
+      "completion_nodes": 2172,
+      "locked_overlap_reject": 4562,
+      "base_reject": 12
+    },
+    "found": null
+  },
+  {
+    "qu": 1,
+    "qv": 0,
+    "counts": {
+      "incidence_multisets": 9932,
+      "locked_overlap_reject": 9501,
+      "base_valid": 399,
+      "completion_nodes": 744,
+      "base_reject": 32
+    },
+    "found": null
+  },
+  {
+    "qu": 1,
+    "qv": 1,
+    "counts": {
+      "incidence_multisets": 5715,
+      "locked_overlap_reject": 4562,
+      "base_valid": 1138,
+      "completion_nodes": 2089,
+      "base_reject": 15
+    },
+    "found": null
+  },
+  {
+    "qu": 1,
+    "qv": 2,
+    "counts": {
+      "incidence_multisets": 3351,
+      "base_valid": 2222,
+      "completion_nodes": 4317,
+      "locked_overlap_reject": 1120,
+      "base_reject": 9
+    },
+    "found": null
+  },
+  {
+    "qu": 2,
+    "qv": 0,
+    "counts": {
+      "incidence_multisets": 5715,
+      "locked_overlap_reject": 4562,
+      "base_valid": 1066,
+      "completion_nodes": 1988,
+      "base_reject": 87
+    },
+    "found": null
+  },
+  {
+    "qu": 2,
+    "qv": 1,
+    "counts": {
+      "incidence_multisets": 3351,
+      "base_valid": 2205,
+      "completion_nodes": 4175,
+      "locked_overlap_reject": 1120,
+      "base_reject": 26
+    },
+    "found": null
+  },
+  {
+    "qu": 2,
+    "qv": 2,
+    "counts": {
+      "incidence_multisets": 2035,
+      "base_valid": 2026,
+      "completion_nodes": 3985,
+      "base_reject": 9
+    },
+    "found": null
+  }
+]

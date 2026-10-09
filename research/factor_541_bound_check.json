@@ -1,0 +1,86 @@
+{
+  "scope": "Integer arithmetic only; not graph enumeration.",
+  "results": [
+    {
+      "eps": [
+        0,
+        0
+      ],
+      "maxima_by_t": [
+        22,
+        27,
+        28,
+        29,
+        26,
+        19,
+        null
+      ],
+      "maximum": 29,
+      "maximizers": [
+        {
+          "s1": 2,
+          "s2": 2,
+          "t": 3,
+          "h": 7,
+          "m_lower": 2,
+          "isolated_low_representatives": 2,
+          "bound": 29
+        }
+      ]
+    },
+    {
+      "eps": [
+        0,
+        1
+      ],
+      "maxima_by_t": [
+        23,
+        28,
+        29,
+        28,
+        28,
+        25,
+        null
+      ],
+      "maximum": 29,
+      "maximizers": [
+        {
+          "s1": 3,
+          "s2": 3,
+          "t": 2,
+          "h": 9,
+          "m_lower": 11,
+          "isolated_low_representatives": 1,
+          "bound": 29
+        }
+      ]
+    },
+    {
+      "eps": [
+        1,
+        1
+      ],
+      "maxima_by_t": [
+        24,
+        27,
+        30,
+        29,
+        32,
+        29,
+        24
+      ],
+      "maximum": 32,
+      "maximizers": [
+        {
+          "s1": 2,
+          "s2": 2,
+          "t": 4,
+          "h": 10,
+          "m_lower": 14,
+          "isolated_low_representatives": 0,
+          "bound": 32
+        }
+      ]
+    }
+  ]
+}

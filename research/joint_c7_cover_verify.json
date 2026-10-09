@@ -1,0 +1,10 @@
+{
+  "independent_verification": true,
+  "vertices": 2121,
+  "edges": 4242,
+  "F_edges": 2121,
+  "girth": 7,
+  "short_path_states": 213009,
+  "induced_13_exact": true,
+  "scope": "No optimal-partition certificate asserted."
+}

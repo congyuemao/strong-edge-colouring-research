@@ -1,0 +1,41 @@
+[
+  {
+    "version": "v1_degree_caps_only",
+    "status": "Historical result; the matching positives are withdrawn under the stronger necessary test and are not current certificates.",
+    "conditions": [
+      "Five exact Q root neighbourhoods of size twelve",
+      "Q-external B degrees 3 at q and 4 at the four R vertices",
+      "The three B neighbours of q form a triangle",
+      "All listed B/C induced degrees are at most three"
+    ],
+    "coverage": "One recorded endpoint kernel per five-edge shape; all admissible core F subsets; fresh external ports only. A successful root stops further triangle/colour tests for that root. No claim of completeness over external identifications or added external edges.",
+    "recorded_results": {
+      "4,1": {"F_choices": 2, "triple_cases": 3, "nodes": 40, "positive_roots": [0, 3, 4]},
+      "3,1,1": {"F_choices": 5, "triple_cases": 4, "nodes": 52, "positive_roots": [0, 2, 3, 4]},
+      "2,2,1": {"F_choices": 9, "triple_cases": 16, "nodes": 48, "positive_roots": [0, 1, 2, 3]},
+      "1,1,1,1,1": {"F_choices": 121, "triple_cases": 29, "nodes": 39, "positive_roots": [3, 2, 1, 4, 0]},
+      "C5": {"F_choices": 1, "triple_cases": 0, "nodes": 0, "positive_roots": []}
+    }
+  },
+  {
+    "version": "v2_add_single_move_necessary_degree_completion",
+    "status": "Current fresh-port search; matching has no positive certificate in this model.",
+    "additional_condition": "Each listed vertex separately admits some total degree-twelve triple extending known part degrees, obeying its part maximum degree and all nonnegative single-move inequalities. Simultaneous graph completion and global minimality are not asserted.",
+    "coverage": "Same finite fresh-port model as v1; the new condition is checked before accepting a leaf assignment.",
+    "recorded_results": {
+      "4,1": {"F_choices": 2, "triple_cases": 3, "nodes": 40, "positive_roots": [0, 3, 4]},
+      "3,1,1": {"F_choices": 5, "triple_cases": 4, "nodes": 52, "positive_roots": [0, 2, 3, 4]},
+      "2,2,1": {"F_choices": 9, "triple_cases": 16, "nodes": 48, "positive_roots": [0, 1, 2, 3]},
+      "1,1,1,1,1": {"F_choices": 121, "triple_cases": 1070, "nodes": 1270, "positive_roots": []},
+      "C5": {"F_choices": 1, "triple_cases": 0, "nodes": 0, "positive_roots": []}
+    }
+  },
+  {
+    "version": "v3_explicit_matching_one_cross_edge",
+    "status": "Current separate positive local model; stored under matching_one_cross_edge, not under the fresh-port matching key.",
+    "conditions": "All v2 conditions. Start with only the five matching Q edges red inside the exact kernel. For q=uv and a another kernel neighbour of u, use the external red continuations ux,vy,az and add one external blue edge yz.",
+    "coverage": "Exactly five roots, two root orientations and two choices of a: twenty prescribed models. This is not an enumeration of arbitrary external edges or identifications.",
+    "recorded_results": {"tested_cases": 20, "positive_cases": 20, "positive_roots": [0, 1, 2, 3, 4], "saved_certificates": 5},
+    "limitation": "Local endpoint and necessary degree data only. No full regular completion satisfying these partition labels or global potential optimum has been constructed."
+  }
+]

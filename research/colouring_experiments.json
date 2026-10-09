@@ -1,0 +1,35 @@
+{
+  "seed": 20261008,
+  "samples": 454,
+  "construction_modes": {
+    "boundary_clique": 21,
+    "girth_at_least_five": 1,
+    "linear_four_cycles": 2,
+    "triangle": 240,
+    "multiple_four_cycles": 140,
+    "nonregular": 50
+  },
+  "constructive_colour_histogram": {
+    "10": 41,
+    "11": 4,
+    "12": 55,
+    "13": 135,
+    "14": 131,
+    "15": 61,
+    "16": 25,
+    "17": 1,
+    "20": 1
+  },
+  "dsatur_colour_histogram": {
+    "10": 49,
+    "11": 40,
+    "12": 154,
+    "13": 99,
+    "14": 83,
+    "15": 7,
+    "16": 21,
+    "20": 1
+  },
+  "tight_example_edges": 20,
+  "all_certificates_independently_checked": true
+}

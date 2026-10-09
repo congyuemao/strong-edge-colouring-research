@@ -1,0 +1,433 @@
+{
+  "status": "all_samples_3_colorable",
+  "tried": 5600,
+  "hardest": [
+    703,
+    [
+      7,
+      12
+    ]
+  ],
+  "rows": [
+    {
+      "h": 2,
+      "p": 2,
+      "generated": 80,
+      "max_nodes": 10
+    },
+    {
+      "h": 2,
+      "p": 4,
+      "generated": 80,
+      "max_nodes": 13
+    },
+    {
+      "h": 2,
+      "p": 6,
+      "generated": 80,
+      "max_nodes": 15
+    },
+    {
+      "h": 3,
+      "p": 2,
+      "generated": 80,
+      "max_nodes": 19
+    },
+    {
+      "h": 3,
+      "p": 4,
+      "generated": 80,
+      "max_nodes": 24
+    },
+    {
+      "h": 3,
+      "p": 6,
+      "generated": 80,
+      "max_nodes": 30
+    },
+    {
+      "h": 3,
+      "p": 8,
+      "generated": 80,
+      "max_nodes": 21
+    },
+    {
+      "h": 4,
+      "p": 4,
+      "generated": 80,
+      "max_nodes": 22
+    },
+    {
+      "h": 4,
+      "p": 6,
+      "generated": 80,
+      "max_nodes": 21
+    },
+    {
+      "h": 4,
+      "p": 8,
+      "generated": 80,
+      "max_nodes": 52
+    },
+    {
+      "h": 4,
+      "p": 10,
+      "generated": 80,
+      "max_nodes": 31
+    },
+    {
+      "h": 5,
+      "p": 4,
+      "generated": 80,
+      "max_nodes": 38
+    },
+    {
+      "h": 5,
+      "p": 6,
+      "generated": 80,
+      "max_nodes": 32
+    },
+    {
+      "h": 5,
+      "p": 8,
+      "generated": 80,
+      "max_nodes": 46
+    },
+    {
+      "h": 5,
+      "p": 10,
+      "generated": 80,
+      "max_nodes": 28
+    },
+    {
+      "h": 5,
+      "p": 12,
+      "generated": 80,
+      "max_nodes": 30
+    },
+    {
+      "h": 6,
+      "p": 4,
+      "generated": 80,
+      "max_nodes": 59
+    },
+    {
+      "h": 6,
+      "p": 6,
+      "generated": 80,
+      "max_nodes": 32
+    },
+    {
+      "h": 6,
+      "p": 8,
+      "generated": 80,
+      "max_nodes": 36
+    },
+    {
+      "h": 6,
+      "p": 10,
+      "generated": 80,
+      "max_nodes": 49
+    },
+    {
+      "h": 6,
+      "p": 12,
+      "generated": 80,
+      "max_nodes": 37
+    },
+    {
+      "h": 6,
+      "p": 14,
+      "generated": 80,
+      "max_nodes": 35
+    },
+    {
+      "h": 7,
+      "p": 6,
+      "generated": 80,
+      "max_nodes": 39
+    },
+    {
+      "h": 7,
+      "p": 8,
+      "generated": 80,
+      "max_nodes": 99
+    },
+    {
+      "h": 7,
+      "p": 10,
+      "generated": 80,
+      "max_nodes": 43
+    },
+    {
+      "h": 7,
+      "p": 12,
+      "generated": 80,
+      "max_nodes": 703
+    },
+    {
+      "h": 7,
+      "p": 14,
+      "generated": 80,
+      "max_nodes": 52
+    },
+    {
+      "h": 7,
+      "p": 16,
+      "generated": 80,
+      "max_nodes": 44
+    },
+    {
+      "h": 8,
+      "p": 6,
+      "generated": 80,
+      "max_nodes": 49
+    },
+    {
+      "h": 8,
+      "p": 8,
+      "generated": 80,
+      "max_nodes": 39
+    },
+    {
+      "h": 8,
+      "p": 10,
+      "generated": 80,
+      "max_nodes": 56
+    },
+    {
+      "h": 8,
+      "p": 12,
+      "generated": 80,
+      "max_nodes": 44
+    },
+    {
+      "h": 8,
+      "p": 14,
+      "generated": 80,
+      "max_nodes": 45
+    },
+    {
+      "h": 8,
+      "p": 16,
+      "generated": 80,
+      "max_nodes": 55
+    },
+    {
+      "h": 8,
+      "p": 18,
+      "generated": 80,
+      "max_nodes": 92
+    },
+    {
+      "h": 9,
+      "p": 6,
+      "generated": 80,
+      "max_nodes": 87
+    },
+    {
+      "h": 9,
+      "p": 8,
+      "generated": 80,
+      "max_nodes": 46
+    },
+    {
+      "h": 9,
+      "p": 10,
+      "generated": 80,
+      "max_nodes": 55
+    },
+    {
+      "h": 9,
+      "p": 12,
+      "generated": 80,
+      "max_nodes": 57
+    },
+    {
+      "h": 9,
+      "p": 14,
+      "generated": 80,
+      "max_nodes": 311
+    },
+    {
+      "h": 9,
+      "p": 16,
+      "generated": 80,
+      "max_nodes": 117
+    },
+    {
+      "h": 9,
+      "p": 18,
+      "generated": 80,
+      "max_nodes": 56
+    },
+    {
+      "h": 9,
+      "p": 20,
+      "generated": 80,
+      "max_nodes": 51
+    },
+    {
+      "h": 10,
+      "p": 8,
+      "generated": 80,
+      "max_nodes": 123
+    },
+    {
+      "h": 10,
+      "p": 10,
+      "generated": 80,
+      "max_nodes": 50
+    },
+    {
+      "h": 10,
+      "p": 12,
+      "generated": 80,
+      "max_nodes": 50
+    },
+    {
+      "h": 10,
+      "p": 14,
+      "generated": 80,
+      "max_nodes": 51
+    },
+    {
+      "h": 10,
+      "p": 16,
+      "generated": 80,
+      "max_nodes": 55
+    },
+    {
+      "h": 10,
+      "p": 18,
+      "generated": 80,
+      "max_nodes": 180
+    },
+    {
+      "h": 10,
+      "p": 20,
+      "generated": 80,
+      "max_nodes": 59
+    },
+    {
+      "h": 10,
+      "p": 22,
+      "generated": 80,
+      "max_nodes": 59
+    },
+    {
+      "h": 11,
+      "p": 8,
+      "generated": 80,
+      "max_nodes": 59
+    },
+    {
+      "h": 11,
+      "p": 10,
+      "generated": 80,
+      "max_nodes": 87
+    },
+    {
+      "h": 11,
+      "p": 12,
+      "generated": 80,
+      "max_nodes": 72
+    },
+    {
+      "h": 11,
+      "p": 14,
+      "generated": 80,
+      "max_nodes": 56
+    },
+    {
+      "h": 11,
+      "p": 16,
+      "generated": 80,
+      "max_nodes": 52
+    },
+    {
+      "h": 11,
+      "p": 18,
+      "generated": 80,
+      "max_nodes": 59
+    },
+    {
+      "h": 11,
+      "p": 20,
+      "generated": 80,
+      "max_nodes": 57
+    },
+    {
+      "h": 11,
+      "p": 22,
+      "generated": 80,
+      "max_nodes": 60
+    },
+    {
+      "h": 11,
+      "p": 24,
+      "generated": 80,
+      "max_nodes": 65
+    },
+    {
+      "h": 12,
+      "p": 8,
+      "generated": 80,
+      "max_nodes": 74
+    },
+    {
+      "h": 12,
+      "p": 10,
+      "generated": 80,
+      "max_nodes": 71
+    },
+    {
+      "h": 12,
+      "p": 12,
+      "generated": 80,
+      "max_nodes": 89
+    },
+    {
+      "h": 12,
+      "p": 14,
+      "generated": 80,
+      "max_nodes": 56
+    },
+    {
+      "h": 12,
+      "p": 16,
+      "generated": 80,
+      "max_nodes": 70
+    },
+    {
+      "h": 12,
+      "p": 18,
+      "generated": 80,
+      "max_nodes": 62
+    },
+    {
+      "h": 12,
+      "p": 20,
+      "generated": 80,
+      "max_nodes": 60
+    },
+    {
+      "h": 12,
+      "p": 22,
+      "generated": 80,
+      "max_nodes": 65
+    },
+    {
+      "h": 12,
+      "p": 24,
+      "generated": 80,
+      "max_nodes": 141
+    },
+    {
+      "h": 12,
+      "p": 26,
+      "generated": 80,
+      "max_nodes": 212
+    }
+  ]
+}

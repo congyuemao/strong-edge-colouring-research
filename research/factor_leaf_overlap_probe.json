@@ -1,0 +1,120 @@
+[
+  {
+    "m": 5,
+    "leaf_overlap_degree_counts": {
+      "0": 5,
+      "3": 100,
+      "4": 50
+    },
+    "components": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      150
+    ],
+    "odd_cycle": null
+  },
+  {
+    "m": 6,
+    "leaf_overlap_degree_counts": {
+      "0": 6,
+      "3": 120,
+      "4": 60
+    },
+    "components": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      180
+    ],
+    "odd_cycle": null
+  },
+  {
+    "m": 7,
+    "leaf_overlap_degree_counts": {
+      "0": 7,
+      "3": 140,
+      "4": 70
+    },
+    "components": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      210
+    ],
+    "odd_cycle": null
+  },
+  {
+    "m": 8,
+    "leaf_overlap_degree_counts": {
+      "0": 8,
+      "3": 160,
+      "4": 80
+    },
+    "components": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      240
+    ],
+    "odd_cycle": null
+  },
+  {
+    "m": 9,
+    "leaf_overlap_degree_counts": {
+      "0": 9,
+      "3": 180,
+      "4": 90
+    },
+    "components": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      270
+    ],
+    "odd_cycle": null
+  },
+  {
+    "m": 11,
+    "leaf_overlap_degree_counts": {
+      "0": 11,
+      "3": 220,
+      "4": 110
+    },
+    "components": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      330
+    ],
+    "odd_cycle": null
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "group_lists": [
+      107,
+      185,
+      109,
+      107,
+      155,
+      157,
+      109
+    ],
+    "status": "unsat",
+    "counts": {
+      "spoke_assignments": 54548,
+      "empty_cycle_list": 18014,
+      "clique_hall_failure": 34226,
+      "remaining_search_failure": 2308
+    },
+    "witness": null,
+    "details": []
+  },
+  {
+    "group_lists": [
+      185,
+      181,
+      244,
+      109,
+      205,
+      241,
+      117,
+      220
+    ],
+    "status": "unsat",
+    "counts": {
+      "spoke_assignments": 136549,
+      "empty_cycle_list": 0,
+      "clique_hall_failure": 130038,
+      "remaining_search_failure": 6511
+    },
+    "witness": null,
+    "details": []
+  }
+]

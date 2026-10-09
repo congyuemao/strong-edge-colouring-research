@@ -1,0 +1,1458 @@
+{
+  "all_checks_passed": true,
+  "certificates_verified": 80,
+  "alpha_search_calls": 25426,
+  "five_color_unsat_replayed": 1,
+  "records": [
+    {
+      "permutation_indices": [
+        0,
+        0,
+        9,
+        18,
+        0,
+        18,
+        16,
+        0,
+        16,
+        18,
+        0,
+        18
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 503
+    },
+    {
+      "permutation_indices": [
+        0,
+        9,
+        18,
+        16,
+        9,
+        0,
+        18,
+        0,
+        9,
+        0,
+        9,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 219
+    },
+    {
+      "permutation_indices": [
+        0,
+        18,
+        9,
+        0,
+        18,
+        0,
+        16,
+        18,
+        0,
+        16,
+        18,
+        0
+      ],
+      "alpha": 8,
+      "independent_alpha_search_calls": 555
+    },
+    {
+      "permutation_indices": [
+        0,
+        18,
+        9,
+        16,
+        18,
+        0,
+        9,
+        0,
+        18,
+        0,
+        18,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 203
+    },
+    {
+      "permutation_indices": [
+        9,
+        9,
+        16,
+        9,
+        16,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 389
+    },
+    {
+      "permutation_indices": [
+        9,
+        16,
+        0,
+        18,
+        9,
+        0,
+        16,
+        0,
+        18,
+        9,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 225
+    },
+    {
+      "permutation_indices": [
+        9,
+        16,
+        18,
+        0,
+        16,
+        0,
+        18,
+        16,
+        9,
+        18,
+        0,
+        9
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 241
+    },
+    {
+      "permutation_indices": [
+        9,
+        16,
+        18,
+        0,
+        16,
+        18,
+        16,
+        9,
+        9,
+        0,
+        9,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 125
+    },
+    {
+      "permutation_indices": [
+        9,
+        18,
+        0,
+        9,
+        18,
+        0,
+        18,
+        9,
+        0,
+        16,
+        18,
+        9
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 223
+    },
+    {
+      "permutation_indices": [
+        9,
+        18,
+        0,
+        16,
+        9,
+        18,
+        0,
+        16,
+        9,
+        18,
+        9,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 353
+    },
+    {
+      "permutation_indices": [
+        16,
+        0,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        18,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 239
+    },
+    {
+      "permutation_indices": [
+        16,
+        9,
+        0,
+        16,
+        18,
+        16,
+        0,
+        16,
+        16,
+        18,
+        9,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 571
+    },
+    {
+      "permutation_indices": [
+        16,
+        18,
+        0,
+        16,
+        9,
+        16,
+        0,
+        16,
+        16,
+        9,
+        18,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 571
+    },
+    {
+      "permutation_indices": [
+        18,
+        9,
+        0,
+        16,
+        18,
+        9,
+        0,
+        16,
+        18,
+        9,
+        18,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 361
+    },
+    {
+      "permutation_indices": [
+        18,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 229
+    },
+    {
+      "permutation_indices": [
+        5,
+        18,
+        9,
+        0,
+        18,
+        0,
+        16,
+        18,
+        0,
+        16,
+        18,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 319,
+      "five_color_unsat": {
+        "nodes": 237,
+        "fixed_clique": [
+          0,
+          4,
+          8,
+          24,
+          40
+        ]
+      }
+    },
+    {
+      "permutation_indices": [
+        14,
+        18,
+        9,
+        0,
+        18,
+        0,
+        16,
+        18,
+        0,
+        16,
+        18,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 271
+    },
+    {
+      "permutation_indices": [
+        16,
+        18,
+        9,
+        0,
+        18,
+        0,
+        16,
+        18,
+        0,
+        16,
+        18,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 255
+    },
+    {
+      "permutation_indices": [
+        0,
+        18,
+        9,
+        0,
+        16,
+        0,
+        16,
+        18,
+        0,
+        16,
+        18,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 307
+    },
+    {
+      "permutation_indices": [
+        0,
+        9,
+        16,
+        9,
+        16,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 141
+    },
+    {
+      "permutation_indices": [
+        9,
+        9,
+        16,
+        0,
+        16,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 369
+    },
+    {
+      "permutation_indices": [
+        9,
+        9,
+        16,
+        9,
+        0,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 329
+    },
+    {
+      "permutation_indices": [
+        9,
+        9,
+        16,
+        9,
+        5,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 349
+    },
+    {
+      "permutation_indices": [
+        9,
+        9,
+        16,
+        9,
+        14,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 393
+    },
+    {
+      "permutation_indices": [
+        9,
+        16,
+        0,
+        18,
+        9,
+        0,
+        16,
+        0,
+        0,
+        9,
+        0,
+        16
+      ],
+      "alpha": 8,
+      "independent_alpha_search_calls": 711
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        0,
+        18,
+        9,
+        0,
+        16,
+        0,
+        0,
+        9,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 245
+    },
+    {
+      "permutation_indices": [
+        9,
+        16,
+        0,
+        18,
+        9,
+        0,
+        16,
+        0,
+        0,
+        7,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 301
+    },
+    {
+      "permutation_indices": [
+        9,
+        16,
+        0,
+        18,
+        9,
+        0,
+        16,
+        0,
+        0,
+        18,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 231
+    },
+    {
+      "permutation_indices": [
+        9,
+        16,
+        0,
+        18,
+        9,
+        0,
+        16,
+        0,
+        0,
+        23,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 259
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        18,
+        0,
+        16,
+        0,
+        18,
+        16,
+        9,
+        18,
+        0,
+        9
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 239
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        0,
+        16,
+        18,
+        16,
+        0,
+        16,
+        16,
+        18,
+        9,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 345
+    },
+    {
+      "permutation_indices": [
+        18,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        0,
+        0,
+        18,
+        0,
+        16
+      ],
+      "alpha": 8,
+      "independent_alpha_search_calls": 699
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        0,
+        0,
+        18,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 231
+    },
+    {
+      "permutation_indices": [
+        18,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        0,
+        0,
+        7,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 245
+    },
+    {
+      "permutation_indices": [
+        18,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        0,
+        0,
+        9,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 221
+    },
+    {
+      "permutation_indices": [
+        18,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        0,
+        0,
+        23,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 315
+    },
+    {
+      "permutation_indices": [
+        18,
+        18,
+        9,
+        0,
+        16,
+        0,
+        16,
+        18,
+        0,
+        16,
+        18,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 175
+    },
+    {
+      "permutation_indices": [
+        0,
+        9,
+        16,
+        0,
+        16,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 151
+    },
+    {
+      "permutation_indices": [
+        9,
+        9,
+        16,
+        0,
+        16,
+        9,
+        5,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 349
+    },
+    {
+      "permutation_indices": [
+        9,
+        9,
+        16,
+        0,
+        16,
+        9,
+        14,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 369
+    },
+    {
+      "permutation_indices": [
+        9,
+        9,
+        16,
+        0,
+        16,
+        9,
+        16,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 367
+    },
+    {
+      "permutation_indices": [
+        8,
+        9,
+        16,
+        9,
+        5,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 313
+    },
+    {
+      "permutation_indices": [
+        14,
+        9,
+        16,
+        9,
+        5,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 183
+    },
+    {
+      "permutation_indices": [
+        15,
+        9,
+        16,
+        9,
+        5,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 355
+    },
+    {
+      "permutation_indices": [
+        3,
+        9,
+        16,
+        9,
+        14,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 319
+    },
+    {
+      "permutation_indices": [
+        5,
+        9,
+        16,
+        9,
+        14,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 195
+    },
+    {
+      "permutation_indices": [
+        11,
+        9,
+        16,
+        9,
+        14,
+        9,
+        0,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 323
+    },
+    {
+      "permutation_indices": [
+        16,
+        9,
+        0,
+        18,
+        9,
+        0,
+        16,
+        0,
+        0,
+        9,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 635
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        0,
+        18,
+        9,
+        0,
+        16,
+        0,
+        0,
+        7,
+        0,
+        16
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 235
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        0,
+        18,
+        9,
+        0,
+        16,
+        0,
+        0,
+        18,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 249
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        0,
+        18,
+        9,
+        0,
+        16,
+        0,
+        0,
+        23,
+        0,
+        16
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 203
+    },
+    {
+      "permutation_indices": [
+        9,
+        16,
+        0,
+        18,
+        9,
+        0,
+        18,
+        0,
+        0,
+        18,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 239
+    },
+    {
+      "permutation_indices": [
+        16,
+        18,
+        0,
+        9,
+        18,
+        0,
+        16,
+        0,
+        0,
+        18,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 619
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        0,
+        0,
+        7,
+        0,
+        16
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 201
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        0,
+        0,
+        9,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 305
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        0,
+        0,
+        23,
+        0,
+        16
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 217
+    },
+    {
+      "permutation_indices": [
+        18,
+        16,
+        0,
+        9,
+        18,
+        0,
+        9,
+        0,
+        0,
+        9,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 245
+    },
+    {
+      "permutation_indices": [
+        0,
+        9,
+        16,
+        0,
+        16,
+        9,
+        5,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 137
+    },
+    {
+      "permutation_indices": [
+        0,
+        9,
+        16,
+        0,
+        16,
+        9,
+        16,
+        9,
+        0,
+        18,
+        9,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 143
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        0,
+        18,
+        9,
+        0,
+        18,
+        0,
+        0,
+        18,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 289
+    },
+    {
+      "permutation_indices": [
+        16,
+        16,
+        0,
+        9,
+        18,
+        0,
+        9,
+        0,
+        0,
+        9,
+        0,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 331
+    },
+    {
+      "permutation_indices": [
+        16,
+        18,
+        0,
+        16,
+        9,
+        18,
+        0,
+        16,
+        9,
+        18,
+        9,
+        16
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 181
+    },
+    {
+      "permutation_indices": [
+        9,
+        18,
+        0,
+        16,
+        9,
+        18,
+        0,
+        18,
+        9,
+        18,
+        9,
+        16
+      ],
+      "alpha": 8,
+      "independent_alpha_search_calls": 695
+    },
+    {
+      "permutation_indices": [
+        9,
+        18,
+        0,
+        16,
+        9,
+        18,
+        5,
+        18,
+        9,
+        18,
+        9,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 253
+    },
+    {
+      "permutation_indices": [
+        9,
+        18,
+        0,
+        16,
+        9,
+        18,
+        14,
+        18,
+        9,
+        18,
+        9,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 269
+    },
+    {
+      "permutation_indices": [
+        9,
+        18,
+        0,
+        16,
+        9,
+        18,
+        16,
+        18,
+        9,
+        18,
+        9,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 333
+    },
+    {
+      "permutation_indices": [
+        9,
+        18,
+        0,
+        16,
+        9,
+        18,
+        16,
+        18,
+        9,
+        0,
+        9,
+        16
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 287
+    },
+    {
+      "permutation_indices": [
+        9,
+        0,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        18,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 329
+    },
+    {
+      "permutation_indices": [
+        16,
+        0,
+        18,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        18,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 269
+    },
+    {
+      "permutation_indices": [
+        16,
+        0,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        7,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 151
+    },
+    {
+      "permutation_indices": [
+        16,
+        0,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        9,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 249
+    },
+    {
+      "permutation_indices": [
+        16,
+        0,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        23,
+        0
+      ],
+      "alpha": 10,
+      "independent_alpha_search_calls": 143
+    },
+    {
+      "permutation_indices": [
+        9,
+        0,
+        18,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        18,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 401
+    },
+    {
+      "permutation_indices": [
+        9,
+        0,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        7,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 327
+    },
+    {
+      "permutation_indices": [
+        9,
+        0,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        9,
+        0
+      ],
+      "alpha": 8,
+      "independent_alpha_search_calls": 759
+    },
+    {
+      "permutation_indices": [
+        9,
+        0,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        23,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 337
+    },
+    {
+      "permutation_indices": [
+        9,
+        0,
+        16,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        9,
+        18
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 321
+    },
+    {
+      "permutation_indices": [
+        9,
+        5,
+        18,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        18,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 371
+    },
+    {
+      "permutation_indices": [
+        9,
+        14,
+        18,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        18,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 431
+    },
+    {
+      "permutation_indices": [
+        9,
+        16,
+        18,
+        0,
+        9,
+        18,
+        0,
+        16,
+        16,
+        0,
+        18,
+        0
+      ],
+      "alpha": 9,
+      "independent_alpha_search_calls": 391
+    }
+  ]
+}
