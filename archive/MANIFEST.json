@@ -13,8 +13,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 77,
-      "sha256": "b27471c999cc295b124937280530e137e592f211d175d272600eb888e0a48e3f"
+      "bytes": 147,
+      "sha256": "da863e50a419241f774dc2419fd227330ce3b279335a7979007b797b7effeba5"
     },
     {
       "path": "archive/research_source_manifest.json",
@@ -53,8 +53,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3924,
-      "sha256": "387a4d2889c3dc750788fef1d155b779a3f1258d381df6591b5533f8a9dce4ec"
+      "bytes": 4538,
+      "sha256": "8fec95ba0634355c2413ac83a7ef6a29d5e1a45ad72f08199818046efd205cde"
     },
     {
       "path": "research/all_blocked_circles_joint_degree.md",
@@ -1633,8 +1633,8 @@
     },
     {
       "path": "tools/package_archive.py",
-      "bytes": 7599,
-      "sha256": "b8fa454f2a0ad52f2320c73ca430e3795c39b24309051f3e2b7ed4fa3093162e"
+      "bytes": 7943,
+      "sha256": "45dbbf72a18bdb5d6814ea6ffd86ce8767f9a97ced532b73ffdf6e9d562ba476"
     }
   ]
 }

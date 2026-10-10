@@ -5,6 +5,7 @@ import ast
 from collections import Counter
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import sys
@@ -21,9 +22,16 @@ SELF_EXCLUDED = {MANIFEST.relative_to(ROOT).as_posix(), REPORT.relative_to(ROOT)
 
 
 def files():
-    return sorted(p for p in ROOT.rglob("*") if p.is_file()
-                  and not any(s in EXCLUDED_DIRS for s in p.relative_to(ROOT).parts)
-                  and p.suffix not in {".pyc", ".pyo", ".tmp"})
+    result = []
+    for directory, subdirs, names in os.walk(ROOT):
+        base = Path(directory)
+        # The independently versioned Lean checkout is archived in its own repository.
+        subdirs[:] = [name for name in subdirs if name not in EXCLUDED_DIRS
+                      and not (base == ROOT and name == "formalization")]
+        result.extend(base / name for name in names
+                      if (base / name).is_file()
+                      and (base / name).suffix not in {".pyc", ".pyo", ".tmp"})
+    return sorted(result)
 
 
 def record(p):

@@ -6,3 +6,5 @@ venv/
 Thumbs.db
 *.tmp
 .upload-local/
+# Independently versioned Lean verification checkout.
+/formalization/
