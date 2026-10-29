@@ -1,0 +1,7 @@
+n=30 run 0: best L2-triangles=3419 girth=4 last Q=yes [0.2s]
+n=30 run 1: best L2-triangles=3530 girth=4 last Q=yes [0.2s]
+n=30 run 2: best L2-triangles=3545 girth=4 last Q=yes [0.1s]
+n=30 run 3: best L2-triangles=3546 girth=4 last Q=yes [0.1s]
+n=30 run 4: best L2-triangles=3437 girth=4 last Q=yes [0.1s]
+n=30 run 5: best L2-triangles=3489 girth=4 last Q=yes [0.1s]
+n=30: tested 36 dense graphs, Q fails on 0  [35s]

@@ -1,0 +1,5 @@
+n=12 chi_s=15 |E(L2)|= 240 Q=True 10+10 2-factorization=True  [1s]
+n=15 chi_s=14 |E(L2)|= 322 Q=True 10+10 2-factorization=True  [12s]
+n=19 chi_s=12 |E(L2)|= 424 Q=True 10+10 2-factorization=True  [19s]
+n=16 chi_s=14 |E(L2)|= 337 Q=True 10+10 2-factorization=True  [22s]
+n=11 chi_s=17 |E(L2)|= 220 Q=True 10+10 2-factorization=True  [24s]

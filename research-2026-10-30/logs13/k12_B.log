@@ -1,0 +1,1 @@
+d=[1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3] R=5 level=0 B,T  bad K2-far : SAT  vars=1267689 states=0 [build 4s, total 127s]

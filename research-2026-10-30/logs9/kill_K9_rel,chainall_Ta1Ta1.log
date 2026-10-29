@@ -1,0 +1,1 @@
+K=9 R=5 chainall,rel  T(a1),T(a1)      (triangle span=5): SAT  vars=176644 [29.8s]

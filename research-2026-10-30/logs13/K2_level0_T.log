@@ -1,0 +1,4 @@
+d=[1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3] R=5 level=0 T  bad K2-hub : UNSAT  vars=95529 states=0 [build 0s, total 3s]
+d=[1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3] R=5 level=0 T  bad K2-far : SAT  vars=95529 states=0 [build 0s, total 2s]
+d=[1, 1, 3, 3, 3, 3, 3, 3] R=5 level=0 T  bad K2-hub : SAT  vars=63565 states=0 [build 0s, total 0s]
+d=[1, 1, 3, 3, 3, 3, 3, 3] R=5 level=0 T  bad K2-far : SAT  vars=63565 states=0 [build 0s, total 0s]

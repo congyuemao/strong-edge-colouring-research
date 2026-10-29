@@ -1,0 +1,5 @@
+pattern=P  L=1 D=7 base: UNSAT  vars=52471 [build 1s, total 1s]
+pattern=P  L=2 D=7 base: SAT  vars=98641 [build 3s, total 4s]
+pattern=P  L=3 D=7 base: SAT  vars=144811 [build 5s, total 17s]
+pattern=P  L=4 D=7 base: SAT  vars=190981 [build 7s, total 26s]
+pattern=P  L=5 D=7 base: SAT  vars=237151 [build 9s, total 37s]
