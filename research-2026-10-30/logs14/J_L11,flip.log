@@ -1,0 +1,5 @@
+pattern=J  L=1 D=6 L11,flip: UNSAT  vars=572329 [build 10s, total 11s]
+pattern=J  L=2 D=6 L11,flip: SAT  vars=928567 [build 22s, total 331s]
+pattern=J  L=3 D=6 L11,flip: SAT  vars=1285615 [build 25s, total 392s]
+pattern=J  L=4 D=6 L11,flip: SAT  vars=1641043 [build 33s, total 516s]
+pattern=J  L=5 D=6 L11,flip: SAT  vars=1997281 [build 43s, total 1738s]

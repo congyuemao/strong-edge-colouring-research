@@ -1,0 +1,1 @@
+K=10 R=6 chain1,short  T(a1),T(a1)      (triangle span=5): SAT  vars=260351 [86.5s]

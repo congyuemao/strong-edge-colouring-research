@@ -1,0 +1,3 @@
+pattern=P  L=1 D=7 L11,flip: UNSAT  vars=798319 [build 10s, total 10s]
+pattern=P  L=2 D=7 L11,flip: SAT  vars=1234747 [build 27s, total 611s]
+pattern=P  L=3 D=7 L11,flip: SAT  vars=1671175 [build 30s, total 1017s]

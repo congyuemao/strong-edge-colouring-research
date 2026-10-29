@@ -1,0 +1,5 @@
+d=[3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1] R=5 level=0 T  bad S(u)   : UNSAT  vars=97053 states=0 [build 0s, total 0s]
+d=[3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1] R=5 level=0 T  bad e+2+1  : UNSAT  vars=97053 states=0 [build 0s, total 0s]
+d=[3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1] R=5 level=0 T  bad 3+1    : UNSAT  vars=97053 states=0 [build 0s, total 0s]
+d=[3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1] R=5 level=0 T  bad 2+2    : UNSAT  vars=97053 states=0 [build 0s, total 2s]
+d=[1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3] R=5 level=1 T  bad K2-far : SAT  vars=2017785 states=22 [build 5s, total 88s]

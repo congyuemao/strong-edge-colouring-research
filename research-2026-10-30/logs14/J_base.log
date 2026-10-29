@@ -1,0 +1,5 @@
+pattern=J  L=1 D=6 base: UNSAT  vars=69481 [build 1s, total 1s]
+pattern=J  L=2 D=6 base: SAT  vars=132661 [build 2s, total 8s]
+pattern=J  L=3 D=6 base: SAT  vars=195841 [build 4s, total 21s]
+pattern=J  L=4 D=6 base: SAT  vars=259021 [build 5s, total 31s]
+pattern=J  L=5 D=6 base: SAT  vars=322201 [build 5s, total 36s]

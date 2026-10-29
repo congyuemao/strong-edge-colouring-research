@@ -1,0 +1,3 @@
+pattern=SJ L=2 D=6 L11: SAT  vars=516358 [build 10s, total 103s]
+pattern=SJ L=4 D=6 L11: SAT  vars=708895 [build 18s, total 340s]
+pattern=SJ L=6 D=6 L11: SAT  vars=941932 [build 25s, total 541s]
