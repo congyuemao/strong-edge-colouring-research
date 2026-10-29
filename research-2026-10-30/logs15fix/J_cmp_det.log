@@ -1,0 +1,1 @@
+pattern=J  L=3 D=6 cmp,det: SAT  detours=54 vars=10795213 [build 36s, total 215s]
