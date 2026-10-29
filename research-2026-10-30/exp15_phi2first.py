@@ -90,22 +90,27 @@ def r1prime(S, y, cache):
             S.s.add_clause([-x[y, i], -Di[2], Dj[2], blocked(S, y, j, cache)])
 
 
-def free_lit(M, r, m, cache):
-    """Literal f -> r can join class m without creating a cycle or a degree-3 vertex:
-    deg_m(r) <= 1 and every m-neighbour of r has m-degree <= 1 (base-state counts, which can only
-    over-estimate the degrees in the compound move -- so certified improvements are genuine)."""
-    key = ("free", r, m)
+def nonfree_lit(M, r, m, cache):
+    """Literal b -> r can NOT join class m safely: deg_m(r) >= 2, or some m-neighbour of r already has
+    m-degree 2 (an incomplete neighbour in m counts as possibly degree 2).  It is used POSITIVELY
+    ("the improving move is blocked"), so this one direction is the sound one.  Base-state counts can
+    only over-estimate degrees in the compound move, so blocks are never under-reported.
+    (Audit fix 2026-10-30: the earlier free_lit encoded only f -> conditions and was used negatively,
+    which let the solver set every f false and made the cmp constraints vacuous.)"""
+    key = ("nonfree", r, m)
     if key in cache:
         return cache[key]
-    f = M.new()
-    M.s.add_clause([-f, -deg(M, r, m)[2]])
+    b = M.new()
+    reasons = [deg(M, r, m)[2]]
     for z in M.nbrs(r):
-        if not M.complete(z):
-            M.s.add_clause([-f, -M.x[z, m]])
-        else:
-            M.s.add_clause([-f, -M.x[z, m], -deg(M, z, m)[2]])
-    cache[key] = f
-    return f
+        w = M.new()
+        M.s.add_clause([-w, M.x[z, m]])
+        if M.complete(z):
+            M.s.add_clause([-w, deg(M, z, m)[2]])
+        reasons.append(w)
+    M.s.add_clause([-b] + reasons)
+    cache[key] = b
+    return b
 
 
 def compound(M, e, cache):
@@ -131,7 +136,7 @@ def compound(M, e, cache):
                         continue
                     if m == 0 and any(M.in_cycle(z) for z in M.nbrs(r)):
                         continue
-                    M.s.add_clause([-x[n, j], De[2], -x[r, j], -free_lit(M, r, m, cache)])
+                    M.s.add_clause([-x[n, j], De[2], -x[r, j], nonfree_lit(M, r, m, cache)])
             for n2 in Ne:
                 if n2 == n or not M.complete(n2):
                     continue
@@ -144,7 +149,7 @@ def compound(M, e, cache):
                     # after n leaves: n2's j-degree is D2 - [n ~ n2]; require it <= 1
                     need = D2[2] if n2 not in nbset(M, n) else D2[3]
                     M.s.add_clause([-x[n, j], -x[n2, j], -De[2], De[3], need,
-                                    -free_lit(M, n, m, cache)])
+                                    nonfree_lit(M, n, m, cache)])
 
 
 def detours(M, cyc_all):

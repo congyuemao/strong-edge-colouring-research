@@ -1,6 +1,10 @@
 # 2026-10-29 至 10-30 轮的原始材料
 
-这一轮的总结与未来路线见 [交接记录](../docs/HANDOFF_2026-10-30.md)。本目录保存这一轮的原始推导、程序、日志与数据，没有改写。
+这一轮的总结与未来路线见 [交接记录](../docs/HANDOFF_2026-10-30.md)。本目录保存这一轮的原始推导、程序、日志与数据。
+
+首次归档后只做过两类后续修改（2026-10-30 晚间），改动都可以在 git 历史里看到：
+- **增补：** ROUTE_Q_zh.md 增补第 12.7 节（审查更正）和第 13 节（M1 结果），并新增 exp16 系列程序。
+- **修正：** exp15_phi2first.py 按 Codex 审查做了修正：原来的 `free_lit` 方向错误，使先清后移的约束失效。
 
 - [ROUTE_Q_zh.md](ROUTE_Q_zh.md)：主推导，第 1–12 节。
 - [REPORT_zh.md](REPORT_zh.md)：这一轮开头的文献核查、早期发现与路线提案。
@@ -28,13 +32,19 @@
 | [exp12_closure_tree.py](exp12_closure_tree.py) | 引理 11 的闭合树，深度 1 和 2 | SAT（ROUTE_Q 第 9 节） |
 | [exp13_brooks.py](exp13_brooks.py)、[exp13b_witness.py](exp13b_witness.py) | Brooks 型划分，引理 A、B | ROUTE_Q 第 10 节 |
 | [exp14_periodic.py](exp14_periodic.py) | 周期性卡死路测试 | 奇数周期 3 可满足（ROUTE_Q 第 11 节） |
-| [exp15_phi2first.py](exp15_phi2first.py)、[exp15b_witness.py](exp15b_witness.py) | 势函数换序 (Φ₂, Φ₁)，绕行，先清后移 | 周期 3 仍 SAT（ROUTE_Q 第 12 节） |
+| [exp15_phi2first.py](exp15_phi2first.py)、[exp15b_witness.py](exp15b_witness.py) | 势函数换序 (Φ₂, Φ₁)，绕行，先清后移 | 修正后周期 3 仍 SAT（ROUTE_Q 第 12、12.7 节） |
+| [exp16_nibble.py](exp16_nibble.py) | M1：多轮 nibble 加贪心收尾，失败概率与局部引理阈值的比较 | ROUTE_Q 第 13 节 |
+| [exp16b_decay.py](exp16b_decay.py) | 失败概率随轮数的衰减（每个 T 取 6×10⁶ 个样本） | 每轮约 ×7–40，而依赖度每轮 ×6561 |
+| [exp16c_repair.py](exp16c_repair.py) | 列表为空的卡死边能否一步修复 | T = 3–5 中没有出现空列表的边 |
+| [exp16d_leftover.py](exp16d_leftover.py) | 剩余分支的精确列表染色 | T = 3–6 全部可染 |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |
 
 ## 数据与日志
 
 - `graphs_n5.txt` 到 `graphs_n13.txt`：exp10_enum.py 枚举出的连通 4 正则图，每行一个图，计数与 OEIS A006820 吻合。
 - `exp1_results.json`、`exp7_results.json`，以及 `exp1.log`、`exp6.log`、`exp7.log`、`logs_enum.log`：对应程序的输出。
+- `hg_n1000_g7_s1.edges`：exp16 使用的 n = 1000、围长 7 的随机 4 正则图（边表）。
+- `logs15fix`：exp15 修正后的重跑日志。`logs15` 中含 `cmp` 的结果因编码错误作废。
 - `logs9` 到 `logs15`：各轮 SAT 运行的日志，文件名标出了参数。
   - **作废：** `logs13/k12_T.log` 中深度 1 的远记号结果，原因是守卫覆盖错误，见交接记录第 5 节。
   - **不完整：** `logs9` 中的空日志来自被终止的旧运行，`logs13/k12_B.log` 只含深度 0 的结果。

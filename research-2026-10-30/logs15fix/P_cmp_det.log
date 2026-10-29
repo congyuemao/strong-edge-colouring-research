@@ -1,0 +1,2 @@
+pattern=P  L=2 D=7 cmp,det: SAT  detours=2 vars=1875802 [build 7s, total 18s]
+pattern=P  L=3 D=7 cmp,det: SAT  detours=3 vars=2506510 [build 9s, total 20s]
