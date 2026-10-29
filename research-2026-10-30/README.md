@@ -34,7 +34,7 @@
 | [exp14_periodic.py](exp14_periodic.py) | 周期性卡死路测试 | 奇数周期 3 可满足（ROUTE_Q 第 11 节） |
 | [exp15_phi2first.py](exp15_phi2first.py)、[exp15b_witness.py](exp15b_witness.py) | 势函数换序 (Φ₂, Φ₁)，绕行，先清后移 | 修正后周期 3 仍 SAT（ROUTE_Q 第 12、12.7 节） |
 | [exp16_nibble.py](exp16_nibble.py) | M1：多轮 nibble 加贪心收尾，失败概率与局部引理阈值的比较 | ROUTE_Q 第 13 节 |
-| [exp16b_decay.py](exp16b_decay.py) | 失败概率随轮数的衰减（每个 T 取 6×10⁶ 个样本） | 每轮约 ×7–40，而依赖度每轮 ×81 |
+| [exp16b_decay.py](exp16b_decay.py) | 失败概率随轮数的衰减（每个 T 取 6×10⁶ 个样本） | 每轮约 ×7–40，而依赖度每轮 ×6561 |
 | [exp16c_repair.py](exp16c_repair.py) | 列表为空的卡死边能否一步修复 | T = 3–5 中没有出现空列表的边 |
 | [exp16d_leftover.py](exp16d_leftover.py) | 剩余分支的精确列表染色 | T = 3–6 全部可染 |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |

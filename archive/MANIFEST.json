@@ -33,8 +33,8 @@
     },
     {
       "path": "docs/HANDOFF_2026-10-30.md",
-      "bytes": 19580,
-      "sha256": "a23786a89276d5ba5591a3b3d98c53cbcdaaa95d40bc3a3f63029de1c76a50ad"
+      "bytes": 20126,
+      "sha256": "7ed98dc4ef0fcda0e719f58085a0aa551f1a06fb0c06e1722b1708bd2c34616a"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -58,8 +58,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5628,
-      "sha256": "9f786da81f82d5f611936050303741100b955859dd6fd9da2d1977741b339307"
+      "bytes": 5722,
+      "sha256": "1844db70c520f413c96cec33be2061e65eeda334ba8f834c0fa7319e1fe8b93c"
     },
     {
       "path": "research/all_blocked_circles_joint_degree.md",
@@ -1703,8 +1703,8 @@
     },
     {
       "path": "research-2026-10-30/exp16_nibble.py",
-      "bytes": 4456,
-      "sha256": "a0ab83683f9dc4a5d9878f933a65121321e21f950fe632f50b765bc7f65c7c1f"
+      "bytes": 4943,
+      "sha256": "68e195bd2825e025cfbe2cd3a1f77d756cc7f2c4dbdf5cd0e6bb8b06ab7d041f"
     },
     {
       "path": "research-2026-10-30/exp16b_decay.py",
@@ -2498,8 +2498,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 4660,
-      "sha256": "d614080413f28ba15ca9428bbaa97ec3ce8324fccbf6c63ce33bb69f39f96406"
+      "bytes": 4712,
+      "sha256": "19cac5b62f3f6a79c5443d1401061aeb28f5e21a3a373109fa9ea6bcb805b9a8"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
@@ -2508,8 +2508,8 @@
     },
     {
       "path": "research-2026-10-30/ROUTE_Q_zh.md",
-      "bytes": 56468,
-      "sha256": "841e942cb9cbbf77a161239038c908a61a1a434f5fe2721694797ee04db5043b"
+      "bytes": 58636,
+      "sha256": "cd12d71b51df3aeb4f0fb46ae44e6d987158fd47fcf32ade7c5e4469b0c0163a"
     },
     {
       "path": "research-2026-10-30/run9.sh",

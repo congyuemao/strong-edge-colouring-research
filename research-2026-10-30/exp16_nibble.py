@@ -7,8 +7,14 @@ uniform colour from L(e), and keeps it unless an activated conflict picked the s
 T rounds the edge e "fails" if it is uncoloured and |L(e)| <= u(e), u(e) = #uncoloured conflicts:
 if no edge fails, the remaining edges can be coloured greedily in any order.
 
-The failure of e depends only on random choices within L^2-distance T+1 of e, so the LLL needs
-  e * q * (D + 1) < 1,  q = P(e fails),  D = #edges within L^2-distance 2(T+1) of e.
+Dependency radius (corrected after the Codex review): each round propagates dependency by TWO
+conflict-graph hops -- a tentative colour depends on the edge's list (one hop: its neighbours'
+earlier successes) and the clash test looks at the neighbours' tentative colours (another hop).
+The state after round t depends on randomness within radius 2t-1, the lists within 2t, and the
+final test |L(e)| <= u(e) within radius 2T.  Two failure events are dependent once their radius-2T
+balls meet, so the LLL needs
+  e * q * (D + 1) < 1,  q = P(e fails),  D = |B(4T)| = 3^(8T+1) - 2
+(on the 4-regular tree |B(r)| = 3^(2r+1) - 2 exactly, so D grows by 3^8 = 6561 per round).
 We measure q by simulation on a random 4-regular graph of large girth and compare.
 
 Usage: exp16_nibble.py n girth k T p runs [schedule]"""
