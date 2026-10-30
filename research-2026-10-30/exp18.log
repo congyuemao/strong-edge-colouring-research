@@ -1,0 +1,12 @@
+# python exp18_large_girth.py 4000 7 2 6
+{'seed': 0, 'n': 4000, 'm': 8000, 'deg4': 4000, 'girth': 7, 'odd_cycles': 6, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 6}, 'N_D': 36, 'J': 28, 'I': 547, 'maxdeg_H[M4-I]': 5, 'colours': 20, 'ok': True}
+{'seed': 1, 'n': 4000, 'm': 8000, 'deg4': 4000, 'girth': 7, 'odd_cycles': 4, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 6}, 'N_D': 24, 'J': 16, 'I': 550, 'maxdeg_H[M4-I]': 5, 'colours': 20, 'ok': True}
+# python exp18_large_girth.py 20001 8 3 8
+{'seed': 0, 'n': 20001, 'm': 40002, 'deg4': 20001, 'girth': 8, 'odd_cycles': 6, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 6}, 'N_D': 36, 'J': 24, 'I': 2746, 'maxdeg_H[M4-I]': 5, 'colours': 20, 'ok': True}
+{'seed': 1, 'fail': 'no separated D-edge'}
+{'seed': 2, 'fail': 'no separated D-edge'}
+# python exp18_large_girth.py 3001 6 4 4
+{'seed': 0, 'n': 3001, 'm': 6002, 'deg4': 3001, 'girth': 6, 'odd_cycles': 12, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 6}, 'N_D': 72, 'J': 49, 'I': 413, 'maxdeg_H[M4-I]': 5, 'colours': 20, 'ok': True}
+{'seed': 1, 'n': 3001, 'm': 6001, 'deg4': 3000, 'girth': 6, 'odd_cycles': 5, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 6}, 'N_D': 30, 'J': 18, 'I': 415, 'maxdeg_H[M4-I]': 5, 'colours': 20, 'ok': True}
+{'seed': 2, 'n': 3001, 'm': 6002, 'deg4': 3001, 'girth': 6, 'odd_cycles': 4, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 6}, 'N_D': 24, 'J': 12, 'I': 411, 'maxdeg_H[M4-I]': 5, 'colours': 20, 'ok': True}
+{'seed': 3, 'n': 3001, 'm': 6001, 'deg4': 2999, 'girth': 6, 'odd_cycles': 4, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 6}, 'N_D': 24, 'J': 12, 'I': 413, 'maxdeg_H[M4-I]': 5, 'colours': 20, 'ok': True}

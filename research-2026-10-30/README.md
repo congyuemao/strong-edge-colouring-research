@@ -8,7 +8,9 @@
   - exp15_phi2first.py 按 Codex 审查做了修正：原来的 `free_lit` 方向错误，使先清后移的约束失效。
   - 第 13 节按第二条 Codex 审查做了修正：slack 判据只是贪心收尾的充分条件，原文误写成等价（第 13.6 节）。
   - exp16_nibble.py 只改了注释，并把 `fail` 表达式抽成函数 `certificate_fails`，输出不变；新增回归测试 test_exp16_criteria.py。
+- **增补（大围长）：** 新增 LARGE_GIRTH_zh.md、exp18_large_girth.py 和 exp18.log。
 
+- [LARGE_GIRTH_zh.md](LARGE_GIRTH_zh.md)：**大围长情形已解决。** 用匹配收缩加 Kostochka 定理证明：第一类图围长 ≥ 41、一般图围长 ≥ 39360 时，χ'_s ≤ 20。
 - [ROUTE_Q_zh.md](ROUTE_Q_zh.md)：主推导，第 1–12 节。
 - [REPORT_zh.md](REPORT_zh.md)：这一轮开头的文献核查、早期发现与路线提案。
 
@@ -41,6 +43,7 @@
 | [test_exp16_criteria.py](test_exp16_criteria.py) | 回归测试：区分判据失败、某种贪心策略失败、剩余部分确实不可染，含 Codex 反例 | 5/5 通过（ROUTE_Q 第 13.6 节） |
 | [exp16c_repair.py](exp16c_repair.py) | 列表为空的卡死边能否一步修复 | T = 3–5 中没有出现空列表的边 |
 | [exp16d_leftover.py](exp16d_leftover.py) | 剩余分支的精确列表染色 | T = 3–6 全部可染 |
+| [exp18_large_girth.py](exp18_large_girth.py) | 逐步执行大围长定理 B 的构造，检查每条结构断言，并验证最终的 20 色强边染色 | 7/9 通过；另 2 个是测试围长太小时贪心选不出 D（LARGE_GIRTH 第 5 节，[exp18.log](exp18.log)） |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |
 
 ## 数据与日志

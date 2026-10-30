@@ -33,8 +33,8 @@
     },
     {
       "path": "docs/HANDOFF_2026-10-30.md",
-      "bytes": 22117,
-      "sha256": "befbea1b581f0268c5f29e69724679831c5cc9d5587a725d6b6377310c402d9b"
+      "bytes": 25556,
+      "sha256": "0f1f38f228b06ef1efb831267397b7e7d1268f752ba574b51bc98c95fc994a14"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -1722,6 +1722,16 @@
       "sha256": "822a5df2038e779472aa37469840bae0a90a28e87909018f49ce32740319ae93"
     },
     {
+      "path": "research-2026-10-30/exp18.log",
+      "bytes": 1566,
+      "sha256": "3e67f0eb9eb42074e6352fd8f937e595ede27f7471422e4389e1de1de00b104f"
+    },
+    {
+      "path": "research-2026-10-30/exp18_large_girth.py",
+      "bytes": 10884,
+      "sha256": "50b1d319e2a5e1cf835d782fc8e05b8218307f5cdf142f9b466b29049df394df"
+    },
+    {
       "path": "research-2026-10-30/exp1_factor_chi.py",
       "bytes": 2073,
       "sha256": "c3dcf4beb5c8660b55ba53960dd14f07148e118d74da1a3cd7a42c2161fead3a"
@@ -1870,6 +1880,11 @@
       "path": "research-2026-10-30/hg_n1000_g7_s1.edges",
       "bytes": 15560,
       "sha256": "4725fac47b564b144306e318b82ecfabca860acbdb250610353155be0a7dd3e6"
+    },
+    {
+      "path": "research-2026-10-30/LARGE_GIRTH_zh.md",
+      "bytes": 15150,
+      "sha256": "bf5ab8eeb231ac08cd869641cf2db3ae7bb16a71b724e5d14aaedcc5fd93eec0"
     },
     {
       "path": "research-2026-10-30/logs10/anneal_14.log",
@@ -2498,8 +2513,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 5328,
-      "sha256": "5a93ce9bb0c9340f7c705009d1b4ecb1decd323e9c100519f200cf3cffb5e4b0"
+      "bytes": 5898,
+      "sha256": "6cdf0f496dca76f41e15b42768b6811542117ea59647bf4504022f70bc2cdfc6"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",

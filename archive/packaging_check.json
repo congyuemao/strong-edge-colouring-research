@@ -4,10 +4,10 @@
   "scope": "Archive integrity, format, syntax and local links only; no research scripts executed.",
   "original_research_files": 315,
   "original_research_bytes": 21079978,
-  "manifested_files": 505,
+  "manifested_files": 508,
   "json_files_parsed": 109,
-  "python_files_parsed_without_execution": 127,
-  "local_document_links_checked": 459,
+  "python_files_parsed_without_execution": 128,
+  "local_document_links_checked": 461,
   "non_stdlib_nonlocal_import_names": [
     "networkx",
     "numpy",
