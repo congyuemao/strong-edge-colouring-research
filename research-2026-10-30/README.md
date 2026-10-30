@@ -44,6 +44,8 @@
 | [exp16c_repair.py](exp16c_repair.py) | 列表为空的卡死边能否一步修复 | T = 3–5 中没有出现空列表的边 |
 | [exp16d_leftover.py](exp16d_leftover.py) | 剩余分支的精确列表染色 | T = 3–6 全部可染 |
 | [exp18_large_girth.py](exp18_large_girth.py) | 逐步执行大围长定理 B 的构造，检查每条结构断言，并验证最终的 20 色强边染色 | 7/9 通过；另 2 个是测试围长太小时贪心选不出 D（LARGE_GIRTH 第 5 节，[exp18.log](exp18.log)） |
+| [exp19_property_m.py](exp19_property_m.py) | 性质 M（至多 4 或 5 个匹配，Σχ(H(M_i)) ≤ 20）：模式 small 检验 n ≤ 13 的全部图，exact 用枚举求精确预算，slack 测中等围长的余量；tight 模式已弃用（不可满足的证明太慢） | 12672 个图全部满足；恰好需要 20 的有 3 个（LARGE_GIRTH 第 8 节，[small](exp19_small.log)、[exact](exp19_exact.log)、[slack](exp19_slack.log)） |
+| [exp19b_families.py](exp19b_families.py) | 性质 M 在 C_k[2]、C_n(1,2)、C_n(1,3) 上的检验（n ≤ 20） | 全部满足，只有 C5[2] 恰好需要 20（[exp19b.log](exp19b.log)） |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |
 
 ## 数据与日志

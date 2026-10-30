@@ -1,0 +1,7 @@
+# python exp19_property_m.py slack 400 g 2  for g = 5, 6, 7, 8 (280 s limit each; g = 5 produced no output in time)
+{'seed': 0, 'n': 400, 'm': 800, 'girth': 6, 'H(M_i) (maxdeg, chi) for one 4-edge-colouring': [(6, 4), (6, 4), (6, 4), (6, 4)], 'M4 with 16 colours': None}
+{'seed': 1, 'n': 400, 'm': 799, 'girth': 6, 'H(M_i) (maxdeg, chi) for one 4-edge-colouring': [(6, 4), (6, 4), (6, 4), (6, 4)], 'M4 with 16 colours': True}
+{'seed': 0, 'n': 400, 'm': 800, 'girth': 7, 'H(M_i) (maxdeg, chi) for one 4-edge-colouring': [(6, 4), (6, 4), (6, 4), (6, 4)], 'M4 with 16 colours': True}
+{'seed': 1, 'n': 400, 'm': 799, 'girth': 7, 'H(M_i) (maxdeg, chi) for one 4-edge-colouring': [(6, 4), (6, 4), (6, 4), (6, 4)], 'M4 with 16 colours': True}
+{'seed': 0, 'n': 400, 'm': 792, 'girth': 8, 'H(M_i) (maxdeg, chi) for one 4-edge-colouring': [(6, 4), (6, 4), (6, 4), (6, 4)], 'M4 with 16 colours': True}
+{'seed': 1, 'n': 400, 'm': 795, 'girth': 8, 'H(M_i) (maxdeg, chi) for one 4-edge-colouring': [(6, 4), (6, 4), (6, 4), (6, 4)], 'M4 with 16 colours': True}

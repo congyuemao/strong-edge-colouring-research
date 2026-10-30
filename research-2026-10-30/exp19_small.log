@@ -1,0 +1,12 @@
+# python exp19_property_m.py small 13
+5 {'graphs': 1, 'M4': 0, 'class2': 1, 'class1_not_M4': 0, 'M5_after_M4_fail': 1, 'unknown': 0}
+6 {'graphs': 1, 'M4': 1, 'class2': 0, 'class1_not_M4': 0, 'M5_after_M4_fail': 0, 'unknown': 0}
+7 {'graphs': 2, 'M4': 0, 'class2': 2, 'class1_not_M4': 0, 'M5_after_M4_fail': 2, 'unknown': 0}
+8 {'graphs': 6, 'M4': 6, 'class2': 0, 'class1_not_M4': 0, 'M5_after_M4_fail': 0, 'unknown': 0}
+9 {'graphs': 16, 'M4': 0, 'class2': 16, 'class1_not_M4': 0, 'M5_after_M4_fail': 16, 'unknown': 0}
+10 {'graphs': 59, 'M4': 58, 'class2': 1, 'class1_not_M4': 0, 'M5_after_M4_fail': 1, 'unknown': 0}
+11 {'graphs': 265, 'M4': 0, 'class2': 265, 'class1_not_M4': 0, 'M5_after_M4_fail': 265, 'unknown': 0}
+12 {'graphs': 1544, 'M4': 1535, 'class2': 9, 'class1_not_M4': 0, 'M5_after_M4_fail': 9, 'unknown': 0}
+13 {'graphs': 10778, 'M4': 0, 'class2': 10778, 'class1_not_M4': 0, 'M5_after_M4_fail': 10778, 'unknown': 0}
+exceptions: [] (0 total)
+[73s]

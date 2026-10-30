@@ -1,0 +1,33 @@
+# python exp19_property_m.py exact 6,8,10,12   (solver noise lines removed)
+n=6: exact min budget for M4 = 12: 1 graphs
+n=8: exact min budget for M4 = 10: 1 graphs
+n=8: exact min budget for M4 = 12: 1 graphs
+n=8: exact min budget for M4 = 16: 4 graphs
+n=10: exact min budget for M4 = 12: 3 graphs
+n=10: exact min budget for M4 = 13: 8 graphs
+n=10: exact min budget for M4 = 14: 17 graphs
+n=10: exact min budget for M4 = 15: 11 graphs
+n=10: exact min budget for M4 = 16: 9 graphs
+n=10: exact min budget for M4 = 17: 4 graphs
+n=10: exact min budget for M4 = 18: 2 graphs
+n=10: exact min budget for M4 = 19: 2 graphs
+n=10: exact min budget for M4 = 20: 2 graphs
+n=12: exact min budget for M4 = 10: 3 graphs
+n=12: exact min budget for M4 = 11: 22 graphs
+n=12: exact min budget for M4 = 12: 199 graphs
+n=12: exact min budget for M4 = 13: 341 graphs
+n=12: exact min budget for M4 = 14: 515 graphs
+n=12: exact min budget for M4 = 15: 307 graphs
+n=12: exact min budget for M4 = 16: 132 graphs
+n=12: exact min budget for M4 = 17: 11 graphs
+n=12: exact min budget for M4 = 18: 3 graphs
+n=12: exact min budget for M4 = 19: 1 graphs
+n=12: exact min budget for M4 = 20: 1 graphs
+graphs with exact min budget >= 19 (n, index, B, #perfect matchings, chi values):
+   (10, 35, 19, 24, [4, 5])
+   (10, 51, 20, 24, [5])
+   (10, 57, 19, 24, [4, 5])
+   (10, 58, 20, 32, [5])
+   (12, 1528, 19, 48, [4, 5, 6])
+   (12, 1529, 20, 48, [5, 6])
+[11s]
