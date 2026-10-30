@@ -1,0 +1,11 @@
+5 {'graphs': 1, 'R': 0, 'not_R': 1, 'unknown': 0}
+6 {'graphs': 1, 'R': 1, 'not_R': 0, 'unknown': 0}
+7 {'graphs': 2, 'R': 1, 'not_R': 1, 'unknown': 0}
+8 {'graphs': 6, 'R': 6, 'not_R': 0, 'unknown': 0}
+9 {'graphs': 16, 'R': 15, 'not_R': 1, 'unknown': 0}
+10 {'graphs': 59, 'R': 59, 'not_R': 0, 'unknown': 0}
+11 {'graphs': 265, 'R': 265, 'not_R': 0, 'unknown': 0}
+12 {'graphs': 1544, 'R': 1544, 'not_R': 0, 'unknown': 0}
+13 {'graphs': 10778, 'R': 10778, 'not_R': 0, 'unknown': 0}
+graphs without a property-R colouring (n, index, result): [(5, 0, False), (7, 0, False), (9, 15, False)] (3 total)
+slowest instance 0.05s  [7s]

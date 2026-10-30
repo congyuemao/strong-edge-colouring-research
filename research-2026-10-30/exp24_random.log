@@ -1,0 +1,17 @@
+{'seed': 0, 'n': 101, 'm': 202, 'girth': 5, 'deg<4': 0, 'property R': True, 'seconds': 0.0}
+{'seed': 1, 'n': 101, 'm': 201, 'girth': 5, 'deg<4': 2, 'property R': True, 'seconds': 0.0}
+{'seed': 2, 'n': 101, 'm': 202, 'girth': 5, 'deg<4': 0, 'property R': True, 'seconds': 0.0}
+{'seed': 3, 'n': 101, 'm': 202, 'girth': 5, 'deg<4': 0, 'property R': True, 'seconds': 0.0}
+{'seed': 0, 'n': 301, 'm': 601, 'girth': 6, 'deg<4': 1, 'property R': True, 'seconds': 0.2}
+{'seed': 1, 'n': 301, 'm': 602, 'girth': 6, 'deg<4': 0, 'property R': True, 'seconds': 0.2}
+{'seed': 2, 'n': 301, 'm': 601, 'girth': 6, 'deg<4': 2, 'property R': True, 'seconds': 0.2}
+{'seed': 3, 'n': 301, 'm': 602, 'girth': 6, 'deg<4': 0, 'property R': True, 'seconds': 0.2}
+{'seed': 0, 'n': 601, 'm': 1201, 'girth': 7, 'deg<4': 1, 'property R': True, 'seconds': 0.5}
+{'seed': 1, 'n': 601, 'm': 1201, 'girth': 7, 'deg<4': 2, 'property R': True, 'seconds': 0.5}
+{'seed': 2, 'n': 601, 'm': 1201, 'girth': 7, 'deg<4': 2, 'property R': True, 'seconds': 0.5}
+{'seed': 0, 'n': 1001, 'm': 2001, 'girth': 7, 'deg<4': 2, 'property R': True, 'seconds': 2.2}
+{'seed': 1, 'n': 1001, 'm': 2001, 'girth': 7, 'deg<4': 1, 'property R': True, 'seconds': 2.4}
+{'seed': 0, 'n': 1001, 'm': 2001, 'girth': 8, 'deg<4': 2, 'property R': True, 'seconds': 1.8}
+{'seed': 1, 'n': 1001, 'm': 2001, 'girth': 8, 'deg<4': 2, 'property R': True, 'seconds': 4.0}
+{'seed': 0, 'n': 2001, 'm': 4001, 'girth': 8, 'deg<4': 2, 'property R': True, 'seconds': 6.3}
+{'seed': 1, 'n': 2001, 'm': 4001, 'girth': 8, 'deg<4': 2, 'property R': True, 'seconds': 10.7}

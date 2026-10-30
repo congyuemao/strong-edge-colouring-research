@@ -8,7 +8,7 @@
   - exp15_phi2first.py 按 Codex 审查做了修正：原来的 `free_lit` 方向错误，使先清后移的约束失效。
   - 第 13 节按第二条 Codex 审查做了修正：slack 判据只是贪心收尾的充分条件，原文误写成等价（第 13.6 节）。
   - exp16_nibble.py 只改了注释，并把 `fail` 表达式抽成函数 `certificate_fails`，输出不变；新增回归测试 test_exp16_criteria.py。
-- **增补（大围长）：** 新增 LARGE_GIRTH_zh.md、exp18_large_girth.py 和 exp18.log。
+- **增补（大围长）：** 新增 LARGE_GIRTH_zh.md、exp18_large_girth.py 和 exp18.log。其后又陆续新增 exp19–exp24 及其日志（性质 M、P、R），见下表。
 
 - [LARGE_GIRTH_zh.md](LARGE_GIRTH_zh.md)：**大围长情形已解决。** 用匹配收缩加 Kostochka 定理证明：第一类图围长 ≥ 41、一般图围长 ≥ 39360 时，χ'_s ≤ 20。
 - [ROUTE_Q_zh.md](ROUTE_Q_zh.md)：主推导，第 1–12 节。
@@ -51,6 +51,7 @@
 | [exp21_property_p.py](exp21_property_p.py) | 性质 P（5 边染色中，每条颜色为 c 的边至多 5 个外邻点被颜色 c 覆盖；配合定理 B'，围长 ≥ 69 ⇒ 20 色）：small 和 girth 模式检验小图，random 模式检验随机图 | 165 个小图失败，全部围长 ≤ 4；围长 5–7 的 20 个随机图全部满足（LARGE_GIRTH 第 9 节，[small](exp21_small.log)、[girth](exp21_girth.log)、[random](exp21_random.log)） |
 | [exp22_kempe.py](exp22_kempe.py) | 性质 P 的 Kempe 局部搜索：单步或两步下降、平移步；ball 模式重染半径 1–4 的球；sanity 模式检验重染求解器 | 下降总会卡住；卡住的边在半径 ≤ 4 内被证明不可修复（LARGE_GIRTH 第 9.6 节，[exp22.log](exp22.log)） |
 | [exp23_structured.py](exp23_structured.py) | 结构化构造（F₁ 用 {1,2,5}，F₂ 用 {3,4,5}）：V1 见证点不限，V2 只沿自身所在的圈；families 模式拆开各约束族 | V1 全部可满足，V2 全部不可满足（计数引理：要求所有圈长都是 5 的倍数）（[exp23.log](exp23.log)） |
+| [exp24_property_r.py](exp24_property_r.py) | 性质 R（一个色类是诱导匹配、一个色类 Δ(H(K)) ≤ 5，其余不限；定理 B 构造的就是它，围长 ≥ 69 ⇒ 20 色）：small、random、compare 模式检验性质 R（compare 与性质 P 对照）；fixedD、dead、resample、core 模式在奇圈最密的图上检验定理 B 流程；tree 模式在 4 正则树的球上检验 | 小图 12669/12672 满足（P 为 12507）；随机第二类图全部满足；缺陷集稠密时定理 B 流程因"死边"失败；树上距离 5 时 40/40 成功、距离 4 有反例（LARGE_GIRTH 第 10 节，[small](exp24_small.log)、[random](exp24_random.log)、[compare](exp24_compare.log)、[dense](exp24_dense.log)、[tree](exp24_tree.log)） |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |
 
 ## 数据与日志

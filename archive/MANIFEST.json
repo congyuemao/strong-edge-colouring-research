@@ -33,8 +33,8 @@
     },
     {
       "path": "docs/HANDOFF_2026-10-30.md",
-      "bytes": 28690,
-      "sha256": "63114833e87d72c92f4d96243a0ba09b9c1b49511e48df5eb4381e4b4fefa8f8"
+      "bytes": 30058,
+      "sha256": "e6ed504d6e5ea059c44d4adcb8c360ccfc70b8ef1cd1dccf6ef3b9d25c77f707"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -1837,6 +1837,36 @@
       "sha256": "0fd414f90dd102f971413f76ca3d221d15761dffcabd33c417aa9a82f86f56cd"
     },
     {
+      "path": "research-2026-10-30/exp24_compare.log",
+      "bytes": 755,
+      "sha256": "16222a4ac08aa39bf52b7cfc7b29fb28aabdd1134c7e4fec6ea820e186cc3841"
+    },
+    {
+      "path": "research-2026-10-30/exp24_dense.log",
+      "bytes": 7137,
+      "sha256": "a59267e183394082c58589363e6e39c429c7be1ae28293a335660b25665db5c5"
+    },
+    {
+      "path": "research-2026-10-30/exp24_property_r.py",
+      "bytes": 30191,
+      "sha256": "578eea3baa1f264ba3a0e4bdf9eed588a605df4d9c16834e939b690924cacb05"
+    },
+    {
+      "path": "research-2026-10-30/exp24_random.log",
+      "bytes": 1580,
+      "sha256": "32445a66d685b20e260098e3fe75549c2be842bf768b1ad9bbd0bf2d6eeebf26"
+    },
+    {
+      "path": "research-2026-10-30/exp24_small.log",
+      "bytes": 620,
+      "sha256": "550e49f4277518e56a5b4edc3d6507e9d9400fe5e8b124827bd796ff9eba7e7d"
+    },
+    {
+      "path": "research-2026-10-30/exp24_tree.log",
+      "bytes": 23168,
+      "sha256": "556bbc89989a52e47e4e57c7eada7fd3b02e04361343ed1b5b021eb9dba09c88"
+    },
+    {
       "path": "research-2026-10-30/exp2_c11.py",
       "bytes": 1347,
       "sha256": "28a034ff112b05a0b8d2f266224a3adee21d0c5a8f2ae319c020a5a3ac1641fe"
@@ -1978,8 +2008,8 @@
     },
     {
       "path": "research-2026-10-30/LARGE_GIRTH_zh.md",
-      "bytes": 37091,
-      "sha256": "f73bee8a85712fd4edd32e81c379ddc1ef76a7834e9f581a88ef745009b23e4c"
+      "bytes": 49440,
+      "sha256": "1bc0c40594d4d45eac52c79eb625a4011f55643b3f27ba6fa486244264c37931"
     },
     {
       "path": "research-2026-10-30/logs10/anneal_14.log",
@@ -2608,8 +2638,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 8167,
-      "sha256": "0e2f0e3e3909a214ca4d30ed63e93b6630902e605ada002ede3345420bc06dfc"
+      "bytes": 9009,
+      "sha256": "26ccb4b74ef671adebacf055e7bc08157a99aaec4d291f30d16994bb1926eea2"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",

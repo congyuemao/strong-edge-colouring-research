@@ -1,0 +1,7 @@
+{'L': 5, 'n': 205, 'girth': 5, 'property P': True, 'P seconds': 0.3, 'property R': True, 'R seconds': 0.1}
+{'L': 5, 'n': 505, 'girth': 5, 'property P': True, 'P seconds': 0.6, 'property R': True, 'R seconds': 0.4}
+{'L': 5, 'n': 1005, 'girth': 5, 'property P': True, 'P seconds': 3.2, 'property R': True, 'R seconds': 1.1}
+{'L': 7, 'n': 301, 'girth': 5, 'property P': True, 'P seconds': 0.4, 'property R': True, 'R seconds': 0.2}
+{'L': 7, 'n': 707, 'girth': 6, 'property P': True, 'P seconds': 10.6, 'property R': True, 'R seconds': 0.6}
+{'L': 7, 'n': 1001, 'girth': 6, 'property P': True, 'P seconds': 13.2, 'property R': True, 'R seconds': 0.8}
+{'L': 7, 'n': 3003, 'girth': 7, 'property P': True, 'P seconds': 88.0, 'property R': True, 'R seconds': 9.7}

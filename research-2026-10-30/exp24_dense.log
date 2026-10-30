@@ -1,0 +1,43 @@
+# fixedD: Theorem B with D only pairwise at distance >= sep (random graphs: few odd cycles)
+{'seed': 0, 'n': 2001, 'girth': 8, 'sep': 2, 'strategy': 'random', 'alt': 'fixed', 'odd cycles': 3, 'D in F1': 3, 'D-pairs at distance 2..7': {5: 1, 6: 2}, 'I exists': True, 'L': 0, 'seconds': 0.3}
+{'seed': 1, 'n': 2001, 'girth': 8, 'sep': 2, 'strategy': 'random', 'alt': 'fixed', 'odd cycles': 7, 'D in F1': 4, 'D-pairs at distance 2..7': {2: 1, 4: 2, 5: 7, 6: 8, 7: 3}, 'I exists': True, 'L': 0, 'seconds': 0.2}
+{'seed': 2, 'n': 2001, 'girth': 8, 'sep': 2, 'strategy': 'random', 'alt': 'fixed', 'odd cycles': 4, 'D in F1': 1, 'D-pairs at distance 2..7': {4: 1, 5: 2, 6: 3}, 'I exists': True, 'L': 0, 'seconds': 0.2}
+{'seed': 0, 'n': 2001, 'girth': 8, 'sep': 2, 'strategy': 'cluster', 'alt': 'fixed', 'odd cycles': 3, 'D in F1': 3, 'D-pairs at distance 2..7': {2: 1, 4: 1, 5: 1}, 'I exists': True, 'L': 0, 'seconds': 0.3}
+{'seed': 1, 'n': 2001, 'girth': 8, 'sep': 2, 'strategy': 'cluster', 'alt': 'fixed', 'odd cycles': 7, 'D in F1': 4, 'D-pairs at distance 2..7': {2: 4, 3: 1, 4: 2, 5: 9, 6: 4, 7: 1}, 'I exists': True, 'L': 0, 'seconds': 0.2}
+{'seed': 2, 'n': 2001, 'girth': 8, 'sep': 2, 'strategy': 'cluster', 'alt': 'fixed', 'odd cycles': 4, 'D in F1': 1, 'D-pairs at distance 2..7': {2: 1, 4: 3, 6: 1, 7: 1}, 'I exists': True, 'L': 0, 'seconds': 0.2}
+# fixedD on graphs whose factor cycles are all odd L-cycles
+{'seed': 0, 'n': 6300, 'girth': 7, 'sep': 2, 'strategy': 'random', 'alt': 'fixed', 'odd cycles': 600, 'D in F1': 300, 'D-pairs at distance 2..7': {2: 916, 3: 2336, 4: 6578, 5: 18862, 6: 44807, 7: 69501}, 'I exists': False, 'L': 21, 'seconds': 3.9}
+{'seed': 0, 'n': 6300, 'girth': 7, 'sep': 2, 'strategy': 'random', 'alt': 'free', 'odd cycles': 600, 'D in F1': 300, 'D-pairs at distance 2..7': {2: 916, 3: 2336, 4: 6578, 5: 18862, 6: 44807, 7: 69501}, 'I exists': False, 'L': 21, 'seconds': 4.0}
+{'seed': 0, 'n': 13500, 'girth': 7, 'sep': 2, 'strategy': 'random', 'alt': 'fixed', 'odd cycles': 600, 'D in F1': 300, 'D-pairs at distance 2..7': {2: 368, 3: 1116, 4: 3234, 5: 9236, 6: 24930, 7: 54546}, 'I exists': False, 'L': 45, 'seconds': 14.9}
+{'seed': 1, 'n': 13500, 'girth': 7, 'sep': 2, 'strategy': 'random', 'alt': 'fixed', 'odd cycles': 600, 'D in F1': 300, 'D-pairs at distance 2..7': {2: 406, 3: 1068, 4: 3159, 5: 9026, 6: 25097, 7: 54801}, 'I exists': False, 'L': 45, 'seconds': 14.8}
+{'seed': 0, 'n': 13500, 'girth': 7, 'sep': 2, 'strategy': 'cluster', 'alt': 'fixed', 'odd cycles': 600, 'D in F1': 300, 'D-pairs at distance 2..7': {2: 791, 3: 916, 4: 3280, 5: 9520, 6: 24588, 7: 55260}, 'I exists': False, 'L': 45, 'seconds': 14.5}
+{'seed': 1, 'n': 13500, 'girth': 7, 'sep': 2, 'strategy': 'cluster', 'alt': 'fixed', 'odd cycles': 600, 'D in F1': 300, 'D-pairs at distance 2..7': {2: 825, 3: 1012, 4: 3203, 5: 9832, 6: 24505, 7: 54675}, 'I exists': False, 'L': 45, 'seconds': 14.5}
+{'seed': 0, 'n': 13500, 'girth': 7, 'sep': 3, 'strategy': 'random', 'alt': 'fixed', 'odd cycles': 600, 'D in F1': 300, 'D-pairs at distance 2..7': {3: 1226, 4: 3438, 5: 9376, 6: 24783, 7: 54557}, 'I exists': False, 'L': 45, 'seconds': 14.6}
+{'seed': 1, 'fail': 'no admissible D-edge', 'L': 45, 'seconds': 13.8}
+{'seed': 0, 'n': 13500, 'girth': 7, 'sep': 3, 'strategy': 'cluster', 'alt': 'fixed', 'odd cycles': 600, 'D in F1': 300, 'D-pairs at distance 2..7': {3: 1359, 4: 3413, 5: 9095, 6: 24792, 7: 55029}, 'I exists': False, 'L': 45, 'seconds': 14.8}
+{'seed': 1, 'fail': 'no admissible D-edge', 'L': 45, 'seconds': 13.9}
+# dead M4-edges and the D-edges causing them
+n=13500 L=45 sep=2 girth=7 |D|=600 dead M4-edges=52; D-edges involved per dead edge: {4: 11, 5: 14, 6: 11, 7: 10, 8: 5, 9: 1}
+   dead (3932, 8097) D-edges [((1074, 8683), 'F2'), ((5591, 5976), 'F2'), ((3931, 3932), 'F1'), ((5504, 5505), 'F1'), ((11606, 11607), 'F1'), ((7371, 7372), 'F1'), ((854, 4581), 'F2'), ((6157, 6158), 'F1')] pairwise distances [6, 2, 6, 6, 6, 4, 5, 4, 6, 6, 6, 6, 7, 4, 4, 4, 2, 2, 2, 6, 6, 7, 6, 4, 7, 6, 7, 5]
+   dead (8114, 8671) D-edges [((4042, 10377), 'F2'), ((1036, 12774), 'F2'), ((3634, 6317), 'F2'), ((11167, 11392), 'F2'), ((8671, 8672), 'F1')] pairwise distances [6, 7, 5, 3, 6, 5, 4, 5, 4, 3]
+   dead (4107, 9084) D-edges [((1149, 12490), 'F2'), ((10563, 10564), 'F1'), ((9083, 9084), 'F1'), ((12441, 12442), 'F1')] pairwise distances [5, 4, 6, 3, 5, 4]
+   dead (10437, 11702) D-edges [((11702, 11703), 'F1'), ((1418, 6580), 'F2'), ((898, 10439), 'F2'), ((2667, 12920), 'F2')] pairwise distances [4, 3, 4, 5, 6, 5]
+n=13500 L=45 sep=3 girth=7 |D|=600 dead M4-edges=71; D-edges involved per dead edge: {4: 29, 5: 16, 6: 16, 7: 8, 8: 2}
+   dead (13, 604) D-edges [((1440, 1484), 'F1'), ((5591, 9636), 'F2'), ((7937, 7938), 'F1'), ((603, 604), 'F1'), ((10, 11), 'F1')] pairwise distances [3, 5, 3, 4, 6, 4, 5, 4, 5, 3]
+   dead (1089, 6602) D-edges [((7891, 12649), 'F2'), ((2498, 11199), 'F2'), ((13217, 13218), 'F1'), ((3825, 4813), 'F2'), ((1090, 7714), 'F2'), ((5508, 5509), 'F1')] pairwise distances [5, 6, 6, 5, 6, 5, 5, 4, 5, 6, 5, 6, 3, 4, 3]
+   dead (2464, 9812) D-edges [((11507, 11508), 'F1'), ((507, 10558), 'F2'), ((9811, 9812), 'F1'), ((3270, 8407), 'F2')] pairwise distances [4, 3, 5, 3, 5, 4]
+   dead (656, 11702) D-edges [((11702, 11703), 'F1'), ((9811, 9812), 'F1'), ((658, 659), 'F1'), ((13099, 13100), 'F1')] pairwise distances [4, 3, 3, 5, 5, 4]
+# resampling D away from dead configurations
+{'seed': 0, 'n': 13500, 'L': 45, 'girth': 7, 'sep': 2, '|D|': 600, 'dead edges initially': 55, 'resampling rounds': 400, 'dead at end': 18, 'I exists': None, 'seconds': 28.8}
+{'seed': 1, 'n': 13500, 'L': 45, 'girth': 7, 'sep': 2, '|D|': 600, 'dead edges initially': 53, 'resampling rounds': 400, 'dead at end': 21, 'I exists': None, 'seconds': 28.2}
+{'seed': 0, 'n': 12000, 'L': 75, 'girth': 7, 'sep': 2, '|D|': 320, 'dead edges initially': 9, 'resampling rounds': 14, 'dead at end': 0, 'I exists': True, 'seconds': 12.5}
+{'seed': 1, 'n': 12000, 'L': 75, 'girth': 7, 'sep': 2, '|D|': 320, 'dead edges initially': 2, 'resampling rounds': 2, 'dead at end': 0, 'I exists': False, 'seconds': 12.0}
+{'seed': 0, 'n': 15840, 'L': 99, 'girth': 7, 'sep': 2, '|D|': 320, 'dead edges initially': 3, 'resampling rounds': 3, 'dead at end': 0, 'I exists': True, 'seconds': 19.3}
+{'seed': 1, 'n': 15840, 'L': 99, 'girth': 7, 'sep': 2, '|D|': 320, 'dead edges initially': 2, 'resampling rounds': 3, 'dead at end': 0, 'I exists': True, 'seconds': 19.1}
+# minimal UNSAT core when no edge is dead
+{'seed': 1, 'L': 75, 'sep': 2, 'I exists': False, 'minimal core: M4-edges whose domination constraints clash': [(2806, 10059), (9215, 11622)], 'their pairwise distances': [3], 'D-edges within distance 1 of them or their H4-neighbours': 7, 'distance of each core edge to those D-edges': [[0, 2, 6, 4, 2, 6, 3], [4, 6, 3, 0, 5, 3, 6]]}
+# sep 4, 5: greedy choice of D
+{'seed': 0, 'fail': 'no admissible D-edge', 'L': 45, 'seconds': 13.5}
+{'seed': 1, 'fail': 'no admissible D-edge', 'L': 45, 'seconds': 13.4}
+{'seed': 0, 'fail': 'no admissible D-edge', 'L': 45, 'seconds': 13.4}
+{'seed': 1, 'fail': 'no admissible D-edge', 'L': 45, 'seconds': 13.3}
