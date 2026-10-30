@@ -38,8 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 65402,
-      "sha256": "4b63d95b3eeeed1f529f85724fa3c65978f004e90aa93004a8f177b531aa5494"
+      "bytes": 66147,
+      "sha256": "c6a4f915b99eed6266ed8c4381c64464a0ee2b9c4f6164b8988e53a18803a13e"
+    },
+    {
+      "path": "docs/NEW_DIRECTIONS_zh.md",
+      "bytes": 17383,
+      "sha256": "cc0a11b4786573137de3acb55899049725db6b639080ed2d9dfc91c25a73ed5f"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -63,8 +68,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6440,
-      "sha256": "5d2a5bf6790675f242454986b9a4a210c69714b5e6a3391be3bb13c6f0a0cec2"
+      "bytes": 6555,
+      "sha256": "5844609c3555745df51230274e54c1132a37b14f9615fe7d473ea4061060d5d7"
     },
     {
       "path": "research/all_blocked_circles_joint_degree.md",
