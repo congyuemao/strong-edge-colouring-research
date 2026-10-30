@@ -40,10 +40,10 @@
 | [exp15_phi2first.py](exp15_phi2first.py)、[exp15b_witness.py](exp15b_witness.py) | 势函数换序 (Φ₂, Φ₁)，绕行，先清后移 | 修正后周期 3 仍 SAT（ROUTE_Q 第 12、12.7 节） |
 | [exp16_nibble.py](exp16_nibble.py) | M1：多轮 nibble 加贪心收尾；判据失败概率（充分判据 \|L\| ≤ U 不成立）与局部引理阈值的比较 | ROUTE_Q 第 13 节 |
 | [exp16b_decay.py](exp16b_decay.py) | 判据失败概率随轮数的衰减（每个 T 取 6×10⁶ 个样本） | 每轮约 ×7–40，而依赖度每轮 ×6561；只说明这一判据下局部引理闭合不了 |
-| [test_exp16_criteria.py](test_exp16_criteria.py) | 回归测试：区分判据失败、某种贪心策略失败、剩余部分确实不可染，含 Codex 反例 | 5/5 通过（ROUTE_Q 第 13.6 节） |
+| [test_exp16_criteria.py](test_exp16_criteria.py) | 回归测试：区分判据失败、`greedy_finish` 失败、剩余部分确实不可染，含 Codex 反例；并检验"存在成功顺序"与"可染"等价 | 6/6 通过（ROUTE_Q 第 13.6 节） |
 | [exp16c_repair.py](exp16c_repair.py) | 列表为空的卡死边能否一步修复 | T = 3–5 中没有出现空列表的边 |
 | [exp16d_leftover.py](exp16d_leftover.py) | 剩余分支的精确列表染色 | T = 3–6 全部可染 |
-| [exp18_large_girth.py](exp18_large_girth.py) | 逐步执行大围长定理 B 的构造，检查每条结构断言，并验证最终的 20 色强边染色 | 7/9 通过；另 2 个是测试围长太小时贪心选不出 D（LARGE_GIRTH 第 5 节，[exp18.log](exp18.log)） |
+| [exp18_large_girth.py](exp18_large_girth.py) | 逐步执行大围长定理 B 的构造，检查每条结构断言，并验证最终的 20 色强边染色 | 10/12 通过；另 2 个是测试围长太小时贪心选不出 D。按 Codex 审查修正了哑点弧未删的错误（LARGE_GIRTH 第 5 节，[exp18.log](exp18.log)） |
 | [exp19_property_m.py](exp19_property_m.py) | 性质 M（至多 4 或 5 个匹配，Σχ(H(M_i)) ≤ 20）：模式 small 检验 n ≤ 13 的全部图，exact 用枚举求精确预算，slack 测中等围长的余量；tight 模式已弃用（不可满足的证明太慢） | 12672 个图全部满足；恰好需要 20 的有 3 个（LARGE_GIRTH 第 8 节，[small](exp19_small.log)、[exact](exp19_exact.log)、[slack](exp19_slack.log)） |
 | [exp19b_families.py](exp19b_families.py) | 性质 M 在 C_k[2]、C_n(1,2)、C_n(1,3) 上的检验（n ≤ 20） | 全部满足，只有 C5[2] 恰好需要 20（[exp19b.log](exp19b.log)） |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |

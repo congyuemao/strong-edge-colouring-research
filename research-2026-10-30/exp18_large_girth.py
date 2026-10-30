@@ -102,6 +102,9 @@ def split_two(adj):
             e = ladj[x][ptr[x]]; used[e] = True
             a, b = ends[e]; y = b if a == x else a
             arcs.append((e, x, y)); stack.append((y, e))
+    # drop the dummy vertex's arcs first (corrected after Codex review: X can have in/out-degree
+    # >= 3, which would break the max-degree-2 bipartite graph below)
+    arcs = [(e, x, y) for e, x, y in arcs if e < real]
     # bipartite graph out(x) -- in(y); max degree 2, so paths and even cycles: alternate
     out_arcs = defaultdict(list); in_arcs = defaultdict(list)
     for e, x, y in arcs:

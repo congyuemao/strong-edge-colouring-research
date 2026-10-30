@@ -10,3 +10,7 @@
 {'seed': 1, 'n': 3001, 'm': 6001, 'deg4': 3000, 'girth': 6, 'odd_cycles': 5, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 6}, 'N_D': 30, 'J': 18, 'I': 415, 'maxdeg_H[M4-I]': 5, 'colours': 20, 'ok': True}
 {'seed': 2, 'n': 3001, 'm': 6002, 'deg4': 3001, 'girth': 6, 'odd_cycles': 4, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 6}, 'N_D': 24, 'J': 12, 'I': 411, 'maxdeg_H[M4-I]': 5, 'colours': 20, 'ok': True}
 {'seed': 3, 'n': 3001, 'm': 6001, 'deg4': 2999, 'girth': 6, 'odd_cycles': 4, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 6}, 'N_D': 24, 'J': 12, 'I': 413, 'maxdeg_H[M4-I]': 5, 'colours': 20, 'ok': True}
+# python exp18_large_girth.py 100 8 3 3   (added after the Codex dummy-edge fix: about half the vertices have odd degree)
+{'seed': 0, 'n': 100, 'm': 165, 'deg4': 39, 'girth': 8, 'odd_cycles': 0, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 5}, 'N_D': 0, 'J': 0, 'I': 12, 'maxdeg_H[M4-I]': 3, 'colours': 20, 'ok': True}
+{'seed': 1, 'n': 100, 'm': 163, 'deg4': 44, 'girth': 8, 'odd_cycles': 0, 'maxdeg_H': {1: 6, 2: 6, 3: 6, 4: 5}, 'N_D': 0, 'J': 0, 'I': 12, 'maxdeg_H[M4-I]': 4, 'colours': 20, 'ok': True}
+{'seed': 2, 'n': 100, 'm': 164, 'deg4': 42, 'girth': 8, 'odd_cycles': 0, 'maxdeg_H': {1: 6, 2: 5, 3: 6, 4: 5}, 'N_D': 0, 'J': 0, 'I': 12, 'maxdeg_H[M4-I]': 3, 'colours': 20, 'ok': True}

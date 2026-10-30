@@ -2,11 +2,14 @@
 
 Three notions about the uncoloured residual of the nibble must not be confused:
   (1) the slack certificate fails:  some uncoloured e has |L(e)| <= u(e)  (exp16 "fail");
-  (2) a particular greedy strategy fails:  greedy_finish returns False;
+  (2) the fixed greedy strategy fails:  greedy_finish returns False;
   (3) the residual is uncolourable:  no colouring of the uncoloured edges from their lists.
 Only the one-way implications hold:
   certificate holds  =>  every greedy order succeeds  =>  greedy_finish succeeds  =>  colourable.
 The cases below show that each converse fails, starting with the Codex counterexample.
+By contrast, "SOME first-fit order succeeds" is equivalent to colourability (third Codex review):
+process the edges of a valid colouring c in nondecreasing order of c; each edge e gets a colour
+<= c(e), so c(e) is never blocked.  Only the fixed strategy greedy_finish is strictly stronger.
 
 Run from this directory:  python test_exp16_criteria.py   (pytest also collects it).
 """
@@ -101,6 +104,14 @@ def test_truly_uncolourable():
                  "some_order_ok": False, "colourable": False}, r
 
 
+def test_greedy_finish_succeeds_but_not_every_order():
+    """Triangle with lists {0,2}, {0,2}, {0,1}: greedy_finish starts with edge 0 and succeeds, but
+    the order 2, 0, 1 gives edge 2 colour 0 and then edges 0 and 1 both need colour 2."""
+    r = classify(3, [{0, 2}, {0, 2}, {0, 1}], [(0, 1), (0, 2), (1, 2)])
+    assert r == {"certificate_fails": True, "greedy_finish_ok": True, "all_orders_ok": False,
+                 "some_order_ok": True, "colourable": True}, r
+
+
 def test_certificate_holds_every_order_succeeds():
     """Lists larger than the number of uncoloured conflicts: the certificate holds."""
     r = classify(3, [{0, 1}, {1, 2}], [(0, 1)])
@@ -109,9 +120,11 @@ def test_certificate_holds_every_order_succeeds():
 
 
 def test_random_implications_and_strictness(trials=3000, seed=20261030):
-    """On random small residuals the forward implications always hold, and each converse fails."""
+    """On random small residuals the forward implications always hold, each converse fails, and
+    'some order succeeds' coincides with colourability."""
     rng = random.Random(seed)
-    strict = {"cert_fails_but_all_orders_ok": 0, "greedy_fails_but_colourable": 0}
+    strict = {"cert_fails_but_all_orders_ok": 0, "greedy_ok_but_not_all_orders": 0,
+              "greedy_fails_but_colourable": 0}
     for _ in range(trials):
         m = rng.randint(2, 6); k = rng.randint(1, 4)
         conflicts = [(a, b) for a in range(m) for b in range(a + 1, m) if rng.random() < 0.5]
@@ -123,7 +136,9 @@ def test_random_implications_and_strictness(trials=3000, seed=20261030):
             assert r["colourable"], (lists, conflicts, r)
         if r["all_orders_ok"]:
             assert r["greedy_finish_ok"], (lists, conflicts, r)
+        assert r["some_order_ok"] == r["colourable"], (lists, conflicts, r)
         strict["cert_fails_but_all_orders_ok"] += r["certificate_fails"] and r["all_orders_ok"]
+        strict["greedy_ok_but_not_all_orders"] += r["greedy_finish_ok"] and not r["all_orders_ok"]
         strict["greedy_fails_but_colourable"] += (not r["greedy_finish_ok"]) and r["colourable"]
     assert all(v > 0 for v in strict.values()), strict
     return strict

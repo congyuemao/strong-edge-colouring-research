@@ -33,8 +33,8 @@
     },
     {
       "path": "docs/HANDOFF_2026-10-30.md",
-      "bytes": 26271,
-      "sha256": "92fffa0a7debc8b12ce095be4efa7d70d1b37b19b66862dcb74ae9b5d819f8ed"
+      "bytes": 26412,
+      "sha256": "ea15034e5054924fc360d57d87769c979b9a35fa03252b34354794db2dd5c6b3"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -1723,13 +1723,13 @@
     },
     {
       "path": "research-2026-10-30/exp18.log",
-      "bytes": 1566,
-      "sha256": "3e67f0eb9eb42074e6352fd8f937e595ede27f7471422e4389e1de1de00b104f"
+      "bytes": 2246,
+      "sha256": "3a4f97e937c26fe0418252329663523e42977d9b408f21a8be7399f1e74d109a"
     },
     {
       "path": "research-2026-10-30/exp18_large_girth.py",
-      "bytes": 10884,
-      "sha256": "50b1d319e2a5e1cf835d782fc8e05b8218307f5cdf142f9b466b29049df394df"
+      "bytes": 11106,
+      "sha256": "0bcb70146653dc47c9f2e0856e0e1fe24bc996bdabdcadef791c801aaf5075c9"
     },
     {
       "path": "research-2026-10-30/exp19_exact.log",
@@ -1913,8 +1913,8 @@
     },
     {
       "path": "research-2026-10-30/LARGE_GIRTH_zh.md",
-      "bytes": 20348,
-      "sha256": "7b2555d2840bf485558c3d547c65cd31a1556620a774560fd1a1aa6aa99623b3"
+      "bytes": 20883,
+      "sha256": "3f57dd8dfffe4dc8a9f7c3bd048f00a5c7f620d0aacb105f2a2aef653aa799fe"
     },
     {
       "path": "research-2026-10-30/logs10/anneal_14.log",
@@ -2543,8 +2543,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 6535,
-      "sha256": "c4d21c6abb78e328d537740c7bf0e3191e4d6ae15059250a3b487eab9c8cbed0"
+      "bytes": 6636,
+      "sha256": "7fb8c93b5272a846327da873c5fe660e14c428946a78e4ecd9db9cb8ed124793"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
@@ -2553,8 +2553,8 @@
     },
     {
       "path": "research-2026-10-30/ROUTE_Q_zh.md",
-      "bytes": 62577,
-      "sha256": "a50c0d6a684bd7ec4fe5d137364be064f6680aeea531636d1f0ea4e6333c6e02"
+      "bytes": 63642,
+      "sha256": "b5e1cc200be1d187130a427ca3aa1c51827163d770bbfb3630e13933a0462779"
     },
     {
       "path": "research-2026-10-30/run9.sh",
@@ -2568,8 +2568,8 @@
     },
     {
       "path": "research-2026-10-30/test_exp16_criteria.py",
-      "bytes": 6037,
-      "sha256": "74625bad15393985521c79db5da2dec3d2e88242608ebf7819e94e8e0ef25196"
+      "bytes": 7079,
+      "sha256": "7c7a9f21702a38a8e69976ea79855d2ed77926ee9131113d991c19e867771f59"
     },
     {
       "path": "tools/package_archive.py",
