@@ -48,6 +48,7 @@
 | [exp19b_families.py](exp19b_families.py) | 性质 M 在 C_k[2]、C_n(1,2)、C_n(1,3) 上的检验（n ≤ 20） | 全部满足，只有 C5[2] 恰好需要 20（[exp19b.log](exp19b.log)） |
 | [exp20_search.py](exp20_search.py) | n = 14–20 的爬山：最大化 4 匹配形式的精确预算 B*（遍历全部 1-因子分解） | 48 次，约 144 万步，B* ≤ 20，没有反例（LARGE_GIRTH 第 8.1 节，[exp20.log](exp20.log)、[exp20b.log](exp20b.log)） |
 | [exp20c_glue.py](exp20c_glue.py) | 把紧图两两沿 2 边割粘接，再求 B* | 754 个图（n = 20–28）全部 ≤ 20（[exp20c.log](exp20c.log)） |
+| [exp21_property_p.py](exp21_property_p.py) | 性质 P（5 边染色中，每条颜色为 c 的边至多 5 个外邻点被颜色 c 覆盖；配合定理 B'，围长 ≥ 69 ⇒ 20 色）：small 和 girth 模式检验小图，random 模式检验随机图 | 165 个小图失败，全部围长 ≤ 4；围长 5–7 的 20 个随机图全部满足（LARGE_GIRTH 第 9 节，[small](exp21_small.log)、[girth](exp21_girth.log)、[random](exp21_random.log)） |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |
 
 ## 数据与日志

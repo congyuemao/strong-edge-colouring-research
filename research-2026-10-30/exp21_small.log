@@ -1,0 +1,12 @@
+# python exp21_property_p.py small 13   (solver noise lines removed)
+5 {'graphs': 1, 'P': 1, 'not_P': 0, 'unknown': 0}
+6 {'graphs': 1, 'P': 1, 'not_P': 0, 'unknown': 0}
+7 {'graphs': 2, 'P': 2, 'not_P': 0, 'unknown': 0}
+8 {'graphs': 6, 'P': 5, 'not_P': 1, 'unknown': 0}
+9 {'graphs': 16, 'P': 16, 'not_P': 0, 'unknown': 0}
+10 {'graphs': 59, 'P': 59, 'not_P': 0, 'unknown': 0}
+11 {'graphs': 265, 'P': 263, 'not_P': 2, 'unknown': 0}
+12 {'graphs': 1544, 'P': 1544, 'not_P': 0, 'unknown': 0}
+13 {'graphs': 10778, 'P': 10616, 'not_P': 162, 'unknown': 0}
+graphs without a property-P colouring (n, index, result): [(8, 5, False), (11, 262, False), (11, 264, False), (13, 9765, False), (13, 9727, False), (13, 8002, False), (13, 9585, False), (13, 9994, False), (13, 9735, False), (13, 9510, False), (13, 9936, False), (13, 9887, False), (13, 9907, False), (13, 9993, False), (13, 10092, False), (13, 7747, False), (13, 9282, False), (13, 10294, False), (13, 9895, False), (13, 9897, False), (13, 10197, False), (13, 8484, False), (13, 8486, False), (13, 10083, False), (13, 10085, False), (13, 10265, False), (13, 9322, False), (13, 9323, False), (13, 9480, False), (13, 9481, False), (13, 10378, False), (13, 10324, False), (13, 10447, False), (13, 9746, False), (13, 9747, False), (13, 10453, False), (13, 10103, False), (13, 10104, False), (13, 10222, False), (13, 10223, False), (13, 10532, False), (13, 10315, False), (13, 10318, False), (13, 10517, False), (13, 9738, False), (13, 9739, False), (13, 9741, False), (13, 10585, False), (13, 10575, False), (13, 10593, False)] (165 total)
+slowest instance 18.59s  [107s]

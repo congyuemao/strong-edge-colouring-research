@@ -1,0 +1,21 @@
+# python exp21_property_p.py random n g s  for (n, g, s) = (100,5,3) (300,6,3) (1000,7,3) (3000,8,2) (101,5,4) (301,6,4) (601,7,3); 280 s limit each, (3000,8,2) produced no output in time
+{'seed': 0, 'n': 100, 'm': 200, 'girth': 5, 'odd degree': 0, 'edges with 6 outer neighbours': 200, 'property P': True, 'seconds': 0.1}
+{'seed': 1, 'n': 100, 'm': 200, 'girth': 5, 'odd degree': 0, 'edges with 6 outer neighbours': 200, 'property P': True, 'seconds': 0.2}
+{'seed': 2, 'n': 100, 'm': 200, 'girth': 5, 'odd degree': 0, 'edges with 6 outer neighbours': 200, 'property P': True, 'seconds': 0.2}
+{'seed': 0, 'n': 300, 'm': 600, 'girth': 6, 'odd degree': 0, 'edges with 6 outer neighbours': 600, 'property P': True, 'seconds': 0.4}
+{'seed': 1, 'n': 300, 'm': 599, 'girth': 6, 'odd degree': 2, 'edges with 6 outer neighbours': 593, 'property P': True, 'seconds': 0.4}
+{'seed': 2, 'n': 300, 'm': 598, 'girth': 6, 'odd degree': 2, 'edges with 6 outer neighbours': 591, 'property P': True, 'seconds': 0.4}
+{'seed': 0, 'n': 1000, 'm': 2000, 'girth': 7, 'odd degree': 0, 'edges with 6 outer neighbours': 2000, 'property P': True, 'seconds': 62.2}
+{'seed': 1, 'n': 1000, 'm': 2000, 'girth': 7, 'odd degree': 0, 'edges with 6 outer neighbours': 2000, 'property P': True, 'seconds': 6.4}
+{'seed': 2, 'n': 1000, 'm': 1999, 'girth': 7, 'odd degree': 2, 'edges with 6 outer neighbours': 1993, 'property P': True, 'seconds': 24.1}
+{'seed': 0, 'n': 101, 'm': 202, 'girth': 5, 'odd degree': 0, 'edges with 6 outer neighbours': 202, 'property P': True, 'seconds': 0.7}
+{'seed': 1, 'n': 101, 'm': 201, 'girth': 5, 'odd degree': 2, 'edges with 6 outer neighbours': 195, 'property P': True, 'seconds': 0.3}
+{'seed': 2, 'n': 101, 'm': 202, 'girth': 5, 'odd degree': 0, 'edges with 6 outer neighbours': 202, 'property P': True, 'seconds': 0.6}
+{'seed': 3, 'n': 101, 'm': 202, 'girth': 5, 'odd degree': 0, 'edges with 6 outer neighbours': 202, 'property P': True, 'seconds': 0.7}
+{'seed': 0, 'n': 301, 'm': 601, 'girth': 6, 'odd degree': 0, 'edges with 6 outer neighbours': 599, 'property P': True, 'seconds': 4.7}
+{'seed': 1, 'n': 301, 'm': 602, 'girth': 6, 'odd degree': 0, 'edges with 6 outer neighbours': 602, 'property P': True, 'seconds': 2.2}
+{'seed': 2, 'n': 301, 'm': 601, 'girth': 6, 'odd degree': 2, 'edges with 6 outer neighbours': 595, 'property P': True, 'seconds': 1.5}
+{'seed': 3, 'n': 301, 'm': 602, 'girth': 6, 'odd degree': 0, 'edges with 6 outer neighbours': 602, 'property P': True, 'seconds': 1.8}
+{'seed': 0, 'n': 601, 'm': 1201, 'girth': 7, 'odd degree': 0, 'edges with 6 outer neighbours': 1199, 'property P': True, 'seconds': 7.6}
+{'seed': 1, 'n': 601, 'm': 1201, 'girth': 7, 'odd degree': 2, 'edges with 6 outer neighbours': 1195, 'property P': True, 'seconds': 9.7}
+{'seed': 2, 'n': 601, 'm': 1201, 'girth': 7, 'odd degree': 2, 'edges with 6 outer neighbours': 1195, 'property P': True, 'seconds': 9.3}

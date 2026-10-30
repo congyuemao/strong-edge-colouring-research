@@ -33,8 +33,8 @@
     },
     {
       "path": "docs/HANDOFF_2026-10-30.md",
-      "bytes": 26848,
-      "sha256": "19c77ca84f9a60dfd5b92b087f54781c3119875d8284aaaf54b8e465038e97eb"
+      "bytes": 27598,
+      "sha256": "4f929cdb54b35dcdae72ec40fd267843eeb451bec7437b5d59d09febb44a68b9"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -1797,6 +1797,26 @@
       "sha256": "0f0913ba62dce8bafff21daa7075cddb853a8ce576c13d61ebc87a9dabab910d"
     },
     {
+      "path": "research-2026-10-30/exp21_girth.log",
+      "bytes": 170,
+      "sha256": "687915641669457e279548a7213760e29caa05acf1057ec2e9f4ab4ef40e4c48"
+    },
+    {
+      "path": "research-2026-10-30/exp21_property_p.py",
+      "bytes": 5904,
+      "sha256": "30dc998c07601f5154fde05e87d936ed95e21ec43a008dfba26e7374696cbb67"
+    },
+    {
+      "path": "research-2026-10-30/exp21_random.log",
+      "bytes": 2905,
+      "sha256": "33a053d154f6c9e92739cdcb1888cc60049471109798425d4d0163e8db1df9ce"
+    },
+    {
+      "path": "research-2026-10-30/exp21_small.log",
+      "bytes": 1615,
+      "sha256": "ddf69b636f3f5540525ebec243b991c5b86ca523461c58fc3bfb033070c61a7c"
+    },
+    {
       "path": "research-2026-10-30/exp2_c11.py",
       "bytes": 1347,
       "sha256": "28a034ff112b05a0b8d2f266224a3adee21d0c5a8f2ae319c020a5a3ac1641fe"
@@ -1938,8 +1958,8 @@
     },
     {
       "path": "research-2026-10-30/LARGE_GIRTH_zh.md",
-      "bytes": 23748,
-      "sha256": "b349e4f0ce6a12099b7f53342a1bbb91a43813465b7d785b368eca8c49149c1d"
+      "bytes": 28782,
+      "sha256": "39aa86527c9822c7861567766e1ecdb26f42be7b142c40604023629d0fdb8314"
     },
     {
       "path": "research-2026-10-30/logs10/anneal_14.log",
@@ -2568,8 +2588,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 7071,
-      "sha256": "2972a0a8947cb2e3e35cffa56e9ce1b89ea73c3bb6c59773f2abb19f8c997a16"
+      "bytes": 7529,
+      "sha256": "ba73cdcb6a3126333e9028fc5181c5138a520a232e4e0f825c03edd9ad95bd13"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
