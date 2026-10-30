@@ -46,6 +46,8 @@
 | [exp18_large_girth.py](exp18_large_girth.py) | 逐步执行大围长定理 B 的构造，检查每条结构断言，并验证最终的 20 色强边染色 | 10/12 通过；另 2 个是测试围长太小时贪心选不出 D。按 Codex 审查修正了哑点弧未删的错误（LARGE_GIRTH 第 5 节，[exp18.log](exp18.log)） |
 | [exp19_property_m.py](exp19_property_m.py) | 性质 M（至多 4 或 5 个匹配，Σχ(H(M_i)) ≤ 20）：模式 small 检验 n ≤ 13 的全部图，exact 用枚举求精确预算，slack 测中等围长的余量；tight 模式已弃用（不可满足的证明太慢） | 12672 个图全部满足；恰好需要 20 的有 3 个（LARGE_GIRTH 第 8 节，[small](exp19_small.log)、[exact](exp19_exact.log)、[slack](exp19_slack.log)） |
 | [exp19b_families.py](exp19b_families.py) | 性质 M 在 C_k[2]、C_n(1,2)、C_n(1,3) 上的检验（n ≤ 20） | 全部满足，只有 C5[2] 恰好需要 20（[exp19b.log](exp19b.log)） |
+| [exp20_search.py](exp20_search.py) | n = 14–20 的爬山：最大化 4 匹配形式的精确预算 B*（遍历全部 1-因子分解） | 48 次，约 144 万步，B* ≤ 20，没有反例（LARGE_GIRTH 第 8.1 节，[exp20.log](exp20.log)、[exp20b.log](exp20b.log)） |
+| [exp20c_glue.py](exp20c_glue.py) | 把紧图两两沿 2 边割粘接，再求 B* | 754 个图（n = 20–28）全部 ≤ 20（[exp20c.log](exp20c.log)） |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |
 
 ## 数据与日志

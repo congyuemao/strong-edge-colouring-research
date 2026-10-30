@@ -1,0 +1,29 @@
+# python exp20_search.py 14,16,18,20 6 300   (score: B*, then mean chi)
+n=14 seed=14000: best B*=20 mean chi=5.000 #PM=72 steps=37829 class2 seen=0 breaks=0
+n=14 seed=14001: best B*=20 mean chi=5.000 #PM=72 steps=37798 class2 seen=4 breaks=0
+n=14 seed=14002: best B*=20 mean chi=5.000 #PM=72 steps=37867 class2 seen=2 breaks=0
+n=14 seed=14003: best B*=20 mean chi=5.000 #PM=72 steps=37189 class2 seen=4 breaks=0
+n=14 seed=14004: best B*=20 mean chi=5.000 #PM=72 steps=37146 class2 seen=1 breaks=0
+n=14 seed=14005: best B*=20 mean chi=5.000 #PM=72 steps=37186 class2 seen=3 breaks=0
+n=16 seed=16000: best B*=19 mean chi=4.645 #PM=124 steps=17793 class2 seen=8 breaks=0
+n=16 seed=16001: best B*=18 mean chi=4.721 #PM=154 steps=17948 class2 seen=12 breaks=0
+n=16 seed=16002: best B*=18 mean chi=4.721 #PM=154 steps=17728 class2 seen=6 breaks=0
+n=16 seed=16004: best B*=19 mean chi=4.938 #PM=128 steps=17785 class2 seen=8 breaks=0
+n=16 seed=16003: best B*=19 mean chi=4.554 #PM=130 steps=17830 class2 seen=10 breaks=0
+n=16 seed=16005: best B*=18 mean chi=4.818 #PM=132 steps=17704 class2 seen=5 breaks=0
+n=18 seed=18001: best B*=18 mean chi=4.883 #PM=240 steps=7839 class2 seen=4 breaks=0
+n=18 seed=18000: best B*=18 mean chi=4.763 #PM=304 steps=8042 class2 seen=0 breaks=0
+n=18 seed=18003: best B*=17 mean chi=4.574 #PM=230 steps=7985 class2 seen=2 breaks=0
+n=18 seed=18002: best B*=18 mean chi=4.717 #PM=240 steps=7963 class2 seen=2 breaks=0
+n=18 seed=18004: best B*=20 mean chi=5.000 #PM=288 steps=7870 class2 seen=5 breaks=0
+n=18 seed=18005: best B*=19 mean chi=4.970 #PM=264 steps=7918 class2 seen=2 breaks=0
+n=20 seed=20000: best B*=18 mean chi=4.662 #PM=420 steps=3675 class2 seen=0 breaks=0
+n=20 seed=20001: best B*=19 mean chi=4.877 #PM=408 steps=3585 class2 seen=2 breaks=0
+n=20 seed=20002: best B*=19 mean chi=4.740 #PM=350 steps=3484 class2 seen=1 breaks=0
+n=20 seed=20005: best B*=18 mean chi=4.858 #PM=486 steps=3578 class2 seen=3 breaks=0
+n=20 seed=20003: best B*=17 mean chi=4.734 #PM=372 steps=3868 class2 seen=2 breaks=0
+n=20 seed=20004: best B*=16 mean chi=4.553 #PM=432 steps=3539 class2 seen=4 breaks=0
+n=14: highest B* = 20 (mean chi 5.000), seed 14000; edges [(0, 3), (0, 7), (0, 8), (0, 9), (1, 2), (1, 4), (1, 8), (1, 12), (2, 3), (2, 6), (2, 13), (3, 4), (3, 5), (4, 10), (4, 11), (5, 10), (5, 12), (5, 13), (6, 7), (6, 9), (6, 10), (7, 11), (7, 12), (8, 10), (8, 13), (9, 11), (9, 12), (11, 13)]
+n=16: highest B* = 19 (mean chi 4.938), seed 16004; edges [(0, 6), (0, 7), (0, 8), (0, 14), (1, 2), (1, 3), (1, 4), (1, 10), (2, 4), (2, 6), (2, 13), (3, 8), (3, 10), (3, 13), (4, 10), (4, 13), (5, 7), (5, 11), (5, 14), (5, 15), (6, 11), (6, 12), (7, 9), (7, 12), (8, 12), (8, 15), (9, 11), (9, 14), (9, 15), (10, 13), (11, 15), (12, 14)]
+n=18: highest B* = 20 (mean chi 5.000), seed 18004; edges [(0, 1), (0, 8), (0, 13), (0, 16), (1, 9), (1, 10), (1, 15), (2, 3), (2, 12), (2, 14), (2, 17), (3, 6), (3, 12), (3, 17), (4, 5), (4, 11), (4, 12), (4, 17), (5, 6), (5, 7), (5, 14), (6, 11), (6, 16), (7, 11), (7, 12), (7, 17), (8, 10), (8, 14), (8, 15), (9, 13), (9, 15), (9, 16), (10, 13), (10, 16), (11, 14), (13, 15)]
+n=20: highest B* = 19 (mean chi 4.877), seed 20001; edges [(0, 4), (0, 7), (0, 17), (0, 18), (1, 6), (1, 7), (1, 8), (1, 9), (2, 6), (2, 13), (2, 16), (2, 19), (3, 6), (3, 11), (3, 12), (3, 16), (4, 11), (4, 13), (4, 19), (5, 7), (5, 8), (5, 9), (5, 10), (6, 10), (7, 15), (8, 12), (8, 17), (9, 15), (9, 17), (10, 15), (10, 17), (11, 14), (11, 18), (12, 14), (12, 15), (13, 16), (13, 18), (14, 16), (14, 19), (18, 19)]

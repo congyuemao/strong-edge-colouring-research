@@ -1,0 +1,31 @@
+# python exp20_search.py 14,16 6 240 k6 12:1529   (score: B*, share of K6-type perfect matchings, mean chi; climbs start from n=12 #1529 grown by vertex insertion)
+n=14 seed=14500: best B*=20 mean chi=5.000 #PM=72 K6 share=0.000 steps=67738 class2 seen=7 breaks=0
+n=14 seed=14502: best B*=20 mean chi=5.000 #PM=72 K6 share=0.000 steps=67987 class2 seen=2 breaks=0
+n=14 seed=14501: best B*=20 mean chi=5.000 #PM=72 K6 share=0.000 steps=68040 class2 seen=3 breaks=0
+n=14 seed=14503: best B*=20 mean chi=5.000 #PM=72 K6 share=0.000 steps=68006 class2 seen=3 breaks=0
+n=14 seed=14504: best B*=20 mean chi=5.000 #PM=72 K6 share=0.000 steps=67484 class2 seen=9 breaks=0
+n=14 seed=14505: best B*=20 mean chi=5.000 #PM=72 K6 share=0.000 steps=66360 class2 seen=2 breaks=0
+n=16 seed=16500: best B*=19 mean chi=4.686 #PM=140 K6 share=0.000 steps=31720 class2 seen=10 breaks=0
+n=16 seed=16501: best B*=19 mean chi=4.686 #PM=140 K6 share=0.000 steps=31750 class2 seen=17 breaks=0
+n=16 seed=16502: best B*=19 mean chi=4.645 #PM=124 K6 share=0.000 steps=31667 class2 seen=17 breaks=0
+n=16 seed=16503: best B*=19 mean chi=4.686 #PM=140 K6 share=0.000 steps=31818 class2 seen=16 breaks=0
+n=16 seed=16504: best B*=19 mean chi=4.938 #PM=128 K6 share=0.000 steps=32050 class2 seen=13 breaks=0
+n=16 seed=16505: best B*=18 mean chi=4.721 #PM=154 K6 share=0.000 steps=31275 class2 seen=14 breaks=0
+n=14: highest B* = 20 (mean chi 5.000), seed 14500; edges [(0, 3), (0, 4), (0, 6), (0, 12), (1, 6), (1, 9), (1, 12), (2, 1), (2, 3), (2, 5), (2, 8), (3, 13), (4, 5), (4, 8), (4, 9), (7, 5), (7, 6), (7, 12), (7, 13), (8, 13), (9, 13), (10, 3), (10, 5), (10, 9), (10, 11), (11, 6), (11, 8), (11, 12)]
+n=16: highest B* = 19 (mean chi 4.938), seed 16504; edges [(0, 6), (0, 8), (0, 14), (0, 15), (1, 5), (1, 9), (1, 12), (2, 4), (2, 7), (2, 10), (2, 11), (3, 4), (3, 8), (3, 14), (3, 15), (4, 12), (4, 13), (5, 12), (6, 15), (7, 5), (7, 9), (7, 13), (8, 6), (8, 14), (9, 12), (10, 1), (10, 6), (10, 13), (11, 5), (11, 9), (11, 13), (14, 15)]
+# python exp20_search.py 14,16,18 4 240 k6   (same score, random starts)
+n=14 seed=14000: best B*=20 mean chi=5.000 #PM=72 K6 share=0.000 steps=66590 class2 seen=2 breaks=0
+n=14 seed=14001: best B*=20 mean chi=5.000 #PM=72 K6 share=0.000 steps=66300 class2 seen=0 breaks=0
+n=14 seed=14002: best B*=20 mean chi=5.000 #PM=72 K6 share=0.000 steps=66675 class2 seen=4 breaks=0
+n=14 seed=14003: best B*=20 mean chi=5.000 #PM=72 K6 share=0.000 steps=66748 class2 seen=0 breaks=0
+n=16 seed=16001: best B*=19 mean chi=4.686 #PM=140 K6 share=0.000 steps=31618 class2 seen=7 breaks=0
+n=16 seed=16000: best B*=19 mean chi=4.938 #PM=128 K6 share=0.000 steps=31519 class2 seen=15 breaks=0
+n=16 seed=16002: best B*=19 mean chi=4.645 #PM=124 K6 share=0.000 steps=31290 class2 seen=16 breaks=0
+n=16 seed=16003: best B*=19 mean chi=4.645 #PM=124 K6 share=0.000 steps=31316 class2 seen=16 breaks=0
+n=18 seed=18000: best B*=18 mean chi=4.868 #PM=288 K6 share=0.340 steps=13736 class2 seen=8 breaks=0
+n=18 seed=18002: best B*=18 mean chi=4.824 #PM=408 K6 share=0.000 steps=14058 class2 seen=2 breaks=0
+n=18 seed=18003: best B*=18 mean chi=4.862 #PM=260 K6 share=0.000 steps=14151 class2 seen=7 breaks=0
+n=18 seed=18001: best B*=20 mean chi=5.000 #PM=288 K6 share=0.000 steps=13693 class2 seen=8 breaks=0
+n=14: highest B* = 20 (mean chi 5.000), seed 14000; edges [(0, 3), (0, 5), (0, 6), (0, 7), (1, 6), (1, 9), (1, 12), (1, 13), (2, 5), (2, 7), (2, 8), (2, 12), (3, 9), (3, 11), (3, 12), (4, 5), (4, 7), (4, 9), (4, 10), (5, 13), (6, 8), (6, 10), (7, 13), (8, 9), (8, 11), (10, 11), (10, 12), (11, 13)]
+n=16: highest B* = 19 (mean chi 4.938), seed 16000; edges [(0, 5), (0, 6), (0, 9), (0, 11), (1, 7), (1, 8), (1, 13), (1, 15), (2, 5), (2, 6), (2, 9), (2, 11), (3, 7), (3, 12), (3, 13), (3, 15), (4, 8), (4, 9), (4, 10), (4, 14), (5, 9), (5, 12), (6, 10), (6, 14), (7, 8), (7, 13), (8, 15), (10, 11), (10, 12), (11, 14), (12, 14), (13, 15)]
+n=18: highest B* = 20 (mean chi 5.000), seed 18001; edges [(0, 2), (0, 3), (0, 4), (0, 15), (1, 5), (1, 7), (1, 12), (1, 16), (2, 6), (2, 12), (2, 13), (3, 4), (3, 6), (3, 13), (4, 15), (4, 17), (5, 8), (5, 14), (5, 16), (6, 15), (6, 17), (7, 8), (7, 14), (7, 16), (8, 10), (8, 11), (9, 10), (9, 11), (9, 16), (9, 17), (10, 12), (10, 14), (11, 12), (11, 14), (13, 15), (13, 17)]
