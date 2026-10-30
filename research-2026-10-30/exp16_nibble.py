@@ -7,6 +7,11 @@ uniform colour from L(e), and keeps it unless an activated conflict picked the s
 T rounds the edge e "fails" if it is uncoloured and |L(e)| <= u(e), u(e) = #uncoloured conflicts:
 if no edge fails, the remaining edges can be coloured greedily in any order.
 
+"Fails" means only that this SUFFICIENT certificate does not hold at e (corrected after the second
+Codex review).  It does not mean that greedy completion fails, nor that the residual edges are
+uncolourable: two conflicting uncoloured edges with lists {0} and {1} both "fail", yet every greedy
+order succeeds.  test_exp16_criteria.py separates the three notions.
+
 Dependency radius (corrected after the Codex review): each round propagates dependency by TWO
 conflict-graph hops -- a tentative colour depends on the edge's list (one hop: its neighbours'
 earlier successes) and the clash test looks at the neighbours' tentative colours (another hop).
@@ -73,8 +78,19 @@ def nibble(NB, k, T, p, rng, schedule=None):
     return col, avail, unc, L, U
 
 
+def certificate_fails(NB, col, avail):
+    """Mask of uncoloured edges with |L(e)| <= u(e): the "fail" event counted in this experiment.
+
+    The slack certificate is only sufficient.  If the mask is empty, greedy completion succeeds in
+    every order; a non-empty mask says nothing about whether greedy completion fails."""
+    unc = col < 0
+    return unc & (avail.sum(1) <= (col[NB] < 0).sum(1))
+
+
 def greedy_finish(NB, col, avail):
-    """Colour the rest, always taking an uncoloured edge with the fewest available colours."""
+    """Colour the rest, always taking an uncoloured edge with the fewest available colours.
+
+    This is one particular greedy strategy; its failure does not make the residual uncolourable."""
     col = col.copy()
     avail = avail.copy()
     left = set(np.nonzero(col < 0)[0].tolist())
@@ -122,7 +138,7 @@ if __name__ == "__main__":
     finished = 0
     for r in range(runs):
         col, avail, unc, L, U = nibble(NB, k, T, p, rng)
-        fail = unc & (L <= U)
+        fail = certificate_fails(NB, col, avail)  # same as unc & (L <= U)
         fails += int(fail.sum())
         unc_tot += int(unc.sum())
         s = (L - U)[unc]

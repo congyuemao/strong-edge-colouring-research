@@ -33,8 +33,8 @@
     },
     {
       "path": "docs/HANDOFF_2026-10-30.md",
-      "bytes": 20126,
-      "sha256": "7ed98dc4ef0fcda0e719f58085a0aa551f1a06fb0c06e1722b1708bd2c34616a"
+      "bytes": 22117,
+      "sha256": "befbea1b581f0268c5f29e69724679831c5cc9d5587a725d6b6377310c402d9b"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -58,8 +58,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5722,
-      "sha256": "1844db70c520f413c96cec33be2061e65eeda334ba8f834c0fa7319e1fe8b93c"
+      "bytes": 6039,
+      "sha256": "42d8752a480212a3be415fcba57b3af8ee76a3d86532d53538ed80c42a2a0a0f"
     },
     {
       "path": "research/all_blocked_circles_joint_degree.md",
@@ -1703,8 +1703,8 @@
     },
     {
       "path": "research-2026-10-30/exp16_nibble.py",
-      "bytes": 4943,
-      "sha256": "68e195bd2825e025cfbe2cd3a1f77d756cc7f2c4dbdf5cd0e6bb8b06ab7d041f"
+      "bytes": 5852,
+      "sha256": "b481d621cc43f565bfde5836267e40097b7fa5eb9618c94eb47b83025088b719"
     },
     {
       "path": "research-2026-10-30/exp16b_decay.py",
@@ -2498,8 +2498,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 4712,
-      "sha256": "19cac5b62f3f6a79c5443d1401061aeb28f5e21a3a373109fa9ea6bcb805b9a8"
+      "bytes": 5328,
+      "sha256": "5a93ce9bb0c9340f7c705009d1b4ecb1decd323e9c100519f200cf3cffb5e4b0"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
@@ -2508,8 +2508,8 @@
     },
     {
       "path": "research-2026-10-30/ROUTE_Q_zh.md",
-      "bytes": 58636,
-      "sha256": "cd12d71b51df3aeb4f0fb46ae44e6d987158fd47fcf32ade7c5e4469b0c0163a"
+      "bytes": 62577,
+      "sha256": "a50c0d6a684bd7ec4fe5d137364be064f6680aeea531636d1f0ea4e6333c6e02"
     },
     {
       "path": "research-2026-10-30/run9.sh",
@@ -2520,6 +2520,11 @@
       "path": "research-2026-10-30/sec.py",
       "bytes": 4464,
       "sha256": "2808f49533b0ac8e2ba4c4bf82cba8c2bf6612db1272ec0f68d176b488576b12"
+    },
+    {
+      "path": "research-2026-10-30/test_exp16_criteria.py",
+      "bytes": 6037,
+      "sha256": "74625bad15393985521c79db5da2dec3d2e88242608ebf7819e94e8e0ef25196"
     },
     {
       "path": "tools/package_archive.py",
