@@ -33,8 +33,8 @@
     },
     {
       "path": "docs/HANDOFF_2026-10-30.md",
-      "bytes": 25556,
-      "sha256": "0f1f38f228b06ef1efb831267397b7e7d1268f752ba574b51bc98c95fc994a14"
+      "bytes": 25826,
+      "sha256": "1365bdd049f4d9d345cc92eb6f6cb280c5cbd5b502b5fb3293055e3995fb5942"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -1883,8 +1883,8 @@
     },
     {
       "path": "research-2026-10-30/LARGE_GIRTH_zh.md",
-      "bytes": 15150,
-      "sha256": "bf5ab8eeb231ac08cd869641cf2db3ae7bb16a71b724e5d14aaedcc5fd93eec0"
+      "bytes": 17504,
+      "sha256": "8ace230b95e8cea1c656c7046c151d39131720853fcf414336f7c4faf5a52631"
     },
     {
       "path": "research-2026-10-30/logs10/anneal_14.log",
