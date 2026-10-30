@@ -49,6 +49,8 @@
 | [exp20_search.py](exp20_search.py) | n = 14–20 的爬山：最大化 4 匹配形式的精确预算 B*（遍历全部 1-因子分解） | 48 次，约 144 万步，B* ≤ 20，没有反例（LARGE_GIRTH 第 8.1 节，[exp20.log](exp20.log)、[exp20b.log](exp20b.log)） |
 | [exp20c_glue.py](exp20c_glue.py) | 把紧图两两沿 2 边割粘接，再求 B* | 754 个图（n = 20–28）全部 ≤ 20（[exp20c.log](exp20c.log)） |
 | [exp21_property_p.py](exp21_property_p.py) | 性质 P（5 边染色中，每条颜色为 c 的边至多 5 个外邻点被颜色 c 覆盖；配合定理 B'，围长 ≥ 69 ⇒ 20 色）：small 和 girth 模式检验小图，random 模式检验随机图 | 165 个小图失败，全部围长 ≤ 4；围长 5–7 的 20 个随机图全部满足（LARGE_GIRTH 第 9 节，[small](exp21_small.log)、[girth](exp21_girth.log)、[random](exp21_random.log)） |
+| [exp22_kempe.py](exp22_kempe.py) | 性质 P 的 Kempe 局部搜索：单步或两步下降、平移步；ball 模式重染半径 1–4 的球；sanity 模式检验重染求解器 | 下降总会卡住；卡住的边在半径 ≤ 4 内被证明不可修复（LARGE_GIRTH 第 9.6 节，[exp22.log](exp22.log)） |
+| [exp23_structured.py](exp23_structured.py) | 结构化构造（F₁ 用 {1,2,5}，F₂ 用 {3,4,5}）：V1 见证点不限，V2 只沿自身所在的圈；families 模式拆开各约束族 | V1 全部可满足，V2 全部不可满足（计数引理：要求所有圈长都是 5 的倍数）（[exp23.log](exp23.log)） |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |
 
 ## 数据与日志

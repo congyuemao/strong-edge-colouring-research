@@ -1,0 +1,19 @@
+# python exp23_structured.py 100 5 3
+{'seed': 0, 'n': 100, 'girth': 5, 'F1 cycle lengths (min,max,count)': (5, 88, 3), 'V1': True, 'V1 s': 0.1, 'V2': False, 'V2 s': 0.0}
+{'seed': 1, 'n': 100, 'girth': 5, 'F1 cycle lengths (min,max,count)': (6, 72, 4), 'V1': True, 'V1 s': 0.7, 'V2': False, 'V2 s': 0.0}
+{'seed': 2, 'n': 100, 'girth': 5, 'F1 cycle lengths (min,max,count)': (5, 95, 2), 'V1': True, 'V1 s': 0.2, 'V2': False, 'V2 s': 0.0}
+# python exp23_structured.py 301 6 3
+{'seed': 0, 'n': 301, 'girth': 6, 'F1 cycle lengths (min,max,count)': (6, 213, 5), 'V1': True, 'V1 s': 12.4, 'V2': False, 'V2 s': 0.1}
+{'seed': 1, 'n': 301, 'girth': 6, 'F1 cycle lengths (min,max,count)': (133, 168, 2), 'V1': True, 'V1 s': 11.2, 'V2': False, 'V2 s': 0.1}
+{'seed': 2, 'n': 301, 'girth': 6, 'F1 cycle lengths (min,max,count)': (13, 159, 3), 'V1': True, 'V1 s': 9.5, 'V2': False, 'V2 s': 0.0}
+# python exp23_structured.py families 301 6 2
+0 F1plain True 0.0s
+0 shared True 0.0s
+0 F1plain+shared True 0.0s
+0 F1plain+F2plain None 8.5s
+0 F1plain+F2plain+shared False 0.1s
+1 F1plain True 0.0s
+1 shared True 0.0s
+1 F1plain+shared True 0.0s
+1 F1plain+F2plain None 8.8s
+1 F1plain+F2plain+shared False 0.1s

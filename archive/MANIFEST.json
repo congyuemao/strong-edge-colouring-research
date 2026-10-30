@@ -33,8 +33,8 @@
     },
     {
       "path": "docs/HANDOFF_2026-10-30.md",
-      "bytes": 28027,
-      "sha256": "802690bb085b4d77bef1f7758fcf5b6e7ffd208713995a3681595fd17b41fc99"
+      "bytes": 28690,
+      "sha256": "63114833e87d72c92f4d96243a0ba09b9c1b49511e48df5eb4381e4b4fefa8f8"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -1817,6 +1817,26 @@
       "sha256": "ddf69b636f3f5540525ebec243b991c5b86ca523461c58fc3bfb033070c61a7c"
     },
     {
+      "path": "research-2026-10-30/exp22.log",
+      "bytes": 6975,
+      "sha256": "fe50094df8cfac73173c21dea970060693b2171f0cc897a6f043d0c3af3763ba"
+    },
+    {
+      "path": "research-2026-10-30/exp22_kempe.py",
+      "bytes": 15106,
+      "sha256": "4838bd3ccbb572ef6deb874477878408f3d3d54faeb805d0795d21a30c674913"
+    },
+    {
+      "path": "research-2026-10-30/exp23.log",
+      "bytes": 1186,
+      "sha256": "3f75d7bef1f808a843c61af9cb84e1e896c7249bf240b6399cc4eb700aa33421"
+    },
+    {
+      "path": "research-2026-10-30/exp23_structured.py",
+      "bytes": 4194,
+      "sha256": "0fd414f90dd102f971413f76ca3d221d15761dffcabd33c417aa9a82f86f56cd"
+    },
+    {
       "path": "research-2026-10-30/exp2_c11.py",
       "bytes": 1347,
       "sha256": "28a034ff112b05a0b8d2f266224a3adee21d0c5a8f2ae319c020a5a3ac1641fe"
@@ -1958,8 +1978,8 @@
     },
     {
       "path": "research-2026-10-30/LARGE_GIRTH_zh.md",
-      "bytes": 32034,
-      "sha256": "3f8568c0d3eb3ea6219c38bdd915cfa8ec560ddd2a794981732e16acebc213da"
+      "bytes": 37091,
+      "sha256": "f73bee8a85712fd4edd32e81c379ddc1ef76a7834e9f581a88ef745009b23e4c"
     },
     {
       "path": "research-2026-10-30/logs10/anneal_14.log",
@@ -2588,8 +2608,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 7529,
-      "sha256": "ba73cdcb6a3126333e9028fc5181c5138a520a232e4e0f825c03edd9ad95bd13"
+      "bytes": 8167,
+      "sha256": "0e2f0e3e3909a214ca4d30ed63e93b6630902e605ada002ede3345420bc06dfc"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
