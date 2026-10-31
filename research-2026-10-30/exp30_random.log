@@ -1,0 +1,7 @@
+# exp30_brooks8.py random 500 5 1 8,7,6  and  random 1000 7 1 8,7,6  (first run as an inline probe with the same graphs: seed 1 for the graph and for raise_girth)
+500 5 K 8 exists odd cycles in found: 25 9.0s
+500 5 K 7 exists odd cycles in found: 42 7.0s
+500 5 K 6 exists odd cycles in found: 44 492.7s
+1000 7 K 8 exists odd cycles in found: 145 55.6s
+1000 7 K 7 exists odd cycles in found: 131 51.5s
+1000 7 K 6 exists odd cycles in found: 96 566.8s
