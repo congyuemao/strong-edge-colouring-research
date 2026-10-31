@@ -10,10 +10,18 @@ all cubes UNSAT  <=>  no stuck state on (G, e);  any cube with a surviving model
 Witness sharing.  A witness clause forbids a separable configuration for all ordered colour pairs and does not
 depend on the cube, so it is valid for every cube.  Each cube appends its new witness sets to pool/<cube>.jsonl and
 before every solve absorbs the new lines of all pool files.  The pool is also the checkpoint: a restarted cube
-reloads everything.  Each cube ends with a line "RESULT UNSAT", "RESULT STUCK <colouring>" or "RESULT OPEN".
+reloads everything.  Each cube ends with a line "RESULT UNSAT", "RESULT STUCK <colouring>", "RESULT OPEN" or
+"RESULT SPLIT".
+
+Adaptive splitting.  The solver runs in slices of KIL_SLICE conflicts (default 200000); once a cube has used
+KIL_SPLIT_AFTER seconds of CPU time (default 900; 0 = never), it stops and splits on the next edge of the order:
+one sub-cube per colour that edge may take (proper against the cube, value precedence), written to
+spawn/<cube>.jsonl for runner.py.  The sub-cubes cover the cube, so a split cube counts as covered.  CPU time, not
+wall time, so a paused job does not split everything on resume.  Sub-cube ids extend the parent id: cube0012.7.3.
 
 Usage: exp37_kil_cubes.py make <jobdir> n girth seed edge t      write the cube tasks (for runner.py)
-       exp37_kil_cubes.py cube <jobdir> n girth seed edge t index  solve one cube
+       exp37_kil_cubes.py cube <jobdir> n girth seed edge t index [c1,c2,..]
+                                                  solve one cube (extended by colours c1, c2, .. on the next edges)
        exp37_kil_cubes.py verdict <jobdir>                         combine the cube results
 """
 import json
@@ -52,27 +60,43 @@ def prefix_order(ks):
     return order
 
 
+def extensions(ks, order, assign, i):
+    """Colours order[i] may take given the colours `assign` of order[:i]: proper against the near edges (colours
+    0..5) and the assigned edges, and a new colour >= 6 only if it is the next unused one (value precedence)."""
+    fixed = {f: c for c, f in enumerate(ks.near)}
+    ff = len(ks.near)
+    h = order[i]
+    banned = {fixed[g] for g in ks.adj[h] if g in fixed} | {assign[g] for g in ks.adj[h] if g in assign}
+    top = max([ff] + [assign[g] + 1 for g in order[:i] if assign[g] >= ff])
+    return [c for c in list(range(ff)) + list(range(ff, min(top + 1, K))) if c not in banned]
+
+
 def cubes(ks, t):
     order = prefix_order(ks)[:t]
-    fixed = {f: i for i, f in enumerate(ks.near)}
-    first_free = len(ks.near)
     out = []
 
-    def rec(i, assign, top):
+    def rec(i, assign):
         if i == len(order):
             out.append(dict(assign))
             return
-        h = order[i]
-        banned = {fixed[g] for g in ks.adj[h] if g in fixed} | {assign[g] for g in ks.adj[h] if g in assign}
-        for c in list(range(first_free)) + list(range(first_free, min(top + 1, K))):
-            if c in banned:
-                continue
-            assign[h] = c
-            rec(i + 1, assign, max(top, c + 1) if c >= first_free else top)
-            del assign[h]
+        for c in extensions(ks, order, assign, i):
+            assign[order[i]] = c
+            rec(i + 1, assign)
+            del assign[order[i]]
 
-    rec(0, {}, first_free)
+    rec(0, {})
     return order, out
+
+
+def cube_id(index, extra):
+    return f"cube{index:04d}" + "".join(f".{c}" for c in extra)
+
+
+def task(job, n, g, seed, e, t, index, extra=()):
+    cmd = [PY, "exp37_kil_cubes.py", "cube", job, str(n), str(g), str(seed), str(e), str(t), str(index)]
+    if extra:
+        cmd.append(",".join(map(str, extra)))
+    return {"id": cube_id(index, extra), "cwd": HERE, "cmd": cmd, "env": {"PYTHONIOENCODING": "utf-8"}}
 
 
 class Pool:
@@ -104,27 +128,59 @@ class Pool:
                 fh.write(json.dumps(sorted(C)) + "\n")
 
 
-def solve_cube(job, n, g, seed, e, t, index):
+def solve_cube(job, n, g, seed, e, t, index, extra=()):
     t0 = time.time()
+    me = cube_id(index, extra)
+    spawn = os.path.join(job, "spawn", f"{me}.jsonl")
+    if os.path.exists(spawn):                                   # split before a crash: nothing left to do
+        print(f"RESULT SPLIT (already split into {sum(1 for _ in open(spawn))} sub-cubes)", flush=True)
+        return
     edges, girth = build(n, g, seed, e)
     ks = KilSat(edges, e)
+    full = prefix_order(ks)
     order, cs = cubes(ks, t)
-    cube = cs[index]
+    cube = dict(cs[index])
+    for i, c in enumerate(extra):
+        assert c in extensions(ks, full, cube, t + i), "invalid sub-cube"
+        cube[full[t + i]] = c
+    depth = t + len(extra)
     assume = [ks.x(h, c) for h, c in cube.items()]
-    pool = Pool(job, f"cube{index:04d}")
+    pool = Pool(job, me)
     budget = int(os.environ.get("KIL_BUDGET", 200_000_000))
-    print(f"n={n} girth={girth} seed={seed} edge {e}; cube {index}/{len(cs)}: {cube}", flush=True)
+    sl = int(os.environ.get("KIL_SLICE", 200_000))
+    split_after = float(os.environ.get("KIL_SPLIT_AFTER", 900))
+    c0 = time.process_time()
+    print(f"n={n} girth={girth} seed={seed} edge {e}; cube {me} of {len(cs)} (depth {depth}): {cube}", flush=True)
     it = 0
     while True:
         it += 1
         got = pool.absorb(ks)
         ts = time.time()
-        ks.s.conf_budget(budget)
-        r = ks.s.solve_limited(assumptions=assume)
-        if r is None:
-            print(f"RESULT OPEN (budget {budget} conflicts) after {it} iterations  [{time.time() - t0:.0f}s]",
-                  flush=True)
-            return
+        used, r = 0, None
+        while True:
+            ks.s.conf_budget(sl)
+            r = ks.s.solve_limited(assumptions=assume)
+            used += sl
+            if r is not None:
+                break
+            if split_after and time.process_time() - c0 > split_after and depth < len(full):
+                kids = extensions(ks, full, cube, depth)
+                if not kids:
+                    print(f"RESULT UNSAT (edge {full[depth]} has no colour left)  [{time.time() - t0:.0f}s]",
+                          flush=True)
+                    return
+                os.makedirs(os.path.dirname(spawn), exist_ok=True)
+                with open(spawn + ".tmp", "w", encoding="utf-8") as fh:
+                    for c in kids:
+                        fh.write(json.dumps(task(job, n, g, seed, e, t, index, list(extra) + [c])) + "\n")
+                os.replace(spawn + ".tmp", spawn)
+                print(f"RESULT SPLIT into {len(kids)} sub-cubes on edge {full[depth]} (colours {kids}) after {it} "
+                      f"iterations, {time.process_time() - c0:.0f}s CPU  [{time.time() - t0:.0f}s]", flush=True)
+                return
+            if used >= budget:
+                print(f"RESULT OPEN (budget {budget} conflicts) after {it} iterations  [{time.time() - t0:.0f}s]",
+                      flush=True)
+                return
         if not r:
             print(f"RESULT UNSAT after {it} iterations, {len(ks.seen)} witness sets  [{time.time() - t0:.0f}s]",
                   flush=True)
@@ -164,9 +220,7 @@ def make(job, n, g, seed, e, t):
     os.makedirs(job, exist_ok=True)
     with open(os.path.join(job, "tasks_src.jsonl"), "w", encoding="utf-8") as fh:
         for i in range(len(cs)):
-            fh.write(json.dumps({"id": f"cube{i:04d}", "cwd": HERE,
-                                 "cmd": [PY, "exp37_kil_cubes.py", "cube", job, str(n), str(g), str(seed), str(e),
-                                         str(t), str(i)]}) + "\n")
+            fh.write(json.dumps(task(job, n, g, seed, e, t, i)) + "\n")
     print(f"n={n} girth={girth} seed={seed} edge {e}: prefix {order}; {len(cs)} cubes written to {job}")
 
 
@@ -176,8 +230,8 @@ def verdict(job):
         for line in fh:
             r = json.loads(line)
             res[r["id"]] = r
-    with open(os.path.join(job, "tasks.jsonl"), encoding="utf-8") as fh:
-        ids = [json.loads(l)["id"] for l in fh if l.strip()]
+    from runner import load_tasks
+    ids = [x["id"] for x in load_tasks(job)]                  # includes the sub-cubes in spawn/
     kinds = {}
     for i in ids:
         last = res.get(i, {}).get("last", "")
@@ -186,8 +240,8 @@ def verdict(job):
     print({k: len(v) for k, v in kinds.items()})
     if "STUCK" in kinds:
         print("COUNTEREXAMPLE in", kinds["STUCK"][:5])
-    elif set(kinds) == {"UNSAT"}:
-        print("ALL CUBES UNSAT: no stuck state on this (G, e)")
+    elif set(kinds) <= {"UNSAT", "SPLIT"}:
+        print("ALL CUBES UNSAT (split cubes are covered by their sub-cubes): no stuck state on this (G, e)")
 
 
 if __name__ == "__main__":
@@ -195,6 +249,7 @@ if __name__ == "__main__":
     if m == "make":
         make(sys.argv[2], *map(int, sys.argv[3:8]))
     elif m == "cube":
-        solve_cube(sys.argv[2], *map(int, sys.argv[3:9]))
+        extra = [int(c) for c in sys.argv[9].split(",")] if len(sys.argv) > 9 else []
+        solve_cube(sys.argv[2], *map(int, sys.argv[3:9]), extra)
     elif m == "verdict":
         verdict(sys.argv[2])

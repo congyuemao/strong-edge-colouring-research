@@ -7,6 +7,9 @@ A job is a directory (keep it on E:, e.g. E:/se20-data/runs/<name>) holding
   results.jsonl  appended when a task ends: {"id", "rc", "start", "end", "last"} (last = last log line)
   logs/<id>.log  stdout + stderr of the task
   running.json   tasks currently running (id -> pid), for status and for cleaning up after a crash
+  spawn/*.jsonl  tasks added by tasks: a task writes <name>.jsonl.tmp there and renames it to <name>.jsonl; the
+                 runner picks the new tasks up within 2 s, runs them before the remaining ones, and reloads them on
+                 a restart (task ids already known are ignored)
 
 Semantics
   * a task is done when it has a result with rc == 0; failed tasks (rc != 0) are not retried unless "retry" is run
@@ -127,9 +130,24 @@ def write_json(path, obj):
     os.replace(path + ".tmp", path)
 
 
-def load_tasks(job):
-    with open(os.path.join(job, "tasks.jsonl"), encoding="utf-8") as fh:
+def read_tasks(path):
+    with open(path, encoding="utf-8") as fh:
         return [json.loads(line) for line in fh if line.strip()]
+
+
+def spawn_files(job):
+    d = os.path.join(job, "spawn")
+    return sorted(f for f in os.listdir(d) if f.endswith(".jsonl")) if os.path.isdir(d) else []
+
+
+def load_tasks(job):
+    tasks, ids = [], set()
+    for path in [os.path.join(job, "tasks.jsonl")] + [os.path.join(job, "spawn", f) for f in spawn_files(job)]:
+        for t in read_tasks(path):
+            if t["id"] not in ids:
+                ids.add(t["id"])
+                tasks.append(t)
+    return tasks
 
 
 def load_results(job):
@@ -182,10 +200,11 @@ def cmd_run(job):
     done = {i for i, r in load_results(job).items() if r["rc"] == 0}
     failed = {i for i, r in load_results(job).items() if r["rc"] != 0}
     pending = [t for t in tasks if t["id"] not in done and t["id"] not in failed]
+    known, spawned = {t["id"] for t in tasks}, set(spawn_files(job))
     running = {}                                                # id -> (Popen, start, logfile handle)
     suspended = False
     print(f"runner: {len(tasks)} tasks, {len(done)} done, {len(failed)} failed, {len(pending)} to run", flush=True)
-    while pending or running:
+    while pending or running or any(f not in spawned for f in spawn_files(job)):
         ctl = read_json(ctl_path, {})
         if ctl.get("stop"):
             table = process_table()
@@ -210,6 +229,14 @@ def cmd_run(job):
                 out.write(json.dumps(res, ensure_ascii=False) + "\n")
             del running[tid]
             print(f"runner: {tid} finished rc={rc}: {res['last'][:150]}", flush=True)
+        for name in spawn_files(job):                           # tasks added by tasks go first
+            if name not in spawned:
+                spawned.add(name)
+                new = [t for t in read_tasks(os.path.join(job, "spawn", name)) if t["id"] not in known]
+                known.update(t["id"] for t in new)
+                pending[0:0] = new
+                if new:
+                    print(f"runner: {name} added {len(new)} tasks", flush=True)
         pause = bool(ctl.get("pause"))
         while not pause and pending and len(running) < int(ctl.get("workers", 1)):
             t = pending.pop(0)
