@@ -1,0 +1,8 @@
+random n=30 girth=5 seed=0, edge 0 (0, 11): m=60, d(e)=24, near=6
+    -> OPEN (solver budget 3000000 conflicts exhausted) after 1 iterations, 24 witness sets, 68654 clauses  [182s]
+random n=30 girth=5 seed=0, edge 31 (9, 25): m=60, d(e)=24, near=6
+    -> OPEN (solver budget 3000000 conflicts exhausted) after 1 iterations, 24 witness sets, 68654 clauses  [405s]
+random n=30 girth=5 seed=1, edge 0 (0, 27): m=60, d(e)=24, near=6
+    -> OPEN (solver budget 3000000 conflicts exhausted) after 1 iterations, 24 witness sets, 68654 clauses  [598s]
+random n=30 girth=5 seed=1, edge 31 (9, 26): m=60, d(e)=24, near=6
+    -> OPEN (solver budget 3000000 conflicts exhausted) after 1 iterations, 24 witness sets, 68654 clauses  [767s]

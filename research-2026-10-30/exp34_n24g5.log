@@ -1,0 +1,8 @@
+random n=24 girth=5 seed=0, edge 0 (0, 3): m=48, d(e)=24, near=6
+    -> UNSAT after 1 iterations, 24 witness sets, 56486 clauses  [1s]
+random n=24 girth=5 seed=0, edge 13 (3, 5): m=48, d(e)=24, near=6
+    -> UNSAT after 1 iterations, 24 witness sets, 56486 clauses  [3s]
+random n=24 girth=5 seed=0, edge 29 (9, 22): m=48, d(e)=24, near=6
+    -> UNSAT after 1 iterations, 24 witness sets, 56486 clauses  [6s]
+n=24 girth>=5 seed=1: generation failed
+n=24 girth>=5 seed=2: generation failed

@@ -1,0 +1,18 @@
+random n=20 girth=4 seed=0, edge 0 (0, 11): m=40, d(e)=24, near=6
+    -> UNSAT after 1 iterations, 24 witness sets, 47654 clauses  [0s]
+random n=20 girth=4 seed=0, edge 13 (3, 7): m=40, d(e)=22, near=6
+    -> UNSAT after 1 iterations, 22 witness sets, 46934 clauses  [0s]
+random n=20 girth=4 seed=0, edge 29 (8, 11): m=40, d(e)=23, near=6
+    -> UNSAT after 1 iterations, 23 witness sets, 47294 clauses  [0s]
+random n=20 girth=4 seed=1, edge 0 (0, 1): m=40, d(e)=22, near=6
+    -> UNSAT after 1 iterations, 22 witness sets, 47134 clauses  [0s]
+random n=20 girth=4 seed=1, edge 13 (3, 13): m=40, d(e)=23, near=6
+    -> UNSAT after 1 iterations, 23 witness sets, 47494 clauses  [1s]
+random n=20 girth=4 seed=1, edge 29 (8, 11): m=40, d(e)=22, near=6
+    -> UNSAT after 1 iterations, 22 witness sets, 47134 clauses  [1s]
+random n=20 girth=4 seed=2, edge 0 (0, 17): m=40, d(e)=22, near=6
+    -> UNSAT after 1 iterations, 22 witness sets, 47174 clauses  [1s]
+random n=20 girth=4 seed=2, edge 13 (3, 18): m=40, d(e)=23, near=6
+    -> UNSAT after 1 iterations, 23 witness sets, 47534 clauses  [1s]
+random n=20 girth=4 seed=2, edge 29 (9, 16): m=40, d(e)=23, near=6
+    -> UNSAT after 1 iterations, 23 witness sets, 47534 clauses  [1s]

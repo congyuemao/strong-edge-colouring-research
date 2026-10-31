@@ -8,7 +8,7 @@
   - exp15_phi2first.py 按 Codex 审查做了修正：原来的 `free_lit` 方向错误，使先清后移的约束失效。
   - 第 13 节按第二条 Codex 审查做了修正：slack 判据只是贪心收尾的充分条件，原文误写成等价（第 13.6 节）。
   - exp16_nibble.py 只改了注释，并把 `fail` 表达式抽成函数 `certificate_fails`，输出不变；新增回归测试 test_exp16_criteria.py。
-- **增补（大围长）：** 新增 LARGE_GIRTH_zh.md、exp18_large_girth.py 和 exp18.log。其后又陆续新增 exp19–exp33 及其日志（性质 M、P、R；2026-10-31 的九类方案检验），见下表。
+- **增补（大围长）：** 新增 LARGE_GIRTH_zh.md、exp18_large_girth.py 和 exp18.log。其后又陆续新增 exp19–exp36 及其日志（性质 M、P、R；2026-10-31 的九类方案检验），见下表。
 
 - [LARGE_GIRTH_zh.md](LARGE_GIRTH_zh.md)：**大围长情形已解决。** 用匹配收缩加 Kostochka 定理证明：第一类图围长 ≥ 41、一般图围长 ≥ 39360 时，χ'_s ≤ 20。
 - [ROUTE_Q_zh.md](ROUTE_Q_zh.md)：主推导，第 1–12 节。
@@ -59,6 +59,7 @@
 | [exp29_local_rounds.py](exp29_local_rounds.py) | 有界轮数的同步局部下降，记录每轮的坏边比例 | 每轮只降 ×1.5–2.3，坏边扎堆，局部引理走不通（NEW_DIRECTIONS 第 9.3 节，[日志](exp29.log)） |
 | [exp30_brooks8.py](exp30_brooks8.py) | L² 能否分成 k 类、每类最大度 ≤ 2（k = 8、7） | n ≤ 14 全部存在（n = 14 共 88168 个）；随机图 n = 500、1000 上连 6 类也存在（NEW_DIRECTIONS 第 9.4 节，[k = 8](exp30_k8.log)、[k = 7](exp30_k7.log)、[随机图](exp30_random.log)） |
 | [exp31_lll_girth.py](exp31_lll_girth.py) | 定理 3.14：用局部引理选缺陷集 D，排除距离 ≤ 4 的对和沿测地线成串的缺陷边；42 状态转移矩阵计数，brute 模式与直接枚举对照，cert 模式用十进制向上舍入严格检验 | g = 5710 时条件成立，无条件门槛 39360 → 5710（手稿第 3.7' 节，[日志](exp31.log)） |
+| [exp34_sat_kil.py](exp34_sat_kil.py)、[exp34b_phases.py](exp34b_phases.py)、[exp35_saturate.py](exp35_saturate.py)、[exp36_lifts.py](exp36_lifts.py)、[exp36b_pairs.py](exp36b_pairs.py) | KIL 的精确判定与分析：exp34 用 SAT 加惰性见证子句判定卡死局面是否存在；exp34b 用对手局面引导求解器；exp35 是快速的饱和对手；exp36 检验 C₅[2] 的覆盖；exp36b 计算树状邻域里需要回绕的颜色对数 | n = 14、20、24 上 19 条边全部无解；树上与 n = 40、60 上饱和局面存在；C₅[2] 的覆盖不产生堵塞；至少 66 对需要回绕（docs/NEW_DIRECTIONS_zh.md 第 11.5、11.6 节；日志 exp34_*.log、exp34b_n40g5.log、exp35_trial.log、exp36.log、exp36b.log） |
 | [exp33_kempe.py](exp33_kempe.py)、[exp33b_adversary.py](exp33b_adversary.py)、[exp33c_saturation.py](exp33c_saturation.py)、[exp33d_anatomy.py](exp33d_anatomy.py)、[exp33e_drivers.py](exp33e_drivers.py) | 直接进攻：L² 上的 Kempe 插入引理（KIL）。exp33 是带修复的贪心；exp33b/e 用模拟退火当对手，找没有可分离颜色对的堵塞局面；exp33c 区分平凡与非平凡的可分离对；exp33d 分析残留的可分离对 | n ≤ 13 全部图与随机图上 2295 次堵塞全部一步修复；对手最少压到 17 对，没有反例；平凡的可分离对可压到 2–4 个（docs/NEW_DIRECTIONS_zh.md 第 11 节；日志 exp33_*.log、exp33b_*.log、exp33c_saturation.log、exp33d.log） |
 | [exp32_frac_reed.py](exp32_frac_reed.py)、[exp32b_occupancy.py](exp32b_occupancy.py) | 分数版本 χ_f(L²) ≤ 20：统计物理的局部占据法。exp32 在 n ≤ 14 的全部图上算局部分数 Reed 界 (d(e) + ω(e) + 1)/2；exp32b 对单个邻域类型枚举全部 2²⁴ 个子集，求有限活度下的最优界 | 只在 C₅[2]（20）和 n = 14 #88048 的一条边（21）上超过 19.5，有限活度改进不了后者；高围长型为 16（docs/NEW_DIRECTIONS_zh.md 第 10.3 节，[日志](exp32.log)、[日志](exp32b.log)） |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |

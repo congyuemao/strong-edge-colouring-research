@@ -43,8 +43,8 @@
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 41748,
-      "sha256": "1c9905e16630c4cc34f5172b0a68ff4d9319842a42b88373d7c12e88012d4762"
+      "bytes": 49033,
+      "sha256": "0897274c1d7294affa3b50a4da52075dcb86bd0bac58ebb1890d35040388865d"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -2072,6 +2072,86 @@
       "sha256": "56ee8684d43d1cb3de6b64557819340a0322a4ce089f936a15e10c442baae854"
     },
     {
+      "path": "research-2026-10-30/exp34_g14.log",
+      "bytes": 867,
+      "sha256": "8a0e7bf26ecf3709cad515a8a126b63e0f4e9dfd0e7730fbdd3d4ff4c7aa6748"
+    },
+    {
+      "path": "research-2026-10-30/exp34_n20g4.log",
+      "bytes": 1246,
+      "sha256": "909198d1c2eb1d0b685d4ccaebe0c6a92208fd204860ed76050686fcf0fd5cca"
+    },
+    {
+      "path": "research-2026-10-30/exp34_n24g5.log",
+      "bytes": 496,
+      "sha256": "83ff6cf8352f1888d045afa5d54ff330d9463d78577702d8f2df933d1cd838a6"
+    },
+    {
+      "path": "research-2026-10-30/exp34_n30g5.log",
+      "bytes": 734,
+      "sha256": "4f78fdfabf4c12535bbbc96b038cf62c6cdd2b252ea16a8e487de01bff04d5ff"
+    },
+    {
+      "path": "research-2026-10-30/exp34_n40g5.log",
+      "bytes": 368,
+      "sha256": "b47adb2f1e91e21ce1b8aaeb9d5cb8e30e3af8afe7e7fea631c67ae88e9c16ef"
+    },
+    {
+      "path": "research-2026-10-30/exp34_n60g5.log",
+      "bytes": 259,
+      "sha256": "32bd32b4416cf24db982b4071774d431a527d1cdd4a4f6fdabde4c32977033b0"
+    },
+    {
+      "path": "research-2026-10-30/exp34_sat_kil.py",
+      "bytes": 10032,
+      "sha256": "fd0e54e9825fed14c0fae46207b0482296842607ad62ae8c2a674bc062003cdb"
+    },
+    {
+      "path": "research-2026-10-30/exp34_treeball.log",
+      "bytes": 80,
+      "sha256": "18f5233a222557a08760ab799ae4bf4b46e080fe7a2a7182c9901704319cea88"
+    },
+    {
+      "path": "research-2026-10-30/exp34b_n40g5.log",
+      "bytes": 273,
+      "sha256": "7d5bbef4d3066ec4635c5b91dd97fcf5e2a7aa36c4e8dcb2c372f3bc622f038e"
+    },
+    {
+      "path": "research-2026-10-30/exp34b_phases.py",
+      "bytes": 1280,
+      "sha256": "e1c847b7aa9f4b9c328cc85f189887318cde3fff689ab8322357161e694bb2f2"
+    },
+    {
+      "path": "research-2026-10-30/exp35_saturate.py",
+      "bytes": 3944,
+      "sha256": "c716448307091f7b02483251f4605b44c22df5968fa9daf7b8a39b3b2e603739"
+    },
+    {
+      "path": "research-2026-10-30/exp35_trial.log",
+      "bytes": 105,
+      "sha256": "1b307cccb2246194cdd2c4eee8798a365e17de2a6ca3fb3ff01da1b62e711cdc"
+    },
+    {
+      "path": "research-2026-10-30/exp36.log",
+      "bytes": 276,
+      "sha256": "6b7a9aa9dc400096c227ca88661568640ba89d309307f58c01994208ca39b25f"
+    },
+    {
+      "path": "research-2026-10-30/exp36_lifts.py",
+      "bytes": 3724,
+      "sha256": "7cf921311e80cbcc3e46d838fbf41d9704ffb8bd33f36113c4497fe751f5519d"
+    },
+    {
+      "path": "research-2026-10-30/exp36b.log",
+      "bytes": 159,
+      "sha256": "6dece6547cc83e519046f34f3d7a8e11584bc5704bbfa521d88248edf975063b"
+    },
+    {
+      "path": "research-2026-10-30/exp36b_pairs.py",
+      "bytes": 647,
+      "sha256": "3113e36b851db443cd8c1ca05432b433e4d515f5aefae381a9cb6328da16cdb7"
+    },
+    {
       "path": "research-2026-10-30/exp3_pairs.py",
       "bytes": 2990,
       "sha256": "7cfe401d55db8420d007db3ea9ba2264822ae3abff8cd0aaade5730b865ff3aa"
@@ -2838,8 +2918,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 12962,
-      "sha256": "71cca90f9fa33482aa1d584075ad5191d32f417a4a231d08ee21d0d3e493f3cf"
+      "bytes": 13707,
+      "sha256": "b42930a6c1ac32d9e4a36a64323cc4312707f3537148b12e17701e088772d4ad"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",

@@ -1,0 +1,4 @@
+random n=40 girth=5 seed=0, edge 0 (0, 2): m=80, d(e)=24, near=6
+    -> OPEN (solver budget 3000000 conflicts exhausted) after 2 iterations, 114 witness sets, 123134 clauses  [253s]
+random n=40 girth=5 seed=1, edge 0 (0, 9): m=80, d(e)=24, near=6
+    -> OPEN (solver budget 3000000 conflicts exhausted) after 2 iterations, 124 witness sets, 126934 clauses  [526s]
