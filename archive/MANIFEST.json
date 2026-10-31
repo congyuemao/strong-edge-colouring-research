@@ -33,18 +33,18 @@
     },
     {
       "path": "docs/HANDOFF_2026-10-30.md",
-      "bytes": 30715,
-      "sha256": "43410c0acdc972cd4838f29222fae6bb51c6ca3875079853a9f24f2d2d94a609"
+      "bytes": 30807,
+      "sha256": "eafe2e84c8e19f95c681315e0616e4e3cb94de7987845cc0a022ca4a1165564d"
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 73249,
-      "sha256": "9780fa2a63654446be78da14620538967582057e13a5f181746910072ddfc5ad"
+      "bytes": 82615,
+      "sha256": "bfcb4dcbee7520f35c41ca9dc589999948d5d3a2644044e959d74ec84c923750"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 29895,
-      "sha256": "c6256b6077c0950ee75aa89c803b6a7cfc0090b57962ab2bf6383a01336d0349"
+      "bytes": 29947,
+      "sha256": "f7026ac115971d7de0852db1b7bcb73f0a1e17e68b97ccf71605faa8a5ba03c5"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -68,8 +68,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6599,
-      "sha256": "43ce3eb2fe384470768fdd369242026537810c213b27d6d51eda842788e029cb"
+      "bytes": 6654,
+      "sha256": "73d3b003e1114db708c6596e73cedcaeb7d8e29749ea16fcb2b953cc9c06f72a"
     },
     {
       "path": "research/all_blocked_circles_joint_degree.md",
@@ -1962,6 +1962,16 @@
       "sha256": "43241a2c8bc7f579069bc34dc2938038dec906e93a9c0cfcfdb1698b34e7f9e5"
     },
     {
+      "path": "research-2026-10-30/exp31.log",
+      "bytes": 2368,
+      "sha256": "d1afa8649d2926eb50b7e5a936ea0a993528adc3efecc3f7c7e88b5512456004"
+    },
+    {
+      "path": "research-2026-10-30/exp31_lll_girth.py",
+      "bytes": 8067,
+      "sha256": "94e8094d757bcd80f772197b77b08edf3f1fda5374f2722ff73b807ce2b7a2fc"
+    },
+    {
       "path": "research-2026-10-30/exp3_pairs.py",
       "bytes": 2990,
       "sha256": "7cfe401d55db8420d007db3ea9ba2264822ae3abff8cd0aaade5730b865ff3aa"
@@ -2098,8 +2108,8 @@
     },
     {
       "path": "research-2026-10-30/LARGE_GIRTH_zh.md",
-      "bytes": 50993,
-      "sha256": "205ff3ed6c7865394ba3449798f20d46183d289c6f43dcf4ad8ab8da9d3eaa76"
+      "bytes": 51075,
+      "sha256": "680c199627a9b49dd4c4c31bdb9c3c36e61666d823eeeee68eb30a0a8f12f218"
     },
     {
       "path": "research-2026-10-30/logs10/anneal_14.log",
@@ -2728,8 +2738,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 11301,
-      "sha256": "3594d287d840807997bba0c01d67a657bbee20e1e39897345d22a85873a476b4"
+      "bytes": 11676,
+      "sha256": "52950fb0250d7668e1a0180f9e5aa11e16f9941216a08e974014a22b91980c13"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",

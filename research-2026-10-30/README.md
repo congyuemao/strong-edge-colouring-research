@@ -8,7 +8,7 @@
   - exp15_phi2first.py 按 Codex 审查做了修正：原来的 `free_lit` 方向错误，使先清后移的约束失效。
   - 第 13 节按第二条 Codex 审查做了修正：slack 判据只是贪心收尾的充分条件，原文误写成等价（第 13.6 节）。
   - exp16_nibble.py 只改了注释，并把 `fail` 表达式抽成函数 `certificate_fails`，输出不变；新增回归测试 test_exp16_criteria.py。
-- **增补（大围长）：** 新增 LARGE_GIRTH_zh.md、exp18_large_girth.py 和 exp18.log。其后又陆续新增 exp19–exp30 及其日志（性质 M、P、R；2026-11-01 的九类方案检验），见下表。
+- **增补（大围长）：** 新增 LARGE_GIRTH_zh.md、exp18_large_girth.py 和 exp18.log。其后又陆续新增 exp19–exp31 及其日志（性质 M、P、R；2026-11-01 的九类方案检验），见下表。
 
 - [LARGE_GIRTH_zh.md](LARGE_GIRTH_zh.md)：**大围长情形已解决。** 用匹配收缩加 Kostochka 定理证明：第一类图围长 ≥ 41、一般图围长 ≥ 39360 时，χ'_s ≤ 20。
 - [ROUTE_Q_zh.md](ROUTE_Q_zh.md)：主推导，第 1–12 节。
@@ -58,6 +58,7 @@
 | [exp28_q9_large.py](exp28_q9_large.py) | 大图（n = 2000–5000，围长 5–10）上 9 类、8 类的 Lovász 下降和记号搜索 | 9 类：下降后至多 1 个三角形，一步消掉；8 类：三角形全部可以消掉，2 次留下度为 3 的边（NEW_DIRECTIONS 第 9.2 节，[日志](exp28.log)） |
 | [exp29_local_rounds.py](exp29_local_rounds.py) | 有界轮数的同步局部下降，记录每轮的坏边比例 | 每轮只降 ×1.5–2.3，坏边扎堆，局部引理走不通（NEW_DIRECTIONS 第 9.3 节，[日志](exp29.log)） |
 | [exp30_brooks8.py](exp30_brooks8.py) | L² 能否分成 k 类、每类最大度 ≤ 2（k = 8、7） | n ≤ 14 全部存在（n = 14 共 88168 个）；随机图 n = 500、1000 上连 6 类也存在（NEW_DIRECTIONS 第 9.4 节，[k = 8](exp30_k8.log)、[k = 7](exp30_k7.log)、[随机图](exp30_random.log)） |
+| [exp31_lll_girth.py](exp31_lll_girth.py) | 定理 3.14：用局部引理选缺陷集 D，排除距离 ≤ 4 的对和沿测地线成串的缺陷边；42 状态转移矩阵计数，brute 模式与直接枚举对照，cert 模式用十进制向上舍入严格检验 | g = 5710 时条件成立，无条件门槛 39360 → 5710（手稿第 3.7' 节，[日志](exp31.log)） |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |
 
 ## 数据与日志
