@@ -14,12 +14,14 @@ on (G, e); a model that survives is a counterexample to one-pair insertion and i
 Colour symmetry is broken by fixing the colours of the six edges sharing an endpoint with e (a clique in L^2)
 and by value precedence for the remaining colours (colour c+1 is used only after colour c, in a BFS order from e).
 
-Environment: KIL_BUDGET = conflict budget per solver call (default 3000000).
+Environment: KIL_BUDGET = conflict budget per solver call (default 3000000); KIL_CKPT_DIR = directory for
+checkpoints (the witness sets, saved after every iteration and reloaded on restart).
 
 Usage: exp34_sat_kil.py g14 index edge | g14all index | random n girth seed [edge] | batch n girth seeds edges
        | tree
 """
 import itertools
+import json
 import os
 import sys
 import time
@@ -110,10 +112,25 @@ class KilSat:
                 self.add(cl)
         return True
 
-    def run(self, t0, max_iter=100000, budget=int(os.environ.get("KIL_BUDGET", 3_000_000))):
+    def load_checkpoint(self, path):
+        if path and os.path.exists(path):
+            with open(path) as fh:
+                sets = json.load(fh)
+            added = sum(self.add_witness(frozenset(C)) for C in sets)
+            print(f"    resumed from {path}: {added} witness sets", flush=True)
+
+    def save_checkpoint(self, path):
+        if path:
+            with open(path + ".tmp", "w") as fh:
+                json.dump(sorted(sorted(C) for C in self.seen), fh)
+            os.replace(path + ".tmp", path)
+
+    def run(self, t0, max_iter=100000, budget=int(os.environ.get("KIL_BUDGET", 3_000_000)), ckpt=None):
+        self.load_checkpoint(ckpt)
         it = 0
         while it < max_iter:
             it += 1
+            ts = time.time()
             self.s.conf_budget(budget)
             r = self.s.solve_limited()
             if r is None:
@@ -144,9 +161,9 @@ class KilSat:
                     new += self.add_witness(frozenset(C))
             if nsep == 0:
                 return "STUCK", it, col
-            if it % 20 == 0:
-                print(f"    iter {it}: model had {nsep} separable pairs; witness sets {len(self.seen)}, "
-                      f"clauses {self.nclauses}  [{time.time() - t0:.0f}s]", flush=True)
+            self.save_checkpoint(ckpt)
+            print(f"    iter {it}: model had {nsep} separable pairs; witness sets {len(self.seen)}, "
+                  f"clauses {self.nclauses}; solve {time.time() - ts:.0f}s  [{time.time() - t0:.0f}s]", flush=True)
             if new == 0:
                 raise RuntimeError("no new witness clause: encoding bug")
         return "OPEN", it, None
@@ -162,7 +179,9 @@ def report_result(ks, name, e, t0):
     if len(ks.N) < K:
         print("    d(e) < 20: never blocked", flush=True)
         return
-    res, it, col = ks.run(t0)
+    tag = f"{name}_e{e}".replace(" ", "_").replace("=", "").replace("#", "")
+    ckpt = os.path.join(os.environ["KIL_CKPT_DIR"], f"kil_{tag}.json") if os.environ.get("KIL_CKPT_DIR") else None
+    res, it, col = ks.run(t0, ckpt=ckpt)
     msg = f"    -> {res} after {it} iterations, {len(ks.seen)} witness sets, {ks.nclauses} clauses"
     if res == "STUCK":
         d2 = depth_two(ks.adj, list(col), e)

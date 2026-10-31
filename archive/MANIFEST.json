@@ -43,8 +43,8 @@
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 49033,
-      "sha256": "0897274c1d7294affa3b50a4da52075dcb86bd0bac58ebb1890d35040388865d"
+      "bytes": 51049,
+      "sha256": "647acd81b9a7080e4a088b058c73e71e49f37143761c011e624da230dca95ec5"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -2103,8 +2103,8 @@
     },
     {
       "path": "research-2026-10-30/exp34_sat_kil.py",
-      "bytes": 10032,
-      "sha256": "fd0e54e9825fed14c0fae46207b0482296842607ad62ae8c2a674bc062003cdb"
+      "bytes": 10987,
+      "sha256": "c4f91c86d8853b8da463f38182ef9f64774360bb51c82b5c4da39034e41bd00b"
     },
     {
       "path": "research-2026-10-30/exp34_treeball.log",
@@ -2150,6 +2150,21 @@
       "path": "research-2026-10-30/exp36b_pairs.py",
       "bytes": 647,
       "sha256": "3113e36b851db443cd8c1ca05432b433e4d515f5aefae381a9cb6328da16cdb7"
+    },
+    {
+      "path": "research-2026-10-30/exp37_kil_cubes.py",
+      "bytes": 7935,
+      "sha256": "463ac55e2463b0c064a7757d1ae3b57f53167617e8231bbea776b35dfd78e85e"
+    },
+    {
+      "path": "research-2026-10-30/exp37b_cover.log",
+      "bytes": 390,
+      "sha256": "dfb933fab38c056905ad455ea688f54a312f9156743d2f6c7373f1b6471bcade"
+    },
+    {
+      "path": "research-2026-10-30/exp37b_cover_check.py",
+      "bytes": 1002,
+      "sha256": "e770a8e297da05df90b29cb13a81ddab4fe5ae771a4281a0bda6c1d9512ef2f2"
     },
     {
       "path": "research-2026-10-30/exp3_pairs.py",
@@ -2918,8 +2933,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 13707,
-      "sha256": "b42930a6c1ac32d9e4a36a64323cc4312707f3537148b12e17701e088772d4ad"
+      "bytes": 14213,
+      "sha256": "5a0192cbcb8b346decccd771f263906fbdf332646a67119eb6286921951757c6"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
@@ -2935,6 +2950,11 @@
       "path": "research-2026-10-30/run9.sh",
       "bytes": 392,
       "sha256": "5fe9405e3edc336cb9a955a4712b28752627b6e1be36528d6100cce0941093da"
+    },
+    {
+      "path": "research-2026-10-30/runner.py",
+      "bytes": 12432,
+      "sha256": "ca63200c43ebb65a4de639ebdcdfddf953301aeac6cc4d00fb934ef3f06f937d"
     },
     {
       "path": "research-2026-10-30/sec.py",

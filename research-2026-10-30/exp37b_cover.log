@@ -1,0 +1,4 @@
+n=40 seed=0 edge 0 t=3: 34 cubes; formula minus all cubes: UNSAT (cubes cover everything)  [0s]
+n=40 seed=0 edge 0 t=4: 141 cubes; formula minus all cubes: UNSAT (cubes cover everything)  [0s]
+n=40 seed=1 edge 0 t=4: 192 cubes; formula minus all cubes: UNSAT (cubes cover everything)  [0s]
+n=30 seed=0 edge 0 t=4: 80 cubes; formula minus all cubes: UNSAT (cubes cover everything)  [0s]
