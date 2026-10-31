@@ -1,0 +1,6 @@
+n=13 #10760 edge 19 seed 0: 30000 steps -> min #separable = 20  [6s]
+n=13 #10760 edge 19 seed 1: 30000 steps -> min #separable = 20  [12s]
+n=13 #10760 edge 19 seed 2: 30000 steps -> min #separable = 20  [18s]
+n=13 #9684 edge 21 seed 0: 30000 steps -> min #separable = 20  [25s]
+n=13 #9684 edge 21 seed 1: 30000 steps -> min #separable = 20  [31s]
+n=13 #9684 edge 21 seed 2: 30000 steps -> min #separable = 20  [37s]

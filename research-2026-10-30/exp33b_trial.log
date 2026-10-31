@@ -1,0 +1,6 @@
+n=60 girth=5 seed=0 edge 67 (d=24): min #separable pairs = 40  [1s]
+n=60 girth=5 seed=0 edge 112 (d=24): min #separable pairs = 40  [2s]
+n=60 girth=5 seed=0 edge 34 (d=24): min #separable pairs = 38  [3s]
+n=60 girth=5 seed=1 edge 104 (d=24): min #separable pairs = 44  [4s]
+n=60 girth=5 seed=1 edge 78 (d=24): min #separable pairs = 44  [4s]
+n=60 girth=5 seed=1 edge 97 (d=24): min #separable pairs = 46  [5s]

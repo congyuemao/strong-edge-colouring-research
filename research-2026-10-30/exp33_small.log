@@ -1,0 +1,7 @@
+n=7: runs=5x; blocked=0 depth1=0 depth2=0 stuck=0; graphs with stuck runs: []  [0s]
+n=8: runs=5x; blocked=0 depth1=0 depth2=0 stuck=0; graphs with stuck runs: []  [0s]
+n=9: runs=5x; blocked=0 depth1=0 depth2=0 stuck=0; graphs with stuck runs: []  [0s]
+n=10: runs=5x; blocked=0 depth1=0 depth2=0 stuck=0; graphs with stuck runs: []  [0s]
+n=11: runs=5x; blocked=74 depth1=74 depth2=0 stuck=0; graphs with stuck runs: []  [1s]
+n=12: runs=5x; blocked=290 depth1=290 depth2=0 stuck=0; graphs with stuck runs: []  [4s]
+n=13: runs=5x; blocked=1931 depth1=1931 depth2=0 stuck=0; graphs with stuck runs: []  [26s]

@@ -1,0 +1,6 @@
+n=100 girth=3 seed=0: m=200 blocked=0 depth1=0 depth2=0 stuck=0  [0s]
+n=100 girth=3 seed=1: m=200 blocked=0 depth1=0 depth2=0 stuck=0  [0s]
+n=400 girth=3 seed=0: m=800 blocked=2 depth1=2 depth2=0 stuck=0  [0s]
+n=400 girth=3 seed=1: m=800 blocked=4 depth1=4 depth2=0 stuck=0  [0s]
+n=1600 girth=3 seed=0: m=3200 blocked=9 depth1=9 depth2=0 stuck=0  [0s]
+n=1600 girth=3 seed=1: m=3200 blocked=9 depth1=9 depth2=0 stuck=0  [1s]

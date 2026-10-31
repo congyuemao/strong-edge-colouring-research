@@ -1,0 +1,6 @@
+n=60 girth=5 edge 57: min #separable by steps [(5000, 38), (60000, 23)]  [43s]
+n=60 girth=5 edge 110: min #separable by steps [(5000, 33), (60000, 22)]  [85s]
+n=200 girth=6 edge 231: min #separable by steps [(5000, 53), (60000, 23)]  [159s]
+n=200 girth=6 edge 286: min #separable by steps [(5000, 54), (60000, 21)]  [262s]
+n=500 girth=7 edge 463: min #separable by steps [(5000, 63), (60000, 36)]  [413s]
+n=500 girth=7 edge 886: min #separable by steps [(5000, 69), (60000, 31)]  [513s]
