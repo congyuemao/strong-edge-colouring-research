@@ -43,8 +43,8 @@
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 59783,
-      "sha256": "4a1f7063f312dbaec03939a5563c69ee23313ae67502c9bc718bf14fa5275e6d"
+      "bytes": 61954,
+      "sha256": "0049c886979e262e2d1756cb0a8b6bd4ce6aae35baacfb33d909c4b00dad6ee9"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -2168,13 +2168,18 @@
     },
     {
       "path": "research-2026-10-30/exp38_gpu_adversary.py",
-      "bytes": 29628,
-      "sha256": "1b2f167e2f66fe548beb7a4fb756831a346b9e848e70062312b4d1261579d1de"
+      "bytes": 30555,
+      "sha256": "135d22414f06f0255ecc0c4544219a7bf907d9d1a07cd1ef9a10877023130ad2"
     },
     {
       "path": "research-2026-10-30/exp38_hunt1.log",
       "bytes": 143676,
       "sha256": "984678cdd1a9d7ab8a6b2a189124b69289796e98a5af1cf0d1055e8b220d4821"
+    },
+    {
+      "path": "research-2026-10-30/exp38_hunt2_4_frontier.log",
+      "bytes": 24243,
+      "sha256": "f86fd94600dd939b3af5ee7f1456590295e4a1037c9d930b5a9fc7896ffb3e0b"
     },
     {
       "path": "research-2026-10-30/exp39_local_sat.py",
@@ -2185,6 +2190,11 @@
       "path": "research-2026-10-30/exp39_local_sat2.log",
       "bytes": 41385,
       "sha256": "e243aea8f2f1868925ae3d8453acff6c3eafe0f7d8f9ad457c54c8ca0b4cfcb5"
+    },
+    {
+      "path": "research-2026-10-30/exp39_local_sat3.log",
+      "bytes": 21863,
+      "sha256": "298cf9ddafd2fd4082f3ce095664ac18dc57c671bcbe1b01e6e43125e1e3ee72"
     },
     {
       "path": "research-2026-10-30/exp3_pairs.py",

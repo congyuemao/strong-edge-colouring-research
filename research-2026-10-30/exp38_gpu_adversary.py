@@ -518,6 +518,21 @@ def run(out, spec, per=1024, minutes=0):
         H.load(ck)
         done_steps = json.load(open(mpath, encoding="utf-8"))["steps"]
         print(f"resumed from {ck} ({done_steps:.3g} steps so far)", flush=True)
+    elif os.environ.get("KIL_GPU_WARM"):        # warm start: tile the chains of the same edges from another hunt
+        src = os.environ["KIL_GPU_WARM"]
+        wm = json.load(open(os.path.join(src, "meta.json"), encoding="utf-8"))["meta"]
+        wd = np.load(os.path.join(src, "state.npz"))
+        wper, wnames = wm["per"], wm["instances"]
+        assert per % wper == 0 and wd["cls"].shape[1:] == H.h["cls"].shape[1:]
+        for i, x in enumerate(insts):
+            if x["name"] in wnames:
+                j = wnames.index(x["name"])
+                for k in ("cls", "Tfix"):
+                    H.h[k][i * per:(i + 1) * per] = np.tile(wd[k][j * wper:(j + 1) * wper],
+                                                           (per // wper,) + (1,) * (wd[k].ndim - 1))
+        H.put("cls", "Tfix")
+        H.k_init(H.nch, *H.args(), np.int32(0), *H.w)
+        print(f"warm start from {src}", flush=True)
     mode = f"parallel tempering, {rungs} rungs {Tmin}-{Tmax}" if rungs else f"run lengths {Ls}"
     print(f"{H.g.name}: {len(insts)} edges x {per} chains = {H.nch} chains, W = {H.W}, {mode}", flush=True)
     t0 = last_log = last_ck = time.time()
