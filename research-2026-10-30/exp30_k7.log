@@ -2,3 +2,4 @@ n=10: 59 graphs, K=7 classes of degree <= 2: fails on 0; odd class cycles in the
 n=11: 265 graphs, K=7 classes of degree <= 2: fails on 0; odd class cycles in the found partition (0/1/2/3+): {0: 4, 1: 15, 2: 17, 3: 229}; slowest 0.2s  [17s]
 n=12: 1544 graphs, K=7 classes of degree <= 2: fails on 0; odd class cycles in the found partition (0/1/2/3+): {0: 21, 1: 129, 2: 230, 3: 1164}; slowest 0.24s  [41s]
 n=13: 10778 graphs, K=7 classes of degree <= 2: fails on 0; odd class cycles in the found partition (0/1/2/3+): {0: 126, 1: 605, 2: 1345, 3: 8702}; slowest 0.5s  [223s]
+n=14: 88168 graphs, K=7 classes of degree <= 2: fails on 0; odd class cycles in the found partition (0/1/2/3+): {0: 980, 1: 4459, 2: 9362, 3: 73367}; slowest 0.36s  [227s]

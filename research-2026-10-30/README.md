@@ -53,11 +53,11 @@
 | [exp23_structured.py](exp23_structured.py) | 结构化构造（F₁ 用 {1,2,5}，F₂ 用 {3,4,5}）：V1 见证点不限，V2 只沿自身所在的圈；families 模式拆开各约束族 | V1 全部可满足，V2 全部不可满足（计数引理：要求所有圈长都是 5 的倍数）（[exp23.log](exp23.log)） |
 | [exp24_property_r.py](exp24_property_r.py) | 性质 R（一个色类是诱导匹配、一个色类 Δ(H(K)) ≤ 5，其余不限；定理 B 构造的就是它，围长 ≥ 69 ⇒ 20 色）：small、random、compare 模式检验性质 R（compare 与性质 P 对照）；fixedD、dead、resample、core 模式在奇圈最密的图上检验定理 B 流程；tree 模式在 4 正则树的球上检验 | 小图 12669/12672 满足（P 为 12507）；随机第二类图全部满足；缺陷集稠密时定理 B 流程因"死边"失败；树上距离 5 时 40/40 成功、距离 4 有反例（LARGE_GIRTH 第 10 节，[small](exp24_small.log)、[random](exp24_random.log)、[compare](exp24_compare.log)、[dense](exp24_dense.log)、[tree](exp24_tree.log)） |
 | [exp25_dead_girth8.py](exp25_dead_girth8.py) | 引理 5 第二种情形在围长 8 时的反例：围长恰为 8、u 和 v 都不是缺陷端点、uv 是死边，只用 4 条缺陷边（2026-10-31 审查发现） | 确认；引理 5(b) 需要围长 ≥ 9（[日志](exp25.log)，LARGE_GIRTH 第 10.8 节） |
-| [exp26_triangle_lock.py](exp26_triangle_lock.py) | 九类方案的类内三角形：在 4 正则树的球上用 SAT 判定，在 (Φ₁, #类内三角形) 的字典序最小者中，单个类内三角形能否锁住、两个锁住的三角形能否互相冲突。模式有 single、pair、pairorb、pairpar，可加翻转条件 | 可满足：锁住的单个三角形、互相冲突的锁住三角形对都能在局部出现，包括 9 对边全冲突的一对；加翻转条件后，已完成的轨道也全部可满足（NEW_DIRECTIONS 第 9.1 节，[日志](exp26_pair5_flip.log)） |
-| [exp27_q9_n14.py](exp27_q9_n14.py) | 用并行的双边交换 BFS 枚举 n = 14 的全部连通 4 正则图，再检验猜想 Q₉（9 个二部类，即 18 色） | 见[日志](exp27_n14.log)（NEW_DIRECTIONS 第 9.5 节） |
+| [exp26_triangle_lock.py](exp26_triangle_lock.py) | 九类方案的类内三角形：在 4 正则树的球上用 SAT 判定，在 (Φ₁, #类内三角形) 的字典序最小者中，单个类内三角形能否锁住、两个锁住的三角形能否互相冲突。模式有 single、pair、pairorb、pairpar，可加翻转条件 | 可满足：锁住的单个三角形、互相冲突的锁住三角形对都能在局部出现，包括 9 对边全冲突的一对；加翻转条件后，完成的 47/111 个轨道也全部可满足（NEW_DIRECTIONS 第 9.1 节；日志：[单个](exp26_single4.log)、[成对](exp26_pair5.log)、[成对加翻转](exp26_pair5_flip.log)） |
+| [exp27_q9_n14.py](exp27_q9_n14.py) | 用并行的双边交换 BFS 枚举 n = 14 的全部连通 4 正则图，再检验猜想 Q₉（9 个二部类，即 18 色）；complete 模式用精确同构判定补上哈希判重漏掉的类 | 88168 个类（与 A006820 一致，BFS 漏的 2 个由 complete 模式补上），全部满足 Q₉（NEW_DIRECTIONS 第 9.6 节，[日志](exp27_n14.log)） |
 | [exp28_q9_large.py](exp28_q9_large.py) | 大图（n = 2000–5000，围长 5–10）上 9 类、8 类的 Lovász 下降和记号搜索 | 9 类：下降后至多 1 个三角形，一步消掉；8 类：三角形全部可以消掉，2 次留下度为 3 的边（NEW_DIRECTIONS 第 9.2 节，[日志](exp28.log)） |
 | [exp29_local_rounds.py](exp29_local_rounds.py) | 有界轮数的同步局部下降，记录每轮的坏边比例 | 每轮只降 ×1.5–2.3，坏边扎堆，局部引理走不通（NEW_DIRECTIONS 第 9.3 节，[日志](exp29.log)） |
-| [exp30_brooks8.py](exp30_brooks8.py) | L² 能否分成 k 类、每类最大度 ≤ 2（k = 8、7） | n ≤ 13 全部存在；随机图 n = 500、1000 上连 6 类也存在（NEW_DIRECTIONS 第 9.4 节，[k = 8](exp30_k8.log)、[k = 7](exp30_k7.log)、[随机图](exp30_random.log)） |
+| [exp30_brooks8.py](exp30_brooks8.py) | L² 能否分成 k 类、每类最大度 ≤ 2（k = 8、7） | n ≤ 14 全部存在（n = 14 共 88168 个）；随机图 n = 500、1000 上连 6 类也存在（NEW_DIRECTIONS 第 9.4 节，[k = 8](exp30_k8.log)、[k = 7](exp30_k7.log)、[随机图](exp30_random.log)） |
 | [run9.sh](run9.sh) | exp9 的批量运行脚本 | — |
 
 ## 数据与日志
