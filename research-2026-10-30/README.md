@@ -8,7 +8,7 @@
   - exp15_phi2first.py 按 Codex 审查做了修正：原来的 `free_lit` 方向错误，使先清后移的约束失效。
   - 第 13 节按第二条 Codex 审查做了修正：slack 判据只是贪心收尾的充分条件，原文误写成等价（第 13.6 节）。
   - exp16_nibble.py 只改了注释，并把 `fail` 表达式抽成函数 `certificate_fails`，输出不变；新增回归测试 test_exp16_criteria.py。
-- **增补（大围长）：** 新增 LARGE_GIRTH_zh.md、exp18_large_girth.py 和 exp18.log。其后又陆续新增 exp19–exp38 及其日志（性质 M、P、R；2026-10-31 的九类方案检验），见下表。
+- **增补（大围长）：** 新增 LARGE_GIRTH_zh.md、exp18_large_girth.py 和 exp18.log。其后又陆续新增 exp19–exp39 及其日志（性质 M、P、R；2026-10-31 的九类方案检验），见下表。
 
 - [LARGE_GIRTH_zh.md](LARGE_GIRTH_zh.md)：**大围长情形已解决。** 用匹配收缩加 Kostochka 定理证明：第一类图围长 ≥ 41、一般图围长 ≥ 39360 时，χ'_s ≤ 20。
 - [ROUTE_Q_zh.md](ROUTE_Q_zh.md)：主推导，第 1–12 节。
@@ -59,6 +59,7 @@
 | [exp29_local_rounds.py](exp29_local_rounds.py) | 有界轮数的同步局部下降，记录每轮的坏边比例 | 每轮只降 ×1.5–2.3，坏边扎堆，局部引理走不通（NEW_DIRECTIONS 第 9.3 节，[日志](exp29.log)） |
 | [exp30_brooks8.py](exp30_brooks8.py) | L² 能否分成 k 类、每类最大度 ≤ 2（k = 8、7） | n ≤ 14 全部存在（n = 14 共 88168 个）；随机图 n = 500、1000 上连 6 类也存在（NEW_DIRECTIONS 第 9.4 节，[k = 8](exp30_k8.log)、[k = 7](exp30_k7.log)、[随机图](exp30_random.log)） |
 | [exp31_lll_girth.py](exp31_lll_girth.py) | 定理 3.14：用局部引理选缺陷集 D，排除距离 ≤ 4 的对和沿测地线成串的缺陷边；42 状态转移矩阵计数，brute 模式与直接枚举对照，cert 模式用十进制向上舍入严格检验 | g = 5710 时条件成立，无条件门槛 39360 → 5710（手稿第 3.7' 节，[日志](exp31.log)） |
+| [exp39_local_sat.py](exp39_local_sat.py)（及 exp34 的 fixed 参数） | 在 GPU 找到的低能量局面附近做精确判定：至多改 k 条边能否得到卡死局面（惰性见证 + 计数约束） | 128 个局面（3–8 对）在 k = 6、7 时全部无解；每条边最好的 16 个在 k = 8 时全部无解（docs/NEW_DIRECTIONS_zh.md 第 11.9 节，[日志](exp39_local_sat2.log)） |
 | [gpu_cl.py](gpu_cl.py)、[exp38_gpu_adversary.py](exp38_gpu_adversary.py) | OpenCL 最小接口（显卡驱动自带，不装任何东西）；exp33b 对手搜索的 GPU 版（位集分支搜索，增量重测 37 对，CPU 复核）| n = 40 时约为单个 Python 进程的 2 万倍；58 条边、2.5 × 10¹¹ 步后最少可分离对降到 3（CPU 最好 17），降温越长越低，未找到卡死局面（docs/NEW_DIRECTIONS_zh.md 第 11.8 节，[日志](exp38_hunt1.log)） |
 | [runner.py](runner.py)、[exp37_kil_cubes.py](exp37_kil_cubes.py)、[exp37b_cover_check.py](exp37b_cover_check.py) | 通用并行调度工具（控制文件可随时改优先级、进程数、暂停；检查点续算；数据放 E 盘）；KIL 精确判定的切块并行与共享见证；切块完整性检查 | n = 24 试点 30 块全部无解；n = 30、40 四个实例的切块覆盖全部模型；n = 40 的两个图在跑（docs/NEW_DIRECTIONS_zh.md 第 11.7 节，[日志](exp37b_cover.log)） |
 | [exp34_sat_kil.py](exp34_sat_kil.py)、[exp34b_phases.py](exp34b_phases.py)、[exp35_saturate.py](exp35_saturate.py)、[exp36_lifts.py](exp36_lifts.py)、[exp36b_pairs.py](exp36b_pairs.py) | KIL 的精确判定与分析：exp34 用 SAT 加惰性见证子句判定卡死局面是否存在；exp34b 用对手局面引导求解器；exp35 是快速的饱和对手；exp36 检验 C₅[2] 的覆盖；exp36b 计算树状邻域里需要回绕的颜色对数 | n = 14、20、24 上 19 条边全部无解；树上与 n = 40、60 上饱和局面存在；C₅[2] 的覆盖不产生堵塞；至少 66 对需要回绕（docs/NEW_DIRECTIONS_zh.md 第 11.5、11.6 节；日志 exp34_*.log、exp34b_n40g5.log、exp35_trial.log、exp36.log、exp36b.log） |

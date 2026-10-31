@@ -37,7 +37,9 @@ PIDX = {p: i for i, p in enumerate(PAIRS)}
 
 
 class KilSat:
-    def __init__(self, edges, e):
+    def __init__(self, edges, e, fixed=None):
+        """fixed: {edge: colour} to hold fixed (exp39).  The colours are then no longer interchangeable, so the
+        symmetry breaking (near edges 0..5, value precedence) is left out."""
         self.edges, self.e = edges, e
         self.adj = adj = l2_adj(edges)
         self.m = m = len(edges)
@@ -66,9 +68,16 @@ class KilSat:
             add([self.x(f, c) for f in self.N])
         a, b = edges[e]
         near = [f for f in self.N if a in edges[f] or b in edges[f]]
+        self.near = near
+        if fixed is not None:
+            for h, c in fixed.items():
+                add([self.x(h, c)])
+            self.seen = set()
+            for f in self.N:
+                self.add_witness(frozenset([f]))
+            return
         for i, f in enumerate(near):                        # symmetry: the near clique gets colours 0, 1, ...
             add([self.x(f, i)])
-        self.near = near
         # value precedence for the interchangeable colours len(near)..K-1, along N(e) first, then by L^2-distance
         order, seen_o = [], set(near) | {e}
         frontier = [f for f in self.N if f not in seen_o]
