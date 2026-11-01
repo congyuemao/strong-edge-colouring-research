@@ -24,6 +24,12 @@ pairs, where a separable pair (a, b) is trivial if the a-members or the b-member
 colour (so the swap only recolours members of N(e)).  With wT >> wN the hunt minimises the non-trivial pairs among
 states without trivial ones, and the other way round; the defaults give the plain count.
 
+KIL2-single mode (KIL_GPU_GCAP = G > 0): energy += min(#good single recolourings, G) at depth-1 stuck states and
++= G elsewhere, where a single recolouring changes one edge f of N(e) to a colour free at f, and is good if some pair
+is then separable at e.  Energy 0 = stuck and no single recolouring followed by one pair swap frees a colour.
+With KIL_GPU_GMODE=2 the term counts all good first moves (Kempe swaps of an (a, b)-component meeting N(e), after
+which some pair is separable); energy 0 is then a KIL2 counterexample.
+
 Output directory: log lines on stdout, best.json (best energy per edge), found.jsonl, state.npz + meta.json
 (checkpoint every 2 minutes and at the end; a restart with the same arguments resumes).  At every checkpoint the
 best state of each edge is re-checked on the CPU.
@@ -45,7 +51,7 @@ import time
 import networkx as nx
 import numpy as np
 
-from exp33_kempe import K, l2_adj, depth_two, load, separable
+from exp33_kempe import K, l2_adj, depth_two, load, separable, component, swap
 from exp33b_adversary import colour_all_but, energy, deep_search, anneal as cpu_anneal
 from gpu_cl import GPU
 
@@ -54,6 +60,12 @@ SRC = r"""
 #define K 20
 #define NPAIR 190
 #define FORW for (int w = 0; w < W; w++)
+#ifndef GCAP
+#define GCAP 0
+#endif
+#ifndef GMODE
+#define GMODE 1
+#endif
 
 inline uint rnd(ulong *s) {
     ulong x = *s;
@@ -129,11 +141,88 @@ int count_in_N(const uint *Nm, const uint *cls, int c) {
     return s;
 }
 
-int energy(__global const uint *adj, const uint *Nm, const uint *cls, const uchar *cnt, uint *sep, uint *tr,
+/* KIL2-single: the number of recolourings f -> q (f in N(e), q free at f) after which some pair containing the old
+   colour p or q is separable at e; cls is restored */
+int good_singles(__global const uint *adj, const uint *Nm, uint *cls) {
+    int g = 0;
+    for (int w = 0; w < W; w++) {
+        uint bits = Nm[w];
+        while (bits) {
+            int f = 32 * w + low_bit(bits);
+            bits &= bits - 1;
+            uint fb = 1u << (f & 31);
+            int p = 0;
+            while (!(cls[p * W + w] & fb)) p++;
+            __global const uint *row = adj + f * W;
+            uint used = 0;
+            for (int cc = 0; cc < K; cc++) {
+                uint any = 0;
+                for (int v = 0; v < W; v++) any |= row[v] & cls[cc * W + v];
+                if (any) used |= 1u << cc;
+            }
+            uint fr = ~used & 0xFFFFFu & ~(1u << p);
+            while (fr) {
+                int q = low_bit(fr);
+                fr &= fr - 1;
+                cls[p * W + w] &= ~fb;
+                cls[q * W + w] |= fb;
+                int ok = 0;
+                for (int x = 0; x < K && !ok; x++) {
+                    if (x != p) ok = separable(adj, Nm, cls, min(p, x), max(p, x)) != 0;
+                    if (!ok && x != p && x != q) ok = separable(adj, Nm, cls, min(q, x), max(q, x)) != 0;
+                }
+                cls[q * W + w] &= ~fb;
+                cls[p * W + w] |= fb;
+                g += ok;
+            }
+        }
+    }
+    return g;
+}
+
+/* KIL2: the number of first moves (Kempe swaps of an (a,b)-component meeting N(e)) after which some pair containing
+   a or b is separable at e; cls is restored */
+int good_first_moves(__global const uint *adj, const uint *Nm, uint *cls) {
+    int g = 0;
+    for (int a = 0; a < K; a++)
+        for (int b = a + 1; b < K; b++) {
+            uint done[W], comp[W];
+            FORW done[w] = 0;
+            for (;;) {
+                int f = -1;
+                FORW {
+                    uint cand = Nm[w] & (cls[a * W + w] | cls[b * W + w]) & ~done[w];
+                    if (cand) { f = 32 * w + low_bit(cand); break; }
+                }
+                if (f < 0) break;
+                kcomp(adj, cls, f, a, b, comp);
+                FORW {
+                    done[w] |= comp[w];
+                    uint x = (cls[a * W + w] & comp[w]) ^ (cls[b * W + w] & comp[w]);
+                    cls[a * W + w] ^= x;
+                    cls[b * W + w] ^= x;
+                }
+                int ok = 0;
+                for (int x = 0; x < K && !ok; x++) {
+                    if (x != a) ok = separable(adj, Nm, cls, min(a, x), max(a, x)) != 0;
+                    if (!ok && x != a && x != b) ok = separable(adj, Nm, cls, min(b, x), max(b, x)) != 0;
+                }
+                FORW {
+                    uint x = (cls[a * W + w] & comp[w]) ^ (cls[b * W + w] & comp[w]);
+                    cls[a * W + w] ^= x;
+                    cls[b * W + w] ^= x;
+                }
+                g += ok;
+            }
+        }
+    return g;
+}
+
+int energy(__global const uint *adj, const uint *Nm, uint *cls, const uchar *cnt, uint *sep, uint *tr,
            uint *dirty, int wT, int wN) {
     int miss = 0;
     for (int c = 0; c < K; c++) miss += (cnt[c] == 0);
-    if (miss) return (10 * miss + NPAIR) * max(wT, wN);
+    if (miss) return (10 * miss + NPAIR) * max(wT, wN) + GCAP;
     if (*dirty) {
         int k = 0;
         for (int a = 0; a < K; a++)
@@ -152,7 +241,9 @@ int energy(__global const uint *adj, const uint *Nm, const uint *cls, const ucha
         ns += popcount(sep[i]);
         nt += popcount(tr[i]);
     }
-    return wN * (ns - nt) + wT * nt;
+    int E1 = wN * (ns - nt) + wT * nt;
+    if (GCAP == 0) return E1;
+    return E1 + (E1 ? GCAP : min(GMODE == 2 ? good_first_moves(adj, Nm, cls) : good_singles(adj, Nm, cls), GCAP));
 }
 
 /* inst: 8 ints per instance: m, e, adjacency base (words), N(e) mask base (words), region base, |region|, -, - */
@@ -364,8 +455,8 @@ def from_bits(bits, m):
 
 
 class Hunt:
-    def __init__(self, insts, per, Ls, seed=1, gpu=None, rungs=0, Tmin=0.05, Tmax=2.0, wT=1, wN=1):
-        self.insts, self.per, self.rungs = insts, per, rungs
+    def __init__(self, insts, per, Ls, seed=1, gpu=None, rungs=0, Tmin=0.05, Tmax=2.0, wT=1, wN=1, gcap=0, gmode=1):
+        self.insts, self.per, self.rungs, self.gcap, self.gmode = insts, per, rungs, gcap, gmode
         self.w = (np.int32(wT), np.int32(wN))
         self.g = gpu or GPU()
         self.W = W = (max(len(x["adj"]) for x in insts) + 31) // 32
@@ -412,7 +503,7 @@ class Hunt:
             self.swaps = [0, 0]
         self.names = list(self.h)
         self.b = {k: self.g.buffer(v) for k, v in self.h.items()}
-        prog = self.g.build(SRC, f"-D W={W}")
+        prog = self.g.build(SRC, f"-D W={W} -D GCAP={gcap} -D GMODE={gmode}")
         self.k_init, self.k_eval, self.k_anneal = prog.kernel("init"), prog.kernel("evaluate"), prog.kernel("anneal")
         self.k_init(nch, *self.args(), np.int32(0), *self.w)
 
@@ -461,9 +552,9 @@ class Hunt:
         os.replace(path + ".tmp.npz", path)
 
     def load(self, path):
-        d = np.load(path)
-        for k in d.files:
-            self.h[k][...] = d[k]
+        with np.load(path) as d:
+            for k in d.files:
+                self.h[k][...] = d[k]
         self.put(*self.names)
 
 
@@ -493,9 +584,83 @@ def check_stuck(x, col):
     if not (proper(adj, col, e) and energy(adj, col, e) == 0):
         return {"verified": False}
     d2 = depth_two(adj, list(col), e)
-    dd = None if d2 else deep_search(adj, list(col), e, 3)
+    dd = None if d2 else deep_search_capped(adj, list(col), e, 3, cap=200_000)
     return {"verified": True, "depth2": "repaired" if d2 else "fails",
-            "deep": None if d2 else (f"repaired at depth {dd}" if dd else "none up to depth 3")}
+            "deep": None if d2 else (dd if isinstance(dd, str) else f"repaired at depth {dd}" if dd
+                                     else "none up to depth 3")}
+
+
+def good_singles(adj, col, e):
+    """CPU version of the kernel's good_singles (KIL2-single): recolourings f -> q of one edge f of N(e) to a colour q
+    free at f, after which some pair containing col[f] or q is separable at e."""
+    g = 0
+    for f in adj[e]:
+        p = col[f]
+        used = {col[h] for h in adj[f]}
+        for q in range(K):
+            if q == p or q in used:
+                continue
+            col[f] = q
+            g += any(separable(adj, col, e, min(x, y), max(x, y)) is not None
+                     for x in (p, q) for y in range(K) if y not in (p, q) or (x, y) == (p, q))
+            col[f] = p
+    return g
+
+
+def good_first_moves(adj, col, e):
+    """CPU version of the kernel's good_first_moves (KIL2): Kempe swaps of an (a, b)-component meeting N(e) after which
+    some pair containing a or b is separable at e."""
+    g = 0
+    for a in range(K):
+        for b in range(a + 1, K):
+            done = set()
+            for f in adj[e]:
+                if col[f] not in (a, b) or f in done:
+                    continue
+                comp = component(adj, col, f, a, b)
+                done.update(comp)
+                swap(col, comp, a, b)
+                g += any(separable(adj, col, e, min(x, y), max(x, y)) is not None
+                         for x in (a, b) for y in range(K) if y not in (a, b) or (x, y) == (a, b))
+                swap(col, comp, a, b)
+    return g
+
+
+def g_term(adj, col, e, gmode):
+    return good_first_moves(adj, col, e) if gmode == 2 else good_singles(adj, col, e)
+
+
+def deep_search_capped(adj, col, e, depth, cap):
+    """exp33b's deep_search (swap sequences at N(e), then a free colour) with at most `cap` states expanded, so a
+    depth-2 failure cannot stall the hunt; returns the depth, None, or a string when the cap is hit."""
+    frontier, seen, n = [list(col)], {tuple(col[f] for f in adj[e])}, 0
+    for d in range(depth):
+        nxt = []
+        for c0 in frontier:
+            present = sorted({c0[f] for f in adj[e]})
+            for i, a in enumerate(present):
+                for b in present[i + 1:]:
+                    done = set()
+                    for f in adj[e]:
+                        if c0[f] not in (a, b) or f in done:
+                            continue
+                        n += 1
+                        if n > cap:
+                            return f"undecided at depth {d + 1} ({cap} states)"
+                        comp = component(adj, c0, f, a, b)
+                        done.update(comp)
+                        c1 = list(c0)
+                        swap(c1, comp, a, b)
+                        if len({c1[g] for g in adj[e]}) < K:
+                            return d + 1
+                        key = tuple(c1[g] for g in adj[e])
+                        if key not in seen:
+                            seen.add(key)
+                            nxt.append(c1)
+        frontier = nxt
+        if not frontier:
+            break
+    return None
 
 
 def run(out, spec, per=1024, minutes=0):
@@ -504,6 +669,7 @@ def run(out, spec, per=1024, minutes=0):
     rungs = int(os.environ.get("KIL_GPU_PT", 0))
     Tmin, Tmax = float(os.environ.get("KIL_GPU_TMIN", 0.05)), float(os.environ.get("KIL_GPU_TMAX", 2.0))
     wT, wN = int(os.environ.get("KIL_GPU_WT", 1)), int(os.environ.get("KIL_GPU_WN", 1))
+    gcap, gmode = int(os.environ.get("KIL_GPU_GCAP", 0)), int(os.environ.get("KIL_GPU_GMODE", 1))
     insts = build_instances(parse_specs(spec))
     meta = {"spec": spec, "per": per, "Ls": Ls, "instances": [x["name"] for x in insts]}
     if rungs:
@@ -511,7 +677,9 @@ def run(out, spec, per=1024, minutes=0):
         del meta["Ls"]
     if (wT, wN) != (1, 1):
         meta.update(wT=wT, wN=wN)
-    H = Hunt(insts, per, Ls, rungs=rungs, Tmin=Tmin, Tmax=Tmax, wT=wT, wN=wN)
+    if gcap:
+        meta.update(gcap=gcap, **({"gmode": gmode} if gmode != 1 else {}))
+    H = Hunt(insts, per, Ls, rungs=rungs, Tmin=Tmin, Tmax=Tmax, wT=wT, wN=wN, gcap=gcap, gmode=gmode)
     ck, mpath = os.path.join(out, "state.npz"), os.path.join(out, "meta.json")
     done_steps = 0
     if os.path.exists(ck) and os.path.exists(mpath) and json.load(open(mpath, encoding="utf-8"))["meta"] == meta:
@@ -521,7 +689,8 @@ def run(out, spec, per=1024, minutes=0):
     elif os.environ.get("KIL_GPU_WARM"):        # warm start: tile the chains of the same edges from another hunt
         src = os.environ["KIL_GPU_WARM"]
         wm = json.load(open(os.path.join(src, "meta.json"), encoding="utf-8"))["meta"]
-        wd = np.load(os.path.join(src, "state.npz"))
+        with np.load(os.path.join(src, "state.npz")) as z:     # closed at once: an open file blocks the source's
+            wd = {k: z[k] for k in ("cls", "Tfix")}            # checkpoint replace on Windows
         wper, wnames = wm["per"], wm["instances"]
         assert per % wper == 0 and wd["cls"].shape[1:] == H.h["cls"].shape[1:]
         for i, x in enumerate(insts):
@@ -543,7 +712,7 @@ def run(out, spec, per=1024, minutes=0):
         H.step(S)
         dt = time.time() - ts
         done_steps += S * active
-        S = int(min(max(S * min(max(0.15 / max(dt, 1e-4), 0.5), 2.0), 2), 1 << 16))
+        S = int(min(max(S * min(max(0.15 / max(dt, 1e-4), 0.05), 2.0), 2), 1 << 16))
         launches += 1
         if rungs:
             H.exchange(launches % 2)
@@ -553,6 +722,8 @@ def run(out, spec, per=1024, minutes=0):
             for c in np.flatnonzero(found == 1):
                 x, col = H.cpu_col(c)
                 res = {"instance": x["name"], "chain": int(c), **check_stuck(x, col), "colouring": col,
+                       **({"good_singles": good_singles(x["adj"], list(col), x["e"])} if gcap else {}),
+                       **({"good_first_moves": good_first_moves(x["adj"], list(col), x["e"])} if gmode == 2 else {}),
                        "time": time.strftime("%Y-%m-%d %H:%M:%S")}
                 with open(os.path.join(out, "found.jsonl"), "a", encoding="utf-8") as fh:
                     fh.write(json.dumps(res) + "\n")
@@ -589,7 +760,10 @@ def run(out, spec, per=1024, minutes=0):
                 x, col = H.cpu_col(c)
                 nt, nn = classify(x["adj"], col, x["e"])
                 ok = proper(x["adj"], col, x["e"]) and len({col[f] for f in x["adj"][x["e"]]}) == K
-                bad += not (ok and wT * nt + wN * nn == H.h["bestEs"][c])
+                E1 = wT * nt + wN * nn
+                if gcap:
+                    E1 += min(g_term(x["adj"], list(col), x["e"], gmode), gcap) if E1 == 0 else gcap
+                bad += not (ok and E1 == H.h["bestEs"][c])
                 comp.append(f"{nt}+{nn}")
             print(f"checkpoint saved; CPU re-check of {len(insts)} best states: {bad} mismatches; "
                   f"best states as trivial+non-trivial: {' '.join(comp)}", flush=True)
