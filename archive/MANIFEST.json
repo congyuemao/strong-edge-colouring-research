@@ -38,13 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 84671,
-      "sha256": "129b2cde4d854daac883989fb6bb36f4d31f2b27aac7200311e24630c6e0ae58"
+      "bytes": 84796,
+      "sha256": "a270b4712b3dca559a5f52aba4d55e59f646abc44226cc951a62f6d3fe2b6822"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 76180,
-      "sha256": "15bea97ddef4dc48f142659e04b3b16e538b4f578a9bbbae16b67473aa4f6527"
+      "bytes": 77470,
+      "sha256": "e36a381619348f651a1ae663e750077eca34836ce2a7612fc3d00d5338040059"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -2203,8 +2203,8 @@
     },
     {
       "path": "research-2026-10-30/exp38_single_hunts.log",
-      "bytes": 184392,
-      "sha256": "921ce3060ae2ba109927ac15981e80fa245d681f407dc4d76184cd584ebcb350"
+      "bytes": 349345,
+      "sha256": "db004973d20ffe850c415787511e0c654ac292f38b76f4a42e4da2937cf2752b"
     },
     {
       "path": "research-2026-10-30/exp39_local_sat.py",
@@ -3018,8 +3018,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 17061,
-      "sha256": "81fcf6fb9f1d09a59b8cd805f67495f1cf2a3d5978897c07fc23b41c27d6f0e2"
+      "bytes": 17239,
+      "sha256": "a5f4ac80bef7830d6418d01d9a21f04c24a33e48953e4bde1a44515e21be0f0a"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
@@ -3053,8 +3053,8 @@
     },
     {
       "path": "research-2026-10-30/weak_single_form_counterexamples_n200.json",
-      "bytes": 34849,
-      "sha256": "94743c3f6c19d11c6d1e76abc44634330a5bf6b4a7b1a35ef97da251b0810068"
+      "bytes": 171977,
+      "sha256": "300cd614d7341f19f2e89ee6f0b56b9b6c12b72f19bef311d71bf3492193df67"
     },
     {
       "path": "tools/package_archive.py",
