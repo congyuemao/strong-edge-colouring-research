@@ -36,7 +36,9 @@ KIL_GPU_GMODE=5 counts the good single recolourings as GMODE 1 but takes GCAP wh
 state with recolourable edges in N(e), none of whose recolourings opens a pair.  KIL_GPU_GMODE=6 has the same zero
 set but adds 1 while no recolouring is bad (energy = good + [bad = 0]), so states with bad recolourings are favoured.
 KIL_GPU_GMODE=7 takes the most pairs opened by one single recolouring (GCAP if there is none): the same zero set as
-GMODE 5, with the graded descent of GMODE 4.
+GMODE 5, with the graded descent of GMODE 4.  KIL_GPU_GMODE=8 takes the most pairs opened by one first move on a
+component of at most KIL_GPU_SMAX edges (0 = any size; GCAP if there is none): with SMAX=0 energy 0 is a KIL2
+counterexample, with SMAX=s one where no swap of at most s edges is good.
 
 Output directory: log lines on stdout, best.json (best energy per edge), found.jsonl, state.npz + meta.json
 (checkpoint every 2 minutes and at the end; a restart with the same arguments resumes).  At every checkpoint the
@@ -73,6 +75,9 @@ SRC = r"""
 #endif
 #ifndef GMODE
 #define GMODE 1
+#endif
+#ifndef SMAX
+#define SMAX 0
 #endif
 
 inline uint rnd(ulong *s) {
@@ -195,7 +200,7 @@ int good_singles(__global const uint *adj, const uint *Nm, uint *cls) {
 /* KIL2: the number of first moves (Kempe swaps of an (a,b)-component meeting N(e)) after which some pair containing
    a or b is separable at e; cls is restored */
 int good_first_moves(__global const uint *adj, const uint *Nm, uint *cls) {
-    int g = 0;
+    int g = 0, mx = 0, n = 0;                 /* GMODE 8: most pairs opened by one move on <= SMAX edges, n moves */
     for (int a = 0; a < K; a++)
         for (int b = a + 1; b < K; b++) {
             uint done[W], comp[W];
@@ -208,16 +213,19 @@ int good_first_moves(__global const uint *adj, const uint *Nm, uint *cls) {
                 }
                 if (f < 0) break;
                 kcomp(adj, cls, f, a, b, comp);
+                int sz = 0;
+                FORW { done[w] |= comp[w]; sz += popcount(comp[w]); }
+                if (GMODE == 8 && SMAX && sz > SMAX) continue;
                 FORW {
-                    done[w] |= comp[w];
                     uint x = (cls[a * W + w] & comp[w]) ^ (cls[b * W + w] & comp[w]);
                     cls[a * W + w] ^= x;
                     cls[b * W + w] ^= x;
                 }
-                int ok = 0;                                    /* GMODE 3: count every opened pair */
-                for (int x = 0; x < K && (GMODE == 3 || !ok); x++) {
+                int ok = 0;                                    /* GMODE 3, 8: count every opened pair */
+                for (int x = 0; x < K && (GMODE == 3 || GMODE == 8 || !ok); x++) {
                     if (x != a) ok += separable(adj, Nm, cls, min(a, x), max(a, x)) != 0;
-                    if ((GMODE == 3 || !ok) && x != a && x != b) ok += separable(adj, Nm, cls, min(b, x), max(b, x)) != 0;
+                    if ((GMODE == 3 || GMODE == 8 || !ok) && x != a && x != b)
+                        ok += separable(adj, Nm, cls, min(b, x), max(b, x)) != 0;
                 }
                 FORW {
                     uint x = (cls[a * W + w] & comp[w]) ^ (cls[b * W + w] & comp[w]);
@@ -225,9 +233,11 @@ int good_first_moves(__global const uint *adj, const uint *Nm, uint *cls) {
                     cls[b * W + w] ^= x;
                 }
                 g += GMODE == 3 ? ok : (ok != 0);
+                mx = max(mx, ok);
+                n++;
             }
         }
-    return g;
+    return GMODE == 8 ? (n ? mx : 1 << 20) : g;
 }
 
 int energy(__global const uint *adj, const uint *Nm, uint *cls, const uchar *cnt, uint *sep, uint *tr,
@@ -255,7 +265,7 @@ int energy(__global const uint *adj, const uint *Nm, uint *cls, const uchar *cnt
     }
     int E1 = wN * (ns - nt) + wT * nt;
     if (GCAP == 0) return E1;
-    return E1 + (E1 ? GCAP : min((GMODE == 2 || GMODE == 3) ? good_first_moves(adj, Nm, cls) : good_singles(adj, Nm, cls), GCAP));
+    return E1 + (E1 ? GCAP : min((GMODE == 2 || GMODE == 3 || GMODE == 8) ? good_first_moves(adj, Nm, cls) : good_singles(adj, Nm, cls), GCAP));
 }
 
 /* inst: 8 ints per instance: m, e, adjacency base (words), N(e) mask base (words), region base, |region|, -, - */
@@ -467,7 +477,7 @@ def from_bits(bits, m):
 
 
 class Hunt:
-    def __init__(self, insts, per, Ls, seed=1, gpu=None, rungs=0, Tmin=0.05, Tmax=2.0, wT=1, wN=1, gcap=0, gmode=1):
+    def __init__(self, insts, per, Ls, seed=1, gpu=None, rungs=0, Tmin=0.05, Tmax=2.0, wT=1, wN=1, gcap=0, gmode=1, smax=0):
         self.insts, self.per, self.rungs, self.gcap, self.gmode = insts, per, rungs, gcap, gmode
         self.w = (np.int32(wT), np.int32(wN))
         self.g = gpu or GPU()
@@ -515,7 +525,7 @@ class Hunt:
             self.swaps = [0, 0]
         self.names = list(self.h)
         self.b = {k: self.g.buffer(v) for k, v in self.h.items()}
-        prog = self.g.build(SRC, f"-D W={W} -D GCAP={gcap} -D GMODE={gmode}")
+        prog = self.g.build(SRC, f"-D W={W} -D GCAP={gcap} -D GMODE={gmode} -D SMAX={smax}")
         self.k_init, self.k_eval, self.k_anneal = prog.kernel("init"), prog.kernel("evaluate"), prog.kernel("anneal")
         self.k_init(nch, *self.args(), np.int32(0), *self.w)
 
@@ -623,10 +633,11 @@ def good_singles(adj, col, e, fewest=False, most=False):
     return mn if fewest else mx if most else g
 
 
-def good_first_moves(adj, col, e, opened=False):
+def good_first_moves(adj, col, e, opened=False, smax=None):
     """CPU version of the kernel's good_first_moves (KIL2): Kempe swaps of an (a, b)-component meeting N(e) after which
-    some pair containing a or b is separable at e; with opened=True (GMODE 3) the number of such pairs, summed."""
-    g = 0
+    some pair containing a or b is separable at e; with opened=True (GMODE 3) the number of such pairs, summed; with
+    smax given (GMODE 8) the most pairs opened by one move on a component of at most smax edges (0 = any; None if none)."""
+    g, mx = 0, None
     for a in range(K):
         for b in range(a + 1, K):
             done = set()
@@ -635,15 +646,21 @@ def good_first_moves(adj, col, e, opened=False):
                     continue
                 comp = component(adj, col, f, a, b)
                 done.update(comp)
+                if smax and len(comp) > smax:
+                    continue
                 swap(col, comp, a, b)
                 ok = [separable(adj, col, e, min(x, y), max(x, y)) is not None
                       for x in (a, b) for y in range(K) if y not in (a, b) or (x, y) == (a, b)]
                 g += sum(ok) if opened else any(ok)
+                mx = sum(ok) if mx is None else max(mx, sum(ok))
                 swap(col, comp, a, b)
-    return g
+    return g if smax is None else mx
 
 
-def g_term(adj, col, e, gmode):
+def g_term(adj, col, e, gmode, smax=0):
+    if gmode == 8:
+        mx = good_first_moves(adj, col, e, smax=smax)
+        return 1 << 20 if mx is None else mx
     if gmode in (4, 5, 6, 7):
         mn = good_singles(adj, col, e, True)
         if mn is None or gmode == 4:
@@ -695,6 +712,7 @@ def run(out, spec, per=1024, minutes=0):
     Tmin, Tmax = float(os.environ.get("KIL_GPU_TMIN", 0.05)), float(os.environ.get("KIL_GPU_TMAX", 2.0))
     wT, wN = int(os.environ.get("KIL_GPU_WT", 1)), int(os.environ.get("KIL_GPU_WN", 1))
     gcap, gmode = int(os.environ.get("KIL_GPU_GCAP", 0)), int(os.environ.get("KIL_GPU_GMODE", 1))
+    smax = int(os.environ.get("KIL_GPU_SMAX", 0))
     insts = build_instances(parse_specs(spec))
     meta = {"spec": spec, "per": per, "Ls": Ls, "instances": [x["name"] for x in insts]}
     if rungs:
@@ -703,8 +721,8 @@ def run(out, spec, per=1024, minutes=0):
     if (wT, wN) != (1, 1):
         meta.update(wT=wT, wN=wN)
     if gcap:
-        meta.update(gcap=gcap, **({"gmode": gmode} if gmode != 1 else {}))
-    H = Hunt(insts, per, Ls, rungs=rungs, Tmin=Tmin, Tmax=Tmax, wT=wT, wN=wN, gcap=gcap, gmode=gmode)
+        meta.update(gcap=gcap, **({"gmode": gmode} if gmode != 1 else {}), **({"smax": smax} if gmode == 8 else {}))
+    H = Hunt(insts, per, Ls, rungs=rungs, Tmin=Tmin, Tmax=Tmax, wT=wT, wN=wN, gcap=gcap, gmode=gmode, smax=smax)
     ck, mpath = os.path.join(out, "state.npz"), os.path.join(out, "meta.json")
     done_steps = 0
     if os.path.exists(ck) and os.path.exists(mpath) and json.load(open(mpath, encoding="utf-8"))["meta"] == meta:
@@ -754,7 +772,7 @@ def run(out, spec, per=1024, minutes=0):
                 x, col = H.cpu_col(c)
                 res = {"instance": x["name"], "chain": int(c), **check_stuck(x, col), "colouring": col,
                        **({"good_singles": good_singles(x["adj"], list(col), x["e"])} if gcap else {}),
-                       **({"good_first_moves": good_first_moves(x["adj"], list(col), x["e"])} if gmode in (2, 3) else {}),
+                       **({"good_first_moves": good_first_moves(x["adj"], list(col), x["e"])} if gmode in (2, 3, 8) else {}),
                        "time": time.strftime("%Y-%m-%d %H:%M:%S")}
                 with open(os.path.join(out, "found.jsonl"), "a", encoding="utf-8") as fh:
                     fh.write(json.dumps(res) + "\n")
@@ -793,7 +811,7 @@ def run(out, spec, per=1024, minutes=0):
                 ok = proper(x["adj"], col, x["e"]) and len({col[f] for f in x["adj"][x["e"]]}) == K
                 E1 = wT * nt + wN * nn
                 if gcap:
-                    E1 += min(g_term(x["adj"], list(col), x["e"], gmode), gcap) if E1 == 0 else gcap
+                    E1 += min(g_term(x["adj"], list(col), x["e"], gmode, smax), gcap) if E1 == 0 else gcap
                 bad += not (ok and E1 == H.h["bestEs"][c])
                 comp.append(f"{nt}+{nn}")
             print(f"checkpoint saved; CPU re-check of {len(insts)} best states: {bad} mismatches; "
