@@ -32,6 +32,8 @@ which some pair is separable); energy 0 is then a KIL2 counterexample.  KIL_GPU_
 pairs each first move opens (a smoother energy with the same zero set; use weights and temperatures about 10x).
 KIL_GPU_GMODE=4 takes the fewest pairs opened by one single recolouring (GCAP if there is none): energy 0 is a stuck
 state with a recolourable edge of N(e) whose recolouring opens nothing, against the doubled-colour lemma (11.12).
+KIL_GPU_GMODE=5 counts the good single recolourings as GMODE 1 but takes GCAP when there is none: energy 0 is a stuck
+state with recolourable edges in N(e), none of whose recolourings opens a pair.
 
 Output directory: log lines on stdout, best.json (best energy per edge), found.jsonl, state.npz + meta.json
 (checkpoint every 2 minutes and at the end; a restart with the same arguments resumes).  At every checkpoint the
@@ -147,7 +149,7 @@ int count_in_N(const uint *Nm, const uint *cls, int c) {
 /* KIL2-single: the number of recolourings f -> q (f in N(e), q free at f) after which some pair containing the old
    colour p or q is separable at e; cls is restored */
 int good_singles(__global const uint *adj, const uint *Nm, uint *cls) {
-    int g = 0, mn = 1 << 20;                                   /* GMODE 4: fewest pairs opened by one recolouring */
+    int g = 0, mn = 1 << 20, n1 = 0;     /* GMODE 4: fewest pairs opened by one recolouring; 5: g, or none if n1 = 0 */
     for (int w = 0; w < W; w++) {
         uint bits = Nm[w];
         while (bits) {
@@ -177,11 +179,12 @@ int good_singles(__global const uint *adj, const uint *Nm, uint *cls) {
                 cls[q * W + w] &= ~fb;
                 cls[p * W + w] |= fb;
                 g += ok != 0;
+                n1++;
                 mn = min(mn, ok);
             }
         }
     }
-    return GMODE == 4 ? mn : g;
+    return GMODE == 4 ? mn : GMODE == 5 && n1 == 0 ? 1 << 20 : g;
 }
 
 /* KIL2: the number of first moves (Kempe swaps of an (a,b)-component meeting N(e)) after which some pair containing
@@ -635,9 +638,9 @@ def good_first_moves(adj, col, e, opened=False):
 
 
 def g_term(adj, col, e, gmode):
-    if gmode == 4:
+    if gmode in (4, 5):
         mn = good_singles(adj, col, e, True)
-        return 1 << 20 if mn is None else mn
+        return 1 << 20 if mn is None else mn if gmode == 4 else good_singles(adj, col, e)
     return good_first_moves(adj, col, e, gmode == 3) if gmode >= 2 else good_singles(adj, col, e)
 
 

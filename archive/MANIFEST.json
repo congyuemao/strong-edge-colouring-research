@@ -38,13 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 84423,
-      "sha256": "73367e4c02a3c249099cf7541fdbe31bf5e184250f8eef6fa3ba835437be7985"
+      "bytes": 84525,
+      "sha256": "21727bc3ad15a8c6c5291514d5af2c8b46b8e3be3f308694c60c761090e8c9d2"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 70967,
-      "sha256": "5907b265b4d81dfd27d368e15b6750992648ccd39ba27cda0c34a42ed6ab259c"
+      "bytes": 72194,
+      "sha256": "2bd5b32bda5a2a60c25e1f10e61a61cc8cf5c845b134479dc0ec08ba0a5570a5"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -1647,6 +1647,11 @@
       "sha256": "fedb754197e639e9d6c0f5382484cc577b8159f6ddc6d8b3b13687acb3084ecf"
     },
     {
+      "path": "research-2026-10-30/doubled_colour_lemma_counterexample_n100.json",
+      "bytes": 8242,
+      "sha256": "073c39cbaefe6d1ea6a3102f87e87872e31153439e7aa904e6506e3556d81624"
+    },
+    {
       "path": "research-2026-10-30/exp1.log",
       "bytes": 1051,
       "sha256": "0c306663fe8ecaff1677dcc5eda33f44c6ae87cf27e974e3a51843af7dbc6b53"
@@ -2168,8 +2173,8 @@
     },
     {
       "path": "research-2026-10-30/exp38_gpu_adversary.py",
-      "bytes": 40151,
-      "sha256": "1c833112ae3befbc6033a67880e413298ebbff087e60c26ad8b7bfb673f4dd5e"
+      "bytes": 40461,
+      "sha256": "26f8a62da3e70a6bd32178c969170306fb883e6f055712367a3d14a468ab3ca1"
     },
     {
       "path": "research-2026-10-30/exp38_hunt1.log",
@@ -2190,6 +2195,11 @@
       "path": "research-2026-10-30/exp38_kil2_hunts.log",
       "bytes": 245271,
       "sha256": "ba6b76e4094213cb44050099aac8788fb0fe9ac7b11e353903d53cdd5abef4b4"
+    },
+    {
+      "path": "research-2026-10-30/exp38_lemma_n100.log",
+      "bytes": 8888,
+      "sha256": "56687c6348060b89e4bc28e5a5903db00a804ce758771e349354803ce72d25b9"
     },
     {
       "path": "research-2026-10-30/exp39_local_sat.py",
@@ -3003,8 +3013,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 16179,
-      "sha256": "73a3a5f5e58e861b3179d7ea61f3592d3d946d596eaf10e4a2723dd6b247ac11"
+      "bytes": 16659,
+      "sha256": "7fca47a8e1db72126b22bdc6609807eeb5a87c7b93c34f6059cd47ec9efd2a7d"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
