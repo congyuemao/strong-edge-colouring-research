@@ -38,13 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 84525,
-      "sha256": "21727bc3ad15a8c6c5291514d5af2c8b46b8e3be3f308694c60c761090e8c9d2"
+      "bytes": 84639,
+      "sha256": "33df64db34b1f581e32cd1c22c0f977577da178a027d0b252ccc2565cadc8cc8"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 72194,
-      "sha256": "2bd5b32bda5a2a60c25e1f10e61a61cc8cf5c845b134479dc0ec08ba0a5570a5"
+      "bytes": 74487,
+      "sha256": "8f9fa7d4294d0b351bac7f1399f287332cc3a3fa8f4687e2bd7396c503056594"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -2173,8 +2173,8 @@
     },
     {
       "path": "research-2026-10-30/exp38_gpu_adversary.py",
-      "bytes": 40461,
-      "sha256": "26f8a62da3e70a6bd32178c969170306fb883e6f055712367a3d14a468ab3ca1"
+      "bytes": 41302,
+      "sha256": "c5a395848fcfdaecba69ffd806641d3bd4e6629adf56897c9148f8ac63c77c1e"
     },
     {
       "path": "research-2026-10-30/exp38_hunt1.log",
@@ -2200,6 +2200,11 @@
       "path": "research-2026-10-30/exp38_lemma_n100.log",
       "bytes": 8888,
       "sha256": "56687c6348060b89e4bc28e5a5903db00a804ce758771e349354803ce72d25b9"
+    },
+    {
+      "path": "research-2026-10-30/exp38_single_hunts.log",
+      "bytes": 184392,
+      "sha256": "921ce3060ae2ba109927ac15981e80fa245d681f407dc4d76184cd584ebcb350"
     },
     {
       "path": "research-2026-10-30/exp39_local_sat.py",
@@ -3013,8 +3018,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 16659,
-      "sha256": "7fca47a8e1db72126b22bdc6609807eeb5a87c7b93c34f6059cd47ec9efd2a7d"
+      "bytes": 16919,
+      "sha256": "bdd7ca0cddef47f2e2f532df948b47a3c9ae506be1e1dd27620669561e43db0e"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
