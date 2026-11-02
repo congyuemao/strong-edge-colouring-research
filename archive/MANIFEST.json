@@ -38,13 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 84796,
-      "sha256": "a270b4712b3dca559a5f52aba4d55e59f646abc44226cc951a62f6d3fe2b6822"
+      "bytes": 85116,
+      "sha256": "cc4385e7eb0382187710c3ceed167eb7ab2b512f9d921c37e6427540842b4e07"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 77470,
-      "sha256": "e36a381619348f651a1ae663e750077eca34836ce2a7612fc3d00d5338040059"
+      "bytes": 85547,
+      "sha256": "fcd3b2277ca1109b844b2dee7a3c5fd3ee8279fdeebd17b7cae2ece57e968fec"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -1647,6 +1647,11 @@
       "sha256": "fedb754197e639e9d6c0f5382484cc577b8159f6ddc6d8b3b13687acb3084ecf"
     },
     {
+      "path": "research-2026-10-30/class_m_all_form_counterexamples_n200.json",
+      "bytes": 137268,
+      "sha256": "54c8503175ac979c67e7c8bcb85640546a211f0c69793cfa0a08eacd7c6bd90f"
+    },
+    {
       "path": "research-2026-10-30/doubled_colour_lemma_counterexample_n100.json",
       "bytes": 8242,
       "sha256": "073c39cbaefe6d1ea6a3102f87e87872e31153439e7aa904e6506e3556d81624"
@@ -2173,8 +2178,8 @@
     },
     {
       "path": "research-2026-10-30/exp38_gpu_adversary.py",
-      "bytes": 42560,
-      "sha256": "dd5ed12b03a8bd5773781f7e264bcbbc1bd21e3ca261f31fdb02ee7a25373b59"
+      "bytes": 46048,
+      "sha256": "d38febce373dee5f94133d8b50b3629e9efa8b223e269b65192647318a1c15a4"
     },
     {
       "path": "research-2026-10-30/exp38_hunt1.log",
@@ -2203,8 +2208,8 @@
     },
     {
       "path": "research-2026-10-30/exp38_single_hunts.log",
-      "bytes": 349345,
-      "sha256": "db004973d20ffe850c415787511e0c654ac292f38b76f4a42e4da2937cf2752b"
+      "bytes": 430716,
+      "sha256": "e1a05ca4a0d0791acefe9af67cd406c12e04a6f4adfb0797bd3a5f208b2ab208"
     },
     {
       "path": "research-2026-10-30/exp39_local_sat.py",
@@ -2235,6 +2240,11 @@
       "path": "research-2026-10-30/exp41_kil2_margin.py",
       "bytes": 3755,
       "sha256": "6b6d1bc8d948d52ca46f2ec4a78ed0c6aa0b24669dbcc994781344c915fd2a02"
+    },
+    {
+      "path": "research-2026-10-30/exp42_first_move_shapes.py",
+      "bytes": 11086,
+      "sha256": "5cb2d391d735b7b6c5dab8e51f4352f7f7c5a0463650e9453c311b6c677d189b"
     },
     {
       "path": "research-2026-10-30/exp4_local_search.py",
@@ -3018,8 +3028,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 17239,
-      "sha256": "a5f4ac80bef7830d6418d01d9a21f04c24a33e48953e4bde1a44515e21be0f0a"
+      "bytes": 18099,
+      "sha256": "818e0cc776d82dc47a2bd15a9e28fd36e46701a1e45c349e9e5274015e5a2692"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",

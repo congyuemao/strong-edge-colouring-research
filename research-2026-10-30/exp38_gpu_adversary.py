@@ -38,7 +38,11 @@ set but adds 1 while no recolouring is bad (energy = good + [bad = 0]), so state
 KIL_GPU_GMODE=7 takes the most pairs opened by one single recolouring (GCAP if there is none): the same zero set as
 GMODE 5, with the graded descent of GMODE 4.  KIL_GPU_GMODE=8 takes the most pairs opened by one first move on a
 component of at most KIL_GPU_SMAX edges (0 = any size; GCAP if there is none): with SMAX=0 energy 0 is a KIL2
-counterexample, with SMAX=s one where no swap of at most s edges is good.
+counterexample, with SMAX=s one where no swap of at most s edges is good.  KIL_GPU_GMODE=9 / 10 take the fewest /
+most pairs opened by one class-M first move (GCAP if there is none): class M swaps the (a, b)-component holding the
+only a-member of N(e) and some but not all of the (at least two) b-members.  Energy 0 is a stuck state where some /
+every class-M move opens nothing.  KIL_GPU_GMODE=11 is GMODE 9 on the non-sibling class-M moves: no b-member of N(e)
+in the component shares an endpoint with f_a.
 
 Output directory: log lines on stdout, best.json (best energy per edge), found.jsonl, state.npz + meta.json
 (checkpoint every 2 minutes and at the end; a restart with the same arguments resumes).  At every checkpoint the
@@ -53,6 +57,7 @@ Usage: exp38_gpu_adversary.py run <outdir> <spec,...> [chains_per_edge] [minutes
 Run lengths L cycle through KIL_GPU_L (default "60000,480000,4000000") over the chains.
 """
 import json
+from collections import Counter
 import os
 import random
 import sys
@@ -200,11 +205,13 @@ int good_singles(__global const uint *adj, const uint *Nm, uint *cls) {
 /* KIL2: the number of first moves (Kempe swaps of an (a,b)-component meeting N(e)) after which some pair containing
    a or b is separable at e; cls is restored */
 int good_first_moves(__global const uint *adj, const uint *Nm, uint *cls) {
-    int g = 0, mx = 0, n = 0;                 /* GMODE 8: most pairs opened by one move on <= SMAX edges, n moves */
+    int g = 0, mx = 0, mn = 1 << 20, n = 0;   /* GMODE 8: most pairs opened by one move on <= SMAX edges, n moves;
+                                                 GMODE 9 / 10: fewest / most opened by one class-M move */
     for (int a = 0; a < K; a++)
         for (int b = a + 1; b < K; b++) {
             uint done[W], comp[W];
             FORW done[w] = 0;
+            int ma = GMODE >= 9 ? count_in_N(Nm, cls, a) : 0, mb = GMODE >= 9 ? count_in_N(Nm, cls, b) : 0;
             for (;;) {
                 int f = -1;
                 FORW {
@@ -216,15 +223,29 @@ int good_first_moves(__global const uint *adj, const uint *Nm, uint *cls) {
                 int sz = 0;
                 FORW { done[w] |= comp[w]; sz += popcount(comp[w]); }
                 if (GMODE == 8 && SMAX && sz > SMAX) continue;
+                if (GMODE >= 9) {
+                    int ka = 0, kb = 0;
+                    FORW { ka += popcount(Nm[w] & cls[a * W + w] & comp[w]); kb += popcount(Nm[w] & cls[b * W + w] & comp[w]); }
+                    if (!((ma == 1 && ka == 1 && mb >= 2 && kb > 0 && kb < mb) ||
+                          (mb == 1 && kb == 1 && ma >= 2 && ka > 0 && ka < ma))) continue;
+                }
+                if (GMODE == 11) {                         /* skip moves where a b-member in C shares an endpoint
+                                                              with f_a; line-graph rows start at row 32 W */
+                    int p = ma == 1 ? a : b, q = ma == 1 ? b : a, fa = -1, sib = 0;
+                    FORW { uint v = Nm[w] & cls[p * W + w]; if (v) fa = 32 * w + low_bit(v); }
+                    __global const uint *lrow = adj + (32 * W + fa) * W;
+                    FORW sib |= (Nm[w] & cls[q * W + w] & comp[w] & lrow[w]) != 0;
+                    if (sib) continue;
+                }
                 FORW {
                     uint x = (cls[a * W + w] & comp[w]) ^ (cls[b * W + w] & comp[w]);
                     cls[a * W + w] ^= x;
                     cls[b * W + w] ^= x;
                 }
-                int ok = 0;                                    /* GMODE 3, 8: count every opened pair */
-                for (int x = 0; x < K && (GMODE == 3 || GMODE == 8 || !ok); x++) {
+                int ok = 0;                                    /* GMODE 3, 8-10: count every opened pair */
+                for (int x = 0; x < K && (GMODE == 3 || GMODE >= 8 || !ok); x++) {
                     if (x != a) ok += separable(adj, Nm, cls, min(a, x), max(a, x)) != 0;
-                    if ((GMODE == 3 || GMODE == 8 || !ok) && x != a && x != b)
+                    if ((GMODE == 3 || GMODE >= 8 || !ok) && x != a && x != b)
                         ok += separable(adj, Nm, cls, min(b, x), max(b, x)) != 0;
                 }
                 FORW {
@@ -234,10 +255,11 @@ int good_first_moves(__global const uint *adj, const uint *Nm, uint *cls) {
                 }
                 g += GMODE == 3 ? ok : (ok != 0);
                 mx = max(mx, ok);
+                mn = min(mn, ok);
                 n++;
             }
         }
-    return GMODE == 8 ? (n ? mx : 1 << 20) : g;
+    return (GMODE == 9 || GMODE == 11) ? (n ? mn : 1 << 20) : GMODE >= 8 ? (n ? mx : 1 << 20) : g;
 }
 
 int energy(__global const uint *adj, const uint *Nm, uint *cls, const uchar *cnt, uint *sep, uint *tr,
@@ -265,7 +287,7 @@ int energy(__global const uint *adj, const uint *Nm, uint *cls, const uchar *cnt
     }
     int E1 = wN * (ns - nt) + wT * nt;
     if (GCAP == 0) return E1;
-    return E1 + (E1 ? GCAP : min((GMODE == 2 || GMODE == 3 || GMODE == 8) ? good_first_moves(adj, Nm, cls) : good_singles(adj, Nm, cls), GCAP));
+    return E1 + (E1 ? GCAP : min((GMODE == 2 || GMODE == 3 || GMODE >= 8) ? good_first_moves(adj, Nm, cls) : good_singles(adj, Nm, cls), GCAP));
 }
 
 /* inst: 8 ints per instance: m, e, adjacency base (words), N(e) mask base (words), region base, |region|, -, - */
@@ -493,6 +515,12 @@ class Hunt:
             inst += [m, e, len(adj_all), len(Nm_all), len(R), len(region), 0, 0]
             for h in range(m):
                 adj_all += to_bits([0 if g in adj[h] else -1 for g in range(m)], W)[0].tolist()
+            if gmode == 11:                                 # line-graph rows at row 32 W + h
+                adj_all += [0] * ((32 * W - m) * W)
+                ends = x["edges"]
+                for h in range(m):
+                    adj_all += to_bits([0 if g != h and set(ends[g]) & set(ends[h]) else -1 for g in range(m)],
+                                       W)[0].tolist()
             Nm_all += to_bits([0 if g in adj[e] else -1 for g in range(m)], W)[0].tolist()
             R += x["region"]
         self.nch = nch = per * len(insts)
@@ -633,11 +661,14 @@ def good_singles(adj, col, e, fewest=False, most=False):
     return mn if fewest else mx if most else g
 
 
-def good_first_moves(adj, col, e, opened=False, smax=None):
+def good_first_moves(adj, col, e, opened=False, smax=None, mclass=0, edges=None):
     """CPU version of the kernel's good_first_moves (KIL2): Kempe swaps of an (a, b)-component meeting N(e) after which
     some pair containing a or b is separable at e; with opened=True (GMODE 3) the number of such pairs, summed; with
-    smax given (GMODE 8) the most pairs opened by one move on a component of at most smax edges (0 = any; None if none)."""
-    g, mx = 0, None
+    smax given (GMODE 8) the most pairs opened by one move on a component of at most smax edges (0 = any; None if none);
+    with mclass = 9 / 10 the fewest / most pairs opened by one class-M move (None if none); with mclass = 11 (edges
+    given) the fewest opened by one non-sibling class-M move."""
+    g, mx, mn = 0, None, None
+    mult = Counter(col[f] for f in adj[e])
     for a in range(K):
         for b in range(a + 1, K):
             done = set()
@@ -648,16 +679,32 @@ def good_first_moves(adj, col, e, opened=False, smax=None):
                 done.update(comp)
                 if smax and len(comp) > smax:
                     continue
+                if mclass:
+                    cs = set(comp)
+                    ka = sum(col[h] == a and h in cs for h in adj[e])
+                    kb = sum(col[h] == b and h in cs for h in adj[e])
+                    if not ((mult[a] == 1 and ka == 1 and mult[b] >= 2 and 0 < kb < mult[b]) or
+                            (mult[b] == 1 and kb == 1 and mult[a] >= 2 and 0 < ka < mult[a])):
+                        continue
+                    if mclass == 11:
+                        p, q = (a, b) if mult[a] == 1 else (b, a)
+                        fa = next(h for h in adj[e] if col[h] == p)
+                        if any(col[h] == q and h in cs and set(edges[h]) & set(edges[fa]) for h in adj[e]):
+                            continue
                 swap(col, comp, a, b)
                 ok = [separable(adj, col, e, min(x, y), max(x, y)) is not None
                       for x in (a, b) for y in range(K) if y not in (a, b) or (x, y) == (a, b)]
                 g += sum(ok) if opened else any(ok)
                 mx = sum(ok) if mx is None else max(mx, sum(ok))
+                mn = sum(ok) if mn is None else min(mn, sum(ok))
                 swap(col, comp, a, b)
-    return g if smax is None else mx
+    return mn if mclass in (9, 11) else mx if mclass else g if smax is None else mx
 
 
-def g_term(adj, col, e, gmode, smax=0):
+def g_term(adj, col, e, gmode, smax=0, edges=None):
+    if gmode in (9, 10, 11):
+        v = good_first_moves(adj, col, e, mclass=gmode, edges=edges)
+        return 1 << 20 if v is None else v
     if gmode == 8:
         mx = good_first_moves(adj, col, e, smax=smax)
         return 1 << 20 if mx is None else mx
@@ -772,7 +819,7 @@ def run(out, spec, per=1024, minutes=0):
                 x, col = H.cpu_col(c)
                 res = {"instance": x["name"], "chain": int(c), **check_stuck(x, col), "colouring": col,
                        **({"good_singles": good_singles(x["adj"], list(col), x["e"])} if gcap else {}),
-                       **({"good_first_moves": good_first_moves(x["adj"], list(col), x["e"])} if gmode in (2, 3, 8) else {}),
+                       **({"good_first_moves": good_first_moves(x["adj"], list(col), x["e"])} if gmode in (2, 3, 8, 9, 10, 11) else {}),
                        "time": time.strftime("%Y-%m-%d %H:%M:%S")}
                 with open(os.path.join(out, "found.jsonl"), "a", encoding="utf-8") as fh:
                     fh.write(json.dumps(res) + "\n")
@@ -811,7 +858,7 @@ def run(out, spec, per=1024, minutes=0):
                 ok = proper(x["adj"], col, x["e"]) and len({col[f] for f in x["adj"][x["e"]]}) == K
                 E1 = wT * nt + wN * nn
                 if gcap:
-                    E1 += min(g_term(x["adj"], list(col), x["e"], gmode, smax), gcap) if E1 == 0 else gcap
+                    E1 += min(g_term(x["adj"], list(col), x["e"], gmode, smax, x["edges"]), gcap) if E1 == 0 else gcap
                 bad += not (ok and E1 == H.h["bestEs"][c])
                 comp.append(f"{nt}+{nn}")
             print(f"checkpoint saved; CPU re-check of {len(insts)} best states: {bad} mismatches; "
