@@ -38,13 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 88392,
-      "sha256": "f48386d41fe0356d9207b8e3de2d1c6104e939a5ac8ed59e32849d5aa362b282"
+      "bytes": 88756,
+      "sha256": "2d91c4f28ea3af0389f4328ff78b004d28142906b14835b731c99896cb7ace02"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 129144,
-      "sha256": "ba4a1b2a0b746c876d5e45e4b1866c44e94cad82aa43f62ae5a9ffbb737e5057"
+      "bytes": 134774,
+      "sha256": "3542a07f4c830e85ff9d2172961a9362ca5c430f24236fea582187e49e51b6a1"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
