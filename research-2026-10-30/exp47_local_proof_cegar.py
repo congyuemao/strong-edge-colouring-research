@@ -26,7 +26,7 @@ Mode full: every ball edge except e coloured (the setting of a minimal counterex
 Checkpoint: after every round the new clauses are appended (and synced) to <log_dir>/exp47_checkpoint[_full].jsonl; a
 restart with the same mode loads them and continues with the next round (a half-written last round is redone).  The
 loop is deterministic, so a restart reproduces the same models.
-Usage (run from this directory): exp47_local_proof_cegar.py [max_rounds] [log_dir] [full]
+Usage (run from this directory): exp47_local_proof_cegar.py [max_rounds] [log_dir] [full] [cut]
 """
 import json
 import os
@@ -43,7 +43,8 @@ from exp44_local_repair import tree
 MAXR = int(sys.argv[1]) if len(sys.argv) > 1 else 10000
 LOG = sys.argv[2] if len(sys.argv) > 2 else "."
 FULL = "full" in sys.argv[3:]
-TAG = "_full" if FULL else ""
+CUT = "cut" in sys.argv[3:]
+TAG = ("_full" if FULL else "") + ("_cut" if CUT else "")
 t0 = time.time()
 edges = tree(6)
 adj = l2_adj(edges)
@@ -182,11 +183,15 @@ def separations(col):
 
 
 def block(c, p, x, y, Kset):
-    """clause forbidding the certificate: K keeps its colours, nothing next to K is x / y, no other x-member at c"""
-    lits = [-X[h, col_now[h]] for h in Kset]
+    """clause forbidding the certificate: K keeps its colours, nothing next to K is x / y, no other x-member at c.
+    Mode cut drops the colours of K: if no edge next to K is x / y, every (x, y)-component meeting K stays inside K;
+    so it is enough that the members of c outside K are not x and those inside K are not y."""
     rim = {g for h in Kset for g in adj[h] if g not in Kset and g != e}
+    lits = [] if CUT else [-X[h, col_now[h]] for h in Kset]
     lits += [X[g, x] for g in rim] + [X[g, y] for g in rim]
     lits += [X[g, x] for g in adj[c] if g != e and g not in Kset]
+    if CUT:
+        lits += [X[g, y] for g in adj[c] if g != e and g in Kset]
     if p >= 0:
         lits += single_lits(c, p)
     cl = sorted(set(lits))
@@ -196,7 +201,7 @@ def block(c, p, x, y, Kset):
 
 os.makedirs(LOG, exist_ok=True)
 CKPT = f"{LOG}/exp47_checkpoint{TAG}.jsonl"
-meta = {"full": FULL, "variables": nv[0], "clauses": ncl[0]}
+meta = {"full": FULL, "cut": CUT, "variables": nv[0], "clauses": ncl[0]}
 hist, start = [], 1
 if os.path.exists(CKPT):
     lines = open(CKPT, encoding="utf-8").read().splitlines()

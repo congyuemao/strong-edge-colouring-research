@@ -43,8 +43,8 @@
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 125926,
-      "sha256": "db077b845e915b08f9b5c2b3865e81306c79fd026912dcfef57017808ad9a219"
+      "bytes": 129144,
+      "sha256": "ba4a1b2a0b746c876d5e45e4b1866c44e94cad82aa43f62ae5a9ffbb737e5057"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -2278,8 +2278,8 @@
     },
     {
       "path": "research-2026-10-30/exp47_local_proof_cegar.py",
-      "bytes": 10694,
-      "sha256": "787367a5686b3cea98e0140556842f7e232056c0632066b79955f8166d721d8f"
+      "bytes": 11071,
+      "sha256": "35c65cb5fdd4c1666b210bb107b52441c9d220695209096f8cd26ae7ca4fc195"
     },
     {
       "path": "research-2026-10-30/exp47_witness_partial.json",
