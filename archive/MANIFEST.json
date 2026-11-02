@@ -38,13 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 87173,
-      "sha256": "90f6e028ab14a455cbef75e63a8e81fa61b1243c079ba0ff3f6ed3cb17d44bf6"
+      "bytes": 88156,
+      "sha256": "f055bc76e37c1ca5e8f2276bfccf01e63dea92b4456c71cd20ae32bbbba1fc31"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 108927,
-      "sha256": "788279087e9a66f2cb1ff57d6b0807ef6ba65eb76072d626cfe857c97358dda8"
+      "bytes": 125549,
+      "sha256": "9f97f7f2ec5078e5a7990522ca91bb7afa169fd2340acf7616d32c3f6a11ec1c"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -2213,8 +2213,8 @@
     },
     {
       "path": "research-2026-10-30/exp38_single_hunts.log",
-      "bytes": 821969,
-      "sha256": "de6acf8d70be80c72392a4bef2936596f50962baca03611072191d1b23add7c5"
+      "bytes": 932657,
+      "sha256": "4218dc3c4ed3f64101dfe5d28b2a79429489a1d12add9052eccdde59e49d99ef"
     },
     {
       "path": "research-2026-10-30/exp39_local_sat.py",
@@ -2270,6 +2270,26 @@
       "path": "research-2026-10-30/exp45_conjecture119_check.py",
       "bytes": 3590,
       "sha256": "1e4d202fa75fa0a04ee8af9142d5f3f8904654778851c28a3b90b52950d7c2a3"
+    },
+    {
+      "path": "research-2026-10-30/exp46_hole_moves_check.py",
+      "bytes": 5483,
+      "sha256": "26f6f84df2b7221dfa3b2429d71312925db6bc298082af5b40f1b2d7bc427f8e"
+    },
+    {
+      "path": "research-2026-10-30/exp47_local_proof_cegar.py",
+      "bytes": 9133,
+      "sha256": "714051f396aa7a2f16c761ad8df73a0a87c171070a68b2d6f7ef5f8feee5a848"
+    },
+    {
+      "path": "research-2026-10-30/exp47_witness_partial.json",
+      "bytes": 46803,
+      "sha256": "7e5c8bf0a3c126f44832b4734b5536bd328789292798a4e87c649409d2a22592"
+    },
+    {
+      "path": "research-2026-10-30/exp47b_check_witness.py",
+      "bytes": 3153,
+      "sha256": "aa062ce2cf21f3b56f765a2b8b98f7a5225f24c7a052bd86168dffd0c844453e"
     },
     {
       "path": "research-2026-10-30/exp4_local_search.py",
@@ -3053,8 +3073,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 20533,
-      "sha256": "350204889cd6153599f74ed6c4bfd7b17198e829b76cad3d402334aa79494187"
+      "bytes": 22123,
+      "sha256": "ed0586e2d468d967a7014c1c488f138f153b39036361816dbc4442fa3327a9a1"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
