@@ -23,6 +23,9 @@ conflicts of the centre (not a); for a member f it also needs f to be the only p
 colouring really has the separable pair, so the clauses are sound; SAT models are re-checked directly.
 Symmetry: near edge i (of the 6 at the ends of e), if coloured, gets a colour <= i (colours renamed by first use).
 Mode full: every ball edge except e coloured (the setting of a minimal counterexample, where G - e is coloured).
+Checkpoint: after every round the new clauses are appended (and synced) to <log_dir>/exp47_checkpoint[_full].jsonl; a
+restart with the same mode loads them and continues with the next round (a half-written last round is redone).  The
+loop is deterministic, so a restart reproduces the same models.
 Usage (run from this directory): exp47_local_proof_cegar.py [max_rounds] [log_dir] [full]
 """
 import json
@@ -186,12 +189,36 @@ def block(c, p, x, y, Kset):
     lits += [X[g, x] for g in adj[c] if g != e and g not in Kset]
     if p >= 0:
         lits += single_lits(c, p)
-    add(sorted(set(lits)))
+    cl = sorted(set(lits))
+    add(cl)
+    return cl
 
 
 os.makedirs(LOG, exist_ok=True)
-hist = []
-for rnd in range(1, MAXR + 1):
+CKPT = f"{LOG}/exp47_checkpoint{TAG}.jsonl"
+meta = {"full": FULL, "variables": nv[0], "clauses": ncl[0]}
+hist, start = [], 1
+if os.path.exists(CKPT):
+    lines = open(CKPT, encoding="utf-8").read().splitlines()
+    assert json.loads(lines[0])["meta"] == meta, "checkpoint written by a different encoding"
+    good = lines[:1]
+    for line in lines[1:]:
+        try:
+            r = json.loads(line)
+        except json.JSONDecodeError:                         # a round cut off while being written: redo it
+            break
+        for cl in r["clauses"]:
+            add(cl)
+        hist.append((r["round"], r["separable"]))
+        start = r["round"] + 1
+        good.append(line)
+    with open(CKPT, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(good) + "\n")
+    print(f"resumed from {CKPT}: {start - 1} rounds done, {ncl[0]} clauses [{time.time() - t0:.0f}s]", flush=True)
+else:
+    with open(CKPT, "w", encoding="utf-8") as fh:
+        fh.write(json.dumps({"meta": meta}) + "\n")
+for rnd in range(start, MAXR + 1):
     ok = s.solve()
     if not ok:
         print(f"round {rnd}: UNSAT [{time.time() - t0:.0f}s] -- no local counterexample: conjecture 11.9 holds when "
@@ -215,6 +242,9 @@ for rnd in range(1, MAXR + 1):
         json.dump({"edges": edges, "col": col_now, "ball": ball}, open(f"{LOG}/exp47_witness{TAG}.json", "w"))
         hist.append(("SAT", rnd))
         break
-    for t in seps:
-        block(*t)
+    new = [block(*t) for t in seps]
+    with open(CKPT, "a", encoding="utf-8") as fh:                # checkpoint: the clauses of this round
+        fh.write(json.dumps({"round": rnd, "separable": len(seps), "clauses": new}) + "\n")
+        fh.flush()
+        os.fsync(fh.fileno())
 json.dump(hist, open(f"{LOG}/exp47_history{TAG}.json", "w"))
