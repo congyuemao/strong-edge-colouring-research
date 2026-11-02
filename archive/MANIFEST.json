@@ -38,13 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 85326,
-      "sha256": "73f1a9cc2e49f35a0ae11fbee35d5fccd31e3f901dde021f7d0c7225cbf7dac2"
+      "bytes": 85966,
+      "sha256": "da7d474922e25ddcb25b1568c084e6c17e36ca2b80a07bfc91090387f6b6e028"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 90035,
-      "sha256": "3742890a135b511baef6534af50da8b256d253ea57db3fdfcafb8b64cbf24668"
+      "bytes": 98370,
+      "sha256": "3e0e5a66c33520bdd2ef43271033a08c8d98eb406ed6d1e6b6c2a2a77f75a4b0"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -2252,6 +2252,11 @@
       "sha256": "e6fff0af672ed3ed942ccc1c5f48a153271f1baea2c024abd687c5cf4ba6edb2"
     },
     {
+      "path": "research-2026-10-30/exp43_singleton_repair.py",
+      "bytes": 5638,
+      "sha256": "70e8571951f66140de2c29a4facf54823a06d1faa7f916a9d5f6787334bdc9d7"
+    },
+    {
       "path": "research-2026-10-30/exp4_local_search.py",
       "bytes": 4849,
       "sha256": "d9f3d06010b33678940e19c95376e8a5627cae6e95487b60ce86a6e6ac16832a"
@@ -3033,8 +3038,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 18590,
-      "sha256": "a409139424b235e1865bde7b8ca24d2279aefd3e2571c80dfe68b94bee54c749"
+      "bytes": 19176,
+      "sha256": "82fe27a469cfe3b0f0abc1eae8c46d2f9a5ccc94a39c05ed5b89fe11daa18db1"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
