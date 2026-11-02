@@ -42,7 +42,12 @@ counterexample, with SMAX=s one where no swap of at most s edges is good.  KIL_G
 most pairs opened by one class-M first move (GCAP if there is none): class M swaps the (a, b)-component holding the
 only a-member of N(e) and some but not all of the (at least two) b-members.  Energy 0 is a stuck state where some /
 every class-M move opens nothing.  KIL_GPU_GMODE=11 is GMODE 9 on the non-sibling class-M moves: no b-member of N(e)
-in the component shares an endpoint with f_a.
+in the component shares an endpoint with f_a.  KIL_GPU_GMODE=12 / 13 attack conjecture 11.9 (NEW_DIRECTIONS 11.14):
+over the singleton colours p of N(e) (f_p the only p-member) the most / fewest pairs (a, b), a, b != p, separable at
+f_p.  Energy 0 is a stuck state where every / some singleton member is depth-1 stuck outside its colour; GMODE 12's
+zero is a counterexample to conjecture 11.9.  GCAP should exceed 171, the most such pairs.
+
+KIL_GPU_RADIUS (default 2): moves recolour edges within this L^2-distance of e.
 
 Output directory: log lines on stdout, best.json (best energy per edge), found.jsonl, state.npz + meta.json
 (checkpoint every 2 minutes and at the end; a restart with the same arguments resumes).  At every checkpoint the
@@ -262,6 +267,26 @@ int good_first_moves(__global const uint *adj, const uint *Nm, uint *cls) {
     return (GMODE == 9 || GMODE == 11) ? (n ? mn : 1 << 20) : GMODE >= 8 ? (n ? mx : 1 << 20) : g;
 }
 
+/* conjecture 11.9 (GMODE 12 / 13): over the singleton colours p of N(e), the most / fewest pairs (a, b), a, b != p,
+   separable at the only p-member f_p; N(f_p) is the L^2 row of f_p (e in it is uncoloured) */
+int singleton_pairs(__global const uint *adj, const uint *Nm, const uint *cls, const uchar *cnt) {
+    int mx = 0, mn = 1 << 20, n = 0;
+    for (int p = 0; p < K; p++) {
+        if (cnt[p] != 1) continue;
+        int fp = -1, s = 0;
+        FORW { uint v = Nm[w] & cls[p * W + w]; if (v) fp = 32 * w + low_bit(v); }
+        uint Nf[W];
+        FORW Nf[w] = adj[fp * W + w];
+        for (int a = 0; a < K; a++)
+            for (int b = a + 1; b < K; b++)
+                if (a != p && b != p) s += separable(adj, Nf, cls, a, b) != 0;
+        mx = max(mx, s);
+        mn = min(mn, s);
+        n++;
+    }
+    return !n ? 1 << 20 : GMODE == 13 ? mn : mx;
+}
+
 int energy(__global const uint *adj, const uint *Nm, uint *cls, const uchar *cnt, uint *sep, uint *tr,
            uint *dirty, int wT, int wN) {
     int miss = 0;
@@ -287,7 +312,7 @@ int energy(__global const uint *adj, const uint *Nm, uint *cls, const uchar *cnt
     }
     int E1 = wN * (ns - nt) + wT * nt;
     if (GCAP == 0) return E1;
-    return E1 + (E1 ? GCAP : min((GMODE == 2 || GMODE == 3 || GMODE >= 8) ? good_first_moves(adj, Nm, cls) : good_singles(adj, Nm, cls), GCAP));
+    return E1 + (E1 ? GCAP : min(GMODE >= 12 ? singleton_pairs(adj, Nm, cls, cnt) : (GMODE == 2 || GMODE == 3 || GMODE >= 8) ? good_first_moves(adj, Nm, cls) : good_singles(adj, Nm, cls), GCAP));
 }
 
 /* inst: 8 ints per instance: m, e, adjacency base (words), N(e) mask base (words), region base, |region|, -, - */
@@ -499,7 +524,8 @@ def from_bits(bits, m):
 
 
 class Hunt:
-    def __init__(self, insts, per, Ls, seed=1, gpu=None, rungs=0, Tmin=0.05, Tmax=2.0, wT=1, wN=1, gcap=0, gmode=1, smax=0):
+    def __init__(self, insts, per, Ls, seed=1, gpu=None, rungs=0, Tmin=0.05, Tmax=2.0, wT=1, wN=1, gcap=0, gmode=1, smax=0,
+                 radius=2):
         self.insts, self.per, self.rungs, self.gcap, self.gmode = insts, per, rungs, gcap, gmode
         self.w = (np.int32(wT), np.int32(wN))
         self.g = gpu or GPU()
@@ -508,8 +534,9 @@ class Hunt:
         for x in insts:
             adj, e, m = x["adj"], x["e"], len(x["adj"])
             region = set(adj[e])
-            for f in list(region):
-                region.update(adj[f])
+            for _ in range(radius - 1):
+                for f in list(region):
+                    region.update(adj[f])
             region.discard(e)
             x["region"] = sorted(region)
             inst += [m, e, len(adj_all), len(Nm_all), len(R), len(region), 0, 0]
@@ -701,7 +728,22 @@ def good_first_moves(adj, col, e, opened=False, smax=None, mclass=0, edges=None)
     return mn if mclass in (9, 11) else mx if mclass else g if smax is None else mx
 
 
+def singleton_pairs(adj, col, e):
+    """CPU version of the kernel's singleton_pairs (conjecture 11.9): for each singleton colour p of N(e), the number
+    of pairs (a, b), a, b != p, separable at the only p-member f_p."""
+    out = {}
+    for p in range(K):
+        fp = [f for f in adj[e] if col[f] == p]
+        if len(fp) == 1:
+            out[p] = sum(separable(adj, col, fp[0], a, b) is not None
+                         for a in range(K) for b in range(a + 1, K) if p not in (a, b))
+    return out
+
+
 def g_term(adj, col, e, gmode, smax=0, edges=None):
+    if gmode in (12, 13):
+        v = singleton_pairs(adj, col, e).values()
+        return (min(v) if gmode == 13 else max(v)) if v else 1 << 20
     if gmode in (9, 10, 11):
         v = good_first_moves(adj, col, e, mclass=gmode, edges=edges)
         return 1 << 20 if v is None else v
@@ -759,9 +801,11 @@ def run(out, spec, per=1024, minutes=0):
     Tmin, Tmax = float(os.environ.get("KIL_GPU_TMIN", 0.05)), float(os.environ.get("KIL_GPU_TMAX", 2.0))
     wT, wN = int(os.environ.get("KIL_GPU_WT", 1)), int(os.environ.get("KIL_GPU_WN", 1))
     gcap, gmode = int(os.environ.get("KIL_GPU_GCAP", 0)), int(os.environ.get("KIL_GPU_GMODE", 1))
-    smax = int(os.environ.get("KIL_GPU_SMAX", 0))
+    smax, radius = int(os.environ.get("KIL_GPU_SMAX", 0)), int(os.environ.get("KIL_GPU_RADIUS", 2))
     insts = build_instances(parse_specs(spec))
     meta = {"spec": spec, "per": per, "Ls": Ls, "instances": [x["name"] for x in insts]}
+    if radius != 2:
+        meta.update(radius=radius)
     if rungs:
         meta.update(pt=rungs, Tmin=Tmin, Tmax=Tmax)
         del meta["Ls"]
@@ -769,7 +813,8 @@ def run(out, spec, per=1024, minutes=0):
         meta.update(wT=wT, wN=wN)
     if gcap:
         meta.update(gcap=gcap, **({"gmode": gmode} if gmode != 1 else {}), **({"smax": smax} if gmode == 8 else {}))
-    H = Hunt(insts, per, Ls, rungs=rungs, Tmin=Tmin, Tmax=Tmax, wT=wT, wN=wN, gcap=gcap, gmode=gmode, smax=smax)
+    H = Hunt(insts, per, Ls, rungs=rungs, Tmin=Tmin, Tmax=Tmax, wT=wT, wN=wN, gcap=gcap, gmode=gmode, smax=smax,
+             radius=radius)
     ck, mpath = os.path.join(out, "state.npz"), os.path.join(out, "meta.json")
     done_steps = 0
     if os.path.exists(ck) and os.path.exists(mpath) and json.load(open(mpath, encoding="utf-8"))["meta"] == meta:
@@ -819,7 +864,8 @@ def run(out, spec, per=1024, minutes=0):
                 x, col = H.cpu_col(c)
                 res = {"instance": x["name"], "chain": int(c), **check_stuck(x, col), "colouring": col,
                        **({"good_singles": good_singles(x["adj"], list(col), x["e"])} if gcap else {}),
-                       **({"good_first_moves": good_first_moves(x["adj"], list(col), x["e"])} if gmode in (2, 3, 8, 9, 10, 11) else {}),
+                       **({"good_first_moves": good_first_moves(x["adj"], list(col), x["e"])} if gmode in (2, 3, 8, 9, 10, 11, 12, 13) else {}),
+                       **({"singleton_pairs": singleton_pairs(x["adj"], list(col), x["e"])} if gmode >= 12 else {}),
                        "time": time.strftime("%Y-%m-%d %H:%M:%S")}
                 with open(os.path.join(out, "found.jsonl"), "a", encoding="utf-8") as fh:
                     fh.write(json.dumps(res) + "\n")
