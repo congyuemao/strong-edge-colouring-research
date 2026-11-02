@@ -11,9 +11,10 @@ Usage (run from this directory):
   exp42_first_move_shapes.py mine <out.jsonl> <workers> <source> ...     every first move with its shape
   exp42_first_move_shapes.py table <moves.jsonl> ...                    good / bad counts per shape
   exp42_first_move_shapes.py mclass <out.jsonl> <workers> <source> ...  class-M moves with the pairs they open
-  exp42_first_move_shapes.py archive <found.jsonl> <spec> <out.json> all|some
-      re-check exp38 GMODE 9 / 10 states with exp40's networkx code (class-M moves recomputed on its conflict sets)
-      and write them one per line
+  exp42_first_move_shapes.py archive <found.jsonl> <spec> <out.json> all|some|nonsibling
+      re-check exp38 GMODE 9 / 10 / 11 states with exp40's networkx code (class-M moves recomputed on its conflict
+      sets) and write them one per line; nonsibling: some class-M move whose component holds no b-member sharing an
+      endpoint with f_a is bad
 Sources: repo (the archived stuck states of this directory), hunt:<exp38 outdir>:<sample size>, npz:<exp38 outdir>
 (the best stuck state of every edge of a run).
 """
@@ -206,15 +207,16 @@ def archive(found, spec, out, form):
                       if q != p and not (p == b and q == a) and sep_nx(nbr, col, e, min(p, q), max(p, q))]
                 for h in C:
                     col[h] = a + b - col[h]
+                sib = any(col[g] == b and set(edges[g]) & set(edges[fa]) for g in C if g in Ne)
                 ms.append({"a": a, "b": b, "f_a": fa, "f_a_near": bool(ends & set(edges[fa])), "mult_b": mult[b],
-                           "kb": kb, "component": sorted(C), "component_in_N(e)": sorted(g for g in C if g in Ne),
-                           "opened": op})
-        bad = [m for m in ms if not m["opened"]]
-        ok = stuck and (bool(bad) if form == "all" else bool(ms) and len(bad) == len(ms))
+                           "kb": kb, "sibling": sib, "component": sorted(C),
+                           "component_in_N(e)": sorted(g for g in C if g in Ne), "opened": op})
+        bad = [m for m in ms if not m["opened"] and (form != "nonsibling" or not m["sibling"])]
+        ok = stuck and (len(bad) == len(ms) > 0 if form == "some" else bool(bad))
         res.append({"instance": r["instance"], "spec": x["spec"], "edges": [list(p) for p in edges], "e": e,
                     "colouring": col, "depth1_stuck_networkx": stuck,
                     "multiplicities_on_N(e)": dict(sorted(Counter(mult.values()).items())),
-                    "class_m_moves": len(ms), "bad_class_m_moves": bad if form == "all" else len(bad),
+                    "class_m_moves": len(ms), "bad_class_m_moves": len(bad) if form == "some" else bad,
                     f"class_m_{form}_form_counterexample": ok, "first_moves": first_moves(x["adj"], col, e),
                     "good_first_moves": good_first_moves(x["adj"], list(col), e), "depth2": r["depth2"]})
         print(r["instance"], "stuck", stuck, "class M", len(ms), "bad", len(bad), "counterexample", ok,

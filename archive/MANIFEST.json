@@ -38,13 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 85116,
-      "sha256": "cc4385e7eb0382187710c3ceed167eb7ab2b512f9d921c37e6427540842b4e07"
+      "bytes": 85273,
+      "sha256": "9263d707265fb6dffb3896e6923597843f4c7bd374464fea9044cc4d2301dc8b"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 85547,
-      "sha256": "fcd3b2277ca1109b844b2dee7a3c5fd3ee8279fdeebd17b7cae2ece57e968fec"
+      "bytes": 87392,
+      "sha256": "ed2a17b29673865158842599b57caa96a54393034e9744b5142a0c6db67737a7"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -1648,8 +1648,13 @@
     },
     {
       "path": "research-2026-10-30/class_m_all_form_counterexamples_n200.json",
-      "bytes": 137268,
-      "sha256": "54c8503175ac979c67e7c8bcb85640546a211f0c69793cfa0a08eacd7c6bd90f"
+      "bytes": 137642,
+      "sha256": "39a0ccfa09eccb6416eaa7324168b6b10ecda23e8d1c59e269aa4059cd5ed4db"
+    },
+    {
+      "path": "research-2026-10-30/class_m_nonsibling_all_form_counterexamples_n200.json",
+      "bytes": 25542,
+      "sha256": "df66f53971d0a61cde0c7ae0c60dd9efc38a590af6517d31e95f12ec17ffe9fe"
     },
     {
       "path": "research-2026-10-30/doubled_colour_lemma_counterexample_n100.json",
@@ -2208,8 +2213,8 @@
     },
     {
       "path": "research-2026-10-30/exp38_single_hunts.log",
-      "bytes": 430716,
-      "sha256": "e1a05ca4a0d0791acefe9af67cd406c12e04a6f4adfb0797bd3a5f208b2ab208"
+      "bytes": 433101,
+      "sha256": "fd16cb9b4986e24dc87561654be01c08051eb838adbc055d384e1bf5214331b1"
     },
     {
       "path": "research-2026-10-30/exp39_local_sat.py",
@@ -2243,8 +2248,8 @@
     },
     {
       "path": "research-2026-10-30/exp42_first_move_shapes.py",
-      "bytes": 11086,
-      "sha256": "5cb2d391d735b7b6c5dab8e51f4352f7f7c5a0463650e9453c311b6c677d189b"
+      "bytes": 11361,
+      "sha256": "e6fff0af672ed3ed942ccc1c5f48a153271f1baea2c024abd687c5cf4ba6edb2"
     },
     {
       "path": "research-2026-10-30/exp4_local_search.py",
@@ -3028,8 +3033,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 18099,
-      "sha256": "818e0cc776d82dc47a2bd15a9e28fd36e46701a1e45c349e9e5274015e5a2692"
+      "bytes": 18370,
+      "sha256": "41667306b82081dcd9e2abbb98f8299c905eae4571e8403ff0d1e077c5c1d91d"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
