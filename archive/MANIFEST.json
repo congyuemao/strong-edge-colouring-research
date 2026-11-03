@@ -43,8 +43,8 @@
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 140634,
-      "sha256": "30110431eadf2f2f3abc31a8b7210b98094d7b685e5c2a818dc98a7acb333ad1"
+      "bytes": 142257,
+      "sha256": "7bec133e571a9aed257b3d7eafc04c9c49fa3e0b85b4fe543126c1f8d825c23f"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -3073,8 +3073,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 22120,
-      "sha256": "661136f3f8755a6b725941c9a5084dada1c0b7a1ad2fe37fe9a7d1f24bbcc090"
+      "bytes": 22183,
+      "sha256": "0d13d17bdb85fc43560c06a05dc2519c2f1d7ae54959c7e05e4b231cc1266aef"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
