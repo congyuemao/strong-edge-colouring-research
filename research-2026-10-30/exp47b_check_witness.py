@@ -1,7 +1,7 @@
 """exp47b: independent check of an exp47 witness, from the edge list and the colouring alone (conflicts from the vertex
 sets, distances and components recomputed here; no exp33 / exp47 code).
 Checks: the colouring of the ball is proper; e is uncoloured and blocked; under the port relaxation (components that
-contain an edge at L2-distance 3 from e are linked) e is depth-1 stuck and every singleton member f_p is stuck outside p.
+contain an edge at L2-distance 3 from e, or R for a ball of radius R, are linked) e is depth-1 stuck and every singleton member f_p is stuck outside p.
 Usage: exp47b_check_witness.py <witness.json>
 """
 import json
@@ -31,8 +31,9 @@ while q:
         if g not in dist:
             dist[g] = dist[h] + 1
             q.append(g)
-ball = [h for h in range(m) if dist[h] <= 3]
-assert len(ball) == m == 2185 and sorted(ball) == sorted(w["ball"])
+R = max(dist.values())                            # the boundary: L2-distance 3, or R for a ball of radius R
+ball = [h for h in range(m) if dist[h] <= R]
+assert len(ball) == m and sorted(ball) == sorted(w["ball"])
 assert col[e] == -1 and all(-1 <= c < K for c in col)
 bad = sum(col[i] >= 0 and col[i] == col[j] for i in ball for j in conf[i] if j > i)
 N = conf[e]
@@ -55,7 +56,7 @@ def links(a, b):
                     lab[y] = s
                     comp.append(y)
                     stack.append(y)
-        if any(dist[c] == 3 for c in comp):
+        if any(dist[c] == R for c in comp):
             for c in comp:
                 lab[c] = "outside"
     return lab

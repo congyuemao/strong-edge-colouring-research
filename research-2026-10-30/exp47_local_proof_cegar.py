@@ -26,10 +26,12 @@ Mode sym renames all colours by first use along the 24 members of N(e) (near edg
 colour occurs on N(e) and no colour symmetry is left; without it most clauses only re-block a certificate under new
 colour names.  Every clause stays sound for every colouring, so sym first imports the rounds of the run without it.
 Mode full: every ball edge except e coloured (the setting of a minimal counterexample, where G - e is coloured).
+Option rR: the ball of L2-radius R instead of 3 (edges within vertex distance 2R; boundary at distance R).  Option
+fix=<witness>: keep the colours of a witness on a smaller ball, to test whether it extends to the larger ball.
 Checkpoint: after every round the new clauses are appended (and synced) to <log_dir>/exp47_checkpoint[_full].jsonl; a
 restart with the same mode loads them and continues with the next round (a half-written last round is redone).  The
 loop is deterministic, so a restart reproduces the same models.
-Usage (run from this directory): exp47_local_proof_cegar.py [max_rounds] [log_dir] [full] [cut] [sym]
+Usage (run from this directory): exp47_local_proof_cegar.py [max_rounds] [log_dir] [full] [cut] [sym] [rR] [fix=...]
 """
 import json
 import os
@@ -48,14 +50,16 @@ LOG = sys.argv[2] if len(sys.argv) > 2 else "."
 FULL = "full" in sys.argv[3:]
 CUT = "cut" in sys.argv[3:]
 SYM = "sym" in sys.argv[3:]
-TAG = ("_full" if FULL else "") + ("_cut" if CUT else "")
+RAD = next((int(a[1:]) for a in sys.argv[3:] if a[:1] == "r" and a[1:].isdigit()), 3)
+FIX = next((a[4:] for a in sys.argv[3:] if a.startswith("fix=")), None)
+TAG = ("_full" if FULL else "") + ("_cut" if CUT else "") + (f"_r{RAD}" if RAD != 3 else "") + ("_fix" if FIX else "")
 STAG = TAG + ("_sym" if SYM else "")
 t0 = time.time()
-edges = tree(6)
+edges = tree(2 * RAD)
 adj = l2_adj(edges)
 e = 0
 dist, layer = {e: 0}, [e]
-for d in (1, 2, 3):
+for d in range(1, RAD + 1):
     nl = []
     for h in layer:
         for g in adj[h]:
@@ -66,7 +70,7 @@ for d in (1, 2, 3):
 ball = sorted(dist)
 inb = set(ball)
 N = adj[e]
-assert len(N) == 24 and all(len(adj[h]) == 24 and set(adj[h]) <= inb for h in ball if dist[h] <= 2)
+assert len(N) == 24 and all(len(adj[h]) == 24 and set(adj[h]) <= inb for h in ball if dist[h] < RAD)
 near = [f for f in N if set(edges[f]) & set(edges[e])]
 order = near + [f for f in N if f not in near]
 
@@ -151,6 +155,12 @@ if SYM:                                                      # colour c >= 1 onl
     for j, f in enumerate(order):
         for c in range(1, K):
             add([-X[f, c]] + [X[g, c - 1] for g in order[:j]])
+if FIX:                                                      # keep the colours of a witness on a smaller ball
+    fixed = json.load(open(FIX, encoding="utf-8"))
+    assert fixed["edges"] == [list(x) for x in edges[:len(fixed["edges"])]]
+    for h in fixed["ball"]:
+        if h != e and fixed["col"][h] >= 0:
+            add([X[h, fixed["col"][h]]])
 print(f"ball {len(ball)} edges{' (every edge coloured)' if FULL else ''}; {nv[0]} variables, {ncl[0]} clauses "
       f"[{time.time() - t0:.0f}s]", flush=True)
 
@@ -176,7 +186,7 @@ def separations(col):
                             comp.append(y)
                             stack.append(y)
                 comps.append(comp)
-            out_of = [any(dist[m] == 3 for m in comp) for comp in comps]
+            out_of = [any(dist[m] == RAD for m in comp) for comp in comps]
             for c, p in centres:
                 if p in (a, b):
                     continue
