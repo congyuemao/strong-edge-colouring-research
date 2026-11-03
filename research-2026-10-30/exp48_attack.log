@@ -1,0 +1,40 @@
+{"name": "n=100 girth=5 seed=1 edge 31", "start": 1, "best": 0, "steps": 974, "stuck": true, "recount": [-2, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=100 girth=5 seed=2 edge 8", "start": 1, "best": 0, "steps": 1591, "stuck": true, "recount": [-2, -2, -2, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=100 girth=6 seed=1 edge 127", "start": 2, "best": 0, "steps": 7679, "stuck": true, "recount": [-1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=200 girth=5 seed=0 edge 178", "start": 1, "best": 0, "steps": 2152, "stuck": true, "recount": [-2, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=100 girth=6 seed=1 edge 31", "start": 1, "best": 0, "steps": 12582, "stuck": true, "recount": [-1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=100 girth=5 seed=4 edge 56", "start": 2, "best": 2, "steps": 20000}
+{"name": "n=100 girth=6 seed=4 edge 39", "start": 2, "best": 2, "steps": 20000}
+{"name": "n=100 girth=6 seed=5 edge 61", "start": 3, "best": 3, "steps": 20000}
+{"name": "n=100 girth=6 seed=4 edge 56", "start": 3, "best": 2, "steps": 20000}
+{"name": "n=100 girth=5 seed=5 edge 28", "start": 2, "best": 2, "steps": 20000}
+{"name": "n=100 girth=6 seed=3 edge 196", "start": 2, "best": 1, "steps": 20000}
+{"name": "n=100 girth=5 seed=0 edge 199", "start": 2, "best": 2, "steps": 20000}
+{"name": "n=100 girth=6 seed=0 edge 199", "start": 3, "best": 1, "steps": 20000}
+{"name": "n=100 girth=5 seed=3 edge 171", "start": 1, "best": 0, "steps": 14111, "stuck": true, "recount": [-1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=100 girth=5 seed=1 edge 127", "start": 2, "best": 1, "steps": 20000}
+{"name": "n=100 girth=6 seed=3 edge 171", "start": 2, "best": 2, "steps": 20000}
+{"name": "n=100 girth=6 seed=2 edge 8", "start": 2, "best": 1, "steps": 20000}
+{"name": "n=100 girth=6 seed=2 edge 149", "start": 3, "best": 3, "steps": 20000}
+{"name": "n=200 girth=5 seed=3 edge 149", "start": 1, "best": 0, "steps": 470, "stuck": true, "recount": [-1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=100 girth=6 seed=0 edge 90", "start": 2, "best": 1, "steps": 20000}
+{"name": "n=100 girth=5 seed=2 edge 149", "start": 1, "best": 1, "steps": 20000}
+{"name": "n=100 girth=5 seed=5 edge 61", "start": 2, "best": 1, "steps": 20000}
+{"name": "n=100 girth=6 seed=5 edge 28", "start": 1, "best": 1, "steps": 20000}
+{"name": "n=200 girth=6 seed=2 edge 112", "start": 2, "best": 0, "steps": 2008, "stuck": true, "recount": [-2, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=100 girth=5 seed=4 edge 39", "start": 1, "best": 0, "steps": 19450, "stuck": true, "recount": [-1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=100 girth=5 seed=3 edge 196", "start": 2, "best": 1, "steps": 20000}
+{"name": "n=200 girth=5 seed=3 edge 265", "start": 1, "best": 0, "steps": 2831, "stuck": true, "recount": [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=100 girth=5 seed=0 edge 90", "start": 2, "best": 1, "steps": 20000}
+{"name": "n=200 girth=6 seed=1 edge 31", "start": 1, "best": 0, "steps": 2852, "stuck": true, "recount": [-1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=200 girth=5 seed=2 edge 112", "start": 1, "best": 0, "steps": 7000, "stuck": true, "recount": [-2, -2, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+{"name": "n=200 girth=5 seed=1 edge 93", "start": 2, "best": 2, "steps": 20000}
+{"name": "n=200 girth=6 seed=1 edge 93", "start": 1, "best": 1, "steps": 20000}
+{"name": "n=200 girth=5 seed=2 edge 367", "start": 1, "best": 1, "steps": 20000}
+{"name": "n=200 girth=6 seed=0 edge 178", "start": 2, "best": 2, "steps": 20000}
+{"name": "n=200 girth=6 seed=3 edge 149", "start": 1, "best": 1, "steps": 20000}
+{"name": "n=200 girth=6 seed=0 edge 396", "start": 1, "best": 1, "steps": 20000}
+{"name": "n=200 girth=6 seed=2 edge 367", "start": 1, "best": 1, "steps": 20000}
+{"name": "n=200 girth=6 seed=3 edge 265", "start": 1, "best": 1, "steps": 20000}
+{"name": "n=200 girth=5 seed=0 edge 396", "start": 1, "best": 1, "steps": 20000}
+{"name": "n=200 girth=5 seed=1 edge 31", "start": 2, "best": 1, "steps": 20000}

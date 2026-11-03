@@ -45,7 +45,9 @@ every class-M move opens nothing.  KIL_GPU_GMODE=11 is GMODE 9 on the non-siblin
 in the component shares an endpoint with f_a.  KIL_GPU_GMODE=12 / 13 attack conjecture 11.9 (NEW_DIRECTIONS 11.14):
 over the singleton colours p of N(e) (f_p the only p-member) the most / fewest pairs (a, b), a, b != p, separable at
 f_p.  Energy 0 is a stuck state where every / some singleton member is depth-1 stuck outside its colour; GMODE 12's
-zero is a counterexample to conjecture 11.9.  GCAP should exceed 171, the most such pairs.
+zero is a counterexample to conjecture 11.9.  GCAP should exceed 171, the most such pairs.  KIL_GPU_GMODE=14
+attacks conjecture 11.15 (NEW_DIRECTIONS 11.17): GMODE 12 with the colours on several members of N(e) as further
+candidates, counting the pairs separable at the whole class jointly (theorem 11.14); energy 0 is a counterexample.
 
 KIL_GPU_RADIUS (default 2): moves recolour edges within this L^2-distance of e.
 
@@ -268,15 +270,24 @@ int good_first_moves(__global const uint *adj, const uint *Nm, uint *cls) {
 }
 
 /* conjecture 11.9 (GMODE 12 / 13): over the singleton colours p of N(e), the most / fewest pairs (a, b), a, b != p,
-   separable at the only p-member f_p; N(f_p) is the L^2 row of f_p (e in it is uncoloured) */
+   separable at the only p-member f_p; N(f_p) is the L^2 row of f_p (e in it is uncoloured).  GMODE 14 (conjecture
+   11.15) also takes every colour p on several members, with the pairs separable at the whole p-class jointly
+   (theorem 11.14: the union of the members' rows) */
 int singleton_pairs(__global const uint *adj, const uint *Nm, const uint *cls, const uchar *cnt) {
     int mx = 0, mn = 1 << 20, n = 0;
     for (int p = 0; p < K; p++) {
-        if (cnt[p] != 1) continue;
-        int fp = -1, s = 0;
-        FORW { uint v = Nm[w] & cls[p * W + w]; if (v) fp = 32 * w + low_bit(v); }
+        if (cnt[p] == 0 || (cnt[p] > 1 && GMODE != 14)) continue;
+        int s = 0;
         uint Nf[W];
-        FORW Nf[w] = adj[fp * W + w];
+        FORW Nf[w] = 0;
+        FORW {
+            uint v = Nm[w] & cls[p * W + w];
+            while (v) {
+                int fp = 32 * w + low_bit(v);
+                v &= v - 1;
+                for (int u = 0; u < W; u++) Nf[u] |= adj[fp * W + u];
+            }
+        }
         for (int a = 0; a < K; a++)
             for (int b = a + 1; b < K; b++)
                 if (a != p && b != p) s += separable(adj, Nf, cls, a, b) != 0;
@@ -728,21 +739,43 @@ def good_first_moves(adj, col, e, opened=False, smax=None, mclass=0, edges=None)
     return mn if mclass in (9, 11) else mx if mclass else g if smax is None else mx
 
 
-def singleton_pairs(adj, col, e):
+def class_linked(adj, col, members, a, b):
+    """True if some (a, b)-component holds an a-neighbour and a b-neighbour of the members (one each, maybe of
+    different members)."""
+    nbr = {g for m in members for g in adj[m]}
+    B = {g for g in nbr if col[g] == b}
+    seen = {g for g in nbr if col[g] == a}
+    stack = list(seen)
+    while stack:
+        x = stack.pop()
+        for y in adj[x]:
+            if y not in seen and (col[y] == a or col[y] == b):
+                if y in B:
+                    return True
+                seen.add(y)
+                stack.append(y)
+    return False
+
+
+def singleton_pairs(adj, col, e, classes=False):
     """CPU version of the kernel's singleton_pairs (conjecture 11.9): for each singleton colour p of N(e), the number
-    of pairs (a, b), a, b != p, separable at the only p-member f_p."""
+    of pairs (a, b), a, b != p, separable at the only p-member f_p; with classes=True (GMODE 14, conjecture 11.15)
+    also each colour p on several members, with the pairs separable at the whole p-class jointly (theorem 11.14)."""
     out = {}
     for p in range(K):
         fp = [f for f in adj[e] if col[f] == p]
         if len(fp) == 1:
             out[p] = sum(separable(adj, col, fp[0], a, b) is not None
                          for a in range(K) for b in range(a + 1, K) if p not in (a, b))
+        elif len(fp) > 1 and classes:
+            out[p] = sum(not class_linked(adj, col, fp, a, b)
+                         for a in range(K) for b in range(a + 1, K) if p not in (a, b))
     return out
 
 
 def g_term(adj, col, e, gmode, smax=0, edges=None):
-    if gmode in (12, 13):
-        v = singleton_pairs(adj, col, e).values()
+    if gmode in (12, 13, 14):
+        v = singleton_pairs(adj, col, e, gmode == 14).values()
         return (min(v) if gmode == 13 else max(v)) if v else 1 << 20
     if gmode in (9, 10, 11):
         v = good_first_moves(adj, col, e, mclass=gmode, edges=edges)
@@ -864,8 +897,8 @@ def run(out, spec, per=1024, minutes=0):
                 x, col = H.cpu_col(c)
                 res = {"instance": x["name"], "chain": int(c), **check_stuck(x, col), "colouring": col,
                        **({"good_singles": good_singles(x["adj"], list(col), x["e"])} if gcap else {}),
-                       **({"good_first_moves": good_first_moves(x["adj"], list(col), x["e"])} if gmode in (2, 3, 8, 9, 10, 11, 12, 13) else {}),
-                       **({"singleton_pairs": singleton_pairs(x["adj"], list(col), x["e"])} if gmode >= 12 else {}),
+                       **({"good_first_moves": good_first_moves(x["adj"], list(col), x["e"])} if gmode in (2, 3, 8, 9, 10, 11, 12, 13, 14) else {}),
+                       **({"singleton_pairs": singleton_pairs(x["adj"], list(col), x["e"], gmode == 14)} if gmode >= 12 else {}),
                        "time": time.strftime("%Y-%m-%d %H:%M:%S")}
                 with open(os.path.join(out, "found.jsonl"), "a", encoding="utf-8") as fh:
                     fh.write(json.dumps(res) + "\n")
