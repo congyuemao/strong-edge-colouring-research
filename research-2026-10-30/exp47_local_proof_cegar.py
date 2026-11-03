@@ -22,11 +22,14 @@ boundary edge.  The certificate is fixed by the colours of K, of the conflicts o
 conflicts of the centre (not a); for a member f it also needs f to be the only p-member of N(e).  Every forbidden
 colouring really has the separable pair, so the clauses are sound; SAT models are re-checked directly.
 Symmetry: near edge i (of the 6 at the ends of e), if coloured, gets a colour <= i (colours renamed by first use).
+Mode sym renames all colours by first use along the 24 members of N(e) (near edges first).  e is blocked, so every
+colour occurs on N(e) and no colour symmetry is left; without it most clauses only re-block a certificate under new
+colour names.  Every clause stays sound for every colouring, so sym first imports the rounds of the run without it.
 Mode full: every ball edge except e coloured (the setting of a minimal counterexample, where G - e is coloured).
 Checkpoint: after every round the new clauses are appended (and synced) to <log_dir>/exp47_checkpoint[_full].jsonl; a
 restart with the same mode loads them and continues with the next round (a half-written last round is redone).  The
 loop is deterministic, so a restart reproduces the same models.
-Usage (run from this directory): exp47_local_proof_cegar.py [max_rounds] [log_dir] [full] [cut]
+Usage (run from this directory): exp47_local_proof_cegar.py [max_rounds] [log_dir] [full] [cut] [sym]
 """
 import json
 import os
@@ -44,7 +47,9 @@ MAXR = int(sys.argv[1]) if len(sys.argv) > 1 else 10000
 LOG = sys.argv[2] if len(sys.argv) > 2 else "."
 FULL = "full" in sys.argv[3:]
 CUT = "cut" in sys.argv[3:]
+SYM = "sym" in sys.argv[3:]
 TAG = ("_full" if FULL else "") + ("_cut" if CUT else "")
+STAG = TAG + ("_sym" if SYM else "")
 t0 = time.time()
 edges = tree(6)
 adj = l2_adj(edges)
@@ -63,6 +68,7 @@ inb = set(ball)
 N = adj[e]
 assert len(N) == 24 and all(len(adj[h]) == 24 and set(adj[h]) <= inb for h in ball if dist[h] <= 2)
 near = [f for f in N if set(edges[f]) & set(edges[e])]
+order = near + [f for f in N if f not in near]
 
 s = Solver(name="cadical195")
 nv = [0]
@@ -140,6 +146,11 @@ for f in N:                                                  # no trivially sepa
             for b in range(K):
                 if len({a, b, p}) == 3:
                     add(single_lits(f, p) + [z(al, a, b) for al in nb])
+nbase = ncl[0]
+if SYM:                                                      # colour c >= 1 only after c - 1 has appeared along order
+    for j, f in enumerate(order):
+        for c in range(1, K):
+            add([-X[f, c]] + [X[g, c - 1] for g in order[:j]])
 print(f"ball {len(ball)} edges{' (every edge coloured)' if FULL else ''}; {nv[0]} variables, {ncl[0]} clauses "
       f"[{time.time() - t0:.0f}s]", flush=True)
 
@@ -200,25 +211,50 @@ def block(c, p, x, y, Kset):
 
 
 os.makedirs(LOG, exist_ok=True)
-CKPT = f"{LOG}/exp47_checkpoint{TAG}.jsonl"
+CKPT = f"{LOG}/exp47_checkpoint{STAG}.jsonl"
+OLD = f"{LOG}/exp47_checkpoint{TAG}.jsonl"
 meta = {"full": FULL, "cut": CUT, "variables": nv[0], "clauses": ncl[0]}
 hist, start = [], 1
-if os.path.exists(CKPT):
-    lines = open(CKPT, encoding="utf-8").read().splitlines()
-    assert json.loads(lines[0])["meta"] == meta, "checkpoint written by a different encoding"
-    good = lines[:1]
+
+
+def rounds_of(path):
+    """meta line and complete round lines of a checkpoint (a last line cut off while being written is dropped)"""
+    lines = open(path, encoding="utf-8").read().splitlines()
+    out = []
     for line in lines[1:]:
         try:
-            r = json.loads(line)
-        except json.JSONDecodeError:                         # a round cut off while being written: redo it
+            out.append((line, json.loads(line)))
+        except json.JSONDecodeError:
             break
-        for cl in r["clauses"]:
-            add(cl)
-        hist.append((r["round"], r["separable"]))
-        start = r["round"] + 1
-        good.append(line)
+    return lines[0], out
+
+
+def take(r):
+    for cl in r["clauses"]:
+        add(cl)
+    hist.append((r["round"], r["separable"]))
+    return r["round"] + 1
+
+
+if SYM:                         # clauses found without the symmetry clauses stay sound: import those rounds first
+    if os.path.exists(CKPT):
+        meta["imported"] = json.loads(open(CKPT, encoding="utf-8").readline())["meta"].get("imported")
+    else:
+        meta["imported"] = len(rounds_of(OLD)[1]) if os.path.exists(OLD) else 0
+    if meta["imported"]:
+        head, old = rounds_of(OLD)
+        assert json.loads(head)["meta"] == {"full": FULL, "cut": CUT, "variables": nv[0], "clauses": nbase} and \
+            len(old) >= meta["imported"], "cannot import the rounds of " + OLD
+        for _, r in old[:meta["imported"]]:
+            start = take(r)
+        print(f"imported {meta['imported']} rounds from {OLD}, {ncl[0]} clauses [{time.time() - t0:.0f}s]", flush=True)
+if os.path.exists(CKPT):
+    head, done = rounds_of(CKPT)
+    assert json.loads(head)["meta"] == meta, "checkpoint written by a different encoding"
+    for _, r in done:                                        # a round cut off while being written is redone
+        start = take(r)
     with open(CKPT, "w", encoding="utf-8") as fh:
-        fh.write("\n".join(good) + "\n")
+        fh.write("\n".join([head] + [line for line, _ in done]) + "\n")
     print(f"resumed from {CKPT}: {start - 1} rounds done, {ncl[0]} clauses [{time.time() - t0:.0f}s]", flush=True)
 else:
     with open(CKPT, "w", encoding="utf-8") as fh:
@@ -233,6 +269,10 @@ for rnd in range(start, MAXR + 1):
     model = set(l for l in s.get_model() if l > 0)
     col_now = [next((c for c in range(K) if X.get((h, c)) in model), -1) if h in inb else -1
                for h in range(len(edges))]
+    if SYM:
+        firsts = [c for j, c in enumerate(col_now[f] for f in order)
+                  if c >= 0 and c not in [col_now[g] for g in order[:j]]]
+        assert firsts == list(range(K)), "model not in the canonical colour naming"
     seps = separations(col_now)
     per = Counter((c, p) for c, p, *_ in seps)
     worst = min((per.get((f, col_now[f]), 0) for f in N if col_now[f] >= 0
@@ -244,7 +284,7 @@ for rnd in range(start, MAXR + 1):
     stuck_all = per.get((e, -1), 0) == 0 and not any(p >= 0 for c, p in per)
     if stuck_all:
         print(f"round {rnd}: SAT -- e and every singleton member stuck under the relaxation", flush=True)
-        json.dump({"edges": edges, "col": col_now, "ball": ball}, open(f"{LOG}/exp47_witness{TAG}.json", "w"))
+        json.dump({"edges": edges, "col": col_now, "ball": ball}, open(f"{LOG}/exp47_witness{STAG}.json", "w"))
         hist.append(("SAT", rnd))
         break
     new = [block(*t) for t in seps]
@@ -252,4 +292,4 @@ for rnd in range(start, MAXR + 1):
         fh.write(json.dumps({"round": rnd, "separable": len(seps), "clauses": new}) + "\n")
         fh.flush()
         os.fsync(fh.fileno())
-json.dump(hist, open(f"{LOG}/exp47_history{TAG}.json", "w"))
+json.dump(hist, open(f"{LOG}/exp47_history{STAG}.json", "w"))
