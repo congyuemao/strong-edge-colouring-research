@@ -50,6 +50,7 @@ attacks conjecture 11.15 (NEW_DIRECTIONS 11.17): GMODE 12 with the colours on se
 candidates, counting the pairs separable at the whole class jointly (theorem 11.14); energy 0 is a counterexample.
 
 KIL_GPU_RADIUS (default 2): moves recolour edges within this L^2-distance of e.
+KIL_GPU_STAR = k (default 0): star state, k further edges at one end of e stay uncoloured (NEW_DIRECTIONS 11.22).
 
 Output directory: log lines on stdout, best.json (best energy per edge), found.jsonl, state.npz + meta.json
 (checkpoint every 2 minutes and at the end; a restart with the same arguments resumes).  At every checkpoint the
@@ -493,6 +494,18 @@ def parse_specs(text):
     return out
 
 
+STAR = int(os.environ.get("KIL_GPU_STAR", 0))
+
+
+def star_adj(edges, adj, e, k):
+    """Star states (NEW_DIRECTIONS 11.22): k further edges at the first end v of e stay uncoloured.  They keep mediating
+    the conflicts already in adj, but are removed as nodes (isolated rows), so their colour bits affect nothing."""
+    v = edges[e][0]
+    U = {f for f, x in enumerate(edges) if v in x and f != e}
+    U = set(sorted(U)[:k])
+    return [[] if f in U else [g for g in row if g not in U] for f, row in enumerate(adj)]
+
+
 def build_instances(specs):
     from graphs_hg import random_girth
     insts, small = [], {}
@@ -510,7 +523,8 @@ def build_instances(specs):
         cand = [e for e in range(len(adj)) if len(adj[e]) >= K]
         random.Random(1000 * n + s).shuffle(cand)
         for e in (ne if isinstance(ne, list) else cand[:ne]):
-            insts.append({"name": f"{name} edge {e}", "edges": edges, "adj": adj, "e": e,
+            eadj = star_adj(edges, adj, e, STAR) if STAR else adj
+            insts.append({"name": f"{name} edge {e}", "edges": edges, "adj": eadj, "e": e,
                           "spec": f"e:{n}:{g}:{s}:{e}" if kind == "r" else None})
     return insts
 
@@ -837,6 +851,8 @@ def run(out, spec, per=1024, minutes=0):
     smax, radius = int(os.environ.get("KIL_GPU_SMAX", 0)), int(os.environ.get("KIL_GPU_RADIUS", 2))
     insts = build_instances(parse_specs(spec))
     meta = {"spec": spec, "per": per, "Ls": Ls, "instances": [x["name"] for x in insts]}
+    if STAR:
+        meta.update(star=STAR)
     if radius != 2:
         meta.update(radius=radius)
     if rungs:

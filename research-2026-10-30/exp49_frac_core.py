@@ -29,6 +29,9 @@ from pysat.formula import IDPool
 from pysat.solvers import Solver
 
 
+NOTRIQ = "notriq" in sys.argv    # no member of Q lies on a triangle (NEW_DIRECTIONS 11.23)
+
+
 def build(s, tri, nT=None, dmin=20, dz=None, sym=True):
     """members have 4t + e' <= 24 - dmin; z = uv has 4t + e' <= dz if dz is given"""
     A = [2, 3, 4]
@@ -103,7 +106,7 @@ def build(s, tri, nT=None, dmin=20, dz=None, sym=True):
             cl.append([-In[p], -In[q], -E(p, q), u_])
             terms.append(u_)
         bound = 24 - dmin if dz is None or (a, b) != (0, 1) else dz
-        if bound < 4:
+        if bound < 4 or NOTRIQ:
             for t1 in Tri:
                 cl.append([-y, -t1])
         enc = CardEnc.atmost(terms, bound=bound, vpool=pool, encoding=EncType.seqcounter)
@@ -159,6 +162,7 @@ def check(V, edges, Q, s, dmin=20):
         rest = (nb[a] | nb[b]) - {a, b}
         e1 = sum(1 for p, q in itertools.combinations(sorted(rest), 2) if q in nb[p])
         assert 4 * t + e1 <= 24 - dmin, (a, b, t, e1)
+        assert not (NOTRIQ and t), (a, b, t)
         out.append(4 * t + e1)
     return out
 
