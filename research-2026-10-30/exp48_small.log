@@ -1,0 +1,8 @@
+n = 10: 59 graphs; {'local maxima': 2360, 'h blocked': 0, 'h stuck': 0}; stuck at a local maximum: []
+n = 11: 265 graphs; {'local maxima': 11660, 'h blocked': 0, 'h stuck': 0}; stuck at a local maximum: []
+n = 12: 1544 graphs; {'local maxima': 74112, 'h blocked': 0, 'h stuck': 0}; stuck at a local maximum: []
+n = 13: 10778 graphs; {'local maxima': 560456, 'h blocked': 0, 'h stuck': 0}; stuck at a local maximum: []
+
+real	302m43.795s
+user	0m0.000s
+sys	0m0.000s

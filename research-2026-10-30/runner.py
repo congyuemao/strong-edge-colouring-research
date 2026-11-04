@@ -52,8 +52,11 @@ k32.OpenProcess.restype = wt.HANDLE
 
 
 def process_table():
-    """pid -> (parent pid, exe name)"""
+    """pid -> (parent pid, exe name); waits while the system cannot take a snapshot (out of memory)"""
     snap = k32.CreateToolhelp32Snapshot(0x2, 0)
+    while snap == wt.HANDLE(-1).value:
+        time.sleep(5)
+        snap = k32.CreateToolhelp32Snapshot(0x2, 0)
     entry = PROCESSENTRY32W()
     entry.dwSize = ctypes.sizeof(PROCESSENTRY32W)
     table = {}
