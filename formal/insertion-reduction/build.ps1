@@ -15,7 +15,8 @@ $modules = @(
     'ConflictBounds', 'Counting', 'Triangle', 'TriangleInsertion', 'Greedy',
     'Exceptional', 'VertexDeletion', 'Suppression', 'RegularCompletion',
     'StarReduction', 'HoleMoves', 'GroupedInsertion', 'SupportCounts',
-    'AuditExamples', 'AxiomAudit'
+    'AuditExamples', 'DoubleHole', 'GirthGeometry', 'GirthBounds',
+    'ReachabilityCounting', 'Theorem1144', 'ComponentBounds', 'BicolourCounts', 'AxiomAudit'
 )
 foreach ($module in $modules) {
     Write-Output "Checking Se20Insertion.$module"

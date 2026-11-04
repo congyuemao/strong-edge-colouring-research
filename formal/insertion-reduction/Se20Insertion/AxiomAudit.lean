@@ -2,6 +2,8 @@ import Se20Insertion.StarReduction
 import Se20Insertion.SupportCounts
 import Se20Insertion.GroupedInsertion
 import Se20Insertion.AuditExamples
+import Se20Insertion.Theorem1144
+import Se20Insertion.BicolourCounts
 
 #print axioms Se20Insertion.strongColourable_of_conj119Star
 #print axioms Se20Insertion.conj119Star_of_conj119
@@ -20,3 +22,24 @@ import Se20Insertion.AuditExamples
 #print axioms Se20Insertion.PartialColouring.inherited_inseparable
 #print axioms Se20Insertion.single_neighbour_at_least_fifteen
 #print axioms Se20Insertion.AuditExamples.example_overlap_conflicts_e
+
+#print axioms Se20Insertion.PartialColouring.doubleHoleMove
+#print axioms Se20Insertion.PartialColouring.DoubleHoleConfig.insert
+#print axioms Se20Insertion.GirthGeometry.no_short_cycle
+#print axioms Se20Insertion.GirthGeometry.common_near_card
+#print axioms Se20Insertion.GirthGeometry.common_far_card
+#print axioms Se20Insertion.GirthGeometry.opposite_near_card
+#print axioms Se20Insertion.GirthGeometry.dominator_bound
+#print axioms Se20Insertion.PartialColouring.nonsingle_budget
+#print axioms Se20Insertion.PartialColouring.counting_contradiction
+#print axioms Se20Insertion.PartialColouring.partner_bound
+#print axioms Se20Insertion.theorem1144_maxDegree
+#print axioms Se20Insertion.theorem1144
+#print axioms Se20Insertion.theorem1144_girth
+#print axioms Se20Insertion.ComponentBounds.vertices_le_edges_add_components
+#print axioms Se20Insertion.ComponentBounds.small_components_mass
+#print axioms Se20Insertion.PartialColouring.bicoloured_mass
+#print axioms Se20Insertion.PartialColouring.bicoloured_edges
+#print axioms Se20Insertion.PartialColouring.coloured_edges_le_twelve
+#print axioms Se20Insertion.PartialColouring.lemma1116
+#print axioms Se20Insertion.PartialColouring.small_components_at_least_twice

@@ -8,19 +8,22 @@ For every finite simple graph with maximum degree at most 4, 20 colours suffice 
 
 Proved without a hypothesis: Theorem 11.7 at k = 1, Theorems 11.14 and 11.18, Lemmas 11.6, 11.11, 11.12, 11.13, 11.17, 11.36, 11.37, and the 4-regular completion of Proposition 11.38. The 16 + k count and the numerical part of Corollary 11.8 are also proved.
 
+Second pass ([BRIEF2.md](BRIEF2.md), [REPORT2.md](REPORT2.md)), also without any conjecture as a hypothesis: the double hole move `doubleHoleMove`, Theorem 11.44 (`theorem1144`, `theorem1144_maxDegree`, `theorem1144_girth`), Lemma 11.16 (`lemma1116`) and `small_components_at_least_twice`.
+
 ## Checked independently of Codex (2026-11-05)
 
 - Deleted this project's build output and re-ran `lake build`: 3188 jobs, success.
 - Re-ran `Se20Insertion/AxiomAudit.lean`: every theorem depends only on `propext`, `Classical.choice`, `Quot.sound`.
 - Searched the sources for `sorry`, `admit`, `axiom`, `native_decide`, `ofReduceBool`, `unsafe`, `implemented_by`, `extern`: none.
 - Read the definitions and the statements of the conjectures and of the main theorems against the documents.
+- For the second pass: rebuilt from scratch (3207 jobs), re-ran `#print axioms` for the Theorem 11.44 family and `doubleHoleMove` (the same three axioms), repeated the keyword search, read the statements.
 - Re-checked the example in [TRIANGLE_COUNTEREXAMPLE.json](TRIANGLE_COUNTEREXAMPLE.json) with separate code.
 
 The proofs themselves were checked only by the Lean kernel, not read.
 
 ## Not done
 
-General chains (k ≥ 2) of Theorem 11.7; the chain part of Corollary 11.8; Lemma 11.16; Lemmas 11.19–11.25; Theorem 11.44.
+General chains (k ≥ 2) of Theorem 11.7; the chain part of Corollary 11.8; Lemmas 11.19–11.25; the two-colour core criterion of NEW_DIRECTIONS 11.25.
 
 ## Build
 
