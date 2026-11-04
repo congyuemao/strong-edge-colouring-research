@@ -299,6 +299,27 @@ int singleton_pairs(__global const uint *adj, const uint *Nm, const uint *cls, c
     return !n ? 1 << 20 : GMODE == 13 ? mn : mx;
 }
 
+/* GMODE 15 (NEW_DIRECTIONS 11.26): the sum over ALL members f of N(e) of the pairs (a, b), a, b != col[f], separable at f.  If every pair fails the core
+   test of theorem 11.47 at k = 2, this sum is at most 24 * 171 - 2736 = 1368 (proposition 11.49), so a state above 1368 needs no further check. */
+int all_member_pairs(__global const uint *adj, const uint *Nm, const uint *cls) {
+    int s = 0;
+    FORW {
+        uint v = Nm[w];
+        while (v) {
+            int fp = 32 * w + low_bit(v);
+            v &= v - 1;
+            int p = -1;
+            for (int c = 0; c < K; c++) if (cls[c * W + fp / 32] >> (fp % 32) & 1) p = c;
+            uint Nf[W];
+            for (int u = 0; u < W; u++) Nf[u] = adj[fp * W + u];
+            for (int a = 0; a < K; a++)
+                for (int b = a + 1; b < K; b++)
+                    if (a != p && b != p) s += separable(adj, Nf, cls, a, b) != 0;
+        }
+    }
+    return s;
+}
+
 int energy(__global const uint *adj, const uint *Nm, uint *cls, const uchar *cnt, uint *sep, uint *tr,
            uint *dirty, int wT, int wN) {
     int miss = 0;
@@ -324,7 +345,7 @@ int energy(__global const uint *adj, const uint *Nm, uint *cls, const uchar *cnt
     }
     int E1 = wN * (ns - nt) + wT * nt;
     if (GCAP == 0) return E1;
-    return E1 + (E1 ? GCAP : min(GMODE >= 12 ? singleton_pairs(adj, Nm, cls, cnt) : (GMODE == 2 || GMODE == 3 || GMODE >= 8) ? good_first_moves(adj, Nm, cls) : good_singles(adj, Nm, cls), GCAP));
+    return E1 + (E1 ? GCAP : min(GMODE == 15 ? all_member_pairs(adj, Nm, cls) : GMODE >= 12 ? singleton_pairs(adj, Nm, cls, cnt) : (GMODE == 2 || GMODE == 3 || GMODE >= 8) ? good_first_moves(adj, Nm, cls) : good_singles(adj, Nm, cls), GCAP));
 }
 
 /* inst: 8 ints per instance: m, e, adjacency base (words), N(e) mask base (words), region base, |region|, -, - */
@@ -787,7 +808,15 @@ def singleton_pairs(adj, col, e, classes=False):
     return out
 
 
+def all_member_pairs(adj, col, e):
+    """CPU version of the kernel's all_member_pairs (GMODE 15)."""
+    return sum(separable(adj, col, f, a, b) is not None
+               for f in adj[e] for a in range(K) for b in range(a + 1, K) if col[f] not in (a, b))
+
+
 def g_term(adj, col, e, gmode, smax=0, edges=None):
+    if gmode == 15:
+        return all_member_pairs(adj, col, e)
     if gmode in (12, 13, 14):
         v = singleton_pairs(adj, col, e, gmode == 14).values()
         return (min(v) if gmode == 13 else max(v)) if v else 1 << 20

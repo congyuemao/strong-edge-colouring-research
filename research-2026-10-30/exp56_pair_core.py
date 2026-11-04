@@ -91,7 +91,8 @@ def check(edges, col):
         nb.setdefault(y, set()).add(x)
     bycol = {}
     for i, c in enumerate(col):
-        assert c >= 0
+        if c < 0:      # only the other edges of a star stay uncoloured; h must be coloured (asserted by the caller)
+            continue
         bycol.setdefault(c, []).append(i)
     for c, L in bycol.items():
         for i, j in itertools.combinations(L, 2):
@@ -111,6 +112,10 @@ for f in sys.argv[2:]:
         col = list(x.get("colouring") or x.get("colours"))
         col[h] = -1
         adj = l2_adj(edges)
+        for g in x.get("U", []):   # star state: conflicts are those of G; other uncoloured edges are simply absent
+            col[g] = -1
+            adj[g] = []
+            adj = [[y for y in r if y != g] for r in adj]
         adj_set = [set(r) for r in adj]
         good = []
         big = 0
@@ -126,6 +131,7 @@ for f in sys.argv[2:]:
         for a, b, S, rank in rng.sample(good, min(reps, len(good))):
             new, mv, kind = repair(edges, adj, col, h, a, b, S, rank)
             check(edges, new)
+            assert new[h] >= 0
             tot["repairs"] += 1
             mw = max(mw, mv)
         print(x.get("instance", f[-28:])[:40], len({col[y] for y in adj[h]}) == K, len(good), big, mw, flush=True)
