@@ -1,0 +1,10 @@
+name = "se20_insertion"
+version = "0.1.0"
+defaultTargets = ["Se20Insertion"]
+
+[[require]]
+name = "mathlib"
+path = "E:/lean/sep19/route-c/lean/.lake/packages/mathlib"
+
+[[lean_lib]]
+name = "Se20Insertion"

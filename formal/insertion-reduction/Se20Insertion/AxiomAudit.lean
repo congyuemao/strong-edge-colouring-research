@@ -1,0 +1,22 @@
+import Se20Insertion.StarReduction
+import Se20Insertion.SupportCounts
+import Se20Insertion.GroupedInsertion
+import Se20Insertion.AuditExamples
+
+#print axioms Se20Insertion.strongColourable_of_conj119Star
+#print axioms Se20Insertion.conj119Star_of_conj119
+#print axioms Se20Insertion.strongColourable_of_conj1115
+#print axioms Se20Insertion.strongColourable_of_conj1126
+#print axioms Se20Insertion.strongColourable_of_starInsertion
+#print axioms Se20Insertion.strongColourable_of_conj119
+#print axioms Se20Insertion.triangle_insertion
+#print axioms Se20Insertion.triangle_edges_last
+#print axioms Se20Insertion.strongColourable_of_all_exceptional
+#print axioms Se20Insertion.regularCompletion
+#print axioms Se20Insertion.at_least_sixteen_add_uncoloured_single
+#print axioms Se20Insertion.PartialColouring.groupedColourClassInsertion
+#print axioms Se20Insertion.PartialColouring.holeMove_class_card
+#print axioms Se20Insertion.PartialColouring.holeMove_inseparable_moved_colour
+#print axioms Se20Insertion.PartialColouring.inherited_inseparable
+#print axioms Se20Insertion.single_neighbour_at_least_fifteen
+#print axioms Se20Insertion.AuditExamples.example_overlap_conflicts_e
