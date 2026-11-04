@@ -38,13 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 90650,
-      "sha256": "200bc092942e3f410655f0f03bc9fd0309d1124b593618df786a36b7ed64d1a7"
+      "bytes": 91958,
+      "sha256": "f59da1497ca834766df24ca6b79ec722eecce3e0590b1dec4dbc47e925455b9c"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 162235,
-      "sha256": "6baebafdd741a6414088b1ebefae109b084386c9ff1895f3b3a80a69c13ea306"
+      "bytes": 170295,
+      "sha256": "b6c63bf9d4b58a993c3ff2cdc42dc468627ba8101335d26d7a0b954430a13235"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -2347,6 +2347,31 @@
       "sha256": "427983da0ff50b3fbffad31e4bb30aebe54b533dbdc81d74905d370bdf8828dd"
     },
     {
+      "path": "research-2026-10-30/exp49_control.log",
+      "bytes": 271,
+      "sha256": "95960d7bd460a166e1ab60e59903a5dc0bc90502b0113883b85a036e8b5379f7"
+    },
+    {
+      "path": "research-2026-10-30/exp49_frac_core.py",
+      "bytes": 11565,
+      "sha256": "e85ea087dd19e96ac6e264fa77c4e7307029e9ab549c015ffa75ee22b5974a05"
+    },
+    {
+      "path": "research-2026-10-30/exp49_runs.log",
+      "bytes": 2863,
+      "sha256": "7a7eb6e9bfda73eae4b0bff2c886b2d7d72fe6014a5b6277cebdc254282cc47c"
+    },
+    {
+      "path": "research-2026-10-30/exp49b_core_scan.log",
+      "bytes": 2408,
+      "sha256": "d3e9a0466d1a79389bf211cac6eb4c9dd10545a2e2c5aea47dc240a69ed09234"
+    },
+    {
+      "path": "research-2026-10-30/exp49b_core_scan.py",
+      "bytes": 3389,
+      "sha256": "20593f55454cd54d6abd4e89dbd8b6736f69e6064c71dcb768becacf7dd579ef"
+    },
+    {
       "path": "research-2026-10-30/exp4_local_search.py",
       "bytes": 4849,
       "sha256": "d9f3d06010b33678940e19c95376e8a5627cae6e95487b60ce86a6e6ac16832a"
@@ -3128,8 +3153,8 @@
     },
     {
       "path": "research-2026-10-30/README.md",
-      "bytes": 23763,
-      "sha256": "8af7b16c12b61d4a9e99df9c973bbb81cdfc6c732db7c8b038b4b5eee18111d5"
+      "bytes": 24268,
+      "sha256": "5bf2ada38dd48442bba636520415e6b74d9a29f6e8221e29cead780cfac1beb4"
     },
     {
       "path": "research-2026-10-30/REPORT_zh.md",
