@@ -1,0 +1,69 @@
+second_pass\PropositionDReduction.lean:14:8: warning: automatically included section variable(s) unused in theorem `Se20Fractional.DReduction.mem_endpoints`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+second_pass\PropositionDReduction.lean:101:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+'Se20Fractional.DReduction.endpoint_bound_23' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.DReduction.obstruction_of_not_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+second_pass\PropositionDReduction.lean:119:0: warning: automatically included section variable(s) unused in theorem `Se20Fractional.DReduction.embedding_degree_le`:
+  [DecidableEq V]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+second_pass\PropositionDReduction.lean:124:0: warning: automatically included section variable(s) unused in theorem `Se20Fractional.DReduction.l2_embedding_iff`:
+  [Fintype V]
+  [DecidableEq V]
+  [Fintype W]
+  [DecidableEq W]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] [Fintype W] [DecidableEq W] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+second_pass\PropositionDReduction.lean:179:0: warning: automatically included section variable(s) unused in theorem `Se20Fractional.DReduction.neighborFinset_map`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+second_pass\PropositionDReduction.lean:213:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+second_pass\PropositionDReduction.lean:259:0: warning: automatically included section variable(s) unused in theorem `Se20Fractional.DReduction.degree_map_le_four`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+second_pass\PropositionDReduction.lean:317:0: warning: automatically included section variable(s) unused in theorem `Se20Fractional.DReduction.induced_edge_lift`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'Se20Fractional.DReduction.l2_embedding_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.DReduction.embedding_local_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.DReduction.local_map' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.DReduction.root_degree_cases' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.DReduction.induced_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.DReduction.obstruction23_of_not_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.DReduction.propositionD_of_no_obstruction23' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.DReduction.root_obstruction23_of_not_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.DReduction.propositionD_of_no_root_obstruction23' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

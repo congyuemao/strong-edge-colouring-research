@@ -1,0 +1,24 @@
+Se20Fractional.Elementary.maximum_stable_key.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] {G : SimpleGraph V}
+  (U : Finset V) (v : V) (hvU : v ∈ U) (ω : ℕ) (hω : ∀ Q ⊆ U, v ∈ Q → Se20Fractional.Clique G Q → Q.card ≤ ω) :
+  2 * (Se20Fractional.Elementary.maximumStableSets G U).card ≤
+    ∑ S ∈ Se20Fractional.Elementary.maximumStableSets G U, Se20Fractional.degreeOn G S v +
+      (ω + 1) * Se20Fractional.Elementary.occurrence (Se20Fractional.Elementary.maximumStableSets G U) v
+Se20Fractional.Elementary.weighted_local_reed.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] {G : SimpleGraph V}
+  (U : Finset V) (r : V → ℝ) (k : ℝ) (ω : V → ℕ) :
+  (∀ v ∈ U, 0 ≤ r v) →
+    0 ≤ k →
+      (∀ v ∈ U, ∀ Q ⊆ U, v ∈ Q → Se20Fractional.Clique G Q → Q.card ≤ ω v) →
+        (∀ v ∈ U, ∑ u ∈ Se20Fractional.neighbors G U v, r u + (↑(ω v) + 1) * r v ≤ 2 * k) → ∃ c, c.total ≤ k
+Se20Fractional.local_fractional_reed_elementary.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] (G : SimpleGraph V)
+  (U : Finset V) (k : ℝ) (hk : 0 ≤ k) (ω : V → ℕ)
+  (hω : ∀ v ∈ U, ∀ Q ⊆ U, v ∈ Q → Se20Fractional.Clique G Q → Q.card ≤ ω v)
+  (hlocal : ∀ v ∈ U, ↑(Se20Fractional.degreeOn G U v) + 1 + ↑(ω v) ≤ 2 * k) :
+  Se20Fractional.FractionalColourableOn G U k
+Se20Fractional.theorem_F_of_D.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] (G : SimpleGraph V)
+  (hΔ : ∀ (v : V), G.degree v ≤ 4) (hD : Se20Fractional.PropositionD G) :
+  Se20Fractional.FractionalColourable (Se20Fractional.L2 G) 20
+'Se20Fractional.Elementary.maximum_stable_key' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.Elementary.weighted_local_reed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.local_fractional_reed_elementary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.theorem_F_of_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.theorem_F' depends on axioms: [propext, Classical.choice, Quot.sound]

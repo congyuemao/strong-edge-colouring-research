@@ -1,0 +1,11 @@
+import Se20Fractional
+
+#check Se20Fractional.Elementary.maximum_stable_key
+#check Se20Fractional.Elementary.weighted_local_reed
+#check Se20Fractional.local_fractional_reed_elementary
+#check Se20Fractional.theorem_F_of_D
+#print axioms Se20Fractional.Elementary.maximum_stable_key
+#print axioms Se20Fractional.Elementary.weighted_local_reed
+#print axioms Se20Fractional.local_fractional_reed_elementary
+#print axioms Se20Fractional.theorem_F_of_D
+#print axioms Se20Fractional.theorem_F

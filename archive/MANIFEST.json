@@ -38,13 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 92031,
-      "sha256": "1c37bad71cd5518131d241908277227820690ac05b3f8aa7cd97ac639a1bc468"
+      "bytes": 92048,
+      "sha256": "b4367cf7b2e62daf65317a12e5a3f01fca65259c4e82aff06a0bbfab81d98428"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 173474,
-      "sha256": "6d0d510f70cac429802d6189fa111cdefd2a7d0ca370b5d26770b0e1f6ce10c4"
+      "bytes": 175153,
+      "sha256": "254b6cf654e7e2f0a84bf788fe422e182f5182f2d9e82a159539748168f0f3e1"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -70,6 +70,11 @@
       "path": "formal/fractional-20/BRIEF.md",
       "bytes": 7642,
       "sha256": "601d009c6ccaae1d3ca45c812a1634254a844ac5093c1fdcb70675b0e9947abb"
+    },
+    {
+      "path": "formal/fractional-20/BRIEF2.md",
+      "bytes": 5534,
+      "sha256": "c6b6b49f797782160d0f1feeca4f9ba090b0f8d3abecaba840cbe44263f76296"
     },
     {
       "path": "formal/fractional-20/independent/AUDIT.md",
@@ -193,13 +198,18 @@
     },
     {
       "path": "formal/fractional-20/README.md",
-      "bytes": 2173,
-      "sha256": "c147b338b8a4504f2c4b9c76f1bdae1a4c99b44bec6ed3df5e1a037a7d63a3e8"
+      "bytes": 2689,
+      "sha256": "6ec25bc46150a2c504342e98ac3733550898a41af89fccca2fc9632f5234c79d"
     },
     {
       "path": "formal/fractional-20/REPORT.md",
       "bytes": 14800,
       "sha256": "b4dc10cb700c7e62729c60bf3f00feee4c4d48a30cb7079528d7bbaa3147d958"
+    },
+    {
+      "path": "formal/fractional-20/REPORT2.md",
+      "bytes": 10309,
+      "sha256": "866583d54d17f0781630fa692a91ea5cfd0820868aa5c7072ebc861126bbce1d"
     },
     {
       "path": "formal/fractional-20/Se20Fractional/Basic.lean",
@@ -222,19 +232,69 @@
       "sha256": "724d3151cd66aaf56e7fcbb996773a2ed861d0f8ad24c17372ddf7581953c248"
     },
     {
+      "path": "formal/fractional-20/Se20Fractional/LocalReedElementary.lean",
+      "bytes": 23492,
+      "sha256": "f7fcd74ccdbe3b171b5385ba6531d4b0480cd0388646dca3700957169e079591"
+    },
+    {
       "path": "formal/fractional-20/Se20Fractional/Peeling.lean",
       "bytes": 11222,
       "sha256": "4976d07c6cc850df319bf658c5c94e98ff151da928440f8c398602e94167a7f3"
     },
     {
       "path": "formal/fractional-20/Se20Fractional/TheoremF.lean",
-      "bytes": 2152,
-      "sha256": "b42f0b91c5d07d68440e42d090ef898836300ad7c83f83c545fd7409d6faed70"
+      "bytes": 3724,
+      "sha256": "3f5bcda6f6d0fc30677a65189c4a4885a5c7e6245ada69fbaf2a150ab54e756a"
     },
     {
       "path": "formal/fractional-20/Se20Fractional.lean",
-      "bytes": 168,
-      "sha256": "8cad04043f4f213c09c9afd107e4f6b9bc0c6a0119f4680dfeaaabb2094dee22"
+      "bytes": 205,
+      "sha256": "39a4827e632f1841951285f7f4c6fbfe5329e45fb42e6c1f30ab31c88c2dd361"
+    },
+    {
+      "path": "formal/fractional-20/second_pass/Axioms.lean",
+      "bytes": 484,
+      "sha256": "0835552a1836538da0365ecc2bcde8244b8a7160ffac6ee7b12b18411b5696d4"
+    },
+    {
+      "path": "formal/fractional-20/second_pass/axioms.txt",
+      "bytes": 2104,
+      "sha256": "c947f16acb476a69bf8e4411367a6cbe57a221d24df1416bba54489715c2c2dd"
+    },
+    {
+      "path": "formal/fractional-20/second_pass/encode_root_only.cpp",
+      "bytes": 3699,
+      "sha256": "e68cec203b25f5c221c46f13ba5e35f3adcd9bb86ab4c6efe10ae0c895637bd5"
+    },
+    {
+      "path": "formal/fractional-20/second_pass/part1-build.log",
+      "bytes": 18118,
+      "sha256": "ba735f7575fcb31a5a8e60c5c4b775bd3b8b228cfc1cb633973d223f7837f623"
+    },
+    {
+      "path": "formal/fractional-20/second_pass/part2-timing.txt",
+      "bytes": 112,
+      "sha256": "586da4b7746d8b16a13714138a9e218a6d0c4881df113b67f569e9674c87fcbc"
+    },
+    {
+      "path": "formal/fractional-20/second_pass/PropositionDReduction.lean",
+      "bytes": 23039,
+      "sha256": "20d8a7de17141404a11d9ff4e394caac26c35339405cc188e46ec97550c13a1f"
+    },
+    {
+      "path": "formal/fractional-20/second_pass/reduction-build.log",
+      "bytes": 4566,
+      "sha256": "61b93160321a6ae3382b2f4dd39e3c3b89bdeb696cbe31061fdb304f837334f0"
+    },
+    {
+      "path": "formal/fractional-20/second_pass/root_only-timing.txt",
+      "bytes": 50,
+      "sha256": "b809b457d2493205aae6870d6221237fe7c054993b70f468c9f0f2b9afd68720"
+    },
+    {
+      "path": "formal/fractional-20/second_pass/root_only_experiment.ps1",
+      "bytes": 1765,
+      "sha256": "92b5f097a147d1c5bcffcb7300adc7813c9619dd82aa09f0203d1ddb66fdc095"
     },
     {
       "path": "README.md",

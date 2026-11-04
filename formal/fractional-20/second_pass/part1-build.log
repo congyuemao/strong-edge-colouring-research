@@ -1,0 +1,234 @@
+⚠ [1124/1148] Replayed Se20Fractional.Definitions
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Combinatorics.SimpleGraph.Finite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Basic.Real.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Tactic.GCongr` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Tactic.FinCases` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional/Definitions.lean:56:8: automatically included section variable(s) unused in theorem `Se20Fractional.mem_neighbors`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/Definitions.lean:61:0: automatically included section variable(s) unused in theorem `Se20Fractional.stable_subset`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/Definitions.lean:65:0: automatically included section variable(s) unused in theorem `Se20Fractional.Colouring.total_nonneg`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1147/1148] Replayed Se20Fractional.Peeling
+warning: Se20Fractional\Peeling.lean: imports `Mathlib.Algebra.BigOperators.Fin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Peeling.lean: imports `Mathlib.Algebra.BigOperators.Ring.Finset` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional/Peeling.lean:14:0: automatically included section variable(s) unused in theorem `Se20Fractional.Colouring.mass_nonneg`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/Peeling.lean:44:20: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: Se20Fractional/Peeling.lean:77:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Se20Fractional/Peeling.lean:80:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Se20Fractional/Peeling.lean:99:0: automatically included section variable(s) unused in theorem `Se20Fractional.pad_colouring`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/Peeling.lean:126:0: automatically included section variable(s) unused in theorem `Se20Fractional.stable_insert`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: Se20Fractional/Peeling.lean:223:0: 'Se20Fractional.normalize_colouring' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/Peeling.lean:224:0: 'Se20Fractional.extend_colouring' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/Peeling.lean:225:0: 'Se20Fractional.peeling' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/Peeling.lean:247:0: 'Se20Fractional.vertex_critical_peeling' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1148/1148] Built Se20Fractional.LocalReedElementary (18s)
+warning: Se20Fractional/LocalReedElementary.lean:18:8: automatically included section variable(s) unused in theorem `Se20Fractional.Elementary.mem_maximumStableSets`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/LocalReedElementary.lean:32:0: automatically included section variable(s) unused in theorem `Se20Fractional.Elementary.maximum_nonempty`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/LocalReedElementary.lean:436:6: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [hz₀] at this
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+info: Se20Fractional/LocalReedElementary.lean:482:0: 'Se20Fractional.Elementary.maximum_stable_key' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/LocalReedElementary.lean:483:0: 'Se20Fractional.Elementary.weighted_local_reed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/LocalReedElementary.lean:500:0: 'Se20Fractional.local_fractional_reed_elementary' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1148 jobs).
+⚠ [1124/1153] Replayed Se20Fractional.Definitions
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Combinatorics.SimpleGraph.Finite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Basic.Real.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Tactic.GCongr` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Definitions.lean: imports `Mathlib.Tactic.FinCases` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional/Definitions.lean:56:8: automatically included section variable(s) unused in theorem `Se20Fractional.mem_neighbors`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/Definitions.lean:61:0: automatically included section variable(s) unused in theorem `Se20Fractional.stable_subset`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/Definitions.lean:65:0: automatically included section variable(s) unused in theorem `Se20Fractional.Colouring.total_nonneg`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [1125/1153] Replayed Se20Fractional.DegreeFormula
+warning: Se20Fractional/DegreeFormula.lean:22:34: This simp argument is unused:
+  and_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [endpointRegion, and_comm, and_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Se20Fractional/DegreeFormula.lean:45:76: This simp argument is unused:
+  exists_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Sym2.mem_iff, forall_eq_or_imp, forall_eq, exists_eq_or_imp]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: Se20Fractional/DegreeFormula.lean:148:0: 'Se20Fractional.degree_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/DegreeFormula.lean:149:0: 'Se20Fractional.degree_formula_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/DegreeFormula.lean:150:0: 'Se20Fractional.l2_degree_le_24' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1148/1153] Replayed Se20Fractional.Peeling
+warning: Se20Fractional\Peeling.lean: imports `Mathlib.Algebra.BigOperators.Fin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional\Peeling.lean: imports `Mathlib.Algebra.BigOperators.Ring.Finset` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: Se20Fractional/Peeling.lean:14:0: automatically included section variable(s) unused in theorem `Se20Fractional.Colouring.mass_nonneg`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/Peeling.lean:44:20: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+warning: Se20Fractional/Peeling.lean:77:12: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: Se20Fractional/Peeling.lean:80:12: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: Se20Fractional/Peeling.lean:99:0: automatically included section variable(s) unused in theorem `Se20Fractional.pad_colouring`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/Peeling.lean:126:0: automatically included section variable(s) unused in theorem `Se20Fractional.stable_insert`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: Se20Fractional/Peeling.lean:223:0: 'Se20Fractional.normalize_colouring' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/Peeling.lean:224:0: 'Se20Fractional.extend_colouring' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/Peeling.lean:225:0: 'Se20Fractional.peeling' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/Peeling.lean:247:0: 'Se20Fractional.vertex_critical_peeling' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1149/1153] Replayed Se20Fractional.LocalReed
+warning: Se20Fractional/LocalReed.lean:26:0: automatically included section variable(s) unused in theorem `Se20Fractional.sum_subset_indicator`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/LocalReed.lean:52:0: automatically included section variable(s) unused in theorem `Se20Fractional.dual_weight_le_one`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/LocalReed.lean:208:6: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [hzS]
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Se20Fractional/LocalReed.lean:243:0: automatically included section variable(s) unused in theorem `Se20Fractional.degreeOn_as_sum`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: Se20Fractional/LocalReed.lean:359:0: 'Se20Fractional.weak_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/LocalReed.lean:360:0: 'Se20Fractional.stable_set_local_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/LocalReed.lean:361:0: 'Se20Fractional.local_fractional_reed' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [1150/1153] Replayed Se20Fractional.LocalReedElementary
+warning: Se20Fractional/LocalReedElementary.lean:18:8: automatically included section variable(s) unused in theorem `Se20Fractional.Elementary.mem_maximumStableSets`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/LocalReedElementary.lean:32:0: automatically included section variable(s) unused in theorem `Se20Fractional.Elementary.maximum_nonempty`:
+  [Fintype V]
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Se20Fractional/LocalReedElementary.lean:436:6: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp [hz₀] at this
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+info: Se20Fractional/LocalReedElementary.lean:482:0: 'Se20Fractional.Elementary.maximum_stable_key' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/LocalReedElementary.lean:483:0: 'Se20Fractional.Elementary.weighted_local_reed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/LocalReedElementary.lean:500:0: 'Se20Fractional.local_fractional_reed_elementary' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1151/1153] Built Se20Fractional.TheoremF (15s)
+info: Se20Fractional/TheoremF.lean:48:0: 'Se20Fractional.theorem_F' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Se20Fractional/TheoremF.lean:81:0: 'Se20Fractional.theorem_F_of_D' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [1152/1153] Built Se20Fractional (13s)
+Build completed successfully (1153 jobs).
