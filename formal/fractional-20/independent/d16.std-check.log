@@ -1,0 +1,4 @@
+'Std.Tactic.BVDecide.LRAT.check_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+Parsed 1707026 original clauses
+Parsed 3051052 LRAT actions
+Std.Tactic.BVDecide.LRAT.check = true; elapsed_ms=50630

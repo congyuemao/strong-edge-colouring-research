@@ -1,0 +1,50 @@
+'Se20Fractional.l2_adj_region' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.region_degree_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.degree_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.degree_formula_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.l2_degree_le_24' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.normalize_colouring' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.extend_colouring' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.peeling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.vertex_critical_peeling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.weak_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.FractionalLPWitness.is_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.stable_set_local_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.local_fractional_reed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Fractional.theorem_F' depends on axioms: [propext, Classical.choice, Quot.sound]
+Se20Fractional.vertex_critical_peeling.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] {G : SimpleGraph V}
+  {U : Finset V} (D : ℤ) (k : ℝ) (hopt : Se20Fractional.IsFractionalChromaticOn G U k) (hD : ↑D < k)
+  (hcritical : ∀ v ∈ U, ∃ r < k, Se20Fractional.FractionalColourableOn G (U.erase v) r) (v : V) :
+  v ∈ U → D ≤ ↑(Se20Fractional.degreeOn G U v)
+Se20Fractional.local_fractional_reed.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] {G : SimpleGraph V} {U : Finset V}
+  (hLP : Nonempty (Se20Fractional.FractionalLPWitness G U)) (k : ℝ) (hk : 0 ≤ k) (ω : V → ℕ)
+  (hω : ∀ u ∈ U, ∀ Q ⊆ U, u ∈ Q → Se20Fractional.Clique G Q → Q.card ≤ ω u)
+  (hlocal : ∀ u ∈ U, ↑(Se20Fractional.degreeOn G U u) + 1 + ↑(ω u) ≤ 2 * k) :
+  Se20Fractional.FractionalColourableOn G U k
+Se20Fractional.theorem_F.{u_1} {V : Type u_1} [Fintype V] [DecidableEq V] (G : SimpleGraph V)
+  (hΔ : ∀ (v : V), G.degree v ≤ 4) (hLP : Se20Fractional.FractionalDuality (Se20Fractional.L2 G))
+  (hD : Se20Fractional.PropositionD G) : Se20Fractional.FractionalColourable (Se20Fractional.L2 G) 20
+structure Se20Fractional.FractionalLPWitness.{u_1} {V : Type u_1} [DecidableEq V] (G : SimpleGraph V) (U : Finset V) :
+  Type u_1
+number of parameters: 4
+fields:
+  Se20Fractional.FractionalLPWitness.primal : Se20Fractional.Colouring G U
+  Se20Fractional.FractionalLPWitness.dual : Se20Fractional.DualWeight G U
+  Se20Fractional.FractionalLPWitness.objective_eq : self.primal.total = ∑ v ∈ U, self.dual.w v
+constructor:
+  Se20Fractional.FractionalLPWitness.mk.{u_1} {V : Type u_1} [DecidableEq V] {G : SimpleGraph V} {U : Finset V}
+    (primal : Se20Fractional.Colouring G U) (dual : Se20Fractional.DualWeight G U)
+    (objective_eq : primal.total = ∑ v ∈ U, dual.w v) : Se20Fractional.FractionalLPWitness G U
+structure Se20Fractional.FractionalDuality.{u_1} {V : Type u_1} [DecidableEq V] (G : SimpleGraph V) : Prop
+number of parameters: 3
+fields:
+  Se20Fractional.FractionalDuality.exists_optimal : ∀ (U : Finset V), Nonempty (Se20Fractional.FractionalLPWitness G U)
+constructor:
+  Se20Fractional.FractionalDuality.mk.{u_1} {V : Type u_1} [DecidableEq V] {G : SimpleGraph V}
+    (exists_optimal : ∀ (U : Finset V), Nonempty (Se20Fractional.FractionalLPWitness G U)) :
+    Se20Fractional.FractionalDuality G
+def Se20Fractional.PropositionD.{u_1} : {V : Type u_1} → [Fintype V] → SimpleGraph V → Prop :=
+fun {V} [Fintype V] G =>
+  ∀ (Q : Finset ↑G.edgeSet),
+    Se20Fractional.Clique (Se20Fractional.L2 G) Q →
+      16 ≤ Q.card → ∃ y ∈ Q, Se20Fractional.degreeOn (Se20Fractional.L2 G) Finset.univ y ≤ 19

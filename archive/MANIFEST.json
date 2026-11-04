@@ -38,13 +38,13 @@
     },
     {
       "path": "docs/MANUSCRIPT_zh.md",
-      "bytes": 91958,
-      "sha256": "f59da1497ca834766df24ca6b79ec722eecce3e0590b1dec4dbc47e925455b9c"
+      "bytes": 92031,
+      "sha256": "1c37bad71cd5518131d241908277227820690ac05b3f8aa7cd97ac639a1bc468"
     },
     {
       "path": "docs/NEW_DIRECTIONS_zh.md",
-      "bytes": 170295,
-      "sha256": "b6c63bf9d4b58a993c3ff2cdc42dc468627ba8101335d26d7a0b954430a13235"
+      "bytes": 172099,
+      "sha256": "0111ef2565622e6df5b159d96420ebbf03135aea5d77b8e4baa1472cd7c9003d"
     },
     {
       "path": "docs/PAUSED_HANDOFF.md",
@@ -65,6 +65,176 @@
       "path": "docs/RESULTS.md",
       "bytes": 13484,
       "sha256": "5e6cd4367f106fb67382d1aab2b97091d31daeafa3d16b324c1c04fbed24a4c8"
+    },
+    {
+      "path": "formal/fractional-20/BRIEF.md",
+      "bytes": 7642,
+      "sha256": "601d009c6ccaae1d3ca45c812a1634254a844ac5093c1fdcb70675b0e9947abb"
+    },
+    {
+      "path": "formal/fractional-20/independent/AUDIT.md",
+      "bytes": 3639,
+      "sha256": "35a7e1971b8309677c5ca391df30d7bc15f13facdd3fd23ff620333a8f195013"
+    },
+    {
+      "path": "formal/fractional-20/independent/Axioms.lean",
+      "bytes": 944,
+      "sha256": "88b794a25e6af9a7937a1bb1b3dbebf64ab9dc00277c8e6a9c67e46f3c663841"
+    },
+    {
+      "path": "formal/fractional-20/independent/axioms.txt",
+      "bytes": 3978,
+      "sha256": "0d8ec235cc3413b8e8e1fef1f0a11993990195df3c7f26c96f9d745a593ea656"
+    },
+    {
+      "path": "formal/fractional-20/independent/build.ps1",
+      "bytes": 331,
+      "sha256": "e2ced2f6df5de1edcd85e8222ec2a7bdd9aac94a19e909e21b926a9c15fe05d7"
+    },
+    {
+      "path": "formal/fractional-20/independent/build_lean.ps1",
+      "bytes": 440,
+      "sha256": "c80585d333df3bcdda4896680475f52688295fba272d1a9214a4bad6dd0eb2e1"
+    },
+    {
+      "path": "formal/fractional-20/independent/check_lrat.cpp",
+      "bytes": 4159,
+      "sha256": "dc6242f303e20cc1e739e1b57a8f7951a8c92f44245bd3597b6c351abc77f09b"
+    },
+    {
+      "path": "formal/fractional-20/independent/check_model.cpp",
+      "bytes": 2717,
+      "sha256": "d965634a055d0a9d1fb4f6a6f48712d8e83b16fefa3453c708337f9e6240804a"
+    },
+    {
+      "path": "formal/fractional-20/independent/checker-tests.log",
+      "bytes": 271,
+      "sha256": "5240c6c9474de006ae85e9de9b33a1309dbd51ef15a1cbfface5443e64648f72"
+    },
+    {
+      "path": "formal/fractional-20/independent/checker_tests.ps1",
+      "bytes": 1219,
+      "sha256": "b4947f408caebfe06a5d3e824c9a67809359b4bb1ca6603b11c36da4ffb00374"
+    },
+    {
+      "path": "formal/fractional-20/independent/CheckLRAT.lean",
+      "bytes": 2420,
+      "sha256": "f80af89870f827c83e9aa2bd56d2d4b7cb082e65207fd1f259a3b007d293b652"
+    },
+    {
+      "path": "formal/fractional-20/independent/control15.graph.txt",
+      "bytes": 786,
+      "sha256": "9227f8319d2f6e3c1081e5750a0249389f977aba2cb221d8f3bfc5df6c233cae"
+    },
+    {
+      "path": "formal/fractional-20/independent/control20.graph.txt",
+      "bytes": 969,
+      "sha256": "38bc845a4acf267ef2be31d3d6a900c473d7054d537feda4c83080071688861c"
+    },
+    {
+      "path": "formal/fractional-20/independent/d16.check.log",
+      "bytes": 66,
+      "sha256": "563015c57dc9b68b72ee949c533e4b30a32601d263af69bc097bea910ad056f7"
+    },
+    {
+      "path": "formal/fractional-20/independent/d16.log",
+      "bytes": 26652,
+      "sha256": "6040a95da372c1bd9c316a193d15d59e6d57c72e90cf9104b8a0acafccfd32d6"
+    },
+    {
+      "path": "formal/fractional-20/independent/d16.std-check.log",
+      "bytes": 214,
+      "sha256": "9c52f7aca2abd5bdc37ddb433a45a9d39497a5d47ae5bbb6bafffc9de334b8a9"
+    },
+    {
+      "path": "formal/fractional-20/independent/encode.cpp",
+      "bytes": 4623,
+      "sha256": "3689396aef8cb26324f9eb4ac1dc3642811683dd501e05a62bab9ede71f1dc0c"
+    },
+    {
+      "path": "formal/fractional-20/independent/env.ps1",
+      "bytes": 244,
+      "sha256": "e3a6c83b60a2e1e9d402f0a059f84fd4373063a4d384c62aa255df481ff75a77"
+    },
+    {
+      "path": "formal/fractional-20/independent/LP_DUALITY.md",
+      "bytes": 2953,
+      "sha256": "d943f8157d63478c28e7c67f038eb17d38eafd2da23f3e1af7c072797341be89"
+    },
+    {
+      "path": "formal/fractional-20/independent/reproduce_sat.ps1",
+      "bytes": 1382,
+      "sha256": "7d398f11d26c8c48aba3b66a8228153660da7df14c4249bca5e92449f92fbb5d"
+    },
+    {
+      "path": "formal/fractional-20/independent/SOUNDNESS.md",
+      "bytes": 4397,
+      "sha256": "b503500e31e53c188ee0e1fc3e9d35974d3cecff94421e58138f2fd31c2146aa"
+    },
+    {
+      "path": "formal/fractional-20/independent/VERDICT.md",
+      "bytes": 1185,
+      "sha256": "1f5160091208489afe72c116aceb3f5ac7f2359fd4f099daf2b7171bcc3d7877"
+    },
+    {
+      "path": "formal/fractional-20/lake-manifest.json",
+      "bytes": 3148,
+      "sha256": "45aeb185c065d1da5c6bacab79a8749fd805d1cd9970ff2f5dff8fadc6a734ca"
+    },
+    {
+      "path": "formal/fractional-20/lakefile.toml",
+      "bytes": 216,
+      "sha256": "1a1891fa564d8deafd412a56aa1d9f30b07c044e9e673c81c62e112e2259044b"
+    },
+    {
+      "path": "formal/fractional-20/lean-toolchain",
+      "bytes": 30,
+      "sha256": "d21cafaf30fee7c3ac0c4111aba1639904f48d96174ca1c7e45899cd8b991f87"
+    },
+    {
+      "path": "formal/fractional-20/README.md",
+      "bytes": 2173,
+      "sha256": "c147b338b8a4504f2c4b9c76f1bdae1a4c99b44bec6ed3df5e1a037a7d63a3e8"
+    },
+    {
+      "path": "formal/fractional-20/REPORT.md",
+      "bytes": 14800,
+      "sha256": "b4dc10cb700c7e62729c60bf3f00feee4c4d48a30cb7079528d7bbaa3147d958"
+    },
+    {
+      "path": "formal/fractional-20/Se20Fractional/Basic.lean",
+      "bytes": 48,
+      "sha256": "5d75ae95ae8a41839cd7328aabbb764b9da1cdcdeef73f1772cfd4204866809c"
+    },
+    {
+      "path": "formal/fractional-20/Se20Fractional/Definitions.lean",
+      "bytes": 2864,
+      "sha256": "c281d852d1ba680c2576212c956b7500c84d33b64438510122dfd358e0a8ce3a"
+    },
+    {
+      "path": "formal/fractional-20/Se20Fractional/DegreeFormula.lean",
+      "bytes": 6360,
+      "sha256": "c857713c673d66131bb9b33e1e9b9c8c5c9e7ad1139897fde5c53c3aeb88d003"
+    },
+    {
+      "path": "formal/fractional-20/Se20Fractional/LocalReed.lean",
+      "bytes": 17246,
+      "sha256": "724d3151cd66aaf56e7fcbb996773a2ed861d0f8ad24c17372ddf7581953c248"
+    },
+    {
+      "path": "formal/fractional-20/Se20Fractional/Peeling.lean",
+      "bytes": 11222,
+      "sha256": "4976d07c6cc850df319bf658c5c94e98ff151da928440f8c398602e94167a7f3"
+    },
+    {
+      "path": "formal/fractional-20/Se20Fractional/TheoremF.lean",
+      "bytes": 2152,
+      "sha256": "b42f0b91c5d07d68440e42d090ef898836300ad7c83f83c545fd7409d6faed70"
+    },
+    {
+      "path": "formal/fractional-20/Se20Fractional.lean",
+      "bytes": 168,
+      "sha256": "8cad04043f4f213c09c9afd107e4f6b9bc0c6a0119f4680dfeaaabb2094dee22"
     },
     {
       "path": "README.md",
@@ -2348,8 +2518,8 @@
     },
     {
       "path": "research-2026-10-30/exp49_control.log",
-      "bytes": 271,
-      "sha256": "95960d7bd460a166e1ab60e59903a5dc0bc90502b0113883b85a036e8b5379f7"
+      "bytes": 347,
+      "sha256": "fc3082567c2103fec76e759b3c5a2dde5a51c611edb9626d96a526beb14d36e7"
     },
     {
       "path": "research-2026-10-30/exp49_frac_core.py",

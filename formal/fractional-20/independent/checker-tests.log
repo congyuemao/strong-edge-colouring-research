@@ -1,0 +1,6 @@
+VERIFIED UNSAT; RUP=1 RAT=0 deleted=0 seconds=0.0001694
+invalid: REJECTED: RUP did not derive conflict
+missing: REJECTED: missing/deleted antecedent 9
+deleted: REJECTED: missing/deleted antecedent 2
+incomplete: REJECTED: no empty clause derived
+All checker tests passed.
