@@ -1,0 +1,16 @@
+{"name": "n=200 girth=5 seed=2 edge 112", "start": 16, "best": 10, "end": 10, "hops": 60, "accepted": 42}
+{"name": "n=200 girth=5 seed=1 edge 31", "start": 9, "best": 4, "end": 4, "hops": 60, "accepted": 55}
+{"name": "n=200 girth=5 seed=3 edge 149", "start": 15, "best": 10, "end": 10, "hops": 60, "accepted": 53}
+{"name": "n=200 girth=6 seed=0 edge 396", "start": 11, "best": 7, "end": 8, "hops": 60, "accepted": 47}
+{"name": "n=200 girth=5 seed=3 edge 265", "start": 10, "best": 5, "end": 5, "hops": 60, "accepted": 50}
+{"name": "n=200 girth=5 seed=0 edge 178", "start": 17, "best": 6, "end": 6, "hops": 60, "accepted": 51}
+{"name": "n=200 girth=6 seed=0 edge 178", "start": 8, "best": 1, "end": 1, "hops": 60, "accepted": 51}
+{"name": "n=200 girth=6 seed=2 edge 112", "start": 19, "best": 4, "end": 4, "hops": 60, "accepted": 52}
+{"name": "n=200 girth=5 seed=2 edge 367", "start": 7, "best": 4, "end": 4, "hops": 60, "accepted": 54}
+{"name": "n=200 girth=6 seed=3 edge 149", "start": 16, "best": 3, "end": 3, "hops": 60, "accepted": 45}
+{"name": "n=200 girth=6 seed=3 edge 265", "start": 12, "best": 5, "end": 5, "hops": 60, "accepted": 49}
+{"name": "n=200 girth=5 seed=0 edge 396", "start": 15, "best": 6, "end": 6, "hops": 60, "accepted": 52}
+{"name": "n=200 girth=5 seed=1 edge 93", "start": 6, "best": 3, "end": 4, "hops": 60, "accepted": 44}
+{"name": "n=200 girth=6 seed=2 edge 367", "start": 10, "best": 3, "end": 3, "hops": 60, "accepted": 48}
+{"name": "n=200 girth=6 seed=1 edge 31", "start": 10, "best": 3, "end": 3, "hops": 60, "accepted": 46}
+{"name": "n=200 girth=6 seed=1 edge 93", "start": 4, "best": 4, "end": 4, "hops": 60, "accepted": 25}
