@@ -1,0 +1,10 @@
+name = "se20_girth"
+version = "0.1.0"
+defaultTargets = ["Se20Part"]
+
+[[require]]
+name = "mathlib"
+path = "E:/lean/sep19/route-c/lean/.lake/packages/mathlib"
+
+[[lean_lib]]
+name = "Se20Part"

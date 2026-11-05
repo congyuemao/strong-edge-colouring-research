@@ -1,0 +1,11 @@
+# Third pass on Part I: discharge what remains of Theorem B+ and Haxell
+
+Read `REPORT.md` (Second pass). Same rules: no `sorry`, no new axioms, no `native_decide`, no change to statements already proved, nothing weakened silently, adversarial report with flaws first. There is time: do not stop at a partial result while a target can still be attacked.
+
+1. `TransferMatrix5710Bound exp31Matrix5710`, kernel-checked. Powers up to 2854 of an explicit rational matrix are not needed literally: find an explicit rational vector v > 0 and rational rho with `M v <= rho v` entrywise, which bounds `1^T M^k 1` by a geometric series; or any other certificate that the kernel can check with `norm_num` or `decide`. If the bound that results is slightly weaker than the printed one, check whether the final budget inequality at g = 5710, beta = 1203/1000 still holds with it, and report the margin. If it does not, find the smallest g for which this certificate works and state the theorem for that g, keeping 5710 as the conditional statement.
+2. `TransferMatrixSpanningFamilyBound`: the weighted counting correspondence between embedded spanning families along a path and the transfer matrix, including the per-part convolution bound. Prove it. If the statement as formulated is stronger than the argument in `reference\MANUSCRIPT_zh.md` section 3.7' and `reference\exp31_lll_girth.py` needs, say so, and prove the form the theorem needs.
+3. With 1 and 2: the unconditional-on-numerics `theorem_B_plus`: `Kostochka -> MaxDegreeFour G -> GirthAtLeast G 5710 -> StrongColourable G 20`.
+4. Prove `Haxell` (P. Haxell, A note on vertex list colouring, Combin. Probab. Comput. 10 (2001)): a graph of maximum degree at most Delta whose vertex set is partitioned into parts of size at least 2 Delta has an independent transversal. The usual proof is short: induction on a maximal partial transversal with an induced-matching-configuration (or "constellation") argument. Then `theorem_B` no longer needs it.
+5. Only if all the above are done: the remaining targets of the first brief, then an honest assessment of what proving `Kostochka` would take (its proof is in the 1978 paper, which is not available here; do not attempt it without the text).
+
+Append a section "Third pass" to `REPORT.md`, and update `AxiomAudit.lean`.
