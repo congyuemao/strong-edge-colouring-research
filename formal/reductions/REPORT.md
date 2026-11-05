@@ -1,5 +1,9 @@
 # Formalization report
 
+**Reading guide:** the first-pass record below is retained as history. Its
+unfinished-item list and missing-source statements are superseded by the
+[Second pass](#second-pass) section at the end of this report.
+
 ## Flaws and corrections found
 
 1. **ROUTE_Q §1 omits a necessary hypothesis.** A 4-regular graph need not have a 24-regular conflict graph. For `G = K₅`, every edge conflicts with the other nine edges. `AuditExamples.complete_five_conflict_degree` proves both 4-regularity and conflict degree 9. The manuscript §2 correctly adds **girth ≥ 5**. The corrected statement is proved as `L2_degree_eq_twentyFour` in `GirthDegree.lean`.
@@ -150,3 +154,233 @@ Full build: **PASS**, exit code 0. All 25 project modules plus the root import w
 'Se20Part.complete_five_conflict_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Se20Part.degree_potential_isolate_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
 ```
+
+## Second pass
+
+### Flaws, repairs and scope corrections first
+
+1. **Lemma 4.10's proof, step 2, is too restrictive when the target capacity
+   is two.** A tight move can produce an odd cycle longer than a triangle;
+   its new bad component need not be `{x} ∪ N_j(x)` or a clique. This is a
+   gap in that proof sentence, not a counterexample to the inequality.
+   `weighted_component_hub_monotone` repairs the argument: it injects all
+   new bad components avoiding the moved vertex into old bad components
+   avoiding it, and accounts for at most one new bad component through the
+   vertex. The actual bad-component potential includes capacity-two odd
+   cycles. The repaired theorem does not assume that the new component is
+   complete.
+2. **The degree-one gap identified in the first pass is now repaired.**
+   `zero_class_neighbour_degree_one` derives equality from the full even
+   path and odd-component minimum. The earlier, weaker Φ₁-only theorem was
+   retained unchanged.
+3. **Appendix E's qualifications are substantive.** G12's minimality must
+   range over all finite graphs of maximum degree four; it cannot silently
+   mean minimality only among four-regular graphs. The definition of
+   three-vertex-connectivity also needs at least four vertices. G13's 100
+   boundary experiments are supplementary, not premises of its paper proof.
+   G16 needs the no-triangle/no-square assumption and the G15 list theorem.
+   The F09 endpoint lemma explicitly assumes the two paths are vertex
+   disjoint. These qualifications were retained when assessing the targets.
+4. **Independence and colouring are kept separate.** The registered G06
+   statement (an independent triple in every 41-edge set) is proved below.
+   The source also proves 20-colourability of every edge set of independence
+   number at most two. That stronger colouring assertion is not inferred
+   merely from the independent-triple bound and is still unfinished here.
+5. **The supplied sources are now available and were read.** The old
+   report's “missing research files” explanation no longer applies. The
+   outstanding items below identify missing formal arguments, not missing
+   files. No external-source statement has been promoted to a Lean axiom.
+
+### Completed second-pass results
+
+All declarations below are in namespace `Se20Part`, with the displayed
+subnamespace where applicable. All conflicts use the unchanged ambient
+graph `G`. Previous proved statements have not been changed.
+
+| Target | Exact new result and principal files |
+|---|---|
+| Finite degree-two decomposition, parity, 4.1 | `exists_pathCycleOrder` and `component_pathCycleOrder` give an actual vertex ordering of each component as a path or a cycle, including isolated vertices and single edges. `PathCycleOrder.colourable_iff` identifies the bipartite cases. `deleteCycleIso`, `odd_cycle_deletion_even` and `deleteCycleIso_endpoints` give the path, even cardinality and endpoints after deleting a vertex of an odd cycle. `Partition.minimum_ten_components` and `minimum_nine_components` apply this to the two partition sizes. `DegreeTwo.lean`. |
+| Formal Φ₂ | `Partition.phi2` counts non-bipartite monochromatic connected components once each. At degree at most two these are exactly odd cycles. `MinimumTwo` quantifies over all primary minima, and `exists_minimumTwo` proves existence. `DegreeTwo.lean`, `ComponentExchange.lean`. |
+| 4.3 | `Partition.zero_class_even_path` returns `EvenPathClosure`: an injectively indexed induced even path, a whole target-class component, whose two ends are exactly the moved edge's target-class neighbours. `zero_class_neighbour_degree_one` supplies their degree-one conclusion explicitly. `ComponentExchange.lean`, `PathEndpointDegree.lean`. |
+| 4.8 | `Partition.internal_zero_class_even_path` proves closure at every internal path vertex, including a move into the original class. The comparison uses component counts and does not assume that an arbitrary intermediate partition minimizes later coordinates. `EvenPathExchange.lean`. |
+| NEW_DIRECTIONS Proposition 1.1 | `proposition_one_one` proves 19-colourability from a nine-class degree-two partition with no monochromatic triangle, maximum original degree four, girth at least 96 and `hHaxell : Haxell`. It constructs the disjoint odd-cycle family, obtains representatives, and proves the residual classes bipartite. `degreeTwo_residual_colourable` allows additional deletions as well. `Residual.lean`. |
+| 4.6 | `no_compact_triangles_ten` proves that a global `(Φ₁, Φ₂, compact-triangle count)` minimum has no compact triangle. Maximum degree four suffices. The proof includes compact-support geometry, a pivot meeting the other two edges, preservation of the first two minima, replacement of the destroyed compact triangle, and the injection of zero classes into at most four available hubs. `CompactExchange.lean`, `CompactGeometry.lean`, `CompactTriangles.lean`. |
+| 4.6′ | `compact_pivot_deficit_nine` proves `24 − degree_L2(e) ≤ 2` for every compact-triangle pivot in a nine-class three-coordinate minimum. No geometric replacement premise is assumed. `CompactTriangles.lean`. |
+| 4.10 | `Partition.weighted_component_hub_monotone` proves `h_own(x) ≤ h_j(x)` at a tight target class from the actual three-coordinate weighted minimum. `WeightedBadComponent` and `weightedPhi2` use non-colourability at the class capacity, so capacity two is included. The first potential and the incident-pair tie-breaker are represented by twice their manuscript values; this preserves both order and exact differences. Existence is `exists_weightedComponentMinimumThree`. `WeightedComponents.lean`. The earlier clique-only development in `WeightedExchange.lean` is retained as a separate theorem, not substituted for this full result. |
+| 4.11 | `component_minimum_conditional_twenty` proves the full no-remote-mark implication for the `(3⁴,1⁸)` minimum, girth at least seven and maximum degree four, with `hBrooks : Brooks`. Tight-class counting forces every bad clique to have zero same-class hub degree. `no_matching_clique_three` rules out a three-edge matching clique by restricting to at most six endpoints and using the forest proof. Thus the three-colour classes have no K₄, and absence of remote marks makes the one-colour classes independent. `WeightedHubs.lean`, `MatchingTriangle.lean`, `ComponentConditional.lean`. |
+| 5.6, full edge set | `full_edge_packing_eighteen` proves the inequality for every finite maximum-degree-four graph, including isolates and tight components. Its exact cited premise is `hJoos : JoosVertexBound`, containing both correction terms in equation (5.1). `edge_bound_remove_isolates` and `tauG_univ` supply the remaining argument. `PackingCases.lean`. |
+| 5.6, rank at most one | `packing_eighteen_rank_le_one` proves the assertion with the explicit hypothesis `h55 : StrongCliqueClassification55`. Rank zero, the clique characterization of rank at most one, and the small-set case are proved independently of 5.5. `PackingCases.lean`. |
+| 5.6, all stated equality examples | `nineCirculant_tight` proves 18 edges, rank one and correction zero for C₉(1,3). `tight_component_subset_equality` covers every 19- or 20-edge subset of a C₅[2] component (and also 18-edge subsets). `circulant_component_equality` transfers the other example to an actual ambient component. `packingRank_union`, `tauG_union` and `packing_equality_biUnion` prove additivity and equality for arbitrary finite disjoint unions of these components. `PackingTightness.lean`, `PackingAdditivity.lean`, `PackingEqualityComponents.lean`. |
+| G06 | `fortyOne_edges_independent_triple`: every ambient edge set of size at least 41 contains an independent subset of size exactly three. `rank_two_card_le_forty` is the equivalent packing-size consequence. This follows from the locally rebuilt unconditional 20-packing proof, not an assumed critical-size theorem. `LegacyBridge.lean`. |
+| G08 | `high24_clique_seven`: a strong clique all of whose edges have ambient conflict degree exactly 24 has size at most seven. The copied old helper only bounded thirteen; the new joint branch/opposite-star argument proves the requested seven. No global girth condition is added. `High24Seven.lean`. |
+| G09 | The first-pass `critical21_no_triangle` and `triangle_reducibility` are retained and included in the new build and audit. |
+| F01 | `GirthClique.girth_clique_seven` proves the seven-edge bound under girth at least five. `girth_degreeTwo_clique_five` proves the five-edge bound when the selected edges have original degree at most two. `DegreeTwoEdgeSet` counts selected incident edges, not degree in the induced graph on their endpoints. Witness edges outside the selected set remain available. `GirthCliques.lean`, `DegreeTwoCliques.lean`, `F01.lean`. |
+| F09, endpoints, forbidden shapes and independence | `GirthFive.disjoint_two_paths_centres_of_clique` proves endpoint lemma 1.1 with all six vertices distinct. `path_edge_attachment`, the two uniqueness lemmas, and the three A/B interaction lemmas prove 1.2 and its stated consequences. `no_five_edge_path_clique`, `no_three_two_paths_clique` and `no_path_three_edges_clique` exclude all three forbidden forest shapes. The last uses 64 explicit, kernel-checked orientation cases and the proved A/B lemmas. `commonExtensions_independent` proves the full independence assertion for common extensions of any four-edge strong clique. The full shape-isomorphism list and extension-count bounds are not claimed. `F09Endpoints.lean`. |
+| S18, complete finite triple classification | `ThirteenKernel` is the explicit thirteen-vertex graph from `joint_thirteen_obstruction.md`, with four degree-five and nine degree-four vertices. `thirteenKernel_independent_card_le_three` and `thirteenKernel_triple_counts` prove independence number three and exactly 56 triples, split 8/32/16. `thirteenKernel_triple_normal_form_of_type` supplies an actual graph automorphism mapping the stated representative of each type to every triple of that type. `thirteenKernel_representatives_distinct` distinguishes the three orbits by their numbers of degree-five vertices. The 56 permutation witnesses, adjacency preservation, bijectivity and complete coverage are kernel checked. The subsequent potential-preserving rotations are not asserted. `ThirteenKernel.lean`. |
+
+The G06 bridge copies 42 dependency modules from the existing local
+`E:/lean/sep19/upstream/packing195/lean/StrongEdge` tree into
+`Se20Part/Legacy`, with all namespaces/imports made project-local.
+`LEGACY_PROVENANCE.json` records original paths and SHA-256 hashes;
+`LEGACY_MODULES.txt` records build order. No upstream project was modified.
+`legacy_conflictGraph_eq` proves that the copied line-graph-square
+definition is exactly this project's endpoint definition. The copied
+20-packing theorem is recompiled locally and its dependencies are included
+in the audit of `ambient_packing_twenty`.
+
+The new girth clique proofs adapt that local rigidity proof by replacing
+degree-24 rigidity with proved no-triangle/no-square lemmas. The degree-two
+selected-edge improvement is new local code. The generation scripts only
+produce ordinary Lean source; they are not proof or evaluation oracles.
+
+### Exact remaining obstructions, in the requested order
+
+These are unfinished formalizations, not claims that the supplied paper
+theorems are false or impossible to formalize.
+
+1. **4.7, hence full 4.9.** Compact triangles and matching triangles are now
+   excluded by proved lemmas, but the remaining diffuse configuration
+   `α=pa, β=pb, γ=cd` needs the complete five-coordinate comparison, including
+   the count of linked K₂ *components*. The unresolved step is to prove the
+   zero-slack hub saturation of ROUTE_Q §6.5 and the relative comparison in
+   §7.2 case B after the first move raises the compact-triangle count. The
+   second move must be compared to the original minimum, not treated as a
+   move from another five-coordinate minimum. The new component exchange
+   proves preservation of the first two coordinates, but does not supply
+   the linked-K₂ count changes `+1`, then at least `+1−1`. Thus no full 4.7
+   or 4.9 theorem is claimed. The cycle-length half-bound remains fully
+   proved without Cameron.
+2. **G12.** `critical21_endpoint_degree` now proves that every endpoint of
+   a critical edge has original degree at least three. The requested global
+   three-vertex-connectivity and cut statements still need formal gluing of
+   side colourings by a palette permutation: the non-star three-edge and
+   bounded-multiplicity four-edge cut interfaces in
+   `global_continuation.md`, plus the five matching-cut interface in
+   `cut5_matching.md`. The latter's exceptional high-forbidden-row case
+   needs the constrained choice of prescribed source/target colours before
+   the remaining Hall matching. No hypothesis asserting G12 was introduced.
+3. **G05 / R13 and the extra rank-two colouring clause.** The source chain
+   is now known, including the previously omitted `critical25.md`.
+   `CriticalSizeChecks.lean` kernel-checks the scalar contradictions for
+   `26≤n≤40`, `0≤a≤12`, the three residual nontrivial odd-block cases, the
+   all-singleton common-neighbour count, and the five-bag size patterns.
+   These checks do not supply their graph-theoretic premises. The missing
+   main infrastructure is the maximum-matching D/A/C decomposition with
+   factor-critical odd blocks and its application to a critical complement;
+   the small-saving cases for orders at most 25 and the structural five-bag
+   classification at order 41 also remain. G08 is now available for the
+   final degree-24 clique contradictions. No “assume R13” substitute and no
+   unverified finite certificate were inserted.
+4. **A03.** The obstacle is the formal degree-list block classification of
+   the low-vertex graph and the one-step leaf-block extension argument.
+   It must yield a complete block or an odd cycle, preserve the current
+   degree information, and turn Hall failure into the forbidden K_k. The
+   source explicitly warns against repeatedly deleting leaves while keeping
+   old degree hypotheses. This machinery is not supplied by the new
+   degree-two component theorem.
+5. **A04.** In addition to that same low-block interface, its eight-port
+   argument needs classification of the two surviving leaf-block chains,
+   including the central K₄ case, and list extensions with the fixed colours
+   of the two adjacent high vertices. Parity of the number of high vertices
+   is insufficient by itself. The nonadjacent-high-vertex case is not being
+   substituted for the stated theorem.
+6. **A02.** The two graph transformations have not been formalized: deleting
+   a private clique and identifying the nonadjacent high/low pair, or
+   deleting it and adding a bridge between two low components. The proof
+   must preserve *every other* private clique, unique high neighbour and
+   exclusion of K_{k+1}, while strictly reducing the high-vertex count. The
+   assumptions `k≥4` and unique high neighbour are retained.
+7. **A06.** A formal incidence-weighted hypergraph interface and the
+   representative-edge exchange are still missing. The key argument must
+   handle repeated representative pairs, reduce odd representative cycles
+   without creating new ones, and combine this with the weighted
+   pseudoforest and two-part potential. The ordinary graph path/cycle result
+   now supplies parity, but not these hypergraph transformations.
+8. **G13.** The fixed-outside-colour extension still needs the six-spoke
+   list accounting and the nine-edge core Hall argument, including repair
+   of the common eight-colour failure by two independent spokes. The 100
+   experimental boundary checks are not used as a replacement.
+9. **G14.** The small-colour-pool reduction and the list-merging/Hall proofs
+   for K_{3×3}, K_{3×4}, K_{3×5} have not been formalized. The mapping from
+   the Petersen endpoint model and the boundary-list counts must then be
+   connected to a fixed ambient partial colouring.
+10. **G16.** The missing geometric step is extraction of the unique
+    witnesses and opposite four-cycle orientations from two matching K₄s
+    sharing a triangle, followed by identification of the induced Petersen
+    or Petersen-minus-edge block. `PetersenMinusListTheoremG15` is now an
+    explicit named hypothesis with the exact arbitrary-list 5/7/8 statement
+    on the labelled 14-vertex graph from the source. Its degree sequence and
+    74-edge count are kernel checked. The coefficient 12240 and the list
+    theorem are **not** asserted proved. The G14 interface and the G15
+    boundary extension are still needed before this can prove G16.
+11. **F03.** The critical-complement decomposition required by G05 is also
+    needed here. The `k=10,11`, `c=2,…,5` numerical contradiction is checked
+    in `factor_component_obstruction`; the factor-critical order-19
+    decomposition and its odd-block incidence inequalities remain. F01 now
+    supplies the exact clique bound for the intended edge-set application.
+12. **F09 and S.** F09's two disjoint two-edge-path centre lemma, A/B
+    attachment alternatives, uniqueness and pair interactions are now proved,
+    as are all three forbidden forest-shape exclusions and independence of all
+    common extensions. What remains is assembling the degree-two component
+    orders and the five-edge count into the complete shape-isomorphism list,
+    proving the matching-four endpoint orientation model, and the
+    shape-by-shape counts proving at most three extensions. The exclusions
+    alone are not substituted for that full classification. S18's finite
+    independent-triple classification, including all three automorphism
+    orbits and the 8/32/16 counts, is proved. Its one- and two-step rotations
+    still need the minimum-potential interface and preservation of the other
+    designated bad cycles. No full S-group theorem was completed. In
+    particular, the finite O₉/blocked-component
+    identifications and synchronous list repairs cannot be inferred from
+    a single movable representative or from the new degree-two decomposition.
+
+### Hypotheses and validation
+
+The only newly added named source-theorem hypothesis definitions are:
+
+- `JoosVertexBound`, the full quoted equation (5.1), used by
+  `full_edge_packing_eighteen`. The earlier restricted `JoosNguyen` definition
+  and theorem are unchanged.
+- `StrongCliqueClassification55`, the exact containment of a strong clique
+  of at least 19 edges in a C₅[2] component, used by the rank-at-most-one case.
+- `PetersenMinusListTheoremG15`, the labelled arbitrary-list theorem reserved
+  for G16. No theorem in this pass claims to prove or instantiate it.
+
+`Brooks` and `Haxell` remain explicit theorem arguments. There is no Cameron
+or Lovász hypothesis. The small circulant, Petersen-minus degree/count
+checks and numerical case splits use kernel reduction or proof-producing
+arithmetic tactics, never `native_decide`.
+
+`AxiomAudit.lean` includes the new principal declarations. `build.ps1`
+contains the complete dependency order, including the local legacy modules,
+and builds the root import. It invokes the installed compiler directly,
+with one worker, a 64 MiB thread stack and no network/package-manager call. Windows runtime
+import/memory failures receive at most three visible retries; actual proof
+errors are never retried or ignored. Such transient import failures and one
+`std::bad_alloc` occurred during development; later checks of those modules
+succeeded. The first final-build attempt exposed a stack overflow in the
+unchanged `Triangle.lean`; increasing the compiler thread stack resolved it
+without changing any theorem or proof in that file.
+
+**Final validation passed.** The full project build exited with code 0.
+After the final S18 additions, the targeted command
+`./build.ps1 -Only ThirteenKernel,AxiomAudit -CheckRoot` also exited with
+code 0, recompiling that source, the complete audit and the root import.
+Together these checks cover all **95 source modules plus the root import**;
+the final build manifest contains every source module exactly once.
+`-CheckRoot` also permits checking the root after a selected-module build;
+the default full build continues to check it automatically.
+
+All **136** `#print axioms` declarations produced results. Their combined
+axiom set is exactly `propext`, `Classical.choice`, `Quot.sound`; individual
+declarations use subsets of that set. The complete output is in
+[SECOND_PASS_AXIOM_OUTPUT.txt](SECOND_PASS_AXIOM_OUTPUT.txt), with compiler
+logs in [SECOND_PASS_BUILD_LOG.txt](SECOND_PASS_BUILD_LOG.txt) and
+[SECOND_PASS_FINAL_AUDIT_LOG.txt](SECOND_PASS_FINAL_AUDIT_LOG.txt).
+The final source scan found no `sorry`, `admit`, `native_decide`, new axiom
+declarations or unsafe declarations. All 42 copied modules also match the
+recorded source hashes and exact namespace/import transformation.
+
+These successful checks certify the declarations listed above, not the
+unfinished targets in the obstruction list. In particular, neither the
+full 4.9 theorem nor the 42-edge critical-size lower bound is claimed.

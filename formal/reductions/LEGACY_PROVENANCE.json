@@ -1,0 +1,212 @@
+[
+    {
+        "Module":  "Legacy.Basic",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Basic.lean",
+        "SHA256":  "288DC9A5BC9C386F761D4629291ACCF36826468C12C449CA88D7B5456A10B17F"
+    },
+    {
+        "Module":  "Legacy.Conflict",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Conflict.lean",
+        "SHA256":  "2BA6DFE103A17B3C236A553076D78B41554B0AA9EEB0646E22E9A4C97C73EB3C"
+    },
+    {
+        "Module":  "Legacy.Bounds.ConflictDegree",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\ConflictDegree.lean",
+        "SHA256":  "31488E9940BB477D5DEA5B03DB2094F7F276D55028EE3B3F6067C0CFA947D138"
+    },
+    {
+        "Module":  "Legacy.Bounds.EdgeCounting",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\EdgeCounting.lean",
+        "SHA256":  "C0E0314DFFABF2D9CD8B211C967C497D6D0B44CDDF01926D872B40B98291851B"
+    },
+    {
+        "Module":  "Legacy.Bounds.High23Local",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High23Local.lean",
+        "SHA256":  "2F3CF63A11D81ABFA0ABEA1F029A3F41E10C7D6F2B727032B6A036CB8759EF00"
+    },
+    {
+        "Module":  "Legacy.Bounds.High21Local",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High21Local.lean",
+        "SHA256":  "0CA45742B1AC44C146C5F2098FEAD1303748FF597821F740FEA86572633AEFB0"
+    },
+    {
+        "Module":  "Legacy.Bounds.High22Local",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High22Local.lean",
+        "SHA256":  "850E545D2C36DF620104AA4956B50071AD54DC31950B68990A2905B8F8060A0D"
+    },
+    {
+        "Module":  "Legacy.Bounds.High23Support",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High23Support.lean",
+        "SHA256":  "7427DD61956BEFFBD946DD0302F3A13515D792AFF0F21BF990484476582D11C9"
+    },
+    {
+        "Module":  "Legacy.Bounds.High23Outer",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High23Outer.lean",
+        "SHA256":  "ECE5071CC52BBF48C6D8A48229D62DFC90D0978463402D259CD1F8E628B90732"
+    },
+    {
+        "Module":  "Legacy.Bounds.High23Four",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High23Four.lean",
+        "SHA256":  "658BC022C5773A44D0B1580D7B7F601BC61BA5F9B9F29EAE85CAC70491595605"
+    },
+    {
+        "Module":  "Legacy.Bounds.High22Support",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High22Support.lean",
+        "SHA256":  "B13CB7D634F8F587988271C71713413D81436104F63045AA2B8CB756DE098F28"
+    },
+    {
+        "Module":  "Legacy.Bounds.High21Support",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High21Support.lean",
+        "SHA256":  "558DCAC67B3993FB3C129FDC29FF9A5992EC1BE041A7AF589A28D164B45EC963"
+    },
+    {
+        "Module":  "Legacy.Bounds.RootCounting",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\RootCounting.lean",
+        "SHA256":  "F27464B4FC8AC49779F79C9CB239AA578D70842A4F8D802E489900D30A56771A"
+    },
+    {
+        "Module":  "Legacy.Bounds.High22RootFour",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High22RootFour.lean",
+        "SHA256":  "0FDF538967C605AC418E978A84CB011BC6211EED51934C441E41D4B61CA86030"
+    },
+    {
+        "Module":  "Legacy.Bounds.High22Heavy",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High22Heavy.lean",
+        "SHA256":  "7D8FA7C8DCB9573788AF2C28AAA11E5BEEAB6542F1B73A89CC14009E991EA2BB"
+    },
+    {
+        "Module":  "Legacy.Bounds.High22Subcubic",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High22Subcubic.lean",
+        "SHA256":  "527002B6E4C0EA0A2CD9E40856B3E0E37824B4F015A19796569B1EF08C9205A0"
+    },
+    {
+        "Module":  "Legacy.Bounds.SubcubicEighteen",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\SubcubicEighteen.lean",
+        "SHA256":  "7E007E86FF6BD4AB4D32943987E1432D681F79464EFACF838F3A8AE1BE5DAB66"
+    },
+    {
+        "Module":  "Legacy.Bounds.DegreeTwoClique",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\DegreeTwoClique.lean",
+        "SHA256":  "C19C40EE1886EF0B4788A232162333DC17D56C744F4A71F973A02E8796AFBF0A"
+    },
+    {
+        "Module":  "Legacy.Bounds.High21Double",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High21Double.lean",
+        "SHA256":  "EDA40A14A25422D5127E1A927C0BDBB18CC86EE730F151625D91F688099C18AF"
+    },
+    {
+        "Module":  "Legacy.Bounds.High21LargeType",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High21LargeType.lean",
+        "SHA256":  "DE5C8553F6A1CD04AA0368E6F27F897409F1998C94EAEF5E6ED05B52B69385AC"
+    },
+    {
+        "Module":  "Legacy.Bounds.High21RootFour",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High21RootFour.lean",
+        "SHA256":  "82E910E507761248A52FCD48D2FE521FDB3304B5B17890D676137EC79214BFA0"
+    },
+    {
+        "Module":  "Legacy.Bounds.High21",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High21.lean",
+        "SHA256":  "01755B57B856B072A70B81AB34C050D5E55EDDA1BB954E1C54F25422CF317176"
+    },
+    {
+        "Module":  "Legacy.Bounds.High20Local",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High20Local.lean",
+        "SHA256":  "12BCA7F902D69F480AE658512DFE479370B1264B52494C26192C74F575E9E669"
+    },
+    {
+        "Module":  "Legacy.Bounds.High20Four",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High20Four.lean",
+        "SHA256":  "2C4FC83E9BDFC4CB67F96808A507AE6BA42FE0252CE5585FDC04C48F4E1F1CEC"
+    },
+    {
+        "Module":  "Legacy.Bounds.High20TwoTriples",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High20TwoTriples.lean",
+        "SHA256":  "01727F8F211F1F5CDB727D845D40D82937B9325F91FF7E0CC82F2412BEB8556C"
+    },
+    {
+        "Module":  "Legacy.Bounds.High20Slots",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High20Slots.lean",
+        "SHA256":  "8AE06351B91E0403A77D99901880BB2B25BF1A4E5ED523976FA30AA32394DD9A"
+    },
+    {
+        "Module":  "Legacy.Bounds.High20Outer",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High20Outer.lean",
+        "SHA256":  "988BC2F00B8CD7BB02B1D197091A65FBF4D9460899C888DE747C31A01EE43300"
+    },
+    {
+        "Module":  "Legacy.Bounds.High20UniqueTriple",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High20UniqueTriple.lean",
+        "SHA256":  "A179499887DC39FBD885827E5F7ABC04798253C6EE4F82A1298CDADAA4E929A0"
+    },
+    {
+        "Module":  "Legacy.Bounds.High20",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High20.lean",
+        "SHA256":  "ADF475C3D18EE364091A81511BF394BB50685A38D8E61745815C2D7B650F00CE"
+    },
+    {
+        "Module":  "Legacy.Bounds.High22",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High22.lean",
+        "SHA256":  "669D863595750E29F1F971C80FEF38CBD73325AF8E0F823A24F78D4C7C017659"
+    },
+    {
+        "Module":  "Legacy.Bounds.High23",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High23.lean",
+        "SHA256":  "1188932515E5768A76BFF64E72F85E25F89497575B022234E5E7D89D10DA27AB"
+    },
+    {
+        "Module":  "Legacy.Bounds.ConflictRigidity",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\ConflictRigidity.lean",
+        "SHA256":  "17E8B5A40F347CB6BD874D53FAE8EC1ABCB0CD0149ED6513EDBD3E27D2E041CA"
+    },
+    {
+        "Module":  "Legacy.Bounds.High24",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Bounds\\High24.lean",
+        "SHA256":  "ACBD70B4AC91CB295F7496E1C4F5147568AC092AF6F5021A095A244D035D16B2"
+    },
+    {
+        "Module":  "Legacy.PrivateExchange",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\PrivateExchange.lean",
+        "SHA256":  "85B591CFF5DA0E351B51DE2E4FF6C19EC79E7649DC6BECACDE2D537FE8765423"
+    },
+    {
+        "Module":  "Legacy.DoubleCount",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\DoubleCount.lean",
+        "SHA256":  "40AB63CB88164F509765DADC130DE926D3BE8256EC958488738DC74FD5EDF7AD"
+    },
+    {
+        "Module":  "Legacy.Packing",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\Packing.lean",
+        "SHA256":  "AB41305D987050FEC53BE08CA0474C1919974B2240821553D301465A40AF7777"
+    },
+    {
+        "Module":  "Legacy.MinimalPacking",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\MinimalPacking.lean",
+        "SHA256":  "84964550D90F4AF23AE492D61725EE2622D167B23F04DB40D69FA5CB158B2698"
+    },
+    {
+        "Module":  "Legacy.High24Packing",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\High24Packing.lean",
+        "SHA256":  "609E27FF574B3950C014DCC339411B8D73256AFA6CC9BC0C2F6CFCEBC48F1A36"
+    },
+    {
+        "Module":  "Legacy.High23Packing",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\High23Packing.lean",
+        "SHA256":  "EA412D3AE12FC7A50130DEDA57182CD39511182EB76F9FA66A7F4E80FD251D3E"
+    },
+    {
+        "Module":  "Legacy.High22Packing",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\High22Packing.lean",
+        "SHA256":  "D3DA06E6CD6877FC4400AF048A5CDE9DB2F71192FA7EDAFDA58E3D991CCF5D42"
+    },
+    {
+        "Module":  "Legacy.High21Packing",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\High21Packing.lean",
+        "SHA256":  "EF41316BC2F9A006C165FDD0B194055AFF05226098C52AF02EB2C3E0807226C5"
+    },
+    {
+        "Module":  "Legacy.High20Packing",
+        "Source":  "E:\\lean\\sep19\\upstream\\packing195\\lean\\StrongEdge\\High20Packing.lean",
+        "SHA256":  "06990888B99F9F231FD545DBBE24DC09E5BEEFFEF697BC9D12F7C97A1CA82BA9"
+    }
+]

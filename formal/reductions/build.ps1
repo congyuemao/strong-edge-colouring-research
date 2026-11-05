@@ -1,4 +1,4 @@
-param([string[]]$Only = @())
+param([string[]]$Only = @(), [switch]$CheckRoot)
 $ErrorActionPreference = 'Stop'
 $env:ELAN_HOME = 'E:\lean\elan'
 $env:XDG_CACHE_HOME = 'E:\lean\cache'
@@ -24,13 +24,43 @@ $modules = @(
     'TriangleInsertion', 'Greedy', 'Partitions', 'CycleLength',
     'GirthDegree', 'RouteQ', 'DegreeProfiles', 'MaximumCut',
     'ColourAssembly', 'Packing', 'TightComponents', 'Critical',
-    'LocalInjection', 'Transversal', 'AuditExamples', 'AxiomAudit'
+    'LocalInjection', 'Transversal', 'DegreeTwo', 'Residual',
+    'ComponentExchange', 'EvenPathExchange', 'PathEndpointDegree',
+    'CompactExchange', 'CompactGeometry', 'CompactTriangles',
+    'WeightedExchange', 'WeightedHubs', 'MatchingTriangle', 'ConditionalTwenty',
+    'WeightedComponents', 'ComponentConditional',
+    'PackingCases', 'PackingTightness', 'PackingAdditivity', 'PackingEqualityComponents',
+    'CriticalSizeChecks', 'CriticalEndpointDegree', 'PetersenMinusHypothesis', 'AuditExamples'
 )
+$modules += Get-Content -Encoding utf8 (Join-Path $PSScriptRoot 'LEGACY_MODULES.txt')
+$modules += @('LegacyBridge', 'High24Seven', 'GirthCliques', 'DegreeTwoCliques', 'F01', 'F09Endpoints', 'ThirteenKernel', 'AxiomAudit')
 if ($Only.Count -gt 0) { $modules = $Only }
+# Windows can transiently fail to map a dependency olean under memory pressure.
+# Retry only those runtime failures, never proof errors. All retries stay visible.
+function Invoke-LeanChecked {
+    param([string]$SourcePath, [string]$ObjectPath)
+    for ($attempt = 1; $attempt -le 4; $attempt++) {
+        $ErrorActionPreference = 'Continue'
+        $lines = @(& $leanExe -j 1 -s 65536 -o $ObjectPath $SourcePath 2>&1)
+        $resultCode = $LASTEXITCODE
+        $ErrorActionPreference = 'Stop'
+        $lines | ForEach-Object { Write-Output $_.ToString() }
+        if ($resultCode -eq 0) { return }
+        $runtimeFailure = ($lines -join "`n") -match 'failed to read file|std::bad_alloc'
+        if (-not $runtimeFailure -or $attempt -eq 4) { exit $resultCode }
+        Write-Warning "Runtime import/memory failure; retry $attempt of 3 for $SourcePath"
+        Start-Sleep -Seconds 1
+    }
+}
 foreach ($module in $modules) {
     Write-Output "Checking Se20Part.$module"
-    & $leanExe -o ".lake\build\lib\lean\Se20Part\$module.olean" "Se20Part\$module.lean"
-    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    $modulePath = $module.Replace('.', '\')
+    $objectPath = ".lake\build\lib\lean\Se20Part\$modulePath.olean"
+    [IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName((Join-Path $PSScriptRoot $objectPath))) | Out-Null
+    Invoke-LeanChecked -SourcePath "Se20Part\$modulePath.lean" -ObjectPath $objectPath
 }
-if ($Only.Count -eq 0) { & $leanExe -o '.lake\build\lib\lean\Se20Part.olean' 'Se20Part.lean' }
-exit $LASTEXITCODE
+if ($Only.Count -eq 0 -or $CheckRoot) {
+    Write-Output 'Checking Se20Part'
+    Invoke-LeanChecked -SourcePath 'Se20Part.lean' -ObjectPath '.lake\build\lib\lean\Se20Part.olean'
+}
+exit 0
