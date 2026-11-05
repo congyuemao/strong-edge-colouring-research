@@ -28,3 +28,7 @@ General chains (k ≥ 2) of Theorem 11.7; the chain part of Corollary 11.8; Lemm
 ## Build
 
 Run `build.ps1` or `lake build` with the local Mathlib path in `lakefile.toml`; it needs `leanprover/lean4:v4.35.0-rc4`.
+
+## Third pass (2026-11-05): colour-set cores
+
+`ColourSetCore.lean`, `ColourSetPeeling.lean`, `ColourSetSpecialCases.lean` and `ColourSetCounting.lean` prove Theorem 11.47 (`colourSetInsertion`), its k = 2 and k = 19 cases, `strongColourable_of_conj1150` and Proposition 11.49 (`allGroupsFail_clique_sum`, `insertion_of_separable_sum`). See [REPORT3.md](REPORT3.md). The project was rebuilt independently of Codex; every audited declaration depends only on `propext`, `Classical.choice` and `Quot.sound`. Lemma 11.48 and the bound 87 are not formalized yet. Conjectures 11.46, 11.50 and 11.51 are not proved.

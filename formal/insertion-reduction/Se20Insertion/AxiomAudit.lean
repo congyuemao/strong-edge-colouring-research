@@ -4,6 +4,8 @@ import Se20Insertion.GroupedInsertion
 import Se20Insertion.AuditExamples
 import Se20Insertion.Theorem1144
 import Se20Insertion.BicolourCounts
+import Se20Insertion.ColourSetCounting
+import Se20Insertion.ColourSetPeeling
 
 #print axioms Se20Insertion.strongColourable_of_conj119Star
 #print axioms Se20Insertion.conj119Star_of_conj119
@@ -43,3 +45,32 @@ import Se20Insertion.BicolourCounts
 #print axioms Se20Insertion.PartialColouring.coloured_edges_le_twelve
 #print axioms Se20Insertion.PartialColouring.lemma1116
 #print axioms Se20Insertion.PartialColouring.small_components_at_least_twice
+
+#print axioms Se20Insertion.PartialColouring.tangledAt_iff_not_separable
+#print axioms Se20Insertion.PartialColouring.colourSetCore_isCore
+#print axioms Se20Insertion.PartialColouring.colourSetCore_greatest
+#print axioms Se20Insertion.PartialColouring.not_mem_colourSetCore_iff
+#print axioms Se20Insertion.PartialColouring.colourSetInsertion
+#print axioms Se20Insertion.PartialColouring.colourSetInsertion_of_subsets
+#print axioms Se20Insertion.PartialColouring.colourPeel_stabilizes
+#print axioms Se20Insertion.PartialColouring.not_mem_core_iff_peeled
+#print axioms Se20Insertion.PartialColouring.twoColourCoreInsertion
+#print axioms Se20Insertion.PartialColouring.twoColour_threshold
+#print axioms Se20Insertion.PartialColouring.nineteen_core_iff
+#print axioms Se20Insertion.PartialColouring.nineteen_not_core_iff_separable
+#print axioms Se20Insertion.PartialColouring.singleInsertion_from_colourSetCore
+#print axioms Se20Insertion.colourSetStarInsertion_of_conj1150
+#print axioms Se20Insertion.starInsertion_of_colourSetStarInsertion
+#print axioms Se20Insertion.starInsertion_of_conj1150
+#print axioms Se20Insertion.strongColourable_of_conj1150
+#print axioms Se20Insertion.PartialColouring.core_degree_bound
+#print axioms Se20Insertion.PartialColouring.core_yDegree_lower
+#print axioms Se20Insertion.PartialColouring.allGroupsFail_tangled
+#print axioms Se20Insertion.PartialColouring.allGroupsFail_single_saturated
+#print axioms Se20Insertion.PartialColouring.allGroupsFail_at_least_sixteen_single
+#print axioms Se20Insertion.PartialColouring.sum_groups_avoiding
+#print axioms Se20Insertion.PartialColouring.allGroupsFail_clique_sum
+#print axioms Se20Insertion.PartialColouring.not_allTangled_iff_separable
+#print axioms Se20Insertion.PartialColouring.clique_pair_partition
+#print axioms Se20Insertion.PartialColouring.good_pair_of_separable_sum
+#print axioms Se20Insertion.PartialColouring.insertion_of_separable_sum

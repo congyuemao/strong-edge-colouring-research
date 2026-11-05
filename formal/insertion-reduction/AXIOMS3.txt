@@ -1,0 +1,81 @@
+'Se20Insertion.strongColourable_of_conj119Star' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.conj119Star_of_conj119' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.strongColourable_of_conj1115' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.strongColourable_of_conj1126' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.strongColourable_of_starInsertion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.strongColourable_of_conj119' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.triangle_insertion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.triangle_edges_last' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.strongColourable_of_all_exceptional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.regularCompletion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.at_least_sixteen_add_uncoloured_single' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.groupedColourClassInsertion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.holeMove_class_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.holeMove_inseparable_moved_colour' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Se20Insertion.PartialColouring.inherited_inseparable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.single_neighbour_at_least_fifteen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.AuditExamples.example_overlap_conflicts_e' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.doubleHoleMove' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.DoubleHoleConfig.insert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.GirthGeometry.no_short_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.GirthGeometry.common_near_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.GirthGeometry.common_far_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.GirthGeometry.opposite_near_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.GirthGeometry.dominator_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.nonsingle_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.counting_contradiction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.partner_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.theorem1144_maxDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.theorem1144' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.theorem1144_girth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.ComponentBounds.vertices_le_edges_add_components' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Se20Insertion.ComponentBounds.small_components_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.bicoloured_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.bicoloured_edges' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.coloured_edges_le_twelve' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.lemma1116' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.small_components_at_least_twice' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Se20Insertion.PartialColouring.tangledAt_iff_not_separable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.colourSetCore_isCore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.colourSetCore_greatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.not_mem_colourSetCore_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.colourSetInsertion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.colourSetInsertion_of_subsets' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Se20Insertion.PartialColouring.colourPeel_stabilizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.not_mem_core_iff_peeled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.twoColourCoreInsertion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.twoColour_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.nineteen_core_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.nineteen_not_core_iff_separable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Se20Insertion.PartialColouring.singleInsertion_from_colourSetCore' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Se20Insertion.colourSetStarInsertion_of_conj1150' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.starInsertion_of_colourSetStarInsertion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.starInsertion_of_conj1150' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.strongColourable_of_conj1150' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.core_degree_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.core_yDegree_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.allGroupsFail_tangled' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.allGroupsFail_single_saturated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Se20Insertion.PartialColouring.allGroupsFail_at_least_sixteen_single' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Se20Insertion.PartialColouring.sum_groups_avoiding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.allGroupsFail_clique_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.not_allTangled_iff_separable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.clique_pair_partition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.good_pair_of_separable_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Se20Insertion.PartialColouring.insertion_of_separable_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
