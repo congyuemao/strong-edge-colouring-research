@@ -17,7 +17,8 @@ $modules = @(
     'StarReduction', 'HoleMoves', 'GroupedInsertion', 'SupportCounts',
     'AuditExamples', 'DoubleHole', 'GirthGeometry', 'GirthBounds',
     'ReachabilityCounting', 'Theorem1144', 'ComponentBounds', 'BicolourCounts',
-    'ColourSetCore', 'ColourSetPeeling', 'ColourSetSpecialCases', 'ColourSetCounting', 'AxiomAudit'
+    'ColourSetCore', 'ColourSetPeeling', 'ColourSetSpecialCases', 'ColourSetCounting',
+    'ForestL2', 'ChordalFan', 'Neighbourhood87', 'FanLemma', 'AxiomAudit'
 )
 foreach ($module in $modules) {
     Write-Output "Checking Se20Insertion.$module"

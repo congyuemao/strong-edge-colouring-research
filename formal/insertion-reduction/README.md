@@ -32,3 +32,7 @@ Run `build.ps1` or `lake build` with the local Mathlib path in `lakefile.toml`; 
 ## Third pass (2026-11-05): colour-set cores
 
 `ColourSetCore.lean`, `ColourSetPeeling.lean`, `ColourSetSpecialCases.lean` and `ColourSetCounting.lean` prove Theorem 11.47 (`colourSetInsertion`), its k = 2 and k = 19 cases, `strongColourable_of_conj1150` and Proposition 11.49 (`allGroupsFail_clique_sum`, `insertion_of_separable_sum`). See [REPORT3.md](REPORT3.md). The project was rebuilt independently of Codex; every audited declaration depends only on `propext`, `Classical.choice` and `Quot.sound`. Lemma 11.48 and the bound 87 are not formalized yet. Conjectures 11.46, 11.50 and 11.51 are not proved.
+
+## Fourth pass (2026-11-05): fan lemma
+
+`ForestL2.lean`, `ChordalFan.lean`, `Neighbourhood87.lean` and `FanLemma.lean` prove chordality of L² of a forest (`forest_L2_chordal`), Lemma 11.48 with a weaker witness-forest hypothesis (`lemma1148`, `lemma1148_induced`), the cycle and girth consequences (`longChain_cycle`, `longChain_girth`, `longChain_girth_half`) and the bound 87 for Δ ≤ 4, girth ≥ 7 (`neighbourhood_edges_le_87`, `directPairs_le_87`). See [REPORT4.md](REPORT4.md), which leads with the corrections to the paper wording. Rebuilt independently with exit code 0; all 87 audited declarations use only `propext`, `Classical.choice`, `Quot.sound` ([AXIOMS4.txt](AXIOMS4.txt)).

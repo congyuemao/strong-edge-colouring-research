@@ -69,7 +69,7 @@ int main(int ac,char**av){
   while(difftime(time(0),t0)<secs){
     for(int r=0;r<RUNGS;r++){St*s=&st[r];
       for(int it=0;it<20;it++){
-        int x=region[rnd()%nr]; int p=s->col[x]; int q=rnd()%K; if(q==p)continue;
+        int x=region[rnd()%nr]; int p=s->col[x]; if(p<0)continue; int q=rnd()%K; if(q==p)continue;
         int c[MAXM],n; component(s,x,p,q,c,&n); int E0=energy(s);
         doswap(s,c,n,p,q); recompute(s,p,q,0); int E1=energy(s); steps++;
         if(E1<=E0||(double)(rnd()>>11)/9007199254740992.0<exp((E0-E1)/s->T)){ if(E1<bestE){bestE=E1;best=*s; if(E1==0)goto done;} }

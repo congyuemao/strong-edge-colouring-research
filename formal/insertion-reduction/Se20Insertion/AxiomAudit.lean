@@ -6,6 +6,7 @@ import Se20Insertion.Theorem1144
 import Se20Insertion.BicolourCounts
 import Se20Insertion.ColourSetCounting
 import Se20Insertion.ColourSetPeeling
+import Se20Insertion.FanLemma
 
 #print axioms Se20Insertion.strongColourable_of_conj119Star
 #print axioms Se20Insertion.conj119Star_of_conj119
@@ -74,3 +75,26 @@ import Se20Insertion.ColourSetPeeling
 #print axioms Se20Insertion.PartialColouring.clique_pair_partition
 #print axioms Se20Insertion.PartialColouring.good_pair_of_separable_sum
 #print axioms Se20Insertion.PartialColouring.insertion_of_separable_sum
+
+#print axioms Se20Insertion.ForestL2.lower_neighbours_clique
+#print axioms Se20Insertion.ForestL2.exists_simplicial
+#print axioms Se20Insertion.ChordalFan.fan
+#print axioms Se20Insertion.ChordalFan.shortest_induced
+#print axioms Se20Insertion.forest_L2_eliminates
+#print axioms Se20Insertion.forest_L2_chordal
+#print axioms Se20Insertion.FanLemma.fan_of_forest
+#print axioms Se20Insertion.PartialColouring.tangledAt_shortestPath
+#print axioms Se20Insertion.PartialColouring.lemma1148
+#print axioms Se20Insertion.PartialColouring.longChain_witness_cycle
+#print axioms Se20Insertion.PartialColouring.lemma1148_span
+#print axioms Se20Insertion.PartialColouring.lemma1148_induced
+#print axioms Se20Insertion.FanLemma.pathVertices_card
+#print axioms Se20Insertion.PartialColouring.longChain_cycle
+#print axioms Se20Insertion.PartialColouring.longChain_girth
+#print axioms Se20Insertion.PartialColouring.longChain_girth_half
+#print axioms Se20Insertion.GirthGeometry.nearNeighbours_card
+#print axioms Se20Insertion.GirthGeometry.neighbourhood_degree
+#print axioms Se20Insertion.GirthGeometry.neighbourhood_edges_le_87
+#print axioms Se20Insertion.PartialColouring.directAt_tangled
+#print axioms Se20Insertion.PartialColouring.directPairs_le_neighbourhood_edges
+#print axioms Se20Insertion.PartialColouring.directPairs_le_87
