@@ -1,3 +1,36 @@
+import Se20Insertion.StarGeometry
+import Se20Insertion.DegreeThreeRigidity
+import Se20Insertion.ShortCycleReduction
+import Se20Insertion.ListRigidity
+import Se20Insertion.StarListRigidity
+import Se20Insertion.CliqueBoundary
+import Se20Insertion.CliqueReduction
+import Se20Insertion.ComponentInsertion
+import Se20Insertion.RecolourGain
+import Se20Insertion.TreePattern
+import Se20Insertion.ShellChains
+import Se20Insertion.InfiniteForest
+import Se20Insertion.CriticalLists
+import Se20Insertion.HoleCycleRank
+import Se20Insertion.MultiplicityIdentity
+import Se20Insertion.P2Identity
+import Se20Insertion.P2Geometry
+import Se20Insertion.PatternVerification
+import Se20Insertion.ShellCover
+import Se20Insertion.LoopChains
+import Se20Insertion.LocalRepairs
+import Se20Insertion.SingleChains
+import Se20Insertion.LowDegree
+import Se20Insertion.ListExtensions
+import Se20Insertion.SwapCriteria
+import Se20Insertion.CriticalStructure
+import Se20Insertion.RimCounting
+import Se20Insertion.Covering
+import Se20Insertion.ChainObstructions
+import Se20Insertion.ForestSeparation
+import Se20Insertion.ParametricCore
+import Se20Insertion.ParametricCounting
+import Se20Insertion.ParametricRatio
 import Se20Insertion.StarReduction
 import Se20Insertion.SupportCounts
 import Se20Insertion.GroupedInsertion
@@ -98,3 +131,299 @@ import Se20Insertion.FanLemma
 #print axioms Se20Insertion.PartialColouring.directAt_tangled
 #print axioms Se20Insertion.PartialColouring.directPairs_le_neighbourhood_edges
 #print axioms Se20Insertion.PartialColouring.directPairs_le_87
+
+-- Fifth pass additions
+#print axioms Se20Insertion.PartialColouring.disjoint_pair_of_thirtySix
+#print axioms Se20Insertion.PartialColouring.double_colour_insertion
+#print axioms Se20Insertion.PartialColouring.outerNeighbours
+#print axioms Se20Insertion.PartialColouring.missingInside
+#print axioms Se20Insertion.PartialColouring.outer_cover
+#print axioms Se20Insertion.PartialColouring.single_outer_cover
+#print axioms Se20Insertion.PartialColouring.single_outer_union_bound
+#print axioms Se20Insertion.PartialColouring.swap_then_single_insertion
+#print axioms Se20Insertion.PartialColouring.SingleChain
+#print axioms Se20Insertion.PartialColouring.chainEnd
+#print axioms Se20Insertion.PartialColouring.singleChain_end_mem
+#print axioms Se20Insertion.PartialColouring.singleChain_congr
+#print axioms Se20Insertion.PartialColouring.singleChain_transport
+#print axioms Se20Insertion.PartialColouring.singleChain_triangle
+#print axioms Se20Insertion.card_rim_le_degrees
+#print axioms Se20Insertion.degree_three_saturated
+#print axioms Se20Insertion.star_coloured_conflicts_le
+#print axioms Se20Insertion.PartialColouring.available
+#print axioms Se20Insertion.PartialColouring.available_card
+#print axioms Se20Insertion.PartialColouring.extend_by_lists
+#print axioms Se20Insertion.almost_full_lists
+#print axioms Se20Insertion.degree_three_lists
+#print axioms Se20Insertion.strongColourable_of_delete_lowDegree
+#print axioms Se20Insertion.minimal_counterexample_minDegree
+#print axioms Se20Insertion.PartialColouring.fillLists
+#print axioms Se20Insertion.PartialColouring.fillLists_agrees
+#print axioms Se20Insertion.degree_three_direct_extension
+#print axioms Se20Insertion.PartialColouring.swap_free_left_iff
+#print axioms Se20Insertion.PartialColouring.swap_free_right_iff
+#print axioms Se20Insertion.PartialColouring.swap_unblocks_iff
+#print axioms Se20Insertion.PartialColouring.separable_of_swap_unblocks
+#print axioms Se20Insertion.PartialColouring.swap_two_list
+#print axioms Se20Insertion.CriticalSet
+#print axioms Se20Insertion.critical_min_degree
+#print axioms Se20Insertion.nonTriangleEdges
+#print axioms Se20Insertion.strongColourable_of_nonTriangle
+#print axioms Se20Insertion.incidenceCount
+#print axioms Se20Insertion.conflict_incidence_bound
+#print axioms Se20Insertion.DegenerateOn
+#print axioms Se20Insertion.partialColouring_of_degenerate
+#print axioms Se20Insertion.strongColourable_of_nonTriangle_degenerate
+#print axioms Se20Insertion.strongColourable_of_rim_sum
+#print axioms Se20Insertion.critical_no_triangle
+#print axioms Se20Insertion.Proposition1133
+#print axioms Se20Insertion.critical_degree_clique
+#print axioms Se20Insertion.counterexample_vertex_nonTriangle
+#print axioms Se20Insertion.VertexOnTriangle
+#print axioms Se20Insertion.nonTriangle_incidence_le_two
+#print axioms Se20Insertion.all_vertices_triangle
+#print axioms Se20Insertion.internalEdges
+#print axioms Se20Insertion.rim_incidence_identity
+#print axioms Se20Insertion.critical_rim_deficit
+#print axioms Se20Insertion.critical_six_rim_deficit
+#print axioms Se20Insertion.critical_rim_at_most_two_triangles
+#print axioms Se20Insertion.LocallyInjective
+#print axioms Se20Insertion.LocallySurjective
+#print axioms Se20Insertion.map_edge_eq_of_incident
+#print axioms Se20Insertion.L2LocalMap
+#print axioms Se20Insertion.strongColourable_pullback
+#print axioms Se20Insertion.L2LocalMap_surjective_neighbours
+#print axioms Se20Insertion.PartialColouring.pullback
+#print axioms Se20Insertion.PartialColouring.pullback_neighbour
+#print axioms Se20Insertion.PartialColouring.pullback_sameComponent
+#print axioms Se20Insertion.PartialColouring.pullback_blocked
+#print axioms Se20Insertion.PartialColouring.pullback_separable
+#print axioms Se20Insertion.PartialColouring.chainEnd_append
+#print axioms Se20Insertion.PartialColouring.singleChain_append
+#print axioms Se20Insertion.PartialColouring.singleChain_colours_nodup
+#print axioms Se20Insertion.PartialColouring.singleChain_insertion
+#print axioms Se20Insertion.PartialColouring.NoChainRepair
+#print axioms Se20Insertion.PartialColouring.chain_obstruction_saturated
+#print axioms Se20Insertion.PartialColouring.chain_obstruction_nonseparable
+#print axioms Se20Insertion.PartialColouring.chain_extend
+#print axioms Se20Insertion.PartialColouring.recolourClassTargets
+#print axioms Se20Insertion.chain_obstruction_count
+#print axioms Se20Insertion.PartialColouring.forest_tangled_direct
+#print axioms Se20Insertion.PartialColouring.forest_single_separable
+#print axioms Se20Insertion.PartialColouring.finite_forest_separable
+#print axioms Se20Insertion.Parametric.PartialColouring
+#print axioms Se20Insertion.Parametric.PartialColouring.Neighbour
+#print axioms Se20Insertion.Parametric.PartialColouring.Free
+#print axioms Se20Insertion.Parametric.PartialColouring.Single
+#print axioms Se20Insertion.Parametric.PartialColouring.Bicoloured
+#print axioms Se20Insertion.Parametric.PartialColouring.KempeGraph
+#print axioms Se20Insertion.Parametric.PartialColouring.SameComponent
+#print axioms Se20Insertion.Parametric.PartialColouring.Separable
+#print axioms Se20Insertion.Parametric.PartialColouring.JointSeparable
+#print axioms Se20Insertion.Parametric.PartialColouring.Stuck
+#print axioms Se20Insertion.Parametric.PartialColouring.KempeClosed
+#print axioms Se20Insertion.Parametric.PartialColouring.swapColour
+#print axioms Se20Insertion.Parametric.PartialColouring.sameComponent_refl
+#print axioms Se20Insertion.Parametric.PartialColouring.SameComponent.symm
+#print axioms Se20Insertion.Parametric.PartialColouring.SameComponent.trans
+#print axioms Se20Insertion.Parametric.PartialColouring.sameComponent_of_adj
+#print axioms Se20Insertion.Parametric.PartialColouring.component_closed
+#print axioms Se20Insertion.Parametric.PartialColouring.swapColour_eq_self
+#print axioms Se20Insertion.Parametric.PartialColouring.swapColour_eq_iff
+#print axioms Se20Insertion.Parametric.PartialColouring.swap
+#print axioms Se20Insertion.Parametric.PartialColouring.touching
+#print axioms Se20Insertion.Parametric.PartialColouring.touching_closed
+#print axioms Se20Insertion.Parametric.PartialColouring.jointSeparable_frees
+#print axioms Se20Insertion.Parametric.PartialColouring.separable_frees
+#print axioms Se20Insertion.Parametric.PartialColouring.insertFree
+#print axioms Se20Insertion.Parametric.PartialColouring.insert_of_separable
+#print axioms Se20Insertion.Parametric.PartialColouring.restrict
+#print axioms Se20Insertion.Parametric.PartialColouring.erase_single_free
+#print axioms Se20Insertion.Parametric.PartialColouring.holeMove
+#print axioms Se20Insertion.Parametric.PartialColouring.holeMove_colour
+#print axioms Se20Insertion.Parametric.PartialColouring.single_count
+#print axioms Se20Insertion.Parametric.PartialColouring.colouredNeighbours
+#print axioms Se20Insertion.Parametric.PartialColouring.free_or_separable_or_stuck
+#print axioms Se20Insertion.Parametric.PartialColouring.TangledAt
+#print axioms Se20Insertion.Parametric.PartialColouring.tangledAt_iff_not_separable
+#print axioms Se20Insertion.Parametric.PartialColouring.AllTangled
+#print axioms Se20Insertion.Parametric.PartialColouring.domainNeighbours
+#print axioms Se20Insertion.Parametric.PartialColouring.yNeighbours
+#print axioms Se20Insertion.Parametric.PartialColouring.colourSetS
+#print axioms Se20Insertion.Parametric.PartialColouring.colourSetThreshold
+#print axioms Se20Insertion.Parametric.PartialColouring.IsColourCore
+#print axioms Se20Insertion.Parametric.PartialColouring.colourSetCore
+#print axioms Se20Insertion.Parametric.PartialColouring.colourSetCore_greatest
+#print axioms Se20Insertion.Parametric.PartialColouring.colourSetCore_isCore
+#print axioms Se20Insertion.Parametric.PartialColouring.not_mem_colourSetCore_iff
+#print axioms Se20Insertion.Parametric.PartialColouring.SameYClasses
+#print axioms Se20Insertion.Parametric.PartialColouring.SameYClasses.symm
+#print axioms Se20Insertion.Parametric.PartialColouring.SameYClasses.trans
+#print axioms Se20Insertion.Parametric.PartialColouring.SameYClasses.neighbour
+#print axioms Se20Insertion.Parametric.PartialColouring.SameYClasses.bicoloured
+#print axioms Se20Insertion.Parametric.PartialColouring.SameYClasses.sameComponent
+#print axioms Se20Insertion.Parametric.PartialColouring.SameYClasses.allTangled
+#print axioms Se20Insertion.Parametric.PartialColouring.SameYClasses.yNeighbours
+#print axioms Se20Insertion.Parametric.PartialColouring.holeMove_sameYClasses
+#print axioms Se20Insertion.Parametric.PartialColouring.outside_single_bound
+#print axioms Se20Insertion.Parametric.PartialColouring.fixedClassHoles
+#print axioms Se20Insertion.Parametric.PartialColouring.colourSetInsertion
+#print axioms Se20Insertion.Parametric.PartialColouring.colourSetInsertion_of_subsets
+#print axioms Se20Insertion.Parametric.PartialColouring.outsideYNeighbours
+#print axioms Se20Insertion.Parametric.PartialColouring.yNeighbours_subset_domain
+#print axioms Se20Insertion.Parametric.PartialColouring.outsideYNeighbours_card
+#print axioms Se20Insertion.Parametric.PartialColouring.threshold_eq_outside
+#print axioms Se20Insertion.Parametric.PartialColouring.core_neighbours_subset_outside
+#print axioms Se20Insertion.Parametric.PartialColouring.core_degree_bound
+#print axioms Se20Insertion.Parametric.PartialColouring.allTangled_sees
+#print axioms Se20Insertion.Parametric.PartialColouring.core_yDegree_lower
+#print axioms Se20Insertion.Parametric.PartialColouring.colourGroups
+#print axioms Se20Insertion.Parametric.PartialColouring.mem_colourGroups
+#print axioms Se20Insertion.Parametric.PartialColouring.card_colourGroups
+#print axioms Se20Insertion.Parametric.PartialColouring.card_groups_avoiding
+#print axioms Se20Insertion.Parametric.PartialColouring.tangleCliqueCount
+#print axioms Se20Insertion.Parametric.PartialColouring.sum_filter_card_swap
+#print axioms Se20Insertion.Parametric.PartialColouring.sum_groups_avoiding
+#print axioms Se20Insertion.Parametric.PartialColouring.AllGroupsFail
+#print axioms Se20Insertion.Parametric.PartialColouring.allGroupsFail_tangled
+#print axioms Se20Insertion.Parametric.PartialColouring.hole_domainNeighbours
+#print axioms Se20Insertion.Parametric.PartialColouring.allGroupsFail_single_saturated
+#print axioms Se20Insertion.Parametric.PartialColouring.allGroupsFail_sum
+#print axioms Se20Insertion.Parametric.PartialColouring.allGroupsFail_ratio
+#print axioms Se20Insertion.Parametric.ofTwenty
+#print axioms Se20Insertion.Parametric.toTwenty
+#print axioms Se20Insertion.Parametric.ofTwenty_core
+#print axioms Se20Insertion.Parametric.core_insertion_twenty
+#print axioms Se20Insertion.Parametric.clique_sum_twenty
+
+-- Sixth pass additions
+#print axioms Se20Insertion.branch
+#print axioms Se20Insertion.starBase
+#print axioms Se20Insertion.shell
+#print axioms Se20Insertion.branch_card_le
+#print axioms Se20Insertion.starBase_card_le
+#print axioms Se20Insertion.shell_card_le
+#print axioms Se20Insertion.conflicts_star_decomposition
+#print axioms Se20Insertion.shell_conflicts_branch
+#print axioms Se20Insertion.PartialColouring.SwapSingleRepair
+#print axioms Se20Insertion.PartialColouring.repair_of_free
+#print axioms Se20Insertion.PartialColouring.palette_split
+#print axioms Se20Insertion.degree_three_rigidity
+#print axioms Se20Insertion.star_coloured_conflicts_subtract
+#print axioms Se20Insertion.degree_three_triangle_conflicts
+#print axioms Se20Insertion.degree_three_square_conflicts
+#print axioms Se20Insertion.degree_three_extension_of_small_conflicts
+#print axioms Se20Insertion.degree_three_short_cycle_reducible
+#print axioms Se20Insertion.minimal_counterexample_degree_three_no_short_cycle
+#print axioms Se20Insertion.PartialColouring.OneSwapListRepair
+#print axioms Se20Insertion.PartialColouring.available_complement
+#print axioms Se20Insertion.PartialColouring.tight_list_neighbours
+#print axioms Se20Insertion.PartialColouring.swap_unique_list
+#print axioms Se20Insertion.PartialColouring.one_swap_list_rigidity
+#print axioms Se20Insertion.PartialColouring.eighteen_split
+#print axioms Se20Insertion.degree_three_star_list_rigidity
+#print axioms Se20Insertion.outsideEdges
+#print axioms Se20Insertion.boundaryEdges
+#print axioms Se20Insertion.CliqueSet
+#print axioms Se20Insertion.outside_colouring
+#print axioms Se20Insertion.boundary_disjoint
+#print axioms Se20Insertion.boundary_pairwise_conflict
+#print axioms Se20Insertion.clique_outside_neighbours
+#print axioms Se20Insertion.boundary_card
+#print axioms Se20Insertion.boundary_coloured_conflicts
+#print axioms Se20Insertion.PartialColouring.fill_of_list_card
+#print axioms Se20Insertion.boundary_iff
+#print axioms Se20Insertion.outside_boundary_partition
+#print axioms Se20Insertion.clique_internal_triangle
+#print axioms Se20Insertion.clique_finish
+#print axioms Se20Insertion.strongColourable_of_delete_K4
+#print axioms Se20Insertion.counterexample_no_K4
+#print axioms Se20Insertion.triangle_boundary_rigidity
+#print axioms Se20Insertion.ComponentInsertion.count
+#print axioms Se20Insertion.ComponentInsertion.Touches
+#print axioms Se20Insertion.ComponentInsertion.touchingCount
+#print axioms Se20Insertion.ComponentInsertion.count_insert
+#print axioms Se20Insertion.sum_pair_star
+#print axioms Se20Insertion.sum_pair_two_stars
+#print axioms Se20Insertion.PartialColouring.pairVertices
+#print axioms Se20Insertion.PartialColouring.pairComponents
+#print axioms Se20Insertion.PartialColouring.pairComponents_eq
+#print axioms Se20Insertion.PartialColouring.componentCount_sum
+#print axioms Se20Insertion.PartialColouring.pairComponents_symm
+#print axioms Se20Insertion.PartialColouring.recolourOne
+#print axioms Se20Insertion.PartialColouring.recolour_gain
+#print axioms Se20Insertion.TreePattern.Branch
+#print axioms Se20Insertion.TreePattern.Position
+#print axioms Se20Insertion.TreePattern.graph
+#print axioms Se20Insertion.TreePattern.positions_card
+#print axioms Se20Insertion.TreePattern.three_choose_le
+#print axioms Se20Insertion.TreePattern.three_choose_eq_dvd
+#print axioms Se20Insertion.TreePattern.ten_far_edges
+#print axioms Se20Insertion.TreePattern.edgeNumber
+#print axioms Se20Insertion.TreePattern.sixteen_positions_bound
+#print axioms Se20Insertion.TreePattern.sixteen_positions_nonadjacent
+#print axioms Se20Insertion.TreePattern.Near
+#print axioms Se20Insertion.TreePattern.Far
+#print axioms Se20Insertion.TreePattern.SelectedEdges
+#print axioms Se20Insertion.TreePattern.selected_edges_bound
+#print axioms Se20Insertion.single_shell_cover
+#print axioms Se20Insertion.shell_branch_conflicts
+#print axioms Se20Insertion.PartialColouring.single_chain_avoids_closed_neighbourhood
+#print axioms Se20Insertion.PartialColouring.stuck_single_chain
+#print axioms Se20Insertion.LocalMaxDegreeFour
+#print axioms Se20Insertion.InfiniteFourRegular
+#print axioms Se20Insertion.InfiniteFourRegular.localMaxDegreeFour
+#print axioms Se20Insertion.localMaxDegreeFour_induce
+#print axioms Se20Insertion.PartialColouring.infinite_forest_separable
+#print axioms Se20Insertion.PartialColouring.infinite_four_regular_tree_separable
+#print axioms Se20Insertion.critical_low_degree_list_obstruction
+#print axioms Se20Insertion.ComponentInsertion.edges
+#print axioms Se20Insertion.ComponentInsertion.twice_edges
+#print axioms Se20Insertion.ComponentInsertion.edges_insert
+#print axioms Se20Insertion.ComponentInsertion.cycleRank
+#print axioms Se20Insertion.ComponentInsertion.cycleRank_insert
+#print axioms Se20Insertion.PartialColouring.totalCycleRank
+#print axioms Se20Insertion.PartialColouring.holeMove_cycleRank
+#print axioms Se20Insertion.multiplicity_identity
+#print axioms Se20Insertion.PartialColouring.seenColours
+#print axioms Se20Insertion.PartialColouring.deficit
+#print axioms Se20Insertion.PartialColouring.excess
+#print axioms Se20Insertion.PartialColouring.single_iff_multiplicity_one
+#print axioms Se20Insertion.PartialColouring.seenColours_le_nineteen
+#print axioms Se20Insertion.PartialColouring.nonsingle_exact
+#print axioms Se20Insertion.PartialColouring.Exposed
+#print axioms Se20Insertion.PartialColouring.unexposedPartners
+#print axioms Se20Insertion.PartialColouring.bothNonsingleGraph
+#print axioms Se20Insertion.PartialColouring.P2Terms
+#print axioms Se20Insertion.PartialColouring.p2Terms
+#print axioms Se20Insertion.PartialColouring.p2_slack_eq
+#print axioms Se20Insertion.PartialColouring.p2_identity
+#print axioms Se20Insertion.regular_girth_conflicts_card
+#print axioms Se20Insertion.PartialColouring.unexposed_partner_bound
+#print axioms Se20Insertion.PartialColouring.propositionP2
+#print axioms Se20Insertion.TreePattern.weight
+#print axioms Se20Insertion.TreePattern.weight_sq
+#print axioms Se20Insertion.TreePattern.sum_members
+#print axioms Se20Insertion.TreePattern.nearCount
+#print axioms Se20Insertion.TreePattern.farCount
+#print axioms Se20Insertion.TreePattern.nearCount_cast
+#print axioms Se20Insertion.TreePattern.farCount_cast
+#print axioms Se20Insertion.TreePattern.selection_card
+#print axioms Se20Insertion.TreePattern.weighted_edges
+#print axioms Se20Insertion.TreePattern.actual_edge_count
+#print axioms Se20Insertion.TreePattern.sixteen_induced_edges
+#print axioms Se20Insertion.LocallyTreeAt
+#print axioms Se20Insertion.locallyTreeAt_of_girth
+#print axioms Se20Insertion.opposite_shell_disjoint
+#print axioms Se20Insertion.single_shell_cover_opposite
+#print axioms Se20Insertion.TreePattern.sixteen_nonedge_card
+#print axioms Se20Insertion.TreePattern.sixty_six_chains
+#print axioms Se20Insertion.TreePattern.sixty_six_chains_of_stuck
+#print axioms Se20Insertion.PartialColouring.P2Terms.n
+#print axioms Se20Insertion.PartialColouring.P2Terms.D
+#print axioms Se20Insertion.PartialColouring.P2Terms.B
+#print axioms Se20Insertion.PartialColouring.P2Terms.M
+#print axioms Se20Insertion.PartialColouring.P2Terms.T
+#print axioms Se20Insertion.PartialColouring.P2Terms.E
+#print axioms Se20Insertion.PartialColouring.P2Terms.Z
+#print axioms Se20Insertion.PartialColouring.P2Terms.L

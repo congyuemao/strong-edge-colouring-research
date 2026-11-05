@@ -36,3 +36,9 @@ Run `build.ps1` or `lake build` with the local Mathlib path in `lakefile.toml`; 
 ## Fourth pass (2026-11-05): fan lemma
 
 `ForestL2.lean`, `ChordalFan.lean`, `Neighbourhood87.lean` and `FanLemma.lean` prove chordality of L² of a forest (`forest_L2_chordal`), Lemma 11.48 with a weaker witness-forest hypothesis (`lemma1148`, `lemma1148_induced`), the cycle and girth consequences (`longChain_cycle`, `longChain_girth`, `longChain_girth_half`) and the bound 87 for Δ ≤ 4, girth ≥ 7 (`neighbourhood_edges_le_87`, `directPairs_le_87`). See [REPORT4.md](REPORT4.md), which leads with the corrections to the paper wording. Rebuilt independently with exit code 0; all 87 audited declarations use only `propext`, `Classical.choice`, `Quot.sound` ([AXIOMS4.txt](AXIOMS4.txt)).
+
+## Fifth and sixth passes (2026-11-06)
+
+[REPORT5.md](REPORT5.md) and [REPORT6.md](REPORT6.md) add almost everything still open in section 11 of the log: general chains of Theorem 11.7, Corollary 11.8, 11.19–11.25, 11.28, the gain formula, 11.39–11.41, 11.1, 11.2, 11.4, 11.5, 11.10, the core theorem and the ratio (2K − d)/d for arbitrary K, the identity P2, the hole-move formula. Not done: Gallai's theorem for 11.40(5) (a seventh pass is working on it), and a geometric construction of the map in `sixty_six_chains`.
+
+Checked independently of Codex: sources copied to an empty directory and rebuilt without Lake (exit code 0, 68 modules); no `sorry`, no `native_decide`, no project axiom; [AXIOMS6.txt](AXIOMS6.txt) holds the single-line audit results, which are only the three standard axioms, and the multi-line ones are the same three in the log. `Proposition1133` appears only as a named hypothesis. The proofs were checked only by the Lean kernel, not read.
