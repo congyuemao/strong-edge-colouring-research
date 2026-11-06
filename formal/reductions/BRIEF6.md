@@ -1,3 +1,0 @@
-# Sixth pass: close targets, not lemmas
-
-Read `REPORT.md` (Fifth pass). The last pass built support without closing a headline target. This pass: pick the single closest target and finish it before starting another. Order of attack: A03, then A04, G13, A02, A06, G16, then G05's real route. Do not start the F and S groups until those are done or honestly blocked. Same rules: no `sorry`, no new axioms, no `native_decide`, no change to proved statements, nothing weakened silently, flaws first, `-j1`, retry on read failures, do not stop or ask. Run the whole build at the end, and append "Sixth pass" to `REPORT.md`.

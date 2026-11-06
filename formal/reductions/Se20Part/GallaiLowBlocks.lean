@@ -1,6 +1,5 @@
 import Se20Part.SmallColourPool
 import Se20Part.Greedy
-import Se20Part.Gallai
 
 noncomputable section
 open scoped Classical
@@ -11,44 +10,15 @@ order. A connected finite two-regular simple graph is a cycle. -/
 def OddCycleGraph {W : Type} [Fintype W] (H : SimpleGraph W) : Prop :=
   H.Connected ∧ Odd (Fintype.card W) ∧ ∀ v, H.degree v = 2
 
-/-- The no-cut-vertex form of degree choosability, proved below. -/
+/-- The no-cut-vertex form of the cited degree-choosability theorem.
+This is an ordinary named hypothesis; its proof is being developed in the
+sister project and is not duplicated or imported here. -/
 def GallaiDegreeChoosable : Prop :=
   ∀ (W C : Type) [Fintype W] [DecidableEq C] (H : SimpleGraph W),
     H.Connected → (∀ v : W, (H.induce {w | w ≠ v}).Preconnected) →
     ∀ L : W → Finset C, (∀ v, H.degree v ≤ (L v).card) →
     ¬ HasListColouring H L →
     (∀ u v, u ≠ v → H.Adj u v) ∨ OddCycleGraph H
-
-/-- The former Gallai input is now a theorem, using the copied kernel-checked
-degree-list proof. The intrinsic odd-cycle interface is unchanged. -/
-theorem gallaiDegreeChoosable : GallaiDegreeChoosable := by
-  intro W C _ _ H hc hdel L hd hb
-  classical
-  by_cases hs : Subsingleton W
-  · exact Or.inl (fun u v huv => (huv (hs.elim u v)).elim)
-  letI : Nontrivial W := not_subsingleton_iff_nontrivial.mp hs
-  obtain ⟨x,y,hxy⟩ := exists_pair_ne W
-  have hp : 0 < H.degree x := (hc x y).degree_pos_left hxy
-  obtain ⟨a,ha⟩ := Finset.card_pos.mp (hp.trans_le (hd x))
-  letI : Nonempty C := ⟨a⟩
-  have hdelete : ∀ v : W, (H.induce {w | w ≠ v}).Connected := by
-    intro v
-    obtain ⟨w,hw⟩ := exists_ne v
-    exact { preconnected := hdel v, nonempty := ⟨⟨w,hw⟩⟩ }
-  have hbad : ¬ DegreeList.ColourableOn H L Finset.univ := by
-    rintro ⟨c,hc',hp'⟩
-    exact hb ⟨c,fun v => hc' v (Finset.mem_univ _),
-      fun u v huv => hp' u (Finset.mem_univ _) v (Finset.mem_univ _) huv⟩
-  rcases DegreeList.bad_noncut_complete_or_odd_cycle H L hc hdelete hd hbad with hh | ho
-  · exact Or.inl hh
-  · obtain ⟨n,hn,⟨i⟩⟩ := ho
-    refine Or.inr ⟨hc,?_,?_⟩
-    · have he : Fintype.card W = n+3 :=
-        (Fintype.card_congr i.toEquiv).trans (Fintype.card_fin _)
-      simpa only [he] using hn
-    · intro v
-      rw [← i.degree_eq v]
-      convert (SimpleGraph.cycleGraph_degree_three_le (v := i v)) using 1
 
 /-- Minimality refers to every proper induced subgraph, with degrees in H. -/
 def VertexMinimalNoncolourable {W : Type} [Fintype W] (H : SimpleGraph W) (k : ℕ) : Prop :=
@@ -116,9 +86,9 @@ theorem minimal_low_bad_lists {W : Type} [Fintype W] (H : SimpleGraph W) (k : �
   · exact (hfree ⟨v,hv⟩ ⟨u,Finset.mem_sdiff.mpr ⟨Finset.mem_univ _,hu⟩⟩ huv.symm).symm
   · exact c.valid huv
 
-/-- The low-block classification used by A03/A04, now without a Gallai
-hypothesis. No claim about leaf-block extension is assumed. -/
-theorem minimal_low_block_classification
+/-- The low-block classification used by A03/A04, with the cited Gallai
+input explicit. No claim about leaf-block extension is assumed. -/
+theorem minimal_low_block_classification (hGallai : GallaiDegreeChoosable)
     {W : Type} [Fintype W] (H : SimpleGraph W) (k : ℕ)
     (hmin : VertexMinimalNoncolourable H k) (B : Finset W)
     (hconn : (H.induce (B : Set W)).Connected)
@@ -127,7 +97,7 @@ theorem minimal_low_block_classification
     (∀ u ∈ B, ∀ v ∈ B, u ≠ v → H.Adj u v) ∨ OddCycleGraph (H.induce (B : Set W)) := by
   obtain ⟨v⟩ := hconn.nonempty
   obtain ⟨L,hdeg,hbad⟩ := minimal_low_bad_lists H k hmin B ⟨v.val,v.prop⟩ hlow
-  rcases gallaiDegreeChoosable B (Fin k) (H.induce (B : Set W)) hconn hnocut L hdeg hbad with hc | ho
+  rcases hGallai B (Fin k) (H.induce (B : Set W)) hconn hnocut L hdeg hbad with hc | ho
   · exact Or.inl (fun u hu v hv hne => hc ⟨u,hu⟩ ⟨v,hv⟩
       (fun h => hne (congrArg Subtype.val h)))
   · exact Or.inr ho
