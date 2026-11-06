@@ -24,6 +24,19 @@ import Se20Part.MultipartiteFive
 import Se20Part.PetersenExtension
 import Se20Part.SmallComponentReduction
 import Se20Part.TwoRepresentativeSizeChecks
+import Se20Part.MatchingCutGluing
+import Se20Part.SmallCutPalette
+import Se20Part.CutBoundary
+import Se20Part.CutMinimal
+import Se20Part.CutConnectivity
+import Se20Part.ExternalStars
+import Se20Part.K33Palette
+import Se20Part.PetersenSupport
+import Se20Part.PetersenMinusKernel
+import Se20Part.PetersenMinusSupport
+import Se20Part.PetersenIncident
+import Se20Part.GallaiLowBlocks
+import Se20Part.CliqueSeparator
 
 -- Hypotheses such as Brooks/Haxell/JoosNguyen are ordinary arguments.
 -- Consequently their absence from #print axioms is not a proof of them.
@@ -229,3 +242,74 @@ import Se20Part.TwoRepresentativeSizeChecks
 #print axioms Se20Part.TwoRepresentativeSizeChecks.table
 #print axioms Se20Part.TwoRepresentativeSizeChecks.checked_bounds
 #print axioms Se20Part.TwoRepresentativeSizeChecks.size_bound
+
+-- Fourth pass: explicit choices and ambient geometry for cut gluing.
+#print axioms Se20Part.matching_cut_four_prescribed
+#print axioms Se20Part.five_stars_single_hall
+#print axioms Se20Part.five_stars_failure_counts
+#print axioms Se20Part.five_stars_source_choices
+#print axioms Se20Part.matching_cut_five_prescribed
+#print axioms Se20Part.five_two_stars_robust
+#print axioms Se20Part.robust_five_representatives
+#print axioms Se20Part.single_allowed_candidates
+#print axioms Se20Part.five_cut_forced_targets
+#print axioms Se20Part.palette_complete_prescribed
+#print axioms Se20Part.palette_complete_five
+#print axioms Se20Part.matching_cut_five_palette
+#print axioms Se20Part.matching_cut_small_palette
+#print axioms Se20Part.cut_endpoint_budgets
+#print axioms Se20Part.cut_cross_conflict_iff
+#print axioms Se20Part.MatchingCut.cut_conflict_near
+#print axioms Se20Part.matching_five_cut_gluing
+#print axioms Se20Part.side_colourable_iff
+#print axioms Se20Part.matching_cut_gluing
+#print axioms Se20Part.matching_cut_strongColourable
+#print axioms Se20Part.representatives_three_four
+#print axioms Se20Part.repeated_cut_small_palette
+#print axioms Se20Part.LabelledCut.endpoint_budgets
+#print axioms Se20Part.LabelledCut.conflict_cover
+#print axioms Se20Part.LabelledCut.boundary_colour_budget
+#print axioms Se20Part.LabelledCut.sourceList_three
+#print axioms Se20Part.LabelledCut.sourceList_large
+#print axioms Se20Part.LabelledCut.targetList_five
+#print axioms Se20Part.repeated_small_cut_gluing
+#print axioms Se20Part.small_cut_strongColourable
+#print axioms Se20Part.cutBoundary_degree_sum
+#print axioms Se20Part.fourRegular_cut_even
+#print axioms Se20Part.fourRegular_nontrivial_cut_six
+#print axioms Se20Part.cutBoundary_erase_identity
+#print axioms Se20Part.InducedMinimalCounterexample.cut_three
+#print axioms Se20Part.InducedMinimalCounterexample.preconnected
+#print axioms Se20Part.InducedMinimalCounterexample.nontrivial_cut_five
+#print axioms Se20Part.InducedMinimalCounterexample.regular_nontrivial_cut_six
+#print axioms Se20Part.InducedMinimalCounterexample.degree_three
+#print axioms Se20Part.InducedMinimalCounterexample.no_matching_five_cut
+#print axioms Se20Part.InducedMinimalCounterexample.regular_cut_four
+#print axioms Se20Part.InducedMinimalCounterexample.no_small_separator
+#print axioms Se20Part.InducedMinimalCounterexample.delete_two_connected
+#print axioms Se20Part.adjacent_colouredStars_inter_le_one
+#print axioms Se20Part.equal_colouredStars_nonadjacent
+#print axioms Se20Part.k33_palette_failure
+#print axioms Se20Part.selected_conflicts_le_fifteen
+#print axioms Se20Part.petersen_selected_degree_one
+#print axioms Se20Part.critical21_no_supported_induced_petersen
+#print axioms Se20Part.petersenMinusEdge_conflict
+#print axioms Se20Part.petersenMinus_short_paths
+#print axioms Se20Part.petersenMinus_only_missing_chord
+#print axioms Se20Part.induced_petersenMinus_extension
+#print axioms Se20Part.critical21_disjoint_induced_petersenMinus
+#print axioms Se20Part.minimal_low_bad_lists
+#print axioms Se20Part.minimal_low_block_classification
+#print axioms Se20Part.selected_conflicts_le_eighteen
+#print axioms Se20Part.petersenMinus_selected_degree_two
+#print axioms Se20Part.critical21_no_supported_induced_petersenMinus
+#print axioms Se20Part.critical21_no_supported_petersenMinus_subgraph
+#print axioms Se20Part.petersen_common_neighbour
+#print axioms Se20Part.inducedPetersenOfGirth
+#print axioms Se20Part.greedy_partial_extension
+#print axioms Se20Part.petersen_spokes_matching
+#print axioms Se20Part.petersen_spoke_outside_conflicts
+#print axioms Se20Part.petersen_incident_extension
+#print axioms Se20Part.critical21_no_supported_petersen_subgraph
+#print axioms Se20Part.colourable_of_clique_separator
+#print axioms Se20Part.minimal_noncolourable_no_clique_separator

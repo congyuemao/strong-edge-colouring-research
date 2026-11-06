@@ -9,7 +9,7 @@ variable {V : Type*} [Fintype V] (G : SimpleGraph V)
 theorem mem_hubs (e f : G.edgeSet) :
     f ∈ hubs G e ↔ f ≠ e ∧ ∃ v ∈ e.val, v ∈ f.val := by simp [hubs]
 
-local instance : DecidableEq G.edgeSet := Classical.decEq _
+local instance diffuseGeometryDecEq : DecidableEq G.edgeSet := Classical.decEq _
 
 def Linked (T : Finset G.edgeSet) : Prop :=
   ∀ e ∈ T, ∀ f ∈ T, e ≠ f → f ∉ hubs G e

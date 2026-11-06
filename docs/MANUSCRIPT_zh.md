@@ -6436,7 +6436,7 @@ B 同理，使用另外两种颜色。跨越 A、B 的每条超边自动含有�
 | 项目 | 内容 | 规模（模块，审计声明） |
 |---|---|---|
 | [formal/large-girth](../formal/large-girth/README.md) | 第一部分 | 57，134 |
-| [formal/reductions](../formal/reductions/README.md) | 第二部分，第三、四部分的一部分 | 136，197 |
+| [formal/reductions](../formal/reductions/README.md) | 第二部分，第三、四部分的一部分 | 162，266 |
 | [formal/insertion-reduction](../formal/insertion-reduction/README.md) | 第五部分 | 94，609 |
 | [formal/fractional-20](../formal/fractional-20/README.md) | 第六部分的分数定理 | 124（含 85 组证书） |
 | strong-edge-packing-19、strong-edge-lean-verification（另外的仓库，第 5 节有链接） | 19、19.5 装箱界，C₉(1,3) | 不在本仓库，这轮没有重新审计 |
@@ -6451,11 +6451,10 @@ B 同理，使用另外两种颜色。跨越 A、B 的每条超边自动含有�
 | 第 5 节 | 5.6 | Lean | F = E 时假设 Joos 的顶点界；ν ≤ 1 时假设 5.5 |
 | 第 5 节 | 5.7 | Lean | 无 |
 | 第 5 节 | 5.1 的 1362 份证书、5.5 | **没有**（计算辅助） | — |
-| 附录 C | G02、G06、G08、G09、F01 | Lean | 无 |
+| 附录 C | G02、G06、G08、G09、G12、G14、F01 | Lean | 无 |
 | 附录 C | G05 | Lean 只到条件形式 | 三个有限检查（`G05SmallAbstractCheck` 等），规模太大，没有执行 |
-| 附录 C | G14 | Lean：任意列表定理和诱导块内部的延拓。关联边的延拓没有 | 无 |
 | 附录 C | G07、G16 | 部分 | G05、G15 |
-| 附录 C | G12、G13 | 部分：Hall 矩阵和调色板合并、公共列表障碍 | — |
+| 附录 C | G13 | 部分：公共列表障碍 | — |
 | 附录 C | F09、S18、S20 | 部分：端点引理和禁止形状、13 点核的三元组分类、数值表 | — |
 | 附录 C | F03、F04、F05、F07、S02、S06、S07、S08、S17、S19、A02、A03、A04、A06、G15 | **没有** | — |
 | 第 7 节 | 全部已证明的定理和引理，包括 Gallai 定理（定理名标在各条后面） | Lean | 猜想只作为显式假设；P6 假设图的围长 ≥ 7 |

@@ -5,7 +5,7 @@ open scoped Classical
 namespace Se20Part
 open Partition
 variable {V : Type*} [Fintype V] (G : SimpleGraph V)
-local instance : DecidableEq G.edgeSet := Classical.decEq _
+local instance routeReductionDecEq : DecidableEq G.edgeSet := Classical.decEq _
 
 theorem route_minimum_no_triangles (hΔ : MaxDegreeFour G) (hg : 7 ≤ G.egirth)
     {π : G.edgeSet → Fin 10} (hπ : RouteMinimum G π) :

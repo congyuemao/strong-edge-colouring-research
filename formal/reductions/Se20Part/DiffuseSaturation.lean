@@ -6,8 +6,8 @@ open scoped Classical
 namespace Se20Part
 open Partition
 variable {V : Type*} [Fintype V] (G : SimpleGraph V)
-local instance : DecidableEq G.edgeSet := Classical.decEq _
-local instance : DecidableEq (Fin 10) := Classical.decEq _
+local instance diffuseSaturationDecEq : DecidableEq G.edgeSet := Classical.decEq _
+local instance diffuseSaturationFinTenDecEq : DecidableEq (Fin 10) := Classical.decEq _
 
 theorem mem_zeroClasses_ten (π : G.edgeSet → Fin 10) (e : G.edgeSet) (j : Fin 10) :
     j ∈ zeroClasses (L2 G) π e ↔ j ≠ π e ∧ degreeIn (L2 G) π e j = 2 := by

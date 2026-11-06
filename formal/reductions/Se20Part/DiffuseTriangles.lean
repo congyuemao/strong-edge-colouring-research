@@ -5,8 +5,8 @@ open scoped Classical
 namespace Se20Part
 open Partition
 variable {V : Type*} [Fintype V] (G : SimpleGraph V)
-local instance : DecidableEq G.edgeSet := Classical.decEq _
-local instance : DecidableEq (Fin 10) := Classical.decEq _
+local instance diffuseTrianglesDecEq : DecidableEq G.edgeSet := Classical.decEq _
+local instance diffuseTrianglesFinTenDecEq : DecidableEq (Fin 10) := Classical.decEq _
 set_option maxHeartbeats 2000000
 
 theorem hubs_conflict {e f : G.edgeSet} (h : f ∈ hubs G e) : (L2 G).Adj e f := by

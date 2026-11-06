@@ -2,7 +2,9 @@
 
 **Reading guide:** the first-pass record below is retained as history. Its
 unfinished-item list and missing-source statements are superseded by the
-[Second pass](#second-pass) and [Third pass](#third-pass) sections below.
+[Second pass](#second-pass), [Third pass](#third-pass), and
+[Fourth pass](#fourth-pass) sections below. The resumed fourth-pass
+subsection is the latest status record.
 
 ## Flaws and corrections found
 
@@ -615,3 +617,227 @@ PowerShell launcher was cancelled before returning, so no build remains
 queued in the background. No combined success or new complete axiom output
 is claimed. Once the other task has finished or paused, run `./build.ps1`
 to check all 136 modules, the 197 audit requests, and the root import.
+
+## Fourth pass
+
+### Flaws and validation boundaries first
+
+The inherited unnamed local decidable-equality instances were not safe to
+combine through the audit import. They now have module-specific names,
+including the two `Fin 10` instances. No proved theorem statement was changed.
+
+The previous three G05 abstract checks remain unproved hypotheses. Their
+statements have not been replaced by asserted computations. The parallel
+Gallai degree-choosability development is not copied or reproved here.
+
+This section is a work checkpoint. In particular, files written while the
+other Lean process holds the compiler are not claimed to be verified. The
+final whole-project build and audit will be recorded separately.
+
+### Cut construction progress
+
+`CutPaletteChoices`, `FiveCutChoices`, and `ExceptionalFiveCut` have passed
+serial development builds. These prove the prescribed pairs for matching
+cuts of size at most four, the ordinary five-source construction (at most
+one twice-occurring source), its seven-repeated-colour failure count, and
+the exceptional five-cut robust representative and candidate-count lemmas.
+They are universal finite-set proofs, with no sampled matrices or new
+theorem hypotheses.
+
+`ForcedFiveCut`, `PaletteCompletion`, `FiveCutPalette`, `CutGeometry`,
+`MatchingCutGeometry`, and `MatchingCutGluing` are being checked. Their
+intended chain forces targets into the large opposite star union, completes
+the remaining palette permutation, counts the actual ambient endpoint
+neighbourhoods, and colours a labelled matching five-cut. Until those
+checks pass, this paragraph records intended interfaces only.
+
+`build.ps1 -WaitForLean` optionally waits for an existing compiler to exit.
+The named build mutex, the refusal to start alongside another Lean process,
+`-j1`, and the allocation limit remain enabled. No other process is stopped.
+
+### Validation blocked by concurrent external compilers
+
+The complete `./build.ps1` was invoked, without `-Only`. It reached
+`Checking Se20Part.Definitions` and the process guard refused to launch
+Lean because external PIDs **15808, 15972, 23020** were running. This is
+**not** a successful build. The earlier serial check queue had waited
+through several successive overlapping external jobs; that waiting
+PowerShell session was interrupted before this full-build attempt.
+**No fourth-pass build remains queued.** No external process was terminated.
+
+The first development check of `CutGeometry` reported an incorrect
+`Sym2.mk.inj_iff` name. The first check of `ForcedFiveCut` reported local
+finite-subtype/cardinality elaboration errors. Those sources were corrected,
+but the corrections have not yet been compiled. `SmallCutPalette` was also
+written while compilation was blocked and is unverified. Accordingly,
+the six pending modules listed above and `SmallCutPalette` are **drafts**;
+their presence in the manifest and audit is not evidence of successful
+checking. The expanded audit and root import remain uncompiled.
+
+The manifest and source-only scan (`FOURTH_PASS_SOURCE_SCAN.txt`) found
+**146 modules**, each listed once, **214 audit requests**, and no `sorry`,
+`admit`, `native_decide`, axiom declarations, or unsafe declarations.
+These source checks do not substitute for elaboration or axiom output.
+
+### Exact remaining work
+
+This is an incomplete fourth pass. No full G12 theorem is claimed.
+First check the corrected cut chain in this order:
+`ForcedFiveCut`, `PaletteCompletion`, `FiveCutPalette`, `SmallCutPalette`,
+`CutGeometry`, `MatchingCutGeometry`, `MatchingCutGluing`.
+The earlier renamed diffuse/route modules also need rebuilding before
+the combined audit.
+
+Beyond validation, G12 still needs the repeated-endpoint three- and
+four-cut constructions, the transfer from induced-side colourings to the
+ambient-side interfaces, and the minimal-counterexample connectivity and
+regular-cut parity arguments. The new actual endpoint budgets include
+the own-star subtraction `3d+u` and the budget summed over distinct
+boundary endpoints, but their use in those remaining cases is unfinished.
+
+G13, the remaining G14 and G16, replacement of the G05 abstract checks,
+A03/A04/A02/A06, F09/F03/F04/F05/F07, and S02/S06/S07/S08/S17/S19 retain
+their third-pass proof obligations. No new completion claim or replacement
+hypothesis for these targets was introduced. In particular, this pass has
+not yet reached an A03/A04 use of `GallaiDegreeChoosable`.
+
+### Resumed verification and further proofs
+
+This subsection supersedes the historical draft/blocked status above.
+The resumed run uses the revised guard (at most two external Lean
+processes), `-WaitForLean`, and `-j1`. Waiting polls more frequently near
+the process threshold and reports every thirty seconds; the threshold,
+named build mutex, and memory limit are unchanged. No external compiler
+was stopped. Development output is in `FOURTH_PASS_RESUMED_CHECK_LOG.txt`.
+
+All inherited cut drafts now pass development compilation, including
+`ForcedFiveCut`, `PaletteCompletion`, `FiveCutPalette`, `SmallCutPalette`,
+`CutGeometry`, `MatchingCutGeometry`, `CutSideColouring`,
+`MatchingCutGluing`, `RepeatedCutPalette`, `LabelledCut`,
+`RepeatedCutGeometry`, `LabelledCutGluing`, `CutBoundary`, and `CutMinimal`.
+The corrections repair elaboration, finite-subtype cardinality arguments,
+swapped-side conversions, and proof bodies; no theorem statement was
+weakened. In particular, namespace hypotheses needed by the minimality
+arguments are now explicitly included.
+
+**G12 is complete in the checked modules.** `CutConnectivity` adds minimum
+degree three, exclusion of matching five-cuts, the regular four-edge cut
+bound, and connectedness after deleting any set of at most two vertices.
+Together with the verified cut chain this includes the exceptional
+five-cut palette, the repeated-endpoint three/four cuts, actual endpoint
+counts, induced-side transfer, nontrivial cut bounds five/six, and regular
+cut parity. Minimality is among all original graphs, not only regular ones.
+
+The following additional modules have passed development compilation:
+
+- `ExternalStars` and `K33Palette`: adjacent original vertices share at
+  most one colour in their coloured stars; equal stars of size at least
+  two force nonadjacency. Failure of the nine G13 lists forces the exact
+  six-plus-three-plus-three disjoint equality state and equal stars on
+  each side. Full G13 still needs the actual six-spoke accounting,
+  equality-state endpoint geometry, and fixed-outside recolouring.
+- `PetersenSupport`: selected conflicts are bounded by selected degrees
+  on the ambient rim. The resulting bound fifteen completes the induced
+  Petersen support exclusion without any ambient girth hypothesis.
+- `PetersenMinusKernel`: the actual ten-vertex, fourteen-edge original
+  model and its labelled G15 conflict graph are identified by kernel
+  checks. Short paths show that the deleted edge is the only possible
+  additional chord under girth at least five. Internal extension and
+  disjointness from critical selected edges use the explicit named
+  `PetersenMinusListTheoremG15` hypothesis. The coefficient 12240 has not
+  been evaluated in Lean.
+- `GallaiLowBlocks`: construction of uncolourable residual degree lists
+  on a nonempty set of critical degree-k vertices, and classification of
+  its connected induced blocks with no cut vertex as complete or odd
+  cycles. The cited theorem is the ordinary named hypothesis
+  `GallaiDegreeChoosable`, as requested; its proof is neither duplicated
+  nor imported from the sister project.
+
+The three further modules now also pass development compilation:
+
+- `PetersenMinusSupport` completes the induced support exclusion using
+  the bound eighteen and excludes every injected Petersen-minus-edge
+  subgraph in girth at least five. Both statements retain the explicit
+  G15 hypothesis. If the deleted edge is present, the proof identifies
+  an induced Petersen block and uses its unconditional exclusion.
+- `PetersenIncident` proves the full G14 incident-edge extension while
+  preserving every outside colour. A kernel-checked common-neighbour
+  lemma makes any injected Petersen subgraph induced under girth at least
+  five. Its external spokes form a matching, have at most twelve fixed
+  outside conflicts and at most six spoke conflicts, and can be greedily
+  coloured before applying the internal eight-list extension. The
+  critical-support subgraph corollary is also checked. No additional
+  cited-theorem hypothesis is used in these G14 results.
+- `CliqueSeparator` glues k-colourings across a complete separator by
+  extending the two injective colour maps on the separator to a palette
+  permutation. Consequently a vertex-minimal non-k-colourable graph has
+  no such separator. This closes the complete-separator step of S08
+  without a Gallai hypothesis; the other S08 arguments remain below.
+
+### Remaining structural obligations after the resumed work
+
+- **G13:** derive the full six-spoke equality geometry from actual
+  original edges, construct the common-colour nonconflicting pair, and
+  finish the extension while preserving every outside colour.
+- **G16:** after the Petersen-minus block interface, formalize unique
+  matching witnesses, the four-cycle orientation of each K4, and the
+  opposite orientations forced by two K4s sharing a triangle. The source's
+  explicit endpoint mapping still needs to be applied to those witnesses.
+- **G05:** the three huge abstract checks remain unexecuted and have not
+  been replaced by a claimed theorem. The local Mathlib contains Tutte's
+  theorem, but not the required maximum-matching D/A/C decomposition.
+  Still needed are its alternating-forest/blossom invariants or an
+  equivalent derivation, factor-critical block and saving arguments,
+  the small-saving classification through order 25, and the actual
+  five-bag classification at order 41. Existing finite arithmetic checks
+  do not establish those graph structures.
+- **A03/A04:** connect the checked low-block classification to a leaf-block
+  decomposition, prove its fixed-boundary list extensions, and finish the
+  eight-port chain classification for A04, including the internal K3
+  branch. **A02:** prove that the identify-pair/add-bridge transformations
+  preserve every private clique and unique high neighbour. **A06:** build
+  the weighted incidence model, representative multigraph exchange,
+  pseudoforest orientation, and two-stage minimum argument.
+- **F09:** classify all five-edge degree-two shapes and count extensions
+  for each four-edge shape, including the matching orientation case.
+  **F03:** use the missing matching decomposition for the 19-vertex
+  factor-critical case. **F04/F05:** define arbitrary permutation covers
+  and derive their selected-fibre conflict/Brooks interfaces.
+  **F07:** prove affine matching normal form, monodromy, and spare-colour
+  transitions, including the four-layer seven-colour lower bound.
+- **S02:** finish the high-clique critical-block classification and
+  endpoint realization. **S06:** build the twelve-neighbour model, prove
+  the bowtie converse, and compare the fourth potential. **S07:** build
+  simultaneous list repairs for full circles and seven-full runs.
+  **S08:** after complete-separator gluing, derive the low-block port bound
+  and disjoint radius-eight ball lower bound from actual distances.
+  **S17:** construct the simultaneous representative assignment preserving
+  all named exclusions. **S19:** derive exact (5,4,1) profiles and zero
+  exchanges and apply the still-incomplete A03 theorem.
+
+### Resumed combined validation
+
+The first resumed whole-build queue was interrupted while waiting at
+`Greedy`, to check the additional proof modules first. No external process
+was interrupted. That partial log is not a successful whole build.
+All development checks and the final whole build now pass. The command
+`./build.ps1 -WaitForLean` rebuilt all 162 manifest modules and the root
+`Se20Part.lean`, using `-j1`, and finished with exit code 0. The combined
+audit and root import both compiled; the earlier combined-import failure
+has not recurred. The full output is in
+`FOURTH_PASS_RESUMED_FULL_BUILD_LOG.txt`. There are no build errors;
+deprecation and unused-variable/tactic linter warnings remain. No local
+build is left queued.
+
+All 266 requested axiom results are present. Their complete output is
+also extracted to `FOURTH_PASS_RESUMED_AXIOMS.txt`. The only axioms that
+appear are `propext`, `Classical.choice`, and `Quot.sound`; there is no
+`sorryAx`, reduction-oracle axiom, or new declared axiom. Named theorem
+hypotheses, including G15, `GallaiDegreeChoosable`, and the three unresolved
+G05 checks, remain ordinary arguments: this audit does not prove them.
+
+The source scan (`FOURTH_PASS_RESUMED_SOURCE_SCAN.txt`) finds 162 source
+modules, each listed exactly once in dependency order, 266 audit requests,
+and no forbidden proof placeholders, `native_decide`, axiom declarations,
+or unsafe declarations, including the root module. All 64 legacy copies match both their recorded
+upstream SHA-256 hashes and the exact namespace/import transformation.

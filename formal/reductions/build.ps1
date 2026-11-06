@@ -1,8 +1,8 @@
-param([string[]]$Only = @(), [switch]$CheckRoot, [int]$MemoryLimitMB = 6000)
+param([string[]]$Only = @(), [switch]$CheckRoot, [int]$MemoryLimitMB = 6000,
+    [switch]$WaitForLean)
 $ErrorActionPreference = 'Stop'
-# Serialize invocations of this build script, including selected-module builds.
-$buildMutex = [Threading.Mutex]::new($false, 'Local\Se20PartLeanBuild')
-if (-not $buildMutex.WaitOne(0)) { throw 'Another Se20Part build is running.' }
+# Each invocation runs one compiler at a time. External invocations do not
+# block this build; use a process-specific temporary output before publishing.
 if ($MemoryLimitMB -le 0) { throw 'MemoryLimitMB must be positive.' }
 $env:ELAN_HOME = 'E:\lean\elan'
 $env:XDG_CACHE_HOME = 'E:\lean\cache'
@@ -40,8 +40,15 @@ $modules = @(
 )
 $modules += Get-Content -Encoding utf8 (Join-Path $PSScriptRoot 'LEGACY_MODULES.txt')
 $modules += @('LegacyBridge', 'High24Seven', 'CliqueTwenty', 'CriticalExtraction', 'G05FiniteReduction', 'PaletteHall',
-    'PaletteExtension', 'SmallColourPool', 'MultipartiteLists', 'MultipartiteFour', 'MultipartiteFive',
-    'ListBlockExtension', 'PetersenKernel', 'PetersenExtension',
+    'PaletteExtension', 'CutPaletteChoices', 'FiveCutChoices', 'ExceptionalFiveCut',
+    'ForcedFiveCut', 'PaletteCompletion', 'FiveCutPalette', 'SmallCutPalette', 'CutGeometry',
+    'MatchingCutGeometry', 'CutSideColouring', 'MatchingCutGluing',
+    'RepeatedCutPalette', 'LabelledCut', 'RepeatedCutGeometry', 'LabelledCutGluing', 'CutBoundary', 'CutMinimal',
+    'CutConnectivity', 'ExternalStars', 'K33Palette',
+    'SmallColourPool', 'MultipartiteLists', 'MultipartiteFour', 'MultipartiteFive',
+    'ListBlockExtension', 'PetersenKernel', 'PetersenExtension', 'PetersenSupport', 'PetersenMinusKernel',
+    'PetersenMinusSupport', 'PetersenIncident',
+    'GallaiLowBlocks', 'CliqueSeparator',
     'SmallComponentReduction', 'TwoRepresentativeSizeChecks',
     'GirthCliques', 'DegreeTwoCliques', 'F01', 'F09Endpoints', 'ThirteenKernel', 'AxiomAudit')
 if ($Only.Count -gt 0) { $modules = $Only }
@@ -50,16 +57,18 @@ if ($Only.Count -gt 0) { $modules = $Only }
 function Invoke-LeanChecked {
     param([string]$SourcePath, [string]$ObjectPath)
     for ($attempt = 1; $attempt -le 4; $attempt++) {
-        $otherLean = @(Get-Process lean -ErrorAction SilentlyContinue)
-        if ($otherLean.Count -gt 0) {
-            throw ('A Lean process is already running (PID ' + ($otherLean.Id -join ', ') + '). No compiler was started.')
-        }
+        # Other projects may compile concurrently. Only this project's own
+        # invocations are serialized; -WaitForLean is retained for compatibility.
         $ErrorActionPreference = 'Continue'
-        $lines = @(& $leanExe -j1 -M $MemoryLimitMB -s 65536 -o $ObjectPath $SourcePath 2>&1)
+        $temporaryObject = "$ObjectPath.$PID.tmp"
+        $lines = @(& $leanExe -j1 -M $MemoryLimitMB -s 65536 -o $temporaryObject $SourcePath 2>&1)
         $resultCode = $LASTEXITCODE
         $ErrorActionPreference = 'Stop'
         $lines | ForEach-Object { Write-Output $_.ToString() }
-        if ($resultCode -eq 0) { return }
+        if ($resultCode -eq 0) {
+            Move-Item -LiteralPath $temporaryObject -Destination $ObjectPath -Force
+            return
+        }
         $runtimeFailure = ($lines -join "`n") -match 'failed to read file|std::bad_alloc'
         if (-not $runtimeFailure -or $attempt -eq 4) { exit $resultCode }
         Write-Warning "Runtime import/memory failure; retry $attempt of 3 for $SourcePath"
