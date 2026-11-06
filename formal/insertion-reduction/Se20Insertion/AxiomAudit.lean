@@ -1,3 +1,16 @@
+import Se20Insertion.HoleStateEquivalence
+import Se20Insertion.TwoStepSaturation
+import Se20Insertion.ClassSquarePotential
+import Se20Insertion.PotentialReachability
+import Se20Insertion.PatternGeometry
+import Se20Insertion.GeometricLoopChains
+import Se20Insertion.IncidentPalettes
+import Se20Insertion.DegreeListTools
+import Se20Insertion.DegreeListReduction
+import Se20Insertion.NonseparatingPair
+import Se20Insertion.RemainingImplications
+import Se20Insertion.SeventhPassExamples
+import Se20Insertion.StaticDynamicExample
 import Se20Insertion.StarGeometry
 import Se20Insertion.DegreeThreeRigidity
 import Se20Insertion.ShortCycleReduction
@@ -427,3 +440,113 @@ import Se20Insertion.FanLemma
 #print axioms Se20Insertion.PartialColouring.P2Terms.E
 #print axioms Se20Insertion.PartialColouring.P2Terms.Z
 #print axioms Se20Insertion.PartialColouring.P2Terms.L
+
+-- Seventh pass additions
+#print axioms Se20Insertion.PartialColouring.holeMove_same_other_classes
+#print axioms Se20Insertion.PartialColouring.holeMove_separable_iff
+#print axioms Se20Insertion.PartialColouring.separable_comm
+#print axioms Se20Insertion.PartialColouring.holeMove_not_stuck_iff
+#print axioms Se20Insertion.PartialColouring.all_holeMoves_not_stuck_iff
+#print axioms Se20Insertion.Conj119HoleNeighbour
+#print axioms Se20Insertion.conj119_iff_hole_neighbour
+#print axioms Se20Insertion.PartialColouring.HoleFillWithin
+#print axioms Se20Insertion.PartialColouring.HoleFillWithin.insert
+#print axioms Se20Insertion.PartialColouring.holeFillWithin_blocked
+#print axioms Se20Insertion.PartialColouring.holeMove_single_other
+#print axioms Se20Insertion.PartialColouring.holeMove_free_other
+#print axioms Se20Insertion.PartialColouring.one_step_static_saturated
+#print axioms Se20Insertion.PartialColouring.two_step_static_saturated
+#print axioms Se20Insertion.PartialColouring.StaticWithinTwo
+#print axioms Se20Insertion.PartialColouring.propositionP4
+#print axioms Se20Insertion.PartialColouring.classSize
+#print axioms Se20Insertion.PartialColouring.classSquare
+#print axioms Se20Insertion.PartialColouring.imbalance
+#print axioms Se20Insertion.PartialColouring.classSize_swap_left
+#print axioms Se20Insertion.PartialColouring.classSize_swap_right
+#print axioms Se20Insertion.PartialColouring.classSize_swap_other
+#print axioms Se20Insertion.PartialColouring.classSquare_swap
+#print axioms Se20Insertion.PartialColouring.propositionP7
+#print axioms Se20Insertion.PartialColouring.equal_classes_balanced
+#print axioms Se20Insertion.PartialColouring.holeMove_classSquare
+#print axioms Se20Insertion.HoleState
+#print axioms Se20Insertion.HoleState.make
+#print axioms Se20Insertion.HoleState.potential
+#print axioms Se20Insertion.HoleState.Step
+#print axioms Se20Insertion.HoleState.Reachable
+#print axioms Se20Insertion.HoleState.exists_reachable_maximum
+#print axioms Se20Insertion.HoleState.maximal_component_imbalance
+#print axioms Se20Insertion.TreePattern.opposite_near_far_not_close
+#print axioms Se20Insertion.TreePattern.same_side_far_close
+#print axioms Se20Insertion.TreePattern.opposite_far_not_close
+#print axioms Se20Insertion.TreePattern.children
+#print axioms Se20Insertion.TreePattern.exists_geometric_label
+#print axioms Se20Insertion.TreePattern.sixty_six_chains_of_girth
+#print axioms Se20Insertion.incidentPalette
+#print axioms Se20Insertion.IncidentProper
+#print axioms Se20Insertion.strong_iff_incident_palettes
+#print axioms Se20Insertion.DegreeList.ColourableOn
+#print axioms Se20Insertion.DegreeList.colourable_of_degenerate
+#print axioms Se20Insertion.DegreeList.colourable_of_one_slack
+#print axioms Se20Insertion.DegreeList.bad_degree_lists_tight
+#print axioms Se20Insertion.DegreeList.degree_delete
+#print axioms Se20Insertion.DegreeList.colourable_of_list_difference
+#print axioms Se20Insertion.DegreeList.bad_lists_subset_at_noncut
+#print axioms Se20Insertion.DegreeList.bad_lists_equal_on_edges
+#print axioms Se20Insertion.DegreeList.bad_noncut_uniform
+#print axioms Se20Insertion.DegreeList.degree_delete_set
+#print axioms Se20Insertion.DegreeList.colourable_of_independent_precolour
+#print axioms Se20Insertion.DegreeList.colourable_of_nonseparating_pair
+#print axioms Se20Insertion.UnrestrictedStarInsertion
+#print axioms Se20Insertion.strongColourable_of_unrestricted_star
+#print axioms Se20Insertion.Conj1126Strong
+#print axioms Se20Insertion.conj1126Weak_of_strong
+#print axioms Se20Insertion.strongColourable_of_conj1126Strong
+#print axioms Se20Insertion.SeventhPassExamples.hexagon
+#print axioms Se20Insertion.SeventhPassExamples.hexagon_locallyTreeAt
+#print axioms Se20Insertion.SeventhPassExamples.farLeft
+#print axioms Se20Insertion.SeventhPassExamples.farRight
+#print axioms Se20Insertion.SeventhPassExamples.hexagon_opposite_far_conflict
+#print axioms Se20Insertion.SeventhPassExamples.oneEdge
+#print axioms Se20Insertion.SeventhPassExamples.oneColoured
+#print axioms Se20Insertion.SeventhPassExamples.raw_P4_needs_obstruction
+#print axioms Se20Insertion.StaticDynamicExample.graph
+#print axioms Se20Insertion.StaticDynamicExample.colour
+#print axioms Se20Insertion.StaticDynamicExample.domain
+#print axioms Se20Insertion.StaticDynamicExample.colouring
+#print axioms Se20Insertion.StaticDynamicExample.saturated
+#print axioms Se20Insertion.StaticDynamicExample.static_double
+#print axioms Se20Insertion.StaticDynamicExample.first_single
+#print axioms Se20Insertion.StaticDynamicExample.afterFirst
+#print axioms Se20Insertion.StaticDynamicExample.second_single
+#print axioms Se20Insertion.StaticDynamicExample.afterSecond
+#print axioms Se20Insertion.StaticDynamicExample.transported_double_destroyed
+#print axioms Se20Insertion.StaticDynamicExample.not_three_colourable
+#print axioms Se20Insertion.StaticDynamicExample.liftedGraph
+#print axioms Se20Insertion.StaticDynamicExample.liftedColour
+#print axioms Se20Insertion.StaticDynamicExample.liftedDomain
+#print axioms Se20Insertion.StaticDynamicExample.liftedColouring
+#print axioms Se20Insertion.StaticDynamicExample.lifted_saturated
+#print axioms Se20Insertion.StaticDynamicExample.lifted_single_closed
+#print axioms Se20Insertion.StaticDynamicExample.lifted_double
+#print axioms Se20Insertion.StaticDynamicExample.lifted_first_single
+#print axioms Se20Insertion.StaticDynamicExample.liftedAfterFirst
+#print axioms Se20Insertion.StaticDynamicExample.lifted_second_single
+#print axioms Se20Insertion.StaticDynamicExample.liftedAfterSecond
+#print axioms Se20Insertion.StaticDynamicExample.lifted_transport_destroyed
+#print axioms Se20Insertion.StaticDynamicExample.five_cycle_not_two
+#print axioms Se20Insertion.StaticDynamicExample.lifted_not_twenty_colourable
+#print axioms Se20Insertion.StaticDynamicExample.lifted_degree_bound
+#print axioms Se20Insertion.StaticDynamicExample.propositionP3
+#print axioms Se20Insertion.StaticDynamicExample.depthThreeColour
+#print axioms Se20Insertion.StaticDynamicExample.depthThreeColouring
+#print axioms Se20Insertion.StaticDynamicExample.depth_three_static
+#print axioms Se20Insertion.StaticDynamicExample.depth_three_no_repair
+#print axioms Se20Insertion.StaticDynamicExample.depthAfterFirst
+#print axioms Se20Insertion.StaticDynamicExample.depth_second_single
+#print axioms Se20Insertion.StaticDynamicExample.depthAfterSecond
+#print axioms Se20Insertion.StaticDynamicExample.depth_third_single
+#print axioms Se20Insertion.StaticDynamicExample.depth_three_missing_colour_changed
+#print axioms Se20Insertion.PartialColouring.HoleFillWithin.fill
+#print axioms Se20Insertion.PartialColouring.HoleFillWithin.move
+#print axioms Se20Insertion.HoleState.Step.hole
+#print axioms Se20Insertion.HoleState.Step.kempe

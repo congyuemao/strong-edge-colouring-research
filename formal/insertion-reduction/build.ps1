@@ -42,7 +42,11 @@ $modules = @(
     'StarListRigidity', 'CliqueBoundary', 'CliqueReduction', 'ComponentInsertion',
     'RecolourGain', 'TreePattern', 'ShellChains', 'InfiniteForest', 'CriticalLists',
     'HoleCycleRank', 'MultiplicityIdentity', 'P2Identity', 'P2Geometry',
-    'PatternVerification', 'ShellCover', 'LoopChains', 'AxiomAudit'
+    'PatternVerification', 'ShellCover', 'LoopChains',
+    'HoleStateEquivalence', 'TwoStepSaturation', 'ClassSquarePotential',
+    'PotentialReachability', 'PatternGeometry', 'GeometricLoopChains', 'IncidentPalettes',
+    'DegreeListTools', 'DegreeListReduction', 'NonseparatingPair', 'RemainingImplications',
+    'SeventhPassExamples', 'StaticDynamicExample', 'AxiomAudit'
 )
 foreach ($module in $modules) {
     Write-Output "Checking Se20Insertion.$module"
