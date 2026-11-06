@@ -6436,7 +6436,7 @@ B 同理，使用另外两种颜色。跨越 A、B 的每条超边自动含有�
 | 项目 | 内容 | 规模（模块，审计声明） |
 |---|---|---|
 | [formal/large-girth](../formal/large-girth/README.md) | 第一部分 | 57，134 |
-| [formal/reductions](../formal/reductions/README.md) | 第二部分，第三、四部分的一部分 | 162，266 |
+| [formal/reductions](../formal/reductions/README.md) | 第二部分，第三、四部分的一部分 | 179，295 |
 | [formal/insertion-reduction](../formal/insertion-reduction/README.md) | 第五部分 | 94，609 |
 | [formal/fractional-20](../formal/fractional-20/README.md) | 第六部分的分数定理 | 124（含 85 组证书） |
 | strong-edge-packing-19、strong-edge-lean-verification（另外的仓库，第 5 节有链接） | 19、19.5 装箱界，C₉(1,3) | 不在本仓库，这轮没有重新审计 |

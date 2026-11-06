@@ -48,7 +48,11 @@ $modules += @('LegacyBridge', 'High24Seven', 'CliqueTwenty', 'CriticalExtraction
     'SmallColourPool', 'MultipartiteLists', 'MultipartiteFour', 'MultipartiteFive',
     'ListBlockExtension', 'PetersenKernel', 'PetersenExtension', 'PetersenSupport', 'PetersenMinusKernel',
     'PetersenMinusSupport', 'PetersenIncident',
-    'GallaiLowBlocks', 'CliqueSeparator',
+    'GallaiPrerequisites', 'CriticalLists', 'DegreeListTools', 'DegreeListReduction',
+    'NonseparatingPair', 'DegreeListInduced', 'DegreeListBrooks', 'FiniteNonseparating',
+    'RegularCycle', 'Gallai', 'GallaiLowBlocks', 'FiniteEndBlock', 'CriticalColourTools',
+    'GallaiEndBlock', 'EndBlockLists', 'HighCliqueCritical', 'CliqueSeparator',
+    'MatchingOverlapModel', 'TwoMatchings',
     'SmallComponentReduction', 'TwoRepresentativeSizeChecks',
     'GirthCliques', 'DegreeTwoCliques', 'F01', 'F09Endpoints', 'ThirteenKernel', 'AxiomAudit')
 if ($Only.Count -gt 0) { $modules = $Only }
@@ -56,7 +60,7 @@ if ($Only.Count -gt 0) { $modules = $Only }
 # Retry only those runtime failures, never proof errors. All retries stay visible.
 function Invoke-LeanChecked {
     param([string]$SourcePath, [string]$ObjectPath)
-    for ($attempt = 1; $attempt -le 4; $attempt++) {
+    for ($attempt = 1; ; $attempt++) {
         # Other projects may compile concurrently. Only this project's own
         # invocations are serialized; -WaitForLean is retained for compatibility.
         $ErrorActionPreference = 'Continue'
@@ -70,9 +74,9 @@ function Invoke-LeanChecked {
             return
         }
         $runtimeFailure = ($lines -join "`n") -match 'failed to read file|std::bad_alloc'
-        if (-not $runtimeFailure -or $attempt -eq 4) { exit $resultCode }
-        Write-Warning "Runtime import/memory failure; retry $attempt of 3 for $SourcePath"
-        Start-Sleep -Seconds 1
+        if (-not $runtimeFailure) { exit $resultCode }
+        Write-Warning "Runtime import/memory failure; retry $attempt after two seconds for $SourcePath"
+        Start-Sleep -Seconds 2
     }
 }
 foreach ($module in $modules) {
