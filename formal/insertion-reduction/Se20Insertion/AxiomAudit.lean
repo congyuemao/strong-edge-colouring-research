@@ -1,3 +1,16 @@
+import Se20Insertion.LongChainCounts
+import Se20Insertion.P6Construction
+import Se20Insertion.P6Geometry
+import Se20Insertion.P6Sizes
+import Se20Insertion.P6Core
+import Se20Insertion.P6Colouring
+import Se20Insertion.P6Route
+import Se20Insertion.DegreeListInduced
+import Se20Insertion.DegreeListBrooks
+import Se20Insertion.FiniteNonseparating
+import Se20Insertion.RegularCycle
+import Se20Insertion.Gallai
+import Se20Insertion.EighthPassExamples
 import Se20Insertion.HoleStateEquivalence
 import Se20Insertion.TwoStepSaturation
 import Se20Insertion.ClassSquarePotential
@@ -550,3 +563,127 @@ import Se20Insertion.FanLemma
 #print axioms Se20Insertion.PartialColouring.HoleFillWithin.move
 #print axioms Se20Insertion.HoleState.Step.hole
 #print axioms Se20Insertion.HoleState.Step.kempe
+
+-- Eighth pass additions
+#print axioms Se20Insertion.PartialColouring.tangledColourPairs
+#print axioms Se20Insertion.PartialColouring.directColourPairs
+#print axioms Se20Insertion.PartialColouring.longColourPairs
+#print axioms Se20Insertion.PartialColouring.longPairCount
+#print axioms Se20Insertion.PartialColouring.tangled_pairs_le_direct_add_long
+#print axioms Se20Insertion.PartialColouring.tangleCliqueCount_le_tangled_pairs
+#print axioms Se20Insertion.PartialColouring.all_tangled_pairs_card
+#print axioms Se20Insertion.PartialColouring.long_pair_witness
+#print axioms Se20Insertion.PartialColouring.nineteen_single_tangleCliqueCount
+#print axioms Se20Insertion.PartialColouring.tangled_pairs_le_87_add_long
+#print axioms Se20Insertion.PartialColouring.allPairsFail_long_at_hole
+#print axioms Se20Insertion.PartialColouring.allPairsFail_long_mean
+#print axioms Se20Insertion.PartialColouring.allPairsFail_long_mean_rat
+#print axioms Se20Insertion.PartialColouring.allNineteenFail_long_at_single
+#print axioms Se20Insertion.PartialColouring.allNineteenFail_sixteen_long_singles
+#print axioms Se20Insertion.P6.Leaf
+#print axioms Se20Insertion.P6.Vertex
+#print axioms Se20Insertion.P6.centre
+#print axioms Se20Insertion.P6.lower
+#print axioms Se20Insertion.P6.upper
+#print axioms Se20Insertion.P6.graph
+#print axioms Se20Insertion.P6.kind
+#print axioms Se20Insertion.P6.counts
+#print axioms Se20Insertion.P6.Pattern
+#print axioms Se20Insertion.P6.ThreeRegular
+#print axioms Se20Insertion.P6.vertex_card
+#print axioms Se20Insertion.P6.part_card
+#print axioms Se20Insertion.P6.graph_neighbours
+#print axioms Se20Insertion.P6.pattern
+#print axioms Se20Insertion.P6.Pattern.degree
+#print axioms Se20Insertion.P6.Pattern.adjacent_different
+#print axioms Se20Insertion.P6.Pattern.edgesOf
+#print axioms Se20Insertion.P6.Pattern.outside
+#print axioms Se20Insertion.P6.Pattern.mem_edgesOf
+#print axioms Se20Insertion.P6.Pattern.incidence_by_neighbours
+#print axioms Se20Insertion.P6.Pattern.weight
+#print axioms Se20Insertion.P6.Pattern.neighbourWeight
+#print axioms Se20Insertion.P6.Pattern.cl_incidence
+#print axioms Se20Insertion.P6.Pattern.neighbour_weight
+#print axioms Se20Insertion.P6.Pattern.rim_no_edges
+#print axioms Se20Insertion.P6.Pattern.cl_conflicts_identity
+#print axioms Se20Insertion.P6.Pattern.cl_conflicts_cu
+#print axioms Se20Insertion.P6.Pattern.cl_conflicts_lu
+#print axioms Se20Insertion.P6.Pattern.cl_conflicts_cl
+#print axioms Se20Insertion.P6.Pattern.outside_eq
+#print axioms Se20Insertion.P6.Pattern.outside_degree
+#print axioms Se20Insertion.P6.Pattern.edge_type_card
+#print axioms Se20Insertion.P6.Pattern.outside_card
+#print axioms Se20Insertion.P6.constructed_outside_card
+#print axioms Se20Insertion.P6.constructed_edge_counts
+#print axioms Se20Insertion.P6.Pattern.outside_centre
+#print axioms Se20Insertion.P6.Pattern.PairClasses
+#print axioms Se20Insertion.P6.Pattern.PairClasses.sameYClasses
+#print axioms Se20Insertion.P6.Pattern.PairClasses.holeMove
+#print axioms Se20Insertion.P6.Pattern.PairClasses.swap
+#print axioms Se20Insertion.P6.Pattern.outside_direct
+#print axioms Se20Insertion.P6.Pattern.outside_tangled
+#print axioms Se20Insertion.P6.Pattern.uncoloured_pair_blocked
+#print axioms Se20Insertion.P6.Pattern.hole_outside
+#print axioms Se20Insertion.P6.Pattern.pair_S_eq
+#print axioms Se20Insertion.P6.Pattern.pair_yNeighbours
+#print axioms Se20Insertion.P6.Pattern.full_domain_degree
+#print axioms Se20Insertion.P6.Pattern.cu_core_numbers
+#print axioms Se20Insertion.P6.Pattern.lu_core_numbers
+#print axioms Se20Insertion.P6.Pattern.pair_core_eq
+#print axioms Se20Insertion.P6.Pattern.hole_in_pair_core
+#print axioms Se20Insertion.P6.Pattern.flip
+#print axioms Se20Insertion.P6.Pattern.flip_edges_01
+#print axioms Se20Insertion.P6.Pattern.flip_edges_12
+#print axioms Se20Insertion.P6.Pattern.cu_conflicts_cu
+#print axioms Se20Insertion.P6.Pattern.lu_conflicts_lu
+#print axioms Se20Insertion.P6.Pattern.exists_seventeen_colouring
+#print axioms Se20Insertion.P6.Pattern.strongColourable_seventeen
+#print axioms Se20Insertion.P6.Pattern.exists_pair_state
+#print axioms Se20Insertion.P6.propositionP6
+#print axioms Se20Insertion.P6.Pattern.FixedPairStep
+#print axioms Se20Insertion.P6.Pattern.fixedPairStep_preserves
+#print axioms Se20Insertion.P6.Pattern.fixedPairRoute_blocked
+#print axioms Se20Insertion.DegreeList.colourable_outside
+#print axioms Se20Insertion.DegreeList.bad_induced_lists
+#print axioms Se20Insertion.DegreeList.exists_induced_three_path
+#print axioms Se20Insertion.DegreeList.bad_noncut_not_degree_colourable
+#print axioms Se20Insertion.DegreeList.colourable_of_pair_deletions
+#print axioms Se20Insertion.FiniteConnectivity.Avoids
+#print axioms Se20Insertion.FiniteConnectivity.Avoids.left
+#print axioms Se20Insertion.FiniteConnectivity.Avoids.right
+#print axioms Se20Insertion.FiniteConnectivity.Avoids.refl
+#print axioms Se20Insertion.FiniteConnectivity.Avoids.adj
+#print axioms Se20Insertion.FiniteConnectivity.Avoids.symm
+#print axioms Se20Insertion.FiniteConnectivity.Avoids.trans
+#print axioms Se20Insertion.FiniteConnectivity.Avoids.exists_path
+#print axioms Se20Insertion.FiniteConnectivity.avoids_of_delete_connected
+#print axioms Se20Insertion.FiniteConnectivity.connected_delete_of_root
+#print axioms Se20Insertion.FiniteConnectivity.suffix_avoids_start
+#print axioms Se20Insertion.FiniteConnectivity.separator_distance
+#print axioms Se20Insertion.FiniteConnectivity.Attached
+#print axioms Se20Insertion.FiniteConnectivity.farthest_marked_noncut
+#print axioms Se20Insertion.FiniteConnectivity.delete_two_noncut
+#print axioms Se20Insertion.FiniteConnectivity.deleted_attached
+#print axioms Se20Insertion.FiniteConnectivity.delete_pair_connected_iff
+#print axioms Se20Insertion.FiniteConnectivity.exists_nonseparating_pair
+#print axioms Se20Insertion.DegreeList.regular_copy_iso
+#print axioms Se20Insertion.DegreeList.IsOddCycleGraph
+#print axioms Se20Insertion.DegreeList.regular_two_iso_cycle
+#print axioms Se20Insertion.DegreeList.regular_two_odd_of_not_colourable
+#print axioms Se20Insertion.DegreeList.bad_noncut_complete_or_odd_cycle
+#print axioms Se20Insertion.BlockEligible
+#print axioms Se20Insertion.FiniteBlock
+#print axioms Se20Insertion.GallaiForestOn
+#print axioms Se20Insertion.GallaiTree
+#print axioms Se20Insertion.DegreeList.bad_lists_on_induce
+#print axioms Se20Insertion.DegreeList.eligible_bad_lists_complete_or_odd
+#print axioms Se20Insertion.gallaiForest_of_induced_obstructions
+#print axioms Se20Insertion.degree_list_obstruction_gallai_tree
+#print axioms Se20Insertion.criticalDegreeTwenty
+#print axioms Se20Insertion.critical_degree_twenty_gallai
+#print axioms Se20Insertion.corollary1140_five
+#print axioms Se20Insertion.EighthPassExamples.square
+#print axioms Se20Insertion.EighthPassExamples.square_connected
+#print axioms Se20Insertion.EighthPassExamples.square_delete_connected
+#print axioms Se20Insertion.EighthPassExamples.square_not_complete
+#print axioms Se20Insertion.EighthPassExamples.square_no_nonseparating_pair

@@ -671,7 +671,7 @@ R17–R30 中 Kempe 插入线的证明现在都在第 7 节，R24、R25 在第 8
 | 5.5（R12） | ≥ 19 条边的强团只出现在 C₅[2] 分量中 | 【计算辅助】 |
 | 5.6 | 18 界在 F = E(G) 时成立，在 ν_s^G(F) ≤ 1 时也成立，并且是紧的 | 见该条 |
 | 5.7 | 18 界推出 19 界 | 【证明】 |
-| 5.8（R24） | χ_f(L²(G)) ≤ 20 | 【证明】+【计算】 |
+| 5.8（R24） | χ_f(L²(G)) ≤ 20 | 【证明】【Lean】 |
 
 **注。** 5.1 在 F = E(G) 时比已知结果弱：对没有孤立点、没有 C₅[2] 分量的图，Joos/Nguyen 的 ν_s ≥ n/9 加上 m ≤ 2n，直接给出 m ≤ 18ν_s。5.1 的价值在于对任意给定的 F 成立。
 
@@ -1063,7 +1063,7 @@ i(G) 是孤立点数，n₅(G) 是 C₅[2] 分量数。Nguyen（arXiv:1407.7604�
 
 **证据标记。** 同第 0.1 节，另外：
 - 【证明，依赖…】：证明完整，但依赖括号里的结果。
-- 【Lean】后面写 Lean 定理名。这些定理都在 [formal/insertion-reduction](../formal/insertion-reduction/README.md)，命名空间 `Se20Insertion`；子命名空间前缀（`PartialColouring.`、`GirthGeometry.`、`ComponentBounds.` 等）省略。审计过的 87 个声明只依赖 `propext`、`Classical.choice`、`Quot.sound`，源文件没有 `sorry`。证明只经 Lean 内核检查，没有人逐行读过，也没有外部审稿。
+- 【Lean】后面写 Lean 定理名。这些定理都在 [formal/insertion-reduction](../formal/insertion-reduction/README.md)，命名空间 `Se20Insertion`；子命名空间前缀（`PartialColouring.`、`GirthGeometry.`、`ComponentBounds.` 等）省略。审计过的声明只依赖 `propext`、`Classical.choice`、`Quot.sound`，源文件没有 `sorry`。证明只经 Lean 内核检查，没有人逐行读过，也没有外部审稿。
 - Lean 只覆盖写出的那个陈述。主要定理的颜色集固定为 `Fin 20`；任意颜色数 K 的版本在 `ParametricCore.lean`、`ParametricCounting.lean`、`ParametricRatio.lean`。
 - 猜想一律只说"未打穿"（对抗搜索没有找到反例），不说可能为真。
 
@@ -3739,7 +3739,7 @@ C(16,2)≤(3/2)Σd_Q(x)²=144−3(n_1+n_2)，
 
 **位置。** 模型的完整覆盖证明和剪枝的安全性见 [clique16_boundary_model.md](../research/clique16_boundary_model.md) 第 3–6 节；程序 [clique16_boundary_search.py](../research/clique16_boundary_search.py)，结果 [clique16_boundary_result.json](../research/clique16_boundary_result.json)。
 
-**独立途径。** [NEW_DIRECTIONS 11.21](NEW_DIRECTIONS_zh.md) 的命题 11.33（5.8 中已写出）也推出 G07：临界子图最小度 ≥ 20，而 16 边的强团必有一条 L² 度数 ≤ 19 的边。那条途径有 LRAT 证书。
+**独立途径。** [NEW_DIRECTIONS 11.21](NEW_DIRECTIONS_zh.md) 的命题 11.33（第 8.1 节）也推出 G07：临界子图最小度 ≥ 20，而 16 边的强团必有一条 L² 度数 ≤ 19 的边。那条途径有 LRAT 证书。
 
 #### G08 冲突度 24 的强团
 
