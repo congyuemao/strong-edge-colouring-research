@@ -17,6 +17,13 @@ import Se20Part.ThirteenKernel
 import Se20Part.CriticalSizeChecks
 import Se20Part.CriticalEndpointDegree
 import Se20Part.PetersenMinusHypothesis
+import Se20Part.RouteReduction
+import Se20Part.G05FiniteReduction
+import Se20Part.PaletteHall
+import Se20Part.MultipartiteFive
+import Se20Part.PetersenExtension
+import Se20Part.SmallComponentReduction
+import Se20Part.TwoRepresentativeSizeChecks
 
 -- Hypotheses such as Brooks/Haxell/JoosNguyen are ordinary arguments.
 -- Consequently their absence from #print axioms is not a proof of them.
@@ -158,3 +165,67 @@ import Se20Part.PetersenMinusHypothesis
 #print axioms Se20Part.thirteenKernel_degrees
 #print axioms Se20Part.thirteenKernel_triple_normal_form_of_type
 #print axioms Se20Part.thirteenKernel_representatives_distinct
+
+-- Third pass: exact component accounting and the complete Route Q reduction.
+#print axioms Se20Part.Partition.exists_minimumFive
+#print axioms Se20Part.Partition.minimumFive_relative
+#print axioms Se20Part.Partition.typedTriangles_flip_count
+#print axioms Se20Part.Partition.typedPairs_flip_count
+#print axioms Se20Part.Partition.typedTriangles_flip_no_triangle_count
+#print axioms Se20Part.Partition.two_flip_compact_replacement
+#print axioms Se20Part.shared_triangle_bridge
+#print axioms Se20Part.diffuse_zero_hub
+#print axioms Se20Part.diffuse_hub_saturation
+#print axioms Se20Part.compact_closures_le_four
+#print axioms Se20Part.no_diffuse_triangles_ten
+#print axioms Se20Part.route_minimum_no_triangles
+#print axioms Se20Part.routeQ_reduction
+#print axioms Se20Part.exists_routeQ_reduction
+#print axioms Se20Part.strong_clique_twenty
+#print axioms Se20Part.twenty_clique_closed
+#print axioms Se20Part.twenty_clique_rigidity
+#print axioms Se20Part.critical21_clique_nineteen
+#print axioms Se20Part.exists_critical21
+#print axioms Se20Part.critical21_no_abstract_obstruction
+-- The three G05 finite checks below are theorem arguments, NOT proved checks.
+#print axioms Se20Part.critical21_fortyTwo_of_finite_checks
+#print axioms Se20Part.small_edge_set_twenty_of_finite_checks
+#print axioms Se20Part.rank_two_twenty_of_finite_checks
+#print axioms Se20Part.palette_equiv_of_no_rectangle
+#print axioms Se20Part.palette_equiv_of_budgets
+#print axioms Se20Part.palette_cut_three
+#print axioms Se20Part.palette_cut_four
+#print axioms Se20Part.palette_cut_five
+#print axioms Se20Part.palette_special_four
+#print axioms Se20Part.merge_partial_palette
+#print axioms Se20Part.near_full_lists_sdr_or_uniform
+#print axioms Se20Part.three_eight_lists_overlap
+#print axioms Se20Part.small_colour_pool
+#print axioms Se20Part.merge_three_parts
+#print axioms Se20Part.paired_lists_hall
+#print axioms Se20Part.three_parts_six_choosable
+#print axioms Se20Part.four_parts_seven_choosable
+#print axioms Se20Part.triple_pair_repair
+#print axioms Se20Part.four_uniform_one_disjoint_hall
+#print axioms Se20Part.five_parts_eight_choosable
+#print axioms Se20Part.list_block_extension
+#print axioms Se20Part.list_block_extension_of_iso
+#print axioms Se20Part.threePart_five_degree
+#print axioms Se20Part.threePart_five_block_extension
+#print axioms Se20Part.petersenMinus_block_extension
+#print axioms Se20Part.petersen_fifteen_edges
+#print axioms Se20Part.petersen_cubic
+#print axioms Se20Part.petersenEdge_injective
+#print axioms Se20Part.petersenEdge_conflict
+#print axioms Se20Part.petersenConflictIso
+#print axioms Se20Part.petersen_eight_choosable
+#print axioms Se20Part.induced_petersen_extension
+#print axioms Se20Part.critical21_disjoint_of_extension
+#print axioms Se20Part.critical21_disjoint_induced_petersen
+#print axioms Se20Part.componentEdges_closed
+#print axioms Se20Part.componentEdges_card_le_twice
+#print axioms Se20Part.critical21_disjoint_small_closed
+#print axioms Se20Part.critical21_disjoint_component_sixteen
+#print axioms Se20Part.TwoRepresentativeSizeChecks.table
+#print axioms Se20Part.TwoRepresentativeSizeChecks.checked_bounds
+#print axioms Se20Part.TwoRepresentativeSizeChecks.size_bound

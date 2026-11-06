@@ -2,7 +2,7 @@
 
 **Reading guide:** the first-pass record below is retained as history. Its
 unfinished-item list and missing-source statements are superseded by the
-[Second pass](#second-pass) section at the end of this report.
+[Second pass](#second-pass) and [Third pass](#third-pass) sections below.
 
 ## Flaws and corrections found
 
@@ -384,3 +384,234 @@ recorded source hashes and exact namespace/import transformation.
 These successful checks certify the declarations listed above, not the
 unfinished targets in the obstruction list. In particular, neither the
 full 4.9 theorem nor the 42-edge critical-size lower bound is claimed.
+
+## Third pass
+
+### Flaws and proof boundaries first
+
+The first two passes above are retained as historical records. The statements
+below supersede their remaining-obstruction entries only where explicitly stated.
+
+No new counterexample to Lemma 4.7 was found. Its delicate point is genuine:
+the intermediate partition in case B does not minimize the last three
+coordinates. The new proof compares the second move with the original
+minimum. It counts **whole linked K₂ components**, not all linked
+monochromatic pairs. Their closure condition is part of `typedPairs`.
+
+The G05 finite-check interfaces introduced in this pass are **unverified
+hypotheses**, not successful computations. They concern arbitrary labelled
+abstract graphs, not samples of original maximum-degree-four graphs.
+No instance of an unexecuted check is asserted, and no resulting conditional
+theorem should be described as an unconditional proof of G05.
+
+### Completed proofs
+
+* **Lemma 4.7:** `no_diffuse_triangles_ten` proves the diffuse-triangle
+  exclusion for the actual five-coordinate global minimum. The result holds
+  for maximum degree four, hence includes the stated four-regular case.
+  `TrianglePotentials.lean` proves existence of the minimum, exact changes
+  of both triangle counts and the linked-component count, and the relative
+  two-flip comparison. `DiffuseGeometry.lean` constructs the actual common
+  connector using the girth hypothesis. `DiffuseSaturation.lean` proves the
+  five zero classes, coverage of every available hub, and injectivity of
+  their colours. `DiffuseTriangles.lean` completes both cases.
+* **Theorem 4.9:** `routeQ_reduction` and `exists_routeQ_reduction` give a
+  complete path/cycle ordering of every non-bipartite monochromatic
+  component, prove that it is an odd cycle of length at least five, and
+  prove the exact unrounded inequality `g ≤ 2 * length`. Existence of the
+  optimizing partition and its degree-two bound are included. No Cameron
+  hypothesis or long-cycle-elimination claim is used.
+
+### Validation record
+
+The five Route Q modules have each compiled with the installed compiler.
+The final combined build and audit record is appended below after the
+remaining work of this pass.
+
+### Recovery after the 11:07 memory failure
+
+The existing short Third pass section above was present on disk when the
+run resumed. It was a checkpoint, not a final validation report. The old
+`THIRD_PASS_BUILD_LOG.txt` stops at `RouteReduction`; it does not establish
+a successful full build. Some development logs contain earlier proof
+errors or import failures even though their sources were subsequently
+fixed. The recovery checks use separate logs and leave that evidence intact.
+
+All five previously unlisted modules, `PaletteExtension`, `SmallColourPool`,
+`MultipartiteLists`, `MultipartiteFour`, and `MultipartiteFive`, compiled
+successfully in one serial recovery run. In particular, the final
+`five_parts_eight_choosable` proof was complete: the old log recorded import
+failures, not a mathematical failure of its Hall repair. All five are now
+registered in `build.ps1` and imported and audited by `AxiomAudit.lean`.
+
+Further checked results from the resumed work:
+
+* `ListBlockExtension.lean`: `list_block_extension` and its isomorphism
+  version extend an arbitrary fixed outside partial colouring whenever
+  the actual induced block is list-colourable with the stated degree
+  budgets. They preserve every outside colour. The graph has not been
+  replaced by an edge-deleted ambient graph.
+* `threePart_five_block_extension` proves the full eight-list extension
+  interface for an induced `K_{3×5}` block in a graph of maximum degree 24.
+  `petersenMinus_block_extension` proves the corresponding variable-list
+  interface with the explicit argument `hG15 : PetersenMinusListTheoremG15`.
+* `PetersenKernel.lean` constructs the ten two-subsets of a five-element
+  set and their fifteen edges, proves cubicity, and identifies the actual
+  conflict graph with `K_{3×5}`. The checks cover the fifteen edge labels,
+  their injectivity, all 225 ordered edge pairs, and the ten vertex
+  degrees using kernel reduction. `petersen_eight_choosable` applies to
+  arbitrary lists, not only lists arising from an outside colouring.
+* `PetersenExtension.lean`: `induced_petersen_extension` extends every
+  partial colouring outside an induced Petersen block to all its internal
+  edges for any ambient graph of maximum degree four, without a girth
+  assumption. `critical21_disjoint_induced_petersen` proves that no internal
+  edge of such a block belongs to a 21-critical edge set. The stronger
+  assertion excluding a Petersen block from the entire support also
+  requires treating the case in which none of its internal edges belongs
+  to that edge set; that additional conclusion is not implicit here.
+
+The resumed build uses `-j1` and a 6000 MiB Lean allocation limit. A named
+mutex serializes this project's builds; a process check before each compiler
+invocation refuses to start while any other `lean` process is present.
+An unrelated `fourth_pass/FrozenBench.lean` job was observed and was not
+terminated. Compiler checks resumed after it exited. A later overlapping
+job was detected by the guard and no second compiler was started.
+
+The final manifest, audit, conditional assumptions, and outstanding targets
+are recorded below after the final serial validation.
+
+### Additional third-pass results and exact hypotheses
+
+The interrupted run also completed the following registered results, which
+were absent from its short report checkpoint:
+
+| Target | Exact proved result |
+|---|---|
+| G02 | `strong_clique_twenty`, `twenty_clique_closed`, and `twenty_clique_rigidity` in `CliqueTwenty.lean`. Equality gives five disjoint pairs with exact ambient neighbour sets, hence the whole isolated `C₅[2]` component. `critical21_clique_nineteen` excludes a 20-clique from a critical edge set. These are unconditional. |
+| Critical extraction | `exists_critical21` extracts a 21-critical subset from any non-20-colourable edge set while retaining the ambient graph. |
+| G05 | `critical21_no_abstract_obstruction` is unconditional. `critical21_fortyTwo_of_finite_checks` and `small_edge_set_twenty_of_finite_checks` require the three checks below. `rank_two_twenty_of_finite_checks` gives the independence-number-at-most-two colouring assertion using only the first two checks and the already proved 40-edge packing bound. |
+| G12 palette steps | `palette_equiv_of_no_rectangle`, `palette_equiv_of_budgets`, `palette_cut_three`, `palette_cut_four`, `palette_cut_five`, and `palette_special_four` in `PaletteHall.lean`. These are universal matrix theorems, not sampled matrix tests. `merge_partial_palette` in `PaletteExtension.lean` performs the actual merging once the cross-conflict condition is established. |
+| G13 list steps | `near_full_lists_sdr_or_uniform` proves the unique common-list obstruction for nine lists of at least eight colours (and the general n-list statement). `three_eight_lists_overlap` supplies the three-spoke pigeonhole step. The ambient geometric failure-state argument is still required. |
+| G14 arbitrary-list proof | `small_colour_pool`, `three_parts_six_choosable`, `four_parts_seven_choosable`, and `five_parts_eight_choosable`. The five-part proof includes the exceptional four-colour merged-list case and its repair. The resumed Petersen kernel and extension results are described above. |
+| G07 final reduction | `SmallComponentReduction.lean` proves conflict closure of every original connected component and its edge bound `|E(C)| ≤ 2|V(C)|`. `critical21_disjoint_component_sixteen` then excludes critical edges from a component with at most sixteen vertices, **conditional on the three G05 checks**. It does not assert that the G07 finite geometric search produces such a component. |
+| S20 numerical step | `TwoRepresentativeSizeChecks.table` kernel-checks all entries of the displayed 3×7 table in section 7 of `factor_541_two_representatives.md`. `checked_bounds` covers all **448 = 2×2×4×4×7** parameter tuples, including both orders of the mixed row. `size_bound` derives 32, or 29 when a representative is low, from the explicit port inequality, admissibility constraints and parity. This is not a graph classification or a proof that every proposed critical kernel satisfies those premises. |
+
+The G05 assumptions are precisely these `Prop` definitions in
+`G05FiniteReduction.lean`:
+
+| Named unexecuted check | Exact number of labelled simple-graph inputs before filtering |
+|---|---|
+| `G05SmallAbstractCheck` | `2^210 + 2^231 + 2^253 + 2^276 + 2^300` (orders 21–25) |
+| `G05MiddleAbstractCheck` | `2^325 + 2^351 + 2^378 + 2^406 + 2^435 + 2^465 + 2^496 + 2^528 + 2^561 + 2^595 + 2^630 + 2^666 + 2^703 + 2^741 + 2^780` (orders 26–40) |
+| `G05BoundaryAbstractCheck` | `2^820` (order 41) |
+
+For every input graph with maximum degree at most 24 that is not
+20-colourable, each check requires either a 20-clique or an eight-clique
+whose vertices all have degree exactly 24. These obligations quantify over
+**all** labelled abstract graphs of the indicated orders. They do not
+include a criticality premise despite the helper name `AbstractCriticalCheck`.
+They are much larger than the scalar parameter checks in
+`CriticalSizeChecks.lean`; those earlier arithmetic checks do not discharge
+them. No enumeration, certificate, or proved instance is claimed for any
+of these three obligations. Their presence as ordinary theorem arguments
+does not show up as a new axiom in `#print axioms`.
+
+G15 likewise remains an ordinary explicit theorem argument. Its claimed
+polynomial coefficient 12240 has not been recomputed here. No other new
+source-theorem hypothesis was added in the resumed work.
+
+### Remaining proof obligations, in BRIEF3 order
+
+1. **4.7 and 4.9:** completed as stated above. This proves the odd-cycle
+   reduction, not elimination of all remaining odd cycles or the general
+   20-colour theorem.
+2. **G05:** the three exact finite obligations remain unexecuted. The
+   maximum-matching D/A/C decomposition, factor-critical odd blocks, and
+   their colouring applications remain the missing route to unconditional
+   results. Neither the 42-edge bound nor the rank-two colouring theorem
+   is claimed unconditionally.
+3. **G12:** the residual Hall matrices and palette merge are now proved.
+   Still missing are the construction of compatible prescribed source and
+   target colours, the exceptional five-cut row/column choice, and the
+   endpoint counts proving those budgets for actual cuts. The global
+   minimal-counterexample connectivity arguments are not formalized.
+   **G13:** the Hall obstruction and overlap lemma do not yet supply the
+   six-spoke accounting, equality-state geometry, same-side external-star
+   argument, or the final fixed-outside recolouring construction.
+   **G14:** the arbitrary-list theorem and induced internal-block extension
+   are complete. The full incident-edge extension and the support case
+   with no internal critical edge still require the external-edge count
+   and support argument. **G16:** the variable-list block extension is
+   available with G15; the matching-witness orientations, two-four-clique
+   overlap classification, and identification of the actual induced
+   Petersen-minus/Petersen block remain. **G02:** complete. **G07:** the
+   small-component contradiction is formalized conditionally on G05;
+   coverage and certificates for the high-star and subcubic sixteen-clique
+   searches remain outside the formal development. The source reports
+   nine subcubic branches, 63,118 type multisets and 20,623 recursive nodes;
+   these reported computational totals are not Lean-verified certificates.
+4. **A03, A04:** still require the degree-list block classification and a
+   formal leaf-block extension that preserves current degrees. A04 also
+   needs the complete eight-port chain analysis, including its central
+   `K₃` case. **A02:** the identify-pair and add-bridge transformations
+   must preserve every other private clique and the unique high-neighbour
+   property while decreasing the high count. The new general Hall lemma
+   handles its final near-full-list step only. **A06:** the incidence-weight
+   hypergraph model, representative-pair exchange, pseudoforest argument,
+   and two-stage minimum are still missing. None has been replaced by an
+   assumed version of the target theorem.
+5. **F03:** depends on the same unformalized critical-complement and
+   maximum-matching decomposition, including the 19-vertex case.
+   **F04, F05:** need actual arbitrary permutation-cover models and the
+   unique-witness/Brooks interfaces for the selected fibre groups; the
+   already proved local-injection pullback is insufficient because the
+   base conflict graphs need more colours. **F07:** needs the affine
+   matching normal form, monodromy, and spare-colour transition sequence,
+   including the four-layer seven-colour lower bound. **F09:** the full
+   five-edge forest-shape list, matching-four orientation model, and
+   shape-by-shape extension counts remain beyond the existing endpoint,
+   forbidden-shape and common-extension independence proofs.
+6. **S02:** needs the high-clique critical-block classification and its
+   endpoint realization. **S06:** needs the full twelve-neighbour model,
+   bowtie converse and fourth-potential comparison. **S07:** needs the
+   simultaneous list-repair constructions for whole full circles and long
+   full runs. **S08:** needs the low-block port count, clique-separator
+   gluing, and the disjoint radius-eight ball lower bound.
+   **S17:** needs a representative-assignment construction preserving all
+   named O₉ and thirteen-vertex exclusions. **S19:** needs the `(5,4,1)`
+   exact profiles and zero exchanges followed by A03; an average-load
+   bound is not an integer representative choice. **S20:** its full
+   finite numerical table is now checked, but the low-block structure,
+   disjointness of `K₄` blocks, geometric `t≤2` restriction when `sᵢ=3`,
+   and port inequalities have not been derived for the actual joint
+   critical graph. No full theorem from this S group is claimed.
+
+### Source and provenance checks
+
+The manifest has **136 source modules**, with every `Se20Part/**/*.lean`
+file listed exactly once, plus the root `Se20Part.lean` import. The audit
+contains **197** requested principal-declaration checks. A source scan
+found no `sorry`, `admit`, `native_decide`, axiom declarations or unsafe
+declarations. All **64** locally copied legacy modules match both their
+recorded upstream SHA-256 hashes and the exact namespace/import
+transformation. The additional 22 provenance entries are in
+`THIRD_PASS_LEGACY_PROVENANCE.json`; the original 42-entry record is retained.
+The upstream project was read only.
+
+### Combined validation status
+
+Individual recovery and resumed-development builds passed for all ten
+modules covered by `THIRD_PASS_RECOVERY_LOG.txt`,
+`LIST_BLOCK_EXTENSION_DEV_LOG.txt`, `PETERSEN_KERNEL_DEV_LOG.txt`,
+`PETERSEN_EXTENSION_DEV_LOG.txt`, `SMALL_COMPONENT_DEV_LOG.txt`, and
+`TWO_REPRESENTATIVE_SIZE_DEV_LOG.txt`.
+
+The combined build and the expanded 197-declaration audit are **pending**.
+The first attempt was refused by the one-process guard because another
+task was running Lean. PID 1568 continued executing
+`fourth_pass/RunStatistics.lean` for over ten minutes, through 11:56 on
+2026-11-06. That unrelated process was not stopped. This task's waiting
+PowerShell launcher was cancelled before returning, so no build remains
+queued in the background. No combined success or new complete axiom output
+is claimed. Once the other task has finished or paused, run `./build.ps1`
+to check all 136 modules, the 197 audit requests, and the root import.

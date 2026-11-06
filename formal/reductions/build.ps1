@@ -1,5 +1,9 @@
-param([string[]]$Only = @(), [switch]$CheckRoot)
+param([string[]]$Only = @(), [switch]$CheckRoot, [int]$MemoryLimitMB = 6000)
 $ErrorActionPreference = 'Stop'
+# Serialize invocations of this build script, including selected-module builds.
+$buildMutex = [Threading.Mutex]::new($false, 'Local\Se20PartLeanBuild')
+if (-not $buildMutex.WaitOne(0)) { throw 'Another Se20Part build is running.' }
+if ($MemoryLimitMB -le 0) { throw 'MemoryLimitMB must be positive.' }
 $env:ELAN_HOME = 'E:\lean\elan'
 $env:XDG_CACHE_HOME = 'E:\lean\cache'
 $env:TEMP = 'E:\lean\tmp'
@@ -27,21 +31,31 @@ $modules = @(
     'LocalInjection', 'Transversal', 'DegreeTwo', 'Residual',
     'ComponentExchange', 'EvenPathExchange', 'PathEndpointDegree',
     'CompactExchange', 'CompactGeometry', 'CompactTriangles',
-    'WeightedExchange', 'WeightedHubs', 'MatchingTriangle', 'ConditionalTwenty',
+    'WeightedExchange', 'WeightedHubs', 'MatchingTriangle',
+    'TrianglePotentials', 'DiffuseGeometry', 'DiffuseSaturation', 'DiffuseTriangles', 'RouteReduction',
+    'ConditionalTwenty',
     'WeightedComponents', 'ComponentConditional',
     'PackingCases', 'PackingTightness', 'PackingAdditivity', 'PackingEqualityComponents',
     'CriticalSizeChecks', 'CriticalEndpointDegree', 'PetersenMinusHypothesis', 'AuditExamples'
 )
 $modules += Get-Content -Encoding utf8 (Join-Path $PSScriptRoot 'LEGACY_MODULES.txt')
-$modules += @('LegacyBridge', 'High24Seven', 'GirthCliques', 'DegreeTwoCliques', 'F01', 'F09Endpoints', 'ThirteenKernel', 'AxiomAudit')
+$modules += @('LegacyBridge', 'High24Seven', 'CliqueTwenty', 'CriticalExtraction', 'G05FiniteReduction', 'PaletteHall',
+    'PaletteExtension', 'SmallColourPool', 'MultipartiteLists', 'MultipartiteFour', 'MultipartiteFive',
+    'ListBlockExtension', 'PetersenKernel', 'PetersenExtension',
+    'SmallComponentReduction', 'TwoRepresentativeSizeChecks',
+    'GirthCliques', 'DegreeTwoCliques', 'F01', 'F09Endpoints', 'ThirteenKernel', 'AxiomAudit')
 if ($Only.Count -gt 0) { $modules = $Only }
 # Windows can transiently fail to map a dependency olean under memory pressure.
 # Retry only those runtime failures, never proof errors. All retries stay visible.
 function Invoke-LeanChecked {
     param([string]$SourcePath, [string]$ObjectPath)
     for ($attempt = 1; $attempt -le 4; $attempt++) {
+        $otherLean = @(Get-Process lean -ErrorAction SilentlyContinue)
+        if ($otherLean.Count -gt 0) {
+            throw ('A Lean process is already running (PID ' + ($otherLean.Id -join ', ') + '). No compiler was started.')
+        }
         $ErrorActionPreference = 'Continue'
-        $lines = @(& $leanExe -j 1 -s 65536 -o $ObjectPath $SourcePath 2>&1)
+        $lines = @(& $leanExe -j1 -M $MemoryLimitMB -s 65536 -o $ObjectPath $SourcePath 2>&1)
         $resultCode = $LASTEXITCODE
         $ErrorActionPreference = 'Stop'
         $lines | ForEach-Object { Write-Output $_.ToString() }
