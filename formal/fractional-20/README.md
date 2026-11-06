@@ -1,5 +1,9 @@
 # Formal and independent checks of chi_f(L^2(G)) <= 20
 
+**Update 2026-11-06: the theorem is now unconditional in Lean.** `Se20Fractional.FourthPass.theorem_F_unconditional`: for every finite simple graph with maximum degree at most 4, `FractionalColourable (L2 G) 20`, with no hypothesis, no SAT and no `native_decide`. Proposition D is `propositionD_unconditional`. The path: Lean reduction from 23 to 14 vertices ([REPORT3.md](REPORT3.md), [PROPOSITION_D_PROOF.md](PROPOSITION_D_PROOF.md)), then 85 groups of certificates evaluated by a verified search in the kernel ([REPORT4.md](REPORT4.md), [fourth_pass](fourth_pass)).
+
+Checked independently of Codex: copied the Lean sources to an empty directory and rebuilt all 124 modules from scratch ([rebuild_all.py](fourth_pass/rebuild_all.py); exit status OK, no retry needed for the failures shown in the log; about 3.6 CPU hours for the certificates). The three final theorems depend only on `propext`, `Classical.choice`, `Quot.sound` ([AXIOMS4.txt](AXIOMS4.txt)). Source scan finds no `sorry`, `native_decide`, `bv_decide`, `ofReduceBool` or project axiom; `unsafe` occurs only in two tactic front ends, whose output the kernel checks. I read the definitions of `Colouring`, `FractionalColourable`, `L2` and the final statements. The proofs were checked only by the Lean kernel, not read. The rest of this file describes the state before this update.
+
 Status of [Theorem 11.29](../../docs/NEW_DIRECTIONS_zh.md) (Δ(G) ≤ 4 implies χ_f(L²(G)) ≤ 20). The work was done by Codex from
 [BRIEF.md](BRIEF.md) and [BRIEF2.md](BRIEF2.md) in `E:\lean\se20-fractional`; its own accounts are [REPORT.md](REPORT.md) and
 [REPORT2.md](REPORT2.md).
