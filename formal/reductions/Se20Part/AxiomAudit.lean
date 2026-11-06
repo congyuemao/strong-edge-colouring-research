@@ -1,4 +1,5 @@
 import Se20Part.DegreeProfiles
+import Se20Part.HighCliqueColouring
 import Se20Part.GirthDegree
 import Se20Part.MaximumCut
 import Se20Part.TightComponents
@@ -37,6 +38,9 @@ import Se20Part.PetersenMinusSupport
 import Se20Part.PetersenIncident
 import Se20Part.GallaiLowBlocks
 import Se20Part.CliqueSeparator
+import Se20Part.HighCliqueCritical
+import Se20Part.MatchingOverlapModel
+import Se20Part.TwoMatchings
 
 -- Hypotheses such as Brooks/Haxell/JoosNguyen are ordinary arguments.
 -- Consequently their absence from #print axioms is not a proof of them.
@@ -313,3 +317,43 @@ import Se20Part.CliqueSeparator
 #print axioms Se20Part.critical21_no_supported_petersen_subgraph
 #print axioms Se20Part.colourable_of_clique_separator
 #print axioms Se20Part.minimal_noncolourable_no_clique_separator
+
+-- Fifth pass: Gallai is a proved theorem; G15 remains a named argument.
+#print axioms Se20Part.critical_low_degree_list_obstruction
+#print axioms Se20Part.DegreeList.colourable_of_one_slack
+#print axioms Se20Part.FiniteConnectivity.exists_nonseparating_pair
+#print axioms Se20Part.DegreeList.bad_noncut_complete_or_odd_cycle
+#print axioms Se20Part.degree_list_obstruction_gallai_tree
+#print axioms Se20Part.critical_degree_twenty_gallai
+#print axioms Se20Part.corollary1140_five
+#print axioms Se20Part.gallaiDegreeChoosable
+#print axioms Se20Part.finite_induced_separation
+#print axioms Se20Part.exists_end_block
+#print axioms Se20Part.exists_vertex_minimal_noncolourable
+#print axioms Se20Part.vertex_minimal_noncolourable_degree
+#print axioms Se20Part.bad_lists_end_block
+#print axioms Se20Part.critical_regular_has_clique
+#print axioms Se20Part.colourable_of_degree_le_no_clique
+#print axioms Se20Part.clique_leaf_list_failure
+#print axioms Se20Part.two_list_avoid_boundary
+#print axioms Se20Part.induced_high_retains_neighbours
+#print axioms Se20Part.induced_high_clique
+#print axioms Se20Part.four_critical_high_card_two
+#print axioms Se20Part.four_critical_eight_ports
+#print axioms Se20Part.matchingOverlap_adj_iff
+#print axioms Se20Part.matchingOverlapIso
+#print axioms Se20Part.matchingOverlap_matching_edges
+#print axioms Se20Part.matching_cross_witness_unique
+#print axioms Se20Part.critical21_no_normalized_matching_overlap
+#print axioms Se20Part.connected_union_two_matchings_colourable
+#print axioms Se20Part.union_two_matchings_colourable
+#print axioms Se20Part.two_matchings_simultaneous_assignment
+
+-- Sixth pass: the full A03 theorem, including its prescribed-list bridge.
+#print axioms Se20Part.induced_set_end_block
+#print axioms Se20Part.critical_prescribed_lists
+#print axioms Se20Part.external_neighbours_eq_of_palette_eq
+#print axioms Se20Part.clique_union_external
+#print axioms Se20Part.critical_block_uniform_palettes
+#print axioms Se20Part.critical_high_clique_contains_clique
+#print axioms Se20Part.high_clique_low_clique_free_colourable

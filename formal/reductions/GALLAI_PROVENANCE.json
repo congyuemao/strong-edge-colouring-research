@@ -1,0 +1,50 @@
+﻿[
+    {
+        "module":  "DegreeListTools",
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\DegreeListTools.lean",
+        "sha256":  "31C265D9D75F7119DE97922685FA46912E30B707DFC4E34609013D182433D4AD",
+        "transformation":  "Se20Insertion -\u003e Se20Part"
+    },
+    {
+        "module":  "DegreeListReduction",
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\DegreeListReduction.lean",
+        "sha256":  "426724C26FF4E60DAD8E4643CF64D0E8C34EF36EE4276F613833267FED01DFC2",
+        "transformation":  "Se20Insertion -\u003e Se20Part"
+    },
+    {
+        "module":  "NonseparatingPair",
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\NonseparatingPair.lean",
+        "sha256":  "1FDD1A2FE01BBE70C8F4FDEC36894B242E2AD01DAEFC2D4A80A3B66837561C86",
+        "transformation":  "Se20Insertion -\u003e Se20Part"
+    },
+    {
+        "module":  "DegreeListInduced",
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\DegreeListInduced.lean",
+        "sha256":  "1C65FCF984444026FE5A750D4DAFCEC937ED9FC4B2614E8A4AE19FB425055D95",
+        "transformation":  "Se20Insertion -\u003e Se20Part"
+    },
+    {
+        "module":  "DegreeListBrooks",
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\DegreeListBrooks.lean",
+        "sha256":  "BEE163197EE16D507C1BA91031B83F3F88C6106A4DEBFC2C2480EBA91404200D",
+        "transformation":  "Se20Insertion -\u003e Se20Part"
+    },
+    {
+        "module":  "FiniteNonseparating",
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\FiniteNonseparating.lean",
+        "sha256":  "64FEACDC90AC3237684A81F09BF500DDA24812ED6B3DF7765C956EAE803697F7",
+        "transformation":  "Se20Insertion -\u003e Se20Part"
+    },
+    {
+        "module":  "RegularCycle",
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\RegularCycle.lean",
+        "sha256":  "C2F31CA00C4A1FA85626B195CEEFAC5D2086CFE23ABF5B76769A38C7D5951D21",
+        "transformation":  "Se20Insertion -\u003e Se20Part"
+    },
+    {
+        "module":  "Gallai",
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\Gallai.lean",
+        "sha256":  "83CC3C70EAF9E4DF0976A4DF4F67A04A96D7D98363A424A69C2F7F4E17E27775",
+        "transformation":  "Se20Insertion -\u003e Se20Part"
+    }
+]

@@ -1,0 +1,27 @@
+﻿[
+    {
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\CriticalLists.lean",
+        "sha256":  "C1BDEED548B0A66B429EB8C93DE87BF8BCDA3F943D5F5C3D305486B75FA9AD2F",
+        "use":  "Exact namespace transformation, with InfiniteForest import replaced by GallaiPrerequisites"
+    },
+    {
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\CriticalStructure.lean",
+        "sha256":  "5C24B0269297008026C02A40073A0112D0A8D20663F2165409F861DF9BD88156",
+        "use":  "Small interface excerpt in GallaiPrerequisites; theorem bodies checked locally"
+    },
+    {
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\HoleMoves.lean",
+        "sha256":  "1A44CA899D6D21ABC5FA99F05FAC0E0E78928170B9FD64A9C1A6DA9C74C13BA0",
+        "use":  "Small interface excerpt in GallaiPrerequisites; theorem bodies checked locally"
+    },
+    {
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\Counting.lean",
+        "sha256":  "DAED88D448EF31856F88309696206F245B5A051576A0C5A8C095BF31B16F5532",
+        "use":  "Small interface excerpt in GallaiPrerequisites; theorem bodies checked locally"
+    },
+    {
+        "upstream":  "E:\\lean\\se20-insertion\\Se20Insertion\\LowDegree.lean",
+        "sha256":  "D974E004303CF89E6E9DA2D7187D4E18ECE4907EF577FE3FD26EA3B3217A9A06",
+        "use":  "Small interface excerpt in GallaiPrerequisites; theorem bodies checked locally"
+    }
+]
