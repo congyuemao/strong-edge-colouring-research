@@ -1,4 +1,6 @@
 import Se20Part.External
+import Se20Part.CompletedTheorems
+import Se20Part.TreeBalls
 import Se20Part.Assembly
 import Se20Part.Contraction
 import Se20Part.Split
@@ -13,6 +15,10 @@ import Se20Part.LocalGeometry
 import Se20Part.OpenStatements
 import Se20Part.ConcreteTagged
 import Se20Part.TheoremBPlus
+import Se20Part.ThirdPassConsequences
+import Se20Part.TransferRuns
+import Se20Part.TransferCounting
+import Se20Part.SpanningPatterns
 
 #print axioms Se20Part.girthAtLeast_iff_egirth
 #print axioms Se20Part.degreeLE_iff
@@ -115,3 +121,41 @@ import Se20Part.TheoremBPlus
 #print axioms Se20Part.theorem_B_plus
 #print axioms Se20Part.lovasz_local_lemma
 #print axioms Se20Part.theorem_B_plus_of_transfer_bounds
+
+-- Third pass: the original numerical inequality and Haxell are discharged.
+#print axioms Se20Part.certificateEntries_correct
+#print axioms Se20Part.certificateVector_contract
+#print axioms Se20Part.exp31_mass_geometric
+#print axioms Se20Part.exp31_lllRhs_bound
+#print axioms Se20Part.exp31_lll_budget
+#print axioms Se20Part.fine_step
+#print axioms Se20Part.fine_contract
+#print axioms Se20Part.fine_envelope_convolution
+#print axioms Se20Part.exp31_fine_mass
+#print axioms Se20Part.exp31_fine_convolution
+#print axioms Se20Part.exp31_transfer_bound
+#print axioms Se20Part.HaxellProof.exists_full
+#print axioms Se20Part.haxell
+#print axioms Se20Part.theorem_B_of_kostochka
+#print axioms Se20Part.theorem_B_plus_of_counting
+#print axioms Se20Part.transferStep_matrix
+#print axioms Se20Part.prefix_advance
+#print axioms Se20Part.ValidDepthPattern.exists_run
+#print axioms Se20Part.run_mass
+#print axioms Se20Part.SpanningFamily.validDepthPattern
+#print axioms Se20Part.familyWeight_root
+#print axioms Se20Part.per_part_of_rooted_count
+#print axioms Se20Part.rootedPattern_convolution
+#print axioms Se20Part.projectedCandidates_card_explicit
+#print axioms Se20Part.rootSegment_card
+#print axioms Se20Part.decoration_card
+#print axioms Se20Part.familyCode_exists
+#print axioms Se20Part.familyCode_mass
+#print axioms Se20Part.rootedChain_bound
+#print axioms Se20Part.transfer_spanning_family_bound
+#print axioms Se20Part.theorem_B_plus_of_kostochka
+#print axioms Se20Part.theorem_B_plus_statement
+#print axioms Se20Part.TreeBall.pathEdge_injective
+#print axioms Se20Part.TreeBall.code_card
+#print axioms Se20Part.TreeBall.edgeBall_eq
+#print axioms Se20Part.infinite_four_tree_edgeBall_card

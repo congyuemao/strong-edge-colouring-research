@@ -4,8 +4,14 @@ param([string[]]$Modules = @(
     'OverlapAudit', 'LocalGeometry', 'OpenStatements', 'Decomposition', 'CycleSelection',
     'LocalDominators', 'TheoremB', 'DeadEdges', 'TreeLemma', 'TaggedSelection', 'Pseudoforest',
     'OptionGraph', 'ConcreteTagged', 'SpanningGeometry', 'GeodesicProjection', 'SpanningFamily',
-    'TransferMatrix', 'VariableLocalLemma', 'LocalLemma', 'RandomTransversal', 'BadFamilies', 'TheoremBPlus', 'AxiomAudit'
-))
+    'TransferMatrix', 'VariableLocalLemma', 'LocalLemma', 'RandomTransversal', 'BadFamilies', 'TheoremBPlus',
+    'Haxell', 'HaxellConsequences', 'CertificateEntries', 'TransferCertificate', 'TransferEstimate',
+    'TransferFineCertificate', 'TransferFineEstimate', 'ThirdPassConsequences',
+    'TransferAutomaton', 'TransferRuns', 'TransferCounting', 'SpanningPatterns',
+    'RootedPatterns', 'EmbeddingCounts', 'PathCounting', 'SegmentCounting', 'PatternProducts',
+    'DecorationCounting', 'FamilyEncoding', 'EmbeddedFamilyBound', 'CompletedTheorems',
+    'TreeBallCodes', 'TreeBalls', 'AxiomAudit'
+), [int]$Threads = 0)
 $ErrorActionPreference = 'Stop'
 $env:ELAN_HOME = 'E:\lean\elan'
 $env:XDG_CACHE_HOME = 'E:\lean\cache'
@@ -26,10 +32,12 @@ $localLibs += Get-ChildItem -LiteralPath $packageRoot -Directory | ForEach-Objec
 $env:LEAN_PATH = $localLibs -join ';'
 $compiler = 'E:\lean\elan\toolchains\leanprover--lean4---v4.35.0-rc4\bin\lean.exe'
 if (-not (Test-Path -LiteralPath $compiler)) { throw "Installed compiler missing: $compiler" }
+$threadArgs = @()
+if ($Threads -gt 0) { $threadArgs = @("-j$Threads") }
 foreach ($module in $Modules) {
     Write-Output "Checking Se20Part.$module"
-    & $compiler -o ".lake\build\lib\lean\Se20Part\$module.olean" "Se20Part\$module.lean"
+    & $compiler @threadArgs -o ".lake\build\lib\lean\Se20Part\$module.olean" "Se20Part\$module.lean"
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 }
-& $compiler -o '.lake\build\lib\lean\Se20Part.olean' 'Se20Part.lean'
+& $compiler @threadArgs -o '.lake\build\lib\lean\Se20Part.olean' 'Se20Part.lean'
 exit $LASTEXITCODE

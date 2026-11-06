@@ -104,10 +104,11 @@ theorem closePair_weight_bound {V I : Type} [Fintype V] [Fintype I] {G : SimpleG
   rw [heq] at hh
   exact hh
 
-/-- Explicit remaining counting correspondence: the weighted count of distinct,
+/-- Explicit counting specification: the weighted count of distinct,
 part-injective spanning families is bounded by the supplied transfer-matrix
 convolution. This includes their embeddings in the degree-four graph, not only
-the scalar depth-pattern identity. It is a named hypothesis, not an axiom. -/
+the scalar depth-pattern identity. It is proved by `transfer_spanning_family_bound`
+in `EmbeddedFamilyBound.lean`; the original proposition is unchanged. -/
 def TransferMatrixSpanningFamilyBound : Prop :=
   ∀ (V I : Type) [Fintype V] [Fintype I] (G : SimpleGraph V), MaxDegreeFour G → GirthAtLeast G 5710 →
     ∀ (E : Set G.edgeSet) (part : E → I), Function.Surjective part →

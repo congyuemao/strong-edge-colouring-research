@@ -1,6 +1,6 @@
 # Part I formalization report
 
-The first-pass record is preserved below. Current results and limitations are in [Second pass](#second-pass).
+The earlier pass records are preserved below. Current results and limitations are in [Third pass](#third-pass).
 
 ## Flaws and proof gaps first
 
@@ -251,3 +251,109 @@ The complete default offline build of all 34 modules and the root library finish
 One earlier full-build attempt stopped on a read error for the existing Mathlib artifact `LinearAlgebra/Matrix/Charpoly/Coeff.olean.private`. The file was present and readable immediately afterwards. No dependency was changed; a fresh complete build succeeded. The failed attempt is preserved in `build-output-second-pass-first-attempt.txt`.
 
 Within the requested second-pass targets, the remaining mathematical obligations are the two explicit B+ transfer bounds above, plus the unused scalar correspondence if it is to serve as a stepping stone to the counting bound. Theorems B, Lemmas 3.6/3.9/3.11/3.15, Corollary 3.10, Proposition 3.13, the corrected tagged remark, and the general finite local lemma are no longer open. The first-pass specifications are unchanged; all except the unqualified B+ specification now have proofs. The first-pass omission of exact ball-size equality in the infinite four-regular tree is not addressed by this pass's requested list.
+
+## Third pass
+
+### Flaws and qualifications first
+
+**Kostochka remains an explicit literature hypothesis.** Neither B nor B+ is claimed without it. The 1978 proof is absent, and no proof of `Kostochka` was attempted. An axiom audit containing only standard foundational axioms does not discharge an ordinary theorem parameter.
+
+**The overlapping-candidate defect in the manuscript's Haxell remark remains a defect of that argument.** Proving Haxell does not make it applicable to overlapping parts. The second-pass disjoint/tagged constructions and their proved degree bounds remain the valid replacement. The girth-8 version of Lemma 3.9(b) in the older reference also remains incorrect; the proved statement still uses 9.
+
+**The original theorem declarations have not been changed.** In particular, the old `theorem_B` still accepts a Haxell parameter and the old `theorem_B_plus` still accepts its local-lemma, counting, and numerical parameters. The new, stronger corollaries below supply proofs of these propositions. This preserves the user's requirement not to change already-proved statements while exposing results with only Kostochka as a literature assumption.
+
+The unused proposition `TransferMatrixSpanningCorrespondence`, an equality of accepted scalar pattern counts for every length and every nonnegative rational parameter, remains unproved. It is not used by any completed theorem. The needed weighted convolution inequality and the **full original** `TransferMatrixSpanningFamilyBound` are now proved. No restriction to minimal families, no change of bad events, and no weaker replacement of that specification was made.
+
+### Completed targets and exact interfaces
+
+```lean
+exp31_transfer_bound : TransferMatrix5710Bound exp31Matrix5710
+
+transfer_spanning_family_bound : TransferMatrixSpanningFamilyBound
+
+haxell : Haxell
+
+theorem_B_of_kostochka (kost : Kostochka)
+    (G : SimpleGraph V) (hd : MaxDegreeFour G)
+    (hg : GirthAtLeast G 39360) : StrongColourable G 20
+
+theorem_B_plus_of_kostochka (kost : Kostochka)
+    (G : SimpleGraph V) (hd : MaxDegreeFour G)
+    (hg : GirthAtLeast G 5710) : StrongColourable G 20
+
+theorem_B_plus_statement : TheoremBPlusStatement
+
+infinite_four_tree_edgeBall_card (T : InfiniteFourTree)
+    (e : T.graph.edgeSet) (k : ℕ) :
+    Nat.card (edgeBall T.graph e k) = 3^(k+2)-3
+```
+
+The finite-graph declarations have the usual `{V : Type} [Fintype V]` parameters, omitted from this display. `TheoremBPlusStatement` is the unchanged first-pass specification; its now-unnecessary local-lemma parameter is accepted and ignored. The strongest B+ corollary is in `CompletedTheorems.lean`, and the strengthened B corollary is in `HaxellConsequences.lean`.
+
+### Rational matrix certificate and margin
+
+`CertificateEntries.lean` checks the explicit matrix entries against integer numerators with denominator **5,710,000**. `TransferCertificate.lean` checks the sparse numerator multiplication formula against the original `exp31Matrix5710`, so the certificate is connected to the matrix defined from the supplied program, not to a replacement matrix.
+
+The final certificate uses
+
+```text
+rho = 9862789 / 10000000 = 0.9862789
+scale = 10000000000
+```
+
+`TransferFineCertificate.lean` contains 101 explicit rational vectors for normalized times 0 through 100, followed by an explicit vector `fineVector`. It checks the initial all-ones vector, all 100 componentwise transitions, domination of the last transient vector, and `M * fineVector ≤ rho * fineVector`. The vector is nonnegative and has zero entries at states eliminated by the transient evolution; strict positivity is not needed because domination of the actual orbit has already been checked. Its scaled mass is at most **658.16**. These finite vector and envelope checks use ordinary kernel evaluation (`decide +kernel`); entry identities and final scalar comparisons use `norm_num` and algebraic proof. No native evaluator is trusted.
+
+`TransferFineEstimate.lean` proves the induction connecting these certificates to every matrix iterate. For the scalar envelope `a_k`, with the first 100 masses explicit and the remaining masses bounded by the tail constant, it proves
+
+```text
+u_k ≤ rho^k * a_k / scale
+Σ(k=0..2854) a_k*a_(2854-k)
+  ≤ 123491640037283275676800000000
+rho^2854 ≤ 750351 / 10^23.
+```
+
+These give a rational upper bound on the original LLL expression of approximately **0.1841539601666061**; the decimal is explanatory only. The kernel proves the original requested upper bound **184154/1000000**, without weakening it. The already-proved logarithm lower bound is **184818/1000000**, leaving the exact certified margin
+
+```text
+184818/1000000 - 184154/1000000 = 83/125000 = 0.000664.
+```
+
+Thus **g = 5710 and beta = 1203/1000 are unchanged**. There is no need to search for a larger girth. A separate, simpler six-step certificate in `TransferEstimate.lean` already gives `184410/1000000`, which would also fit the budget with margin `51/125000`; the finer certificate discharges the actual printed predicate.
+
+### Embedded spanning-family count
+
+The proof bounds every `ChainBad` family in the second-pass definition, indexed by its edge set. The following parts are all kernel-checked:
+
+1. `SpanningPatterns.lean` extracts a depth pattern from actual nearest projections. Separation gives the spacing inequality, and geometric spanning gives the pending-budget conditions. `TransferAutomaton.lean` constructs a valid labelled state run for every such pattern.
+2. `TransferRuns.lean` proves that the total weight of all valid labelled runs of length `n`, with free initial and final states, is exactly `transferMass exp31Matrix5710 n`. This includes summing distinct labels that lead to the same transition.
+3. `RootedPatterns.lean` maps a pattern rooted at position `k` and fixed depth into a pair of valid runs, reading its left side in reverse and its right side forwards. The labels recover every position except the fixed root, so this map is injective. Its weighted sum is at most `u_k * u_(n-k)`.
+4. `EmbeddingCounts.lean`, `PathCounting.lean`, and `SegmentCounting.lean` count actual graph embeddings. For a fixed root edge and depth `d`, there are at most `2*3^d` possible projection vertices. For each such vertex and fixed position, the number of oriented simple path supports is at most `3*3^n`. Thus the path count is at most `6*3^d*3^n`. Path supports determine their endpoints and walks, so these counts apply to the path objects used in the encoding.
+5. At an interior position a depth-`d` projected edge has at most `2*3^d` choices, and at an endpoint at most `3*3^d`. `DecorationCounting.lean` bounds the two endpoint corrections together by 4. This deliberately loose factor still gives a combined coefficient **24**, below the original **27 = (9/4)*12**. `PatternProducts.lean` checks the product identity matching these choices and their powers of `t` to the run weights.
+6. `FamilyEncoding.lean` chooses one witness for each family and encodes it by root position, root depth, pattern, path, and projected-edge choices. `codeEdges` recovers the original edge set. The number of nonroot occupied positions equals `|S|-1`, giving the exact rooted weight `t^(|S|-1)`. Multiple possible witnessing paths do not duplicate an event: one witness is chosen, and recovery proves the injection.
+7. `EmbeddedFamilyBound.lean` sums the encoding. Uniformly for each root edge, the weighted count is at most **8712 times the convolution**, since `24*(3+9+27+81+243)=8712`. The original coefficient is **9801**. `TransferCounting.lean` then roots at the member of a specified part, uses part injectivity to remove exactly one weight factor, and sums over that part. The result is the original per-part bound with its original `transferContribution5710`.
+
+The counting proof does not need the girth premise once the actual spanning-family witnesses are supplied. Girth is still needed in B+ to produce those witnesses from option-graph cycles. The original counting specification is therefore proved as stated, with no hidden geometric assumption added.
+
+### Haxell and the remaining first-pass target
+
+`Haxell.lean` gives an independent proof by finite lexicographic minimization of augmenting sequences. A configuration contains a partial independent transversal, chosen vertices, and their disjoint blocker sets. Its score first favors larger partial transversals and then smaller successive blocker sets. If a part is missing, degree counting and the lower bound `2*Delta` either permit an extension of the sequence or produce an unblocked vertex. The latter augments the partial transversal or performs an earlier swap that decreases its score. Each possibility contradicts minimality. Surjectivity of the partition also covers `Delta = 0` and empty vertex types without adding a positivity assumption.
+
+The augmenting-sequence presentation was checked against the public mathematical treatment in [Buys, Kang and Ozeki, *Reconfiguration of Independent Transversals*](https://pure.uva.nl/ws/files/307132222/Reconfiguration_of_Independent_Transversals.pdf). The public [IndependentTransversals formalization](https://github.com/Pjotr5/IndependentTransversals/) was inspected for context; no source or package from it was imported. The project proof is in `Haxell.lean` and has no independent-transversal theorem as a parameter.
+
+After the four priority targets were completed, `TreeBallCodes.lean` and `TreeBalls.lean` supplied the missing exact infinite-tree ball count. Recursive nonbacktracking branch codes have cardinality `branchBound n`, with exactly three choices at each step. Acyclicity makes the codes simple paths; a nonempty rooted path in a tree is determined by its last edge. This proves injectivity and disjointness of the two sides of the root edge. A shortest endpoint approach proves that their union is the whole edge ball. The result holds for every natural radius, including zero, on the actual `InfiniteFourTree.Vertex`; no finite truncation is substituted.
+
+The first-pass named specifications are now all inhabited. The documented alternative proof of Theorem B steps 1–3 still cuts every cyclic component and uses Hall counting; the literal odd-cycle-only/Euler/Konig presentation is not separately formalized. The erroneous overlapping-part remark cannot be proved as stated. The unused all-parameter scalar transfer equality and historical counterexample constructions are not claimed.
+
+### Verification and Kostochka assessment
+
+`AxiomAudit.lean` includes the numerical certificates, automaton, convolution, embedding injection, per-part bound, Haxell, both strengthened colouring theorems, and the exact infinite-tree ball theorem. The checked main results use only
+
+```text
+[propext, Classical.choice, Quot.sound]
+```
+
+No project source uses `sorry`, `admit`, `native_decide`, `sorryAx`, or a new axiom declaration. No package was fetched or installed. **All 57 source modules and the root library were checked offline on 2026-11-06.** The final invocation, including `CompletedTheorems`, both tree-ball modules, `AxiomAudit`, and the root library, finished with **exit code 0**. The complete record is [build-output-third-pass.txt](build-output-third-pass.txt).
+
+This check required resuming after transient reads of existing Mathlib artifacts failed: first at `TransferFineEstimate`, then twice while importing `CompletedTheorems`. Previously completed modules were retained, and checking resumed at each failure. The last four modules and root library succeeded with `-Threads 1`; `build.ps1` now accepts this optional parameter while preserving its previous default thread behavior. No dependency artifact was changed. The original attempt and each continuation are preserved as `build-output-third-pass-first-attempt.txt` and `build-output-third-pass-resume*.txt`, and the combined log records them all. These were import/read failures, not failed mathematical proof obligations. Minor style and deprecation warnings remain.
+
+Proving `Kostochka` would be a separate substantial formalization, not another numerical certificate. Its exact interface quantifies over the maximum-degree bound, girth, and number of colours, uses `q = floor((g+1)/2)`, and concludes a colouring from the stated exponential inequality. The remaining obligation is the combinatorial implication producing that colouring. The two numerical specializations K6 and K5 are already proved and do not supply this implication. With the paper in hand, the first work would be to audit its precise hypotheses and integer conventions against `External.lean`, identify and formalize its central colouring/counting lemmas, and then prove that their estimates imply the displayed criterion. The local lemma and finite counting infrastructure now available may help if the source proof uses them, but that route cannot responsibly be asserted without the text. No attempt to reconstruct the missing 1978 proof, and no reliable effort estimate for it, is claimed.

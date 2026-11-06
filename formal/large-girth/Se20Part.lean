@@ -18,3 +18,6 @@ import Se20Part.OptionGraph
 import Se20Part.ConcreteTagged
 import Se20Part.SpanningFamily
 import Se20Part.TheoremBPlus
+import Se20Part.ThirdPassConsequences
+import Se20Part.CompletedTheorems
+import Se20Part.TreeBalls

@@ -2,9 +2,9 @@ import Se20Part.Selection
 import Se20Part.ColouringTheorems
 
 /-! First-pass target specifications, recorded as propositions, never as axioms.
-The second-pass modules prove all of these except the unqualified B+ specification;
-B+ currently retains the explicit numerical and spanning-count hypotheses allowed
-by the second-pass brief. The proposition definitions below are unchanged. -/
+The second- and third-pass modules now prove all of these specifications.
+`CompletedTheorems.lean` discharges the B+ counting and numerical assumptions.
+The proposition definitions below are unchanged. -/
 noncomputable section
 open scoped Classical
 namespace Se20Part

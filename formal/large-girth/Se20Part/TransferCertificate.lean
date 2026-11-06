@@ -1,4 +1,4 @@
-import Se20Part.TransferMatrix
+import Se20Part.CertificateEntries
 
 noncomputable section
 open scoped Classical BigOperators
@@ -14,10 +14,9 @@ def certificateStep (x : Fin 42 → ℚ) : Fin 42 → ℚ :=
 theorem certificateStep_eq (x : Fin 42 → ℚ) :
     certificateStep x = fun i => 5710000 * (exp31Matrix5710.mulVec x) i := by
   funext i
+  simp only [Matrix.mulVec,dotProduct,certificateEntries_correct]
   fin_cases i <;>
-    norm_num [certificateStep, exp31Matrix5710, exp31Matrix, t5710, beta5710,
-      transferL, transferS, Matrix.mulVec, dotProduct, Fin.sum_univ_succ,
-      Finset.sum_Icc_succ_top] <;> ring
+    norm_num [certificateStep,certificateEntries,Fin.sum_univ_succ] <;> ring
 
 def certificateRho : ℚ := 24657/25000
 
